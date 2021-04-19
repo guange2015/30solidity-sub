@@ -1,0 +1,712 @@
+1
+00:00:00,700 --> 00:00:03,429
+the syntax for declaring a function is
+
+2
+00:00:03,429 --> 00:00:06,129
+solidity is straightforward functioning
+
+3
+00:00:06,129 --> 00:00:08,620
+data typing variable name for each input
+
+4
+00:00:08,620 --> 00:00:11,020
+order declaration like the keyword
+
+5
+00:00:11,020 --> 00:00:14,050
+public view peer and the type of outputs
+
+6
+00:00:14,050 --> 00:00:17,109
+to return and we be done with this video
+
+7
+00:00:17,109 --> 00:00:19,179
+if solidity functions were like other
+
+8
+00:00:19,179 --> 00:00:21,849
+programming languages in programming
+
+9
+00:00:21,849 --> 00:00:23,919
+language like JavaScript function can
+
+10
+00:00:23,919 --> 00:00:26,169
+take in data types like array and maps
+
+11
+00:00:26,169 --> 00:00:29,550
+as input and also return them as output
+
+12
+00:00:29,550 --> 00:00:32,380
+however you might be surprised and not
+
+13
+00:00:32,380 --> 00:00:34,449
+amused to find out that in solidity
+
+14
+00:00:34,449 --> 00:00:36,850
+public functions cannot accept certain
+
+15
+00:00:36,850 --> 00:00:39,460
+data types as input and you also cannot
+
+16
+00:00:39,460 --> 00:00:42,640
+return certain data type as outputs so
+
+17
+00:00:42,640 --> 00:00:44,379
+in this video let's explore the
+
+18
+00:00:44,379 --> 00:00:46,449
+restrictions on the type of inputs and
+
+19
+00:00:46,449 --> 00:00:49,269
+outputs for a public function and go
+
+20
+00:00:49,269 --> 00:00:51,850
+over the data types that you can use but
+
+21
+00:00:51,850 --> 00:00:54,579
+you really shouldn't use or at least be
+
+22
+00:00:54,579 --> 00:00:57,579
+extremely careful we'll also go over the
+
+23
+00:00:57,579 --> 00:00:59,739
+syntax for returning multiple outputs
+
+24
+00:00:59,739 --> 00:01:02,440
+from a function this is a useful feature
+
+25
+00:01:02,440 --> 00:01:04,510
+when you want to aggregate multiple
+
+26
+00:01:04,510 --> 00:01:06,850
+function outputs into a single function
+
+27
+00:01:06,850 --> 00:01:10,479
+call in solidity you can pass certain
+
+28
+00:01:10,479 --> 00:01:12,840
+data types as input to a public function
+
+29
+00:01:12,840 --> 00:01:15,820
+some data types that you cannot use our
+
+30
+00:01:15,820 --> 00:01:18,369
+map and multi-dimensional array without
+
+31
+00:01:18,369 --> 00:01:21,159
+a fixed size let's see what happens if
+
+32
+00:01:21,159 --> 00:01:23,259
+you try to compile contract with these
+
+33
+00:01:23,259 --> 00:01:26,259
+invalid inputs here we have a function
+
+34
+00:01:26,259 --> 00:01:28,930
+that takes a map as input let's try
+
+35
+00:01:28,930 --> 00:01:31,430
+compiling the contract
+
+36
+00:01:31,430 --> 00:01:33,650
+you'll get an error like the one you can
+
+37
+00:01:33,650 --> 00:01:36,460
+see here how about multi-dimensional
+
+38
+00:01:36,460 --> 00:01:41,900
+fixed sized array we'll compile it did
+
+39
+00:01:41,900 --> 00:01:44,930
+how about multi-dimensional dynamic
+
+40
+00:01:44,930 --> 00:01:45,410
+sized
+
+41
+00:01:45,410 --> 00:01:47,900
+array will this compile try compiling
+
+42
+00:01:47,900 --> 00:01:50,030
+the contract and you get our like the
+
+43
+00:01:50,030 --> 00:01:52,490
+one you can see here the error message
+
+44
+00:01:52,490 --> 00:01:54,770
+states that if you change the pragmatic
+
+45
+00:01:54,770 --> 00:01:57,530
+experimental avi encoder version two
+
+46
+00:01:57,530 --> 00:02:00,890
+then the function is valid code here
+
+47
+00:02:00,890 --> 00:02:03,260
+I've done exactly that change the pragma
+
+48
+00:02:03,260 --> 00:02:05,900
+inside the contract but as you can see
+
+49
+00:02:05,900 --> 00:02:07,760
+here in the warnings you should not
+
+50
+00:02:07,760 --> 00:02:09,860
+deploy a contract with experimental
+
+51
+00:02:09,860 --> 00:02:12,620
+features to the main net how about a
+
+52
+00:02:12,620 --> 00:02:14,870
+regular one dimensional array will
+
+53
+00:02:14,870 --> 00:02:18,099
+compile it does
+
+54
+00:02:18,099 --> 00:02:20,890
+so we've seen public functions can take
+
+55
+00:02:20,890 --> 00:02:22,989
+away as input but should you write
+
+56
+00:02:22,989 --> 00:02:25,030
+functions that take array of arbitrary
+
+57
+00:02:25,030 --> 00:02:28,930
+size in most cases the answer is no the
+
+58
+00:02:28,930 --> 00:02:32,620
+reason is simple guess the bigger the
+
+59
+00:02:32,620 --> 00:02:35,290
+array is the more gasket we use the
+
+60
+00:02:35,290 --> 00:02:37,420
+function will complete successfully for
+
+61
+00:02:37,420 --> 00:02:39,549
+some arrays and fail for other inputs
+
+62
+00:02:39,549 --> 00:02:41,650
+depending on the size of the array and
+
+63
+00:02:41,650 --> 00:02:44,650
+how much gas is available as a developer
+
+64
+00:02:44,650 --> 00:02:46,659
+this is difficult to predict up front
+
+65
+00:02:46,659 --> 00:02:49,209
+and it goes against the best practices
+
+66
+00:02:49,209 --> 00:02:51,579
+to write smart contracts that are simple
+
+67
+00:02:51,579 --> 00:02:54,040
+reliable and with predictable outcomes
+
+68
+00:02:54,040 --> 00:02:56,500
+one way to make this function more
+
+69
+00:02:56,500 --> 00:02:58,870
+reliable is to require that the size of
+
+70
+00:02:58,870 --> 00:03:00,730
+the array is less than some fixed number
+
+71
+00:03:00,730 --> 00:03:03,159
+this would put an upper bound to them
+
+72
+00:03:03,159 --> 00:03:05,169
+and I guess this function can possibly
+
+73
+00:03:05,169 --> 00:03:08,889
+use limitations on the outputs of a
+
+74
+00:03:08,889 --> 00:03:10,780
+public function is similar to that of
+
+75
+00:03:10,780 --> 00:03:13,480
+inputs outputs of type map and
+
+76
+00:03:13,480 --> 00:03:16,090
+multi-dimensional array with dynamic
+
+77
+00:03:16,090 --> 00:03:19,120
+size do not compile let's try them out
+
+78
+00:03:19,120 --> 00:03:22,030
+in remix back in our contract first
+
+79
+00:03:22,030 --> 00:03:25,590
+declare some datatypes a map an array a
+
+80
+00:03:25,590 --> 00:03:27,669
+multi-dimensional array of fixed size
+
+81
+00:03:27,669 --> 00:03:30,549
+and a multi-dimensional array without a
+
+82
+00:03:30,549 --> 00:03:33,310
+fixed size next let's see if these
+
+83
+00:03:33,310 --> 00:03:35,079
+functions that return different data
+
+84
+00:03:35,079 --> 00:03:38,799
+types can compile try compiling you will
+
+85
+00:03:38,799 --> 00:03:40,419
+see errors next to the function that
+
+86
+00:03:40,419 --> 00:03:42,760
+returns a map and also next to a
+
+87
+00:03:42,760 --> 00:03:43,870
+function that returns a
+
+88
+00:03:43,870 --> 00:03:46,209
+multi-dimensional array you will also
+
+89
+00:03:46,209 --> 00:03:48,459
+see error messages here below the
+
+90
+00:03:48,459 --> 00:03:50,650
+compile button and these errors are
+
+91
+00:03:50,650 --> 00:03:52,750
+similar to the ones we saw with invalid
+
+92
+00:03:52,750 --> 00:03:54,330
+inputs
+
+93
+00:03:54,330 --> 00:03:56,980
+solidity has no problem compiling a
+
+94
+00:03:56,980 --> 00:03:59,530
+function that returns an array but
+
+95
+00:03:59,530 --> 00:04:00,940
+should you write a function that returns
+
+96
+00:04:00,940 --> 00:04:04,150
+an array of unbounded size again the
+
+97
+00:04:04,150 --> 00:04:08,290
+answer is probably not what can go wrong
+
+98
+00:04:08,290 --> 00:04:11,140
+imagine there are two contracts a a and
+
+99
+00:04:11,140 --> 00:04:13,930
+B contract a has a function that returns
+
+100
+00:04:13,930 --> 00:04:16,720
+an array of addresses this function does
+
+101
+00:04:16,720 --> 00:04:19,720
+not create any transactions so you don't
+
+102
+00:04:19,720 --> 00:04:24,479
+have to worry about gas right wrong why
+
+103
+00:04:24,479 --> 00:04:27,220
+imagine contract B has a function that
+
+104
+00:04:27,220 --> 00:04:29,620
+calls contract a to get the array of
+
+105
+00:04:29,620 --> 00:04:31,660
+addresses and does something with it
+
+106
+00:04:31,660 --> 00:04:35,110
+like sending either to each other's now
+
+107
+00:04:35,110 --> 00:04:36,729
+what would happen if the array of
+
+108
+00:04:36,729 --> 00:04:39,550
+addresses in contract a is huge and
+
+109
+00:04:39,550 --> 00:04:42,520
+contract B tries to get it the function
+
+110
+00:04:42,520 --> 00:04:45,160
+in contract B will fail every time and
+
+111
+00:04:45,160 --> 00:04:47,620
+many people are unhappy that they can't
+
+112
+00:04:47,620 --> 00:04:48,610
+receive their either
+
+113
+00:04:48,610 --> 00:04:51,310
+so to summarize when writing smart
+
+114
+00:04:51,310 --> 00:04:53,590
+contracts you rather be safe than sorry
+
+115
+00:04:53,590 --> 00:04:56,530
+and one way to be safe is to write
+
+116
+00:04:56,530 --> 00:04:58,090
+functions that have a bounded
+
+117
+00:04:58,090 --> 00:05:01,389
+consumption of gas so little ease
+
+118
+00:05:01,389 --> 00:05:03,660
+limitation on public function is
+
+119
+00:05:03,660 --> 00:05:06,550
+inconvenient but one useful feature of
+
+120
+00:05:06,550 --> 00:05:09,130
+solidity is that you can return multiple
+
+121
+00:05:09,130 --> 00:05:12,039
+values and as a bonus they can be named
+
+122
+00:05:12,039 --> 00:05:15,520
+let's see an example in remix you can
+
+123
+00:05:15,520 --> 00:05:16,990
+declare that a function is returning
+
+124
+00:05:16,990 --> 00:05:20,229
+multiple values by listing the types of
+
+125
+00:05:20,229 --> 00:05:22,690
+values inside the parentheses after the
+
+126
+00:05:22,690 --> 00:05:25,570
+return keyword inside the function give
+
+127
+00:05:25,570 --> 00:05:29,050
+us the values to return outputs can also
+
+128
+00:05:29,050 --> 00:05:32,979
+be named like this also you can
+
+129
+00:05:32,979 --> 00:05:35,229
+explicitly assign to return variables
+
+130
+00:05:35,229 --> 00:05:38,919
+and omit the last return statement when
+
+131
+00:05:38,919 --> 00:05:41,110
+is it useful to return multiple outputs
+
+132
+00:05:41,110 --> 00:05:43,539
+it's useful when you want a function
+
+133
+00:05:43,539 --> 00:05:45,370
+that collect outputs of several
+
+134
+00:05:45,370 --> 00:05:47,770
+functions and return all of them in a
+
+135
+00:05:47,770 --> 00:05:50,020
+single function call let's say that we
+
+136
+00:05:50,020 --> 00:05:53,050
+have functions F and G one way to get
+
+137
+00:05:53,050 --> 00:05:55,419
+the outputs of F and G is to call the
+
+138
+00:05:55,419 --> 00:05:57,880
+functions individually that's two
+
+139
+00:05:57,880 --> 00:06:00,430
+function calls another way is to write a
+
+140
+00:06:00,430 --> 00:06:03,700
+function that calls F and G and returns
+
+141
+00:06:03,700 --> 00:06:05,650
+the two outputs in a single function
+
+142
+00:06:05,650 --> 00:06:09,400
+call how do you assign variables to the
+
+143
+00:06:09,400 --> 00:06:10,960
+output of a function that returns
+
+144
+00:06:10,960 --> 00:06:14,169
+multiple values you use destructuring
+
+145
+00:06:14,169 --> 00:06:16,840
+assignments it's easier to understand by
+
+146
+00:06:16,840 --> 00:06:19,599
+example then to explain what it is so
+
+147
+00:06:19,599 --> 00:06:22,179
+let's go through an example using actual
+
+148
+00:06:22,179 --> 00:06:24,490
+here were assigning the outputs of the
+
+149
+00:06:24,490 --> 00:06:27,279
+function return multiple bells notice
+
+150
+00:06:27,279 --> 00:06:29,860
+that the type of variables declared here
+
+151
+00:06:29,860 --> 00:06:32,589
+on the left side is consistent with the
+
+152
+00:06:32,589 --> 00:06:34,659
+type of values being returned from the
+
+153
+00:06:34,659 --> 00:06:37,599
+function being called you don't have to
+
+154
+00:06:37,599 --> 00:06:40,149
+assign all values if a function returns
+
+155
+00:06:40,149 --> 00:06:42,099
+three parameters but you don't care
+
+156
+00:06:42,099 --> 00:06:44,469
+about the second output this is how you
+
+157
+00:06:44,469 --> 00:06:47,139
+do it here you're telling solidity that
+
+158
+00:06:47,139 --> 00:06:49,899
+you need the first output not the second
+
+159
+00:06:49,899 --> 00:06:51,969
+so you may be declaring the type and
+
+160
+00:06:51,969 --> 00:06:54,429
+naming it and you also need the third
+
+161
+00:06:54,429 --> 00:06:56,510
+output
+
+162
+00:06:56,510 --> 00:06:59,450
+in this video we try to compile public
+
+163
+00:06:59,450 --> 00:07:01,610
+functions with different data types as
+
+164
+00:07:01,610 --> 00:07:04,760
+input in outputs in both cases maps
+
+165
+00:07:04,760 --> 00:07:07,970
+can't be used multi-dimensional fixed
+
+166
+00:07:07,970 --> 00:07:10,270
+size arrays can be used
+
+167
+00:07:10,270 --> 00:07:12,530
+multi-dimensional dynamic sized array
+
+168
+00:07:12,530 --> 00:07:16,970
+cannot array compiles but be careful and
+
+169
+00:07:16,970 --> 00:07:18,800
+you should put up a balance to the array
+
+170
+00:07:18,800 --> 00:07:20,930
+size we also learned how to write
+
+171
+00:07:20,930 --> 00:07:23,080
+functions that return multiple values
+
+172
+00:07:23,080 --> 00:07:27,490
+these outputs can be named or assigned
+
+173
+00:07:27,490 --> 00:07:30,080
+finally we saw how to assign variables
+
+174
+00:07:30,080 --> 00:07:32,150
+from a function that return multiple
+
+175
+00:07:32,150 --> 00:07:35,330
+values thanks for watching in the next
+
+176
+00:07:35,330 --> 00:07:37,610
+video I plan to cover peer and B
+
+177
+00:07:37,610 --> 00:07:40,160
+functions have a nice week and see you
+
+178
+00:07:40,160 --> 00:07:42,370
+soon
+

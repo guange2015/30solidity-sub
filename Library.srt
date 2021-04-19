@@ -1,0 +1,990 @@
+1
+00:00:00,089 --> 00:00:02,790
+libraries are like contracts except
+库就像合同，除了没有存储空间，这意味着
+
+2
+00:00:02,790 --> 00:00:04,799
+there's no storage so that means that
+库就像合同，除了没有存储空间，这意味着
+
+3
+00:00:04,799 --> 00:00:06,660
+you can't declare any state variables
+您不能在库中声明任何状态变量，也不能
+
+4
+00:00:06,660 --> 00:00:09,450
+inside the library and also you can't
+您不能在库中声明任何状态变量，也不能
+
+5
+00:00:09,450 --> 00:00:12,540
+send any ETL to a library the benefits
+将任何ETL发送到库使用库的好处是它可以帮助您
+
+6
+00:00:12,540 --> 00:00:14,700
+of using a library is that it helps you
+将任何ETL发送到库使用库的好处是它可以帮助您
+
+7
+00:00:14,700 --> 00:00:17,160
+keep your code try which stands for
+保持您的代码尝试代表的意思，不要重复自己
+
+8
+00:00:17,160 --> 00:00:19,619
+don't repeat yourself in other words
+保持您的代码尝试代表的意思，不要重复自己
+
+9
+00:00:19,619 --> 00:00:21,900
+you'll be able to reuse the code from
+您将能够重用库中的代码
+
+10
+00:00:21,900 --> 00:00:22,680
+the library
+您将能够重用库中的代码
+
+11
+00:00:22,680 --> 00:00:25,949
+and remove duplicate code one way this
+并删除重复代码的一种方法是因为库允许
+
+12
+00:00:25,949 --> 00:00:28,470
+is achieved is because libraries allow
+并删除重复代码的一种方法是因为库允许
+
+13
+00:00:28,470 --> 00:00:31,380
+you to add functionality to the types so
+您可以向这些类型添加功能，例如，假设您有一个
+
+14
+00:00:31,380 --> 00:00:32,940
+for example let's say that you have a
+您可以向这些类型添加功能，例如，假设您有一个
+
+15
+00:00:32,940 --> 00:00:36,120
+variable of type view and by using the
+类型视图的变量，并通过使用库可以将联合国类型增强为
+
+16
+00:00:36,120 --> 00:00:38,850
+library the UN type can be enhanced to
+类型视图的变量，并通过使用库可以将联合国类型增强为
+
+17
+00:00:38,850 --> 00:00:41,489
+have extra functionalities so that
+具有额外的功能，这样您就可以执行以下操作
+
+18
+00:00:41,489 --> 00:00:43,730
+you'll be able to do something like this
+具有额外的功能，这样您就可以执行以下操作
+
+19
+00:00:43,730 --> 00:00:46,680
+call the function from the library on
+从库中的变量X上调用函数的另一个好处是
+
+20
+00:00:46,680 --> 00:00:49,800
+the variable X the other benefit of
+从库中的变量X上调用函数的另一个好处是
+
+21
+00:00:49,800 --> 00:00:52,140
+using the library is that it can't say
+使用该库是它不能说喘着粗气，而这样做的方式是
+
+22
+00:00:52,140 --> 00:00:54,750
+gasps and the way this is done is that
+使用该库是它不能说喘着粗气，而这样做的方式是
+
+23
+00:00:54,750 --> 00:00:57,930
+you will first deploy the library and if
+您将首先部署库，并且如果您有要使用的合同
+
+24
+00:00:57,930 --> 00:00:59,820
+you have a contract that is going to use
+您将首先部署库，并且如果您有要使用的合同
+
+25
+00:00:59,820 --> 00:01:02,730
+this library then you will first link
+该库，那么您将首先将合同链接到以下库
+
+26
+00:01:02,730 --> 00:01:05,040
+the contract to the library that is
+该库，那么您将首先将合同链接到以下库
+
+27
+00:01:05,040 --> 00:01:07,380
+already deployed and this is done during
+已经部署，并且在合同编制过程中完成，然后您
+
+28
+00:01:07,380 --> 00:01:10,619
+compilation of the contract and then you
+已经部署，并且在合同编制过程中完成，然后您
+
+29
+00:01:10,619 --> 00:01:12,750
+will deploy the contract if you have
+如果您有另一个要部署的合同，则将部署该合同
+
+30
+00:01:12,750 --> 00:01:14,700
+another contract that you want to deploy
+如果您有另一个要部署的合同，则将部署该合同
+
+31
+00:01:14,700 --> 00:01:18,180
+that also uses this library then you
+也会使用该库，那么您将再次重复相同的过程，
+
+32
+00:01:18,180 --> 00:01:20,130
+will repeat the same process again and
+也会使用该库，那么您将再次重复相同的过程，
+
+33
+00:01:20,130 --> 00:01:22,950
+by doing so notice that I only deployed
+通过这样做，请注意，我只部署了想要的库，而不是部署了它
+
+34
+00:01:22,950 --> 00:01:25,920
+the library want instead of deploying it
+通过这样做，请注意，我只部署了想要的库，而不是部署了它
+
+35
+00:01:25,920 --> 00:01:28,740
+multiple times for each contact that
+使用该库的每个联系人多次访问，这就是使用方式
+
+36
+00:01:28,740 --> 00:01:31,500
+uses the library and that's how using
+使用该库的每个联系人多次访问，这就是使用方式
+
+37
+00:01:31,500 --> 00:01:33,240
+the library can save gas
+如果图书馆只有内部图书馆，图书馆现在可以节省汽油
+
+38
+00:01:33,240 --> 00:01:35,939
+now if the library has only internal
+如果图书馆只有内部图书馆，图书馆现在可以节省汽油
+
+39
+00:01:35,939 --> 00:01:38,250
+functions then the library will be
+函数，然后将库嵌入到正在使用的合同中
+
+40
+00:01:38,250 --> 00:01:40,799
+embedded into the contract that is using
+函数，然后将库嵌入到正在使用的合同中
+
+41
+00:01:40,799 --> 00:01:42,899
+the library this means that when a
+该库意味着在编译合同时，所有
+
+42
+00:01:42,899 --> 00:01:45,479
+contract is being compiled all of the
+该库意味着在编译合同时，所有
+
+43
+00:01:45,479 --> 00:01:47,790
+code inside the library will be put
+库中的代码将放在合同中，所以我要显示
+
+44
+00:01:47,790 --> 00:01:50,549
+inside the contract so I'm gonna show
+库中的代码将放在合同中，所以我要显示
+
+45
+00:01:50,549 --> 00:01:52,950
+you how to write and use a library using
+您将通过两个示例来说明如何编写和使用一个库，该库可以防止
+
+46
+00:01:52,950 --> 00:01:55,680
+two examples a library that prevents
+您将通过两个示例来说明如何编写和使用一个库，该库可以防止
+
+47
+00:01:55,680 --> 00:01:58,799
+hearing overflows and the library that
+听觉上溢和图书馆，这将使您删除政府
+
+48
+00:01:58,799 --> 00:02:00,869
+will allow you to delete the government
+听觉上溢和图书馆，这将使您删除政府
+
+49
+00:02:00,869 --> 00:02:03,930
+from array without any gaps what do I
+从阵列中没有任何间隙，我所说的坚固性是什么意思，我们需要
+
+50
+00:02:03,930 --> 00:02:07,049
+mean by this well in solidity we need to
+从阵列中没有任何间隙，我所说的坚固性是什么意思，我们需要
+
+51
+00:02:07,049 --> 00:02:09,149
+veto element from array it does not
+数组中的否决元素不会缩小数组，因此该库将
+
+52
+00:02:09,149 --> 00:02:12,150
+shrink the array so this library will
+数组中的否决元素不会缩小数组，因此该库将
+
+53
+00:02:12,150 --> 00:02:12,880
+allow us
+当我们的元素是
+
+54
+00:02:12,880 --> 00:02:14,920
+to shrink an array when our element is
+当我们的元素是
+
+55
+00:02:14,920 --> 00:02:18,160
+deleted to define a library you first
+删除以定义一个库，您首先输入库，然后我将其命名为
+
+56
+00:02:18,160 --> 00:02:21,100
+type library and I'll name this library
+删除以定义一个库，您首先输入库，然后我将其命名为
+
+57
+00:02:21,100 --> 00:02:24,400
+safe math and for this example we'll
+安全的数学，在此示例中，我们将编写一个函数来防止您
+
+58
+00:02:24,400 --> 00:02:26,800
+write a function that will prevent you
+安全的数学，在此示例中，我们将编写一个函数来防止您
+
+59
+00:02:26,800 --> 00:02:29,800
+and overflow when two units are added so
+当添加两个单位时会溢出，所以我会将此功能命名为“坏”，这是
+
+60
+00:02:29,800 --> 00:02:33,790
+I'll name this function bad and it's
+当添加两个单位时会溢出，所以我会将此功能命名为“坏”，这是
+
+61
+00:02:33,790 --> 00:02:36,670
+gonna take in to EWTN's this function
+将加入EWTN的职能部门将是内部同行，
+
+62
+00:02:36,670 --> 00:02:39,250
+will be internal peer and it's gonna
+将加入EWTN的职能部门将是内部同行，
+
+63
+00:02:39,250 --> 00:02:42,610
+return the sum of the two inputs we will
+返回两个输入的总和，我们将首先将两个输入相加并检查
+
+64
+00:02:42,610 --> 00:02:45,520
+first add the two inputs and to check
+返回两个输入的总和，我们将首先将两个输入相加并检查
+
+65
+00:02:45,520 --> 00:02:47,710
+that there was no overflow all we have
+没有溢出，我们要做的就是确保总和更大
+
+66
+00:02:47,710 --> 00:02:50,680
+to do is make sure that sum is greater
+没有溢出，我们要做的就是确保总和更大
+
+67
+00:02:50,680 --> 00:02:53,350
+than the points and if it is we turn
+比点，如果是的话，我们将其打开并使用此安全数学
+
+68
+00:02:53,350 --> 00:02:56,290
+this on and to use this safe math
+比点，如果是的话，我们将其打开并使用此安全数学
+
+69
+00:02:56,290 --> 00:02:59,860
+library inside this contract you type
+您在合同中键入的库，其后使用
+
+70
+00:02:59,860 --> 00:03:02,470
+using followed by the name of the
+您在合同中键入的库，其后使用
+
+71
+00:03:02,470 --> 00:03:04,690
+library that you're on use so in this
+您正在使用的库，因此在这种情况下，我们将采用安全的数学方法，并且我们希望
+
+72
+00:03:04,690 --> 00:03:10,090
+case we'll be safe math and we want to
+您正在使用的库，因此在这种情况下，我们将采用安全的数学方法，并且我们希望
+
+73
+00:03:10,090 --> 00:03:13,060
+extend the Union type so here we say for
+扩展Union类型，所以我们在这里为您说，这行代码是什么
+
+74
+00:03:13,060 --> 00:03:16,450
+you and so what does this line of code
+扩展Union类型，所以我们在这里为您说，这行代码是什么
+
+75
+00:03:16,450 --> 00:03:20,350
+exactly mean well in general using a for
+确切地讲，通常情况下，对于B使用a表示从a附加功能
+
+76
+00:03:20,350 --> 00:03:23,740
+B means attach functions from by very a
+确切地讲，通常情况下，对于B使用a表示从a附加功能
+
+77
+00:03:23,740 --> 00:03:27,430
+to type B so this kind of code means to
+类型B，所以这种代码意味着将函数从安全路径附加到类型
+
+78
+00:03:27,430 --> 00:03:30,430
+attach functions from safe path to type
+类型B，所以这种代码意味着将函数从安全路径附加到类型
+
+79
+00:03:30,430 --> 00:03:33,220
+you int and if you have a variable of
+您为int，并且如果您具有类型的变量，则可以使用
+
+80
+00:03:33,220 --> 00:03:35,650
+type of you and you'll be able to use
+您为int，并且如果您具有类型的变量，则可以使用
+
+81
+00:03:35,650 --> 00:03:37,390
+the function inside the safe math
+像这样的安全数学库中的函数请注意
+
+82
+00:03:37,390 --> 00:03:40,510
+library like this here notice that were
+像这样的安全数学库中的函数请注意
+
+83
+00:03:40,510 --> 00:03:42,760
+only passing one parameter to the add
+尽管该函数仅将一个参数传递给add函数
+
+84
+00:03:42,760 --> 00:03:44,950
+function although the function that
+尽管该函数仅将一个参数传递给add函数
+
+85
+00:03:44,950 --> 00:03:48,130
+takes in two parameters this is because
+接受两个参数，这是因为坚固性隐式地传递了第一个
+
+86
+00:03:48,130 --> 00:03:50,950
+solidity is implicitly passing the first
+接受两个参数，这是因为坚固性隐式地传递了第一个
+
+87
+00:03:50,950 --> 00:03:53,350
+parameter but if you want to explicitly
+参数，但如果要显式传递第一个参数，则可以执行此操作
+
+88
+00:03:53,350 --> 00:03:55,750
+pass the first parameter you can do it
+参数，但如果要显式传递第一个参数，则可以执行此操作
+
+89
+00:03:55,750 --> 00:03:58,090
+like this so these are the two ways of
+像这样，这是使用库和使用库的两种方式
+
+90
+00:03:58,090 --> 00:04:00,910
+using a library and to use the library
+像这样，这是使用库和使用库的两种方式
+
+91
+00:04:00,910 --> 00:04:02,530
+like the first way you'll have to
+像第一种方法那样，您必须通过这条线来增强自己
+
+92
+00:04:02,530 --> 00:04:05,230
+enhance that you in tight with this line
+像第一种方法那样，您必须通过这条线来增强自己
+
+93
+00:04:05,230 --> 00:04:09,190
+of code using safe math for you and next
+使用安全数学的代码示例，接下来让我们编写一个函数进行实际测试
+
+94
+00:04:09,190 --> 00:04:11,500
+let's write a function to actually test
+使用安全数学的代码示例，接下来让我们编写一个函数进行实际测试
+
+95
+00:04:11,500 --> 00:04:14,940
+this add function I'll name it test add
+这个添加函数，我将其命名为test add，它将把您带入的工具
+
+96
+00:04:14,940 --> 00:04:17,798
+it's going to take in the tool you into
+这个添加函数，我将其命名为test add，它将把您带入的工具
+
+97
+00:04:17,798 --> 00:04:20,470
+it and it's going to return the sum of
+它会返回两个输入的总和，所以在函数内部
+
+98
+00:04:20,470 --> 00:04:22,780
+the two inputs so inside the function
+它会返回两个输入的总和，所以在函数内部
+
+99
+00:04:22,780 --> 00:04:25,950
+will return X
+将返回X的原因，并测试该行代码
+
+100
+00:04:25,950 --> 00:04:30,520
+why and to test that this line of code
+将返回X的原因，并测试该行代码
+
+101
+00:04:30,520 --> 00:04:34,570
+will fail if there is a overflow we will
+如果有溢出将失败，我们将通过在
+
+102
+00:04:34,570 --> 00:04:37,090
+call this function by adding max you in
+如果有溢出将失败，我们将通过在
+
+103
+00:04:37,090 --> 00:04:40,000
+to some other number which would cause
+到其他一些会导致溢出的数字，这一行代码应该
+
+104
+00:04:40,000 --> 00:04:42,640
+an overflow and this line of code should
+到其他一些会导致溢出的数字，这一行代码应该
+
+105
+00:04:42,640 --> 00:04:46,060
+fail here are deployed the test safe
+失败这里部署了测试安全数学合约，我们称之为测试
+
+106
+00:04:46,060 --> 00:04:48,790
+math contract and let's call the test
+失败这里部署了测试安全数学合约，我们称之为测试
+
+107
+00:04:48,790 --> 00:04:51,580
+add function and check that this
+添加功能并检查此功能是否正常工作，以便在我添加一个功能时
+
+108
+00:04:51,580 --> 00:04:54,850
+function is working so when I add one
+添加功能并检查此功能是否正常工作，以便在我添加一个功能时
+
+109
+00:04:54,850 --> 00:05:00,010
+and two I get three back and cause
+和两个我得到三个回来，并导致溢出，我要添加最大hewent
+
+110
+00:05:00,010 --> 00:05:04,170
+overflow I'm gonna add max hewent
+和两个我得到三个回来，并导致溢出，我要添加最大hewent
+
+111
+00:05:04,170 --> 00:05:09,790
+and one and call test add function and
+然后调用test add函数，正如您在此处看到的，该函数失败了
+
+112
+00:05:09,790 --> 00:05:12,570
+as you can see here the function failed
+然后调用test add函数，正如您在此处看到的，该函数失败了
+
+113
+00:05:12,570 --> 00:05:15,850
+so that was an example of using safe
+因此，这是现在在实际编写算术语言时使用安全数学的一个示例
+
+114
+00:05:15,850 --> 00:05:18,700
+math now when you're actually writing a
+因此，这是现在在实际编写算术语言时使用安全数学的一个示例
+
+115
+00:05:18,700 --> 00:05:21,070
+smart contract you'll want to use open
+智能合约，您将要使用已经使用过的开源库
+
+116
+00:05:21,070 --> 00:05:23,230
+source library that's already been
+智能合约，您将要使用已经使用过的开源库
+
+117
+00:05:23,230 --> 00:05:26,560
+tested and used by many people and
+经过许多人测试和使用，我个人将使用安全数学
+
+118
+00:05:26,560 --> 00:05:28,540
+personally I'll use the safe math
+经过许多人测试和使用，我个人将使用安全数学
+
+119
+00:05:28,540 --> 00:05:31,210
+library from opens up and contracts
+图书馆开放，接下来很多合同我要给你看
+
+120
+00:05:31,210 --> 00:05:34,390
+quite a lot next I'm gonna show you an
+图书馆开放，接下来很多合同我要给你看
+
+121
+00:05:34,390 --> 00:05:36,760
+example of a library devil allow us to
+库恶魔的示例允许我们从数组中删除元素，而无需任何操作
+
+122
+00:05:36,760 --> 00:05:39,520
+remove an element from array without any
+库恶魔的示例允许我们从数组中删除元素，而无需任何操作
+
+123
+00:05:39,520 --> 00:05:41,830
+depths normally when you delete the
+通常，当您从数组实体中删除元素时，深度不会
+
+124
+00:05:41,830 --> 00:05:44,560
+element from array solidity will not
+通常，当您从数组实体中删除元素时，深度不会
+
+125
+00:05:44,560 --> 00:05:47,500
+remove the element instead it will set
+删除该元素，而是将DVD元素设置为其默认值，因此
+
+126
+00:05:47,500 --> 00:05:50,500
+the DVD element to its default value so
+删除该元素，而是将DVD元素设置为其默认值，因此
+
+127
+00:05:50,500 --> 00:05:53,380
+for an array of youant it was set the
+对于youant数组，将其值设置为0，现在的技巧实际上是
+
+128
+00:05:53,380 --> 00:05:56,350
+value to 0 now the trick to actually
+对于youant数组，将其值设置为0，现在的技巧实际上是
+
+129
+00:05:56,350 --> 00:05:58,419
+remove the element is to take the last
+删除元素是将数组中的最后一个元素复制到
+
+130
+00:05:58,419 --> 00:06:01,419
+element in the array copy it over to the
+删除元素是将数组中的最后一个元素复制到
+
+131
+00:06:01,419 --> 00:06:03,310
+place that is going to be deleted and
+将要删除的位置，然后删除最后一个元素，因此我们将
+
+132
+00:06:03,310 --> 00:06:06,580
+then remove the last element so we'll do
+将要删除的位置，然后删除最后一个元素，因此我们将
+
+133
+00:06:06,580 --> 00:06:09,690
+exactly that name our function remove
+确切地说，我们的函数名称删除，它将进入我们的int数组
+
+134
+00:06:09,690 --> 00:06:12,400
+it's gonna take in our array of you int
+确切地说，我们的函数名称删除，它将进入我们的int数组
+
+135
+00:06:12,400 --> 00:06:14,950
+the arraignment that we're gonna be
+我们将要删除的元素的提要将是您的
+
+136
+00:06:14,950 --> 00:06:17,020
+removing elements from will be your
+我们将要删除的元素的提要将是您的
+
+137
+00:06:17,020 --> 00:06:19,120
+state variables so we will declare
+状态变量，所以我们将声明存储，第二个输入将是
+
+138
+00:06:19,120 --> 00:06:21,970
+storage and the second input will be the
+状态变量，所以我们将声明存储，第二个输入将是
+
+139
+00:06:21,970 --> 00:06:24,580
+index of the element to remove and for
+要删除的元素的索引，在此示例中，我们将声明
+
+140
+00:06:24,580 --> 00:06:26,200
+this example we will declare the
+要删除的元素的索引，在此示例中，我们将声明
+
+141
+00:06:26,200 --> 00:06:28,720
+function as public this means that this
+作为公共功能，这意味着该库
+
+142
+00:06:28,720 --> 00:06:29,680
+library
+作为公共功能，这意味着该库
+
+143
+00:06:29,680 --> 00:06:31,360
+we'll have to be deployed and then
+我们必须先进行部署，然后链接其他合同才能使用它
+
+144
+00:06:31,360 --> 00:06:33,789
+linked for other contracts to use it
+我们必须先进行部署，然后链接其他合同才能使用它
+
+145
+00:06:33,789 --> 00:06:36,370
+first we'll copy over the last element
+首先，我们将数组的最后一个元素复制到
+
+146
+00:06:36,370 --> 00:06:38,650
+of the array into the position that is
+首先，我们将数组的最后一个元素复制到
+
+147
+00:06:38,650 --> 00:06:41,620
+going to be removed afterwards we remove
+接下来将要删除的元素将被删除，接下来让我们编写一个
+
+148
+00:06:41,620 --> 00:06:43,960
+the last element next let's write a
+接下来将要删除的元素将被删除，接下来让我们编写一个
+
+149
+00:06:43,960 --> 00:06:46,090
+contract to actually use this library
+合同首先要实际使用该库，我将声明一个U数组
+
+150
+00:06:46,090 --> 00:06:48,729
+first I'm going to declare an array of U
+合同首先要实际使用该库，我将声明一个U数组
+
+151
+00:06:48,729 --> 00:06:51,370
+and a state variable next we'll add the
+接下来是一个状态变量，我们将将该库的功能添加到联合国
+
+152
+00:06:51,370 --> 00:06:54,729
+functionality of this library to the UN
+接下来是一个状态变量，我们将将该库的功能添加到联合国
+
+153
+00:06:54,729 --> 00:06:58,630
+array by writing using array for you int
+通过为您的int数组使用array编写array，所以现在该合同将是
+
+154
+00:06:58,630 --> 00:07:01,810
+array so now in this contract will be
+通过为您的int数组使用array编写array，所以现在该合同将是
+
+155
+00:07:01,810 --> 00:07:04,330
+able to do something like this and call
+能够做这样的事情，并调用数组中定义的remove函数
+
+156
+00:07:04,330 --> 00:07:06,759
+the remove function defined in the array
+能够做这样的事情，并调用数组中定义的remove函数
+
+157
+00:07:06,759 --> 00:07:09,490
+library next that's right your function
+接下来的库是正确的，您可以将一些元素放入数组并
+
+158
+00:07:09,490 --> 00:07:11,740
+to put some elements into the array and
+接下来的库是正确的，您可以将一些元素放入数组并
+
+159
+00:07:11,740 --> 00:07:14,320
+then remove some elements so you'll run
+然后删除一些元素，这样您将运行一次for循环三遍，然后放入
+
+160
+00:07:14,320 --> 00:07:17,259
+a for loop for three times and then put
+然后删除一些元素，这样您将运行一次for循环三遍，然后放入
+
+161
+00:07:17,259 --> 00:07:19,690
+some numbers into the array so after the
+一些数字放入数组，因此在for循环完成后，您将获得一个数组
+
+162
+00:07:19,690 --> 00:07:21,910
+for loop completes you'll have an array
+一些数字放入数组，因此在for循环完成后，您将获得一个数组
+
+163
+00:07:21,910 --> 00:07:24,910
+of zero one and two and then we'll
+零一和二，然后我们将删除索引一的元素，因此在这里
+
+164
+00:07:24,910 --> 00:07:28,449
+remove the element at index one so here
+零一和二，然后我们将删除索引一的元素，因此在这里
+
+165
+00:07:28,449 --> 00:07:31,419
+we're gonna remove one when we remove
+我们将在索引1处删除元素时将其删除
+
+166
+00:07:31,419 --> 00:07:33,970
+the element at index one it's going to
+我们将在索引1处删除元素时将其删除
+
+167
+00:07:33,970 --> 00:07:36,820
+copy the last element so index one will
+复制最后一个元素，使索引1现在变为V 2，然后弹出最后一个
+
+168
+00:07:36,820 --> 00:07:39,639
+now V 2 and then it's gonna pop the last
+复制最后一个元素，使索引1现在变为V 2，然后弹出最后一个
+
+169
+00:07:39,639 --> 00:07:41,800
+element so after the function remove
+元素，因此在函数删除完成后，您将剩下0，然后
+
+170
+00:07:41,800 --> 00:07:44,770
+completes you'll be left with 0 and then
+元素，因此在函数删除完成后，您将剩下0，然后
+
+171
+00:07:44,770 --> 00:07:47,349
+2 and to check that that is the case
+2并检查是否是这种情况将断言数组的长度
+
+172
+00:07:47,349 --> 00:07:49,659
+will assert that the length of the array
+2并检查是否是这种情况将断言数组的长度
+
+173
+00:07:49,659 --> 00:07:51,789
+is equal to two first element in the
+等于数组中的两个第一个元素等于零，第二个元素
+
+174
+00:07:51,789 --> 00:07:54,669
+array is so equal to zero and the second
+等于数组中的两个第一个元素等于零，第二个元素
+
+175
+00:07:54,669 --> 00:07:57,490
+element is equal to two what I call test
+元素等于两个我称之为测试数组删除的元素，您可以在此处看到
+
+176
+00:07:57,490 --> 00:08:00,009
+array remove you can see here that the
+元素等于两个我称之为测试数组删除的元素，您可以在此处看到
+
+177
+00:08:00,009 --> 00:08:02,440
+transaction passed which means that it
+交易通过了，这意味着它通过了我们的测试，因此这是一个
+
+178
+00:08:02,440 --> 00:08:05,199
+passed our test over here so that was a
+交易通过了，这意味着它通过了我们的测试，因此这是一个
+
+179
+00:08:05,199 --> 00:08:06,940
+demo of how to use a library
+演示如何使用库，因此使用a4v语法进行总结
+
+180
+00:08:06,940 --> 00:08:10,289
+so in summary using the a4v syntax
+演示如何使用库，因此使用a4v语法进行总结
+
+181
+00:08:10,289 --> 00:08:13,000
+you'll be able to add functions of
+您将能够将库a的功能添加到
+
+182
+00:08:13,000 --> 00:08:14,400
+library a to
+您将能够将库a的功能添加到
+
+183
+00:08:14,400 --> 00:08:16,860
+be the code of the library will be
+是库的代码将被嵌入到正在使用的联系人中
+
+184
+00:08:16,860 --> 00:08:19,229
+embedded into the contact that is using
+是库的代码将被嵌入到正在使用的联系人中
+
+185
+00:08:19,229 --> 00:08:21,540
+the library if all of the library
+库，如果所有库函数都是内部函数，这将是
+
+186
+00:08:21,540 --> 00:08:24,330
+functions are internal and this will be
+库，如果所有库函数都是内部函数，这将是
+
+187
+00:08:24,330 --> 00:08:26,820
+done when you compile the contract on
+另一方面，当您通过某些功能编写合同时完成
+
+188
+00:08:26,820 --> 00:08:29,040
+the other hand if some by very functions
+另一方面，当您通过某些功能编写合同时完成
+
+189
+00:08:29,040 --> 00:08:31,650
+are either public or external then
+是公共的还是外部的，那么您必须首先部署该库
+
+190
+00:08:31,650 --> 00:08:33,750
+you'll have to deploy the library first
+是公共的还是外部的，那么您必须首先部署该库
+
+191
+00:08:33,750 --> 00:08:36,120
+and then link it with the contract that
+然后将其与使用该库的合同链接，然后再进行部署
+
+192
+00:08:36,120 --> 00:08:38,760
+is using the library before deploying
+然后将其与使用该库的合同链接，然后再进行部署
+
+193
+00:08:38,760 --> 00:08:41,580
+the contract and by linking a contract
+合同，并将合同链接到图书馆，您将可以节省汽油
+
+194
+00:08:41,580 --> 00:08:43,830
+to a library you'll be able to save gas
+合同，并将合同链接到图书馆，您将可以节省汽油
+
+195
+00:08:43,830 --> 00:08:46,350
+but since this feature isn't available
+但由于无法在混音中使用此功能，因此无法向您展示
+
+196
+00:08:46,350 --> 00:08:48,990
+in remix I wasn't able to show you a
+但由于无法在混音中使用此功能，因此无法向您展示
+
+197
+00:08:48,990 --> 00:08:51,180
+demo of this thanks for watching this
+演示此视频感谢您观看本视频并祝您周末愉快
+
+198
+00:08:51,180 --> 00:08:54,980
+video and have a good weekend
+演示此视频感谢您观看本视频并祝您周末愉快
+

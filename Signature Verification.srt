@@ -1,0 +1,928 @@
+1
+00:00:00,140 --> 00:00:02,550
+in this video I'm gonna show you how to
+
+2
+00:00:02,550 --> 00:00:05,910
+sign and verify messages to assign a
+
+3
+00:00:05,910 --> 00:00:08,099
+message you first create a message to
+
+4
+00:00:08,099 --> 00:00:10,849
+sign and then you hash the message and
+
+5
+00:00:10,849 --> 00:00:15,000
+then you sign the hash of the message to
+
+6
+00:00:15,000 --> 00:00:16,440
+sign the hash you're gonna need your
+
+7
+00:00:16,440 --> 00:00:19,800
+private key of your eternium account and
+
+8
+00:00:19,800 --> 00:00:21,300
+you want to keep your private key or
+
+9
+00:00:21,300 --> 00:00:23,850
+secret so you will do the actual signing
+
+10
+00:00:23,850 --> 00:00:27,720
+without interacting with us my kata and
+
+11
+00:00:27,720 --> 00:00:30,210
+to verify a signature you will first
+
+12
+00:00:30,210 --> 00:00:32,460
+recreate the hash from the original
+
+13
+00:00:32,460 --> 00:00:35,219
+message and then you would recover the
+
+14
+00:00:35,219 --> 00:00:38,190
+signer from the signature and hash and
+
+15
+00:00:38,190 --> 00:00:40,260
+finally you would compare the recovered
+
+16
+00:00:40,260 --> 00:00:43,800
+signer to the claimed signer let's
+
+17
+00:00:43,800 --> 00:00:45,750
+imagine that we're signing a check from
+
+18
+00:00:45,750 --> 00:00:47,820
+a bank account so we need three
+
+19
+00:00:47,820 --> 00:00:50,940
+informations the person that were
+
+20
+00:00:50,940 --> 00:00:53,730
+signing the check to the amount that
+
+21
+00:00:53,730 --> 00:00:55,710
+this person can withdraw from our
+
+22
+00:00:55,710 --> 00:00:57,960
+account and what they don't know about
+
+23
+00:00:57,960 --> 00:01:00,840
+what this check is for and lastly we're
+
+24
+00:01:00,840 --> 00:01:03,180
+gonna need a unique identifier called
+
+25
+00:01:03,180 --> 00:01:05,909
+announce so that we can invalidate the
+
+26
+00:01:05,909 --> 00:01:08,400
+check wants the person withdrawals from
+
+27
+00:01:08,400 --> 00:01:11,280
+our account will declare this function
+
+28
+00:01:11,280 --> 00:01:14,340
+as public peer and it's gonna be tender
+
+29
+00:01:14,340 --> 00:01:17,880
+32 bytes hash of the inputs and inside
+
+30
+00:01:17,880 --> 00:01:19,979
+our get message hash function will
+
+31
+00:01:19,979 --> 00:01:23,360
+return the catch at 256 Bob our inputs
+
+32
+00:01:23,360 --> 00:01:26,939
+so this function here covers steps one
+
+33
+00:01:26,939 --> 00:01:30,479
+and two of signing now when we sign the
+
+34
+00:01:30,479 --> 00:01:33,090
+message - it's actually not the message
+
+35
+00:01:33,090 --> 00:01:36,630
+hash itself that is being signed what's
+
+36
+00:01:36,630 --> 00:01:40,140
+actually being signed is this you prefix
+
+37
+00:01:40,140 --> 00:01:41,790
+the message that you're going to sign
+
+38
+00:01:41,790 --> 00:01:45,240
+with ether um sign message followed by
+
+39
+00:01:45,240 --> 00:01:47,579
+the length of the message and then
+
+40
+00:01:47,579 --> 00:01:51,030
+finally the message itself you take all
+
+41
+00:01:51,030 --> 00:01:54,060
+of this and hash it using catch up to 56
+
+42
+00:01:54,060 --> 00:01:57,030
+and that is the message that is actually
+
+43
+00:01:57,030 --> 00:02:00,060
+being signed so when we sign the message
+
+44
+00:02:00,060 --> 00:02:02,640
+hash the actual message that will be
+
+45
+00:02:02,640 --> 00:02:04,890
+signed is the prefix
+
+46
+00:02:04,890 --> 00:02:07,799
+eternium sign message since the message
+
+47
+00:02:07,799 --> 00:02:10,679
+has is 32 bytes here the length will be
+
+48
+00:02:10,679 --> 00:02:12,530
+32 and then
+
+49
+00:02:12,530 --> 00:02:15,410
+followed by the message ash and then you
+
+50
+00:02:15,410 --> 00:02:17,600
+take the cat chapter 56 of the whole
+
+51
+00:02:17,600 --> 00:02:20,569
+thing so you'll write a function to
+
+52
+00:02:20,569 --> 00:02:23,900
+recreate that the input of this function
+
+53
+00:02:23,900 --> 00:02:25,940
+will be the message hash from the
+
+54
+00:02:25,940 --> 00:02:28,700
+function of up and since it's going to
+
+55
+00:02:28,700 --> 00:02:30,650
+create another hash it's going to return
+
+56
+00:02:30,650 --> 00:02:33,650
+by it's 32 inside the function it's
+
+57
+00:02:33,650 --> 00:02:36,950
+gonna return the catch up to 56 of the
+
+58
+00:02:36,950 --> 00:02:39,709
+prefix eternam sighing message followed
+
+59
+00:02:39,709 --> 00:02:42,350
+by the length of the message which will
+
+60
+00:02:42,350 --> 00:02:45,680
+be 32 and the actual message which is
+
+61
+00:02:45,680 --> 00:02:47,870
+going to be the message hash that is
+
+62
+00:02:47,870 --> 00:02:51,019
+passed from the input so that completes
+
+63
+00:02:51,019 --> 00:02:53,630
+the code for the function that recreates
+
+64
+00:02:53,630 --> 00:02:56,650
+the hash that is actually being signed
+
+65
+00:02:56,650 --> 00:02:59,750
+now to actually sign the message I'll
+
+66
+00:02:59,750 --> 00:03:00,500
+show you later
+
+67
+00:03:00,500 --> 00:03:03,830
+after we deploy this contract moving on
+
+68
+00:03:03,830 --> 00:03:05,660
+I'm gonna show you how to verify a
+
+69
+00:03:05,660 --> 00:03:09,530
+signature given a message hash first I'm
+
+70
+00:03:09,530 --> 00:03:11,269
+gonna write the function that paints the
+
+71
+00:03:11,269 --> 00:03:13,940
+big picture and then we'll work our way
+
+72
+00:03:13,940 --> 00:03:17,180
+down into the details to verify a
+
+73
+00:03:17,180 --> 00:03:20,390
+signature we need several inputs and the
+
+74
+00:03:20,390 --> 00:03:22,459
+address that claims to be the signer of
+
+75
+00:03:22,459 --> 00:03:25,790
+the message the parameters that was used
+
+76
+00:03:25,790 --> 00:03:28,370
+to create the message hash and the
+
+77
+00:03:28,370 --> 00:03:31,100
+signature itself and the function will
+
+78
+00:03:31,100 --> 00:03:33,739
+return true if the signer is indeed the
+
+79
+00:03:33,739 --> 00:03:36,680
+owner of the signature you'll first
+
+80
+00:03:36,680 --> 00:03:38,690
+recreate the message hash from the
+
+81
+00:03:38,690 --> 00:03:42,170
+inputs and then compute the hash that
+
+82
+00:03:42,170 --> 00:03:45,590
+was actually signed the function recover
+
+83
+00:03:45,590 --> 00:03:48,290
+signer which we all write out later will
+
+84
+00:03:48,290 --> 00:03:51,890
+take in the hash that was signed and the
+
+85
+00:03:51,890 --> 00:03:54,440
+signature and it will be turned the
+
+86
+00:03:54,440 --> 00:03:55,880
+address of the signer
+
+87
+00:03:55,880 --> 00:03:58,579
+so we are compared with the signer that
+
+88
+00:03:58,579 --> 00:04:00,350
+we think should have signed the message
+
+89
+00:04:00,350 --> 00:04:03,980
+and then we turn the comparison the
+
+90
+00:04:03,980 --> 00:04:05,810
+function recover Steiner is gonna fake
+
+91
+00:04:05,810 --> 00:04:08,540
+each side message hash and the signature
+
+92
+00:04:08,540 --> 00:04:11,030
+as input and it's gonna output an
+
+93
+00:04:11,030 --> 00:04:13,549
+address based on the message hash and
+
+94
+00:04:13,549 --> 00:04:16,640
+the signature to recover the signer we
+
+95
+00:04:16,640 --> 00:04:18,858
+first need to split the signature into
+
+96
+00:04:18,858 --> 00:04:23,450
+three parameters or s and B now you
+
+97
+00:04:23,450 --> 00:04:24,890
+don't need to understand what these
+
+98
+00:04:24,890 --> 00:04:26,070
+parameters
+
+99
+00:04:26,070 --> 00:04:28,380
+all you need to understand here is that
+
+100
+00:04:28,380 --> 00:04:30,900
+these parameters I needed to call the
+
+101
+00:04:30,900 --> 00:04:35,100
+built-in function EC recover to call the
+
+102
+00:04:35,100 --> 00:04:37,320
+function GC recover you first need a
+
+103
+00:04:37,320 --> 00:04:40,530
+pass in the hash that was signed and
+
+104
+00:04:40,530 --> 00:04:43,740
+then the parameter is B R in s that we
+
+105
+00:04:43,740 --> 00:04:46,380
+split from the signature and this
+
+106
+00:04:46,380 --> 00:04:48,000
+function will try to compute the address
+
+107
+00:04:48,000 --> 00:04:51,270
+that signed the hash and return a 0
+
+108
+00:04:51,270 --> 00:04:54,960
+address if the signature is invalid so
+
+109
+00:04:54,960 --> 00:04:56,520
+that completes the call to recover
+
+110
+00:04:56,520 --> 00:04:59,880
+designer let's now work on the function
+
+111
+00:04:59,880 --> 00:05:02,130
+split signature which we have not
+
+112
+00:05:02,130 --> 00:05:05,669
+defined yet the function split signature
+
+113
+00:05:05,669 --> 00:05:08,300
+is going to take the signature as input
+
+114
+00:05:08,300 --> 00:05:10,440
+and it's going to return the T
+
+115
+00:05:10,440 --> 00:05:14,280
+parameters are as can be needed to call
+
+116
+00:05:14,280 --> 00:05:17,580
+EC recover will first require that the
+
+117
+00:05:17,580 --> 00:05:20,330
+length of the signature is equal to 65
+
+118
+00:05:20,330 --> 00:05:24,720
+since 32 first output 32 for the second
+
+119
+00:05:24,720 --> 00:05:27,599
+output and 1 for the last output is
+
+120
+00:05:27,599 --> 00:05:31,470
+equal to 65 now to actually split the
+
+121
+00:05:31,470 --> 00:05:33,659
+bytes the only way to do it at this
+
+122
+00:05:33,659 --> 00:05:36,900
+moment is to use assembly and don't
+
+123
+00:05:36,900 --> 00:05:38,610
+worry if you don't understand this part
+
+124
+00:05:38,610 --> 00:05:41,300
+since you won't be using assembly much
+
+125
+00:05:41,300 --> 00:05:44,400
+now to get the first output from the
+
+126
+00:05:44,400 --> 00:05:48,060
+signature this is how you do it at X Y
+
+127
+00:05:48,060 --> 00:05:51,510
+will return X plus y so what does it
+
+128
+00:05:51,510 --> 00:05:54,900
+mean to that 32 to the signature well
+
+129
+00:05:54,900 --> 00:05:56,729
+you're not going to be adding 32 to the
+
+130
+00:05:56,729 --> 00:06:00,240
+actual signature signature is a dynamic
+
+131
+00:06:00,240 --> 00:06:03,360
+data type so what's being stored inside
+
+132
+00:06:03,360 --> 00:06:06,360
+the variable C is a pointer to where the
+
+133
+00:06:06,360 --> 00:06:09,659
+actual signature is stored in other
+
+134
+00:06:09,659 --> 00:06:11,639
+words the starting position of the
+
+135
+00:06:11,639 --> 00:06:15,090
+signature being stored in memory and
+
+136
+00:06:15,090 --> 00:06:17,400
+when you add 32 you move the starting
+
+137
+00:06:17,400 --> 00:06:20,550
+position by 32 effectively skipping the
+
+138
+00:06:20,550 --> 00:06:21,830
+first 32 bytes
+
+139
+00:06:21,830 --> 00:06:25,830
+why do you skip the first 32 bytes and
+
+140
+00:06:25,830 --> 00:06:28,289
+this is because dynamic array store the
+
+141
+00:06:28,289 --> 00:06:30,780
+length of the array in the first 32
+
+142
+00:06:30,780 --> 00:06:34,380
+bytes so the signature itself starts
+
+143
+00:06:34,380 --> 00:06:38,760
+after skipping the first 32 bytes
+
+144
+00:06:38,760 --> 00:06:41,340
+when you call the function endo with an
+
+145
+00:06:41,340 --> 00:06:44,430
+input of P it builds the next 32 bytes
+
+146
+00:06:44,430 --> 00:06:48,510
+starting at the memory address P so
+
+147
+00:06:48,510 --> 00:06:49,920
+putting it all together
+
+148
+00:06:49,920 --> 00:06:52,770
+this line of code will skip the first 32
+
+149
+00:06:52,770 --> 00:06:55,380
+bytes and then load the next 32 bytes
+
+150
+00:06:55,380 --> 00:07:00,060
+and then assign it to the variable R and
+
+151
+00:07:00,060 --> 00:07:02,520
+to get the value for the s we will do
+
+152
+00:07:02,520 --> 00:07:04,890
+something similar to what we did to get
+
+153
+00:07:04,890 --> 00:07:08,970
+the R value here we need to skip 64
+
+154
+00:07:08,970 --> 00:07:12,180
+bytes since the first 32 bytes stores
+
+155
+00:07:12,180 --> 00:07:15,240
+the length of the signature and the next
+
+156
+00:07:15,240 --> 00:07:19,320
+study 2 bytes stores the value for R so
+
+157
+00:07:19,320 --> 00:07:22,080
+the value for s starts after skipping
+
+158
+00:07:22,080 --> 00:07:26,490
+the first 64 bytes and to get the value
+
+159
+00:07:26,490 --> 00:07:30,830
+B we need to skip the first 96 bytes and
+
+160
+00:07:30,830 --> 00:07:35,310
+then get the first bite after so this is
+
+161
+00:07:35,310 --> 00:07:38,310
+how you get our SMB value from the
+
+162
+00:07:38,310 --> 00:07:41,550
+signature and that covers the code for
+
+163
+00:07:41,550 --> 00:07:44,670
+how to verify a signature let's now
+
+164
+00:07:44,670 --> 00:07:47,700
+compile and deploy the contract and I'll
+
+165
+00:07:47,700 --> 00:07:49,650
+show you example of how to sign and
+
+166
+00:07:49,650 --> 00:07:52,650
+verify a message and for this example
+
+167
+00:07:52,650 --> 00:07:55,020
+you're going to need meta mask which is
+
+168
+00:07:55,020 --> 00:07:57,390
+a eternium wallet that you can install
+
+169
+00:07:57,390 --> 00:08:00,690
+inside your browser so here I deployed
+
+170
+00:08:00,690 --> 00:08:03,030
+the contract I will create the message
+
+171
+00:08:03,030 --> 00:08:05,760
+hash to sign and then later verify the
+
+172
+00:08:05,760 --> 00:08:08,880
+signature and let's now go through these
+
+173
+00:08:08,880 --> 00:08:11,880
+steps first we'll create the message
+
+174
+00:08:11,880 --> 00:08:14,820
+hash to sign so you'll call the get
+
+175
+00:08:14,820 --> 00:08:18,300
+message hash function and for the inputs
+
+176
+00:08:18,300 --> 00:08:29,790
+I'll pass in the second account for the
+
+177
+00:08:29,790 --> 00:08:33,059
+number I'll pass in 1 2 3 4 the message
+
+178
+00:08:33,059 --> 00:08:37,229
+all passing in coffee and donuts and
+
+179
+00:08:37,229 --> 00:08:39,870
+then for the nouns or pass in one and
+
+180
+00:08:39,870 --> 00:08:43,169
+then call the function and that's the
+
+181
+00:08:43,169 --> 00:08:46,170
+hash that we're going to be signing and
+
+182
+00:08:46,170 --> 00:08:48,810
+to sign the hash we need to allow remix
+
+183
+00:08:48,810 --> 00:08:52,050
+to connect to metal mask and you can do
+
+184
+00:08:52,050 --> 00:08:54,600
+that by hitting f12 and opening the
+
+185
+00:08:54,600 --> 00:08:57,030
+JavaScript console and then typing the
+
+186
+00:08:57,030 --> 00:09:02,400
+30 end of enable this will open up the
+
+187
+00:09:02,400 --> 00:09:05,400
+metal mask so go ahead and type in your
+
+188
+00:09:05,400 --> 00:09:09,480
+password to unlock it and then hit
+
+189
+00:09:09,480 --> 00:09:12,090
+connect so now you'll have access to
+
+190
+00:09:12,090 --> 00:09:15,720
+meta mask inside the browser console and
+
+191
+00:09:15,720 --> 00:09:17,730
+we can sign the hash inside the browser
+
+192
+00:09:17,730 --> 00:09:21,390
+now first of all assign the hash to a
+
+193
+00:09:21,390 --> 00:09:25,110
+variable named hash and to sign the hash
+
+194
+00:09:25,110 --> 00:09:28,650
+you'll need to call what the personal
+
+195
+00:09:28,650 --> 00:09:32,610
+dot sign pass in the hash followed by
+
+196
+00:09:32,610 --> 00:09:34,110
+the account that we're going to use to
+
+197
+00:09:34,110 --> 00:09:37,110
+sign - in this case we will use the
+
+198
+00:09:37,110 --> 00:09:39,150
+default account that is available to
+
+199
+00:09:39,150 --> 00:09:42,390
+meta mask and you can access that by
+
+200
+00:09:42,390 --> 00:09:48,650
+calling web 3.8 the default hotel and
+
+201
+00:09:48,650 --> 00:09:55,310
+then finally we will console the result
+
+202
+00:09:56,000 --> 00:09:59,460
+so you'll see a pop-up like this and hit
+
+203
+00:09:59,460 --> 00:10:03,780
+sign and that is our signature and the
+
+204
+00:10:03,780 --> 00:10:05,370
+signature will be different for
+
+205
+00:10:05,370 --> 00:10:08,190
+different accounts now to verify the
+
+206
+00:10:08,190 --> 00:10:09,990
+signature we're gonna need the address
+
+207
+00:10:09,990 --> 00:10:12,420
+of the signer and we can get it by
+
+208
+00:10:12,420 --> 00:10:17,340
+calling web 3 the the default account
+
+209
+00:10:17,340 --> 00:10:20,550
+again so that was the address that was
+
+210
+00:10:20,550 --> 00:10:23,700
+used to sign the message and to verify
+
+211
+00:10:23,700 --> 00:10:26,190
+the signature I'm gonna paste the signer
+
+212
+00:10:26,190 --> 00:10:30,420
+in here and then passing the parameters
+
+213
+00:10:30,420 --> 00:10:34,770
+that was used to sign it and then the
+
+214
+00:10:34,770 --> 00:10:37,670
+signature itself
+
+215
+00:10:41,150 --> 00:10:45,810
+then head verified and you can see that
+
+216
+00:10:45,810 --> 00:10:47,190
+the function verified
+
+217
+00:10:47,190 --> 00:10:49,890
+returned to now if you change the
+
+218
+00:10:49,890 --> 00:10:51,690
+parameter even by a little for example
+
+219
+00:10:51,690 --> 00:10:54,600
+instead of sending one two three will
+
+220
+00:10:54,600 --> 00:10:58,950
+add extra zero and then hit verify and
+
+221
+00:10:58,950 --> 00:11:00,540
+you can see that the function returns
+
+222
+00:11:00,540 --> 00:11:04,050
+false likewise if we keep the message
+
+223
+00:11:04,050 --> 00:11:07,320
+the same but changed the signature so
+
+224
+00:11:07,320 --> 00:11:09,660
+for example changing the signature by
+
+225
+00:11:09,660 --> 00:11:13,950
+one number and then hit verify it would
+
+226
+00:11:13,950 --> 00:11:17,160
+again return false so in summary if you
+
+227
+00:11:17,160 --> 00:11:19,620
+changed the original message or the
+
+228
+00:11:19,620 --> 00:11:22,200
+signature even by a little bit then the
+
+229
+00:11:22,200 --> 00:11:25,590
+signature is no longer valid that's all
+
+230
+00:11:25,590 --> 00:11:27,300
+I got to say about signature
+
+231
+00:11:27,300 --> 00:11:30,390
+verification thanks for watching and
+
+232
+00:11:30,390 --> 00:11:33,560
+have a nice day
+

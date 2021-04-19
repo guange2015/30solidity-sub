@@ -1,0 +1,675 @@
+1
+00:00:00,060 --> 00:00:02,730
+hey everyone happy new years we're gonna
+嘿，大家新年快乐，我们要谈论的是一种称为
+
+2
+00:00:02,730 --> 00:00:04,680
+be talking about a data type called
+嘿，大家新年快乐，我们要谈论的是一种称为
+
+3
+00:00:04,680 --> 00:00:07,919
+enums I will explain how to define an
+枚举我将解释如何定义枚举，并向您展示如何使用它。
+
+4
+00:00:07,919 --> 00:00:12,000
+enum and show you how it is used imagine
+枚举我将解释如何定义枚举，并向您展示如何使用它。
+
+5
+00:00:12,000 --> 00:00:13,980
+that I have an online bookstore and
+我有一家在线书店，并且客户以其所有者的身份订购一本书
+
+6
+00:00:13,980 --> 00:00:16,680
+customer orders a book as the owner of
+我有一家在线书店，并且客户以其所有者的身份订购一本书
+
+7
+00:00:16,680 --> 00:00:18,449
+the bookstore there are several things
+书店里有几件事情我需要在发货之前做
+
+8
+00:00:18,449 --> 00:00:20,699
+that I need to do before shipping out
+书店里有几件事情我需要在发货之前做
+
+9
+00:00:20,699 --> 00:00:22,949
+the books like waiting for payments to
+诸如等待付款完成和为订单准备订单之类的书
+
+10
+00:00:22,949 --> 00:00:25,529
+finalize and preparing the order for
+诸如等待付款完成和为订单准备订单之类的书
+
+11
+00:00:25,529 --> 00:00:28,349
+shipment so when the order is created by
+装运，因此当客户创建订单时，订单状态为
+
+12
+00:00:28,349 --> 00:00:30,750
+a customer the status of the order is
+装运，因此当客户创建订单时，订单状态为
+
+13
+00:00:30,750 --> 00:00:31,590
+pending
+收到付款后，我将待处理
+
+14
+00:00:31,590 --> 00:00:34,020
+once I've received the payment I'm gonna
+收到付款后，我将待处理
+
+15
+00:00:34,020 --> 00:00:36,480
+ship the book so the status of the order
+寄出书籍，因此订单状态将在寄出后立即寄出
+
+16
+00:00:36,480 --> 00:00:38,910
+will be shipped once the shipment
+寄出书籍，因此订单状态将在寄出后立即寄出
+
+17
+00:00:38,910 --> 00:00:41,430
+arrives at the customer he can either
+到达客户时，他可以接受或拒绝它，原因如下
+
+18
+00:00:41,430 --> 00:00:44,760
+accept it or reject it for reasons like
+到达客户时，他可以接受或拒绝它，原因如下
+
+19
+00:00:44,760 --> 00:00:48,000
+damage during shipment or I sent the
+运输过程中损坏或我寄错书本，客户可以取消
+
+20
+00:00:48,000 --> 00:00:50,850
+wrong books and the customer can cancel
+运输过程中损坏或我寄错书本，客户可以取消
+
+21
+00:00:50,850 --> 00:00:53,190
+order while the status of the order is
+订单，而订单状态仍处于待处理状态，则他们不应该
+
+22
+00:00:53,190 --> 00:00:55,739
+still pending and they shouldn't be able
+订单，而订单状态仍处于待处理状态，则他们不应该
+
+23
+00:00:55,739 --> 00:00:57,960
+to cancel their order once the order is
+要在订单发货后取消订单，我们可以为
+
+24
+00:00:57,960 --> 00:00:59,820
+shipped we can model the
+要在订单发货后取消订单，我们可以为
+
+25
+00:00:59,820 --> 00:01:02,039
+state-transition using a data type
+使用名为enum的数据类型进行状态转换来定义您的枚举类型
+
+26
+00:01:02,039 --> 00:01:06,659
+called enum to define an enum type you
+使用名为enum的数据类型进行状态转换来定义您的枚举类型
+
+27
+00:01:06,659 --> 00:01:10,170
+start with the keyword enum followed by
+以关键字enum开头，后跟我们要称为的类型的名称
+
+28
+00:01:10,170 --> 00:01:12,270
+the name of the type we're gonna call
+以关键字enum开头，后跟我们要称为的类型的名称
+
+29
+00:01:12,270 --> 00:01:17,369
+this type status inside the braces were
+大括号内的这种类型的状态将列出所有可能的状态
+
+30
+00:01:17,369 --> 00:01:19,799
+gonna list out all possible status of
+大括号内的这种类型的状态将列出所有可能的状态
+
+31
+00:01:19,799 --> 00:01:23,340
+the order the statuses that we mentioned
+订单我们之前提到的状态或待发货状态已接受或
+
+32
+00:01:23,340 --> 00:01:27,420
+earlier or pending shipped accepted or
+订单我们之前提到的状态或待发货状态已接受或
+
+33
+00:01:27,420 --> 00:01:32,369
+rejected and finally cancelled we're
+拒绝并最终取消，我们将订单状态存储在公共场所
+
+34
+00:01:32,369 --> 00:01:34,799
+gonna store the order status in a public
+拒绝并最终取消，我们将订单状态存储在公共场所
+
+35
+00:01:34,799 --> 00:01:37,619
+state variable and the way you do it is
+状态变量和您的操作方式是这样的
+
+36
+00:01:37,619 --> 00:01:38,930
+like this
+状态变量和您的操作方式是这样的
+
+37
+00:01:38,930 --> 00:01:42,940
+[Music]
+[音乐]在这里我声明的是
+
+38
+00:01:42,940 --> 00:01:45,440
+here I'm declaring that the type of the
+[音乐]在这里我声明的是
+
+39
+00:01:45,440 --> 00:01:48,650
+data is status and it's a public state
+数据是状态，它是一个公共状态变量，并存储在名称中
+
+40
+00:01:48,650 --> 00:01:51,470
+variable and it's stored in a name
+数据是状态，它是一个公共状态变量，并存储在名称中
+
+41
+00:01:51,470 --> 00:01:54,619
+called status notice that the status
+称为状态通知，状态数据类型不是内置数据类型
+
+42
+00:01:54,619 --> 00:01:57,950
+data type is not a built-in data type it
+称为状态通知，状态数据类型不是内置数据类型
+
+43
+00:01:57,950 --> 00:02:01,369
+is a data type that we declared here now
+是一种数据类型，我们现在在此处声明该枚举类型的默认值将为
+
+44
+00:02:01,369 --> 00:02:03,680
+the default value for the enum type will
+是一种数据类型，我们现在在此处声明该枚举类型的默认值将为
+
+45
+00:02:03,680 --> 00:02:06,229
+be the first element in the definition
+是枚举定义中的第一个元素，因此在这种情况下，尚待处理的是
+
+46
+00:02:06,229 --> 00:02:09,380
+of the enum so in this case pending is
+是枚举定义中的第一个元素，因此在这种情况下，尚待处理的是
+
+47
+00:02:09,380 --> 00:02:12,560
+the first term and defined in einem so
+第一项，并在einem中定义，因此我们的公共状态变量为
+
+48
+00:02:12,560 --> 00:02:14,600
+our public state variable will be
+第一项，并在einem中定义，因此我们的公共状态变量为
+
+49
+00:02:14,600 --> 00:02:18,320
+initialized to pending once I shift
+我想将状态更新为时将订单初始化为待处理
+
+50
+00:02:18,320 --> 00:02:20,989
+order I want to update the status to
+我想将状态更新为时将订单初始化为待处理
+
+51
+00:02:20,989 --> 00:02:23,209
+shift so we're gonna create your
+移动，以便我们创建您要执行的功能
+
+52
+00:02:23,209 --> 00:02:26,360
+function to do that we're gonna create
+移动，以便我们创建您要执行的功能
+
+53
+00:02:26,360 --> 00:02:35,239
+your public function called ship and the
+您的公共功能称为ship，而您更新状态的方式就像
+
+54
+00:02:35,239 --> 00:02:37,220
+way you will update the status is like
+您的公共功能称为ship，而您更新状态的方式就像
+
+55
+00:02:37,220 --> 00:02:48,110
+this and we only want to update the
+这并且我们只想在当前状态为的情况下将状态更新为shift
+
+56
+00:02:48,110 --> 00:02:51,230
+status to shift if the current status is
+这并且我们只想在当前状态为的情况下将状态更新为shift
+
+57
+00:02:51,230 --> 00:02:54,140
+still pending and the way you would do
+仍然悬而未决，您要做的方式就是这样，我们将要求
+
+58
+00:02:54,140 --> 00:02:56,989
+it is like this we're gonna require that
+仍然悬而未决，您要做的方式就是这样，我们将要求
+
+59
+00:02:56,989 --> 00:03:08,030
+the status is still pending so this
+状态仍处于待处理状态，因此此功能会将状态更新为班次
+
+60
+00:03:08,030 --> 00:03:11,030
+function will update the status to shift
+状态仍处于待处理状态，因此此功能会将状态更新为班次
+
+61
+00:03:11,030 --> 00:03:14,030
+only if the current status is still
+仅在订单发货后当前状态仍处于待处理状态时
+
+62
+00:03:14,030 --> 00:03:16,760
+pending once the order has been shipped
+仅在订单发货后当前状态仍处于待处理状态时
+
+63
+00:03:16,760 --> 00:03:19,959
+and the customer receives the delivery
+并且客户收到交货后，客户可以接受
+
+64
+00:03:19,959 --> 00:03:23,150
+the customer can either accept the
+并且客户收到交货后，客户可以接受
+
+65
+00:03:23,150 --> 00:03:25,910
+delivery or rejected so we're going to
+交付或拒绝，所以我们将创建两个公共职能，除了
+
+66
+00:03:25,910 --> 00:03:28,760
+create two public functions except
+交付或拒绝，所以我们将创建两个公共职能，除了
+
+67
+00:03:28,760 --> 00:03:33,190
+delivery and reject delivery
+交货和拒绝交货
+
+68
+00:03:39,810 --> 00:03:42,450
+now both of these function will have a
+现在这两个功能在这里都具有与此功能相似的逻辑，因此
+
+69
+00:03:42,450 --> 00:03:45,690
+similar logic to this function here so
+现在这两个功能在这里都具有与此功能相似的逻辑，因此
+
+70
+00:03:45,690 --> 00:03:47,850
+we're gonna copy the code and modify it
+我们将复制代码并对其进行一些修改，我们只需要此功能
+
+71
+00:03:47,850 --> 00:03:50,610
+a little bit we only want this function
+我们将复制代码并对其进行一些修改，我们只需要此功能
+
+72
+00:03:50,610 --> 00:03:53,340
+to be called by the customer if the
+如果当前状态为出厂且为当前状态，则由客户调用
+
+73
+00:03:53,340 --> 00:03:58,950
+current status is shipped and if it is
+如果当前状态为出厂且为当前状态，则由客户调用
+
+74
+00:03:58,950 --> 00:04:03,140
+then we're gonna update the status to
+那么我们将更新状态以接受它，而我们只想拒绝
+
+75
+00:04:03,140 --> 00:04:07,200
+accept it and we only want to reject
+那么我们将更新状态以接受它，而我们只想拒绝
+
+76
+00:04:07,200 --> 00:04:10,650
+delivery to be called if the current
+如果当前状态为出厂，则调用该交货，在这种情况下，我们将
+
+77
+00:04:10,650 --> 00:04:13,769
+status is shipped and in that case we're
+如果当前状态为出厂，则调用该交货，在这种情况下，我们将
+
+78
+00:04:13,769 --> 00:04:18,560
+gonna update the status to reject it
+要更新状态以最终拒绝它，我们希望客户能够
+
+79
+00:04:18,560 --> 00:04:21,120
+finally we want the customer to be able
+要更新状态以最终拒绝它，我们希望客户能够
+
+80
+00:04:21,120 --> 00:04:24,240
+to cancel their order if the status of
+如果订单状态仍待处理，则取消他们的订单，因此我们
+
+81
+00:04:24,240 --> 00:04:26,940
+the order is still pending so we're
+如果订单状态仍待处理，则取消他们的订单，因此我们
+
+82
+00:04:26,940 --> 00:04:31,610
+gonna create a function called cancel
+要创建一个称为取消的函数
+
+83
+00:04:32,030 --> 00:04:35,880
+and this function should be called if
+如果状态等于待处理且处于
+
+84
+00:04:35,880 --> 00:04:40,650
+the status is equal to pending and in
+如果状态等于待处理且处于
+
+85
+00:04:40,650 --> 00:04:42,600
+that case we're gonna update the status
+在这种情况下，我们将要更新状态以取消并覆盖所有状态
+
+86
+00:04:42,600 --> 00:04:47,550
+to cancel and that covers all state
+在这种情况下，我们将要更新状态以取消并覆盖所有状态
+
+87
+00:04:47,550 --> 00:04:50,130
+transitions for the status of the order
+订单状态的转换让我们编译部署合同，然后
+
+88
+00:04:50,130 --> 00:04:53,190
+let's compile deploy the contract and
+订单状态的转换让我们编译部署合同，然后
+
+89
+00:04:53,190 --> 00:05:03,570
+test it out first call status and you'll
+测试它的首次通话状态，您会发现自己没有待处理
+
+90
+00:05:03,570 --> 00:05:05,669
+notice that you don't get pending
+测试它的首次通话状态，您会发现自己没有待处理
+
+91
+00:05:05,669 --> 00:05:09,060
+instead you get a number zero this is
+相反，您得到的数字为零，这是因为零对应于我们的第一个
+
+92
+00:05:09,060 --> 00:05:11,370
+because zero corresponds to our first
+相反，您得到的数字为零，这是因为零对应于我们的第一个
+
+93
+00:05:11,370 --> 00:05:15,720
+element in our enum so one will be
+枚举中的一个元素，因此将被发送两个将被接受三个将
+
+94
+00:05:15,720 --> 00:05:18,570
+shipped two will be accepted three will
+枚举中的一个元素，因此将被发送两个将被接受三个将
+
+95
+00:05:18,570 --> 00:05:21,979
+be rejected and four will be cancelled
+被拒绝，下一个呼叫船将取消四个，您可以检查一下
+
+96
+00:05:21,979 --> 00:05:24,960
+next call ship and you can check that
+被拒绝，下一个呼叫船将取消四个，您可以检查一下
+
+97
+00:05:24,960 --> 00:05:28,740
+the status is now equal to one so that
+现在的状态等于1，这意味着我们当前的状态等于
+
+98
+00:05:28,740 --> 00:05:31,050
+means our current status is equal to
+现在的状态等于1，这意味着我们当前的状态等于
+
+99
+00:05:31,050 --> 00:05:34,500
+shipped and if you try to cancel a
+发货，如果您尝试取消发货订单，您会注意到我们的
+
+100
+00:05:34,500 --> 00:05:37,919
+shipped order you'll notice that our
+发货，如果您尝试取消发货订单，您会注意到我们的
+
+101
+00:05:37,919 --> 00:05:41,250
+transaction failed this is because you
+交易失败，这是因为您只能在状态为
+
+102
+00:05:41,250 --> 00:05:44,010
+can only call canceled if the status is
+交易失败，这是因为您只能在状态为
+
+103
+00:05:44,010 --> 00:05:45,410
+still pending
+仍在等待中，因此一旦状态被发送，唯一的
+
+104
+00:05:45,410 --> 00:05:49,050
+so once the status is shipped the only
+仍在等待中，因此一旦状态被发送，唯一的
+
+105
+00:05:49,050 --> 00:05:51,360
+two function that we can call or either
+我们可以调用或接受交付的两个功能
+
+106
+00:05:51,360 --> 00:05:52,720
+accept delivery
+我们可以调用或接受交付的两个功能
+
+107
+00:05:52,720 --> 00:05:56,980
+or reject delivery call accept delivery
+或拒绝送货电话接受送货，您可以验证状态为
+
+108
+00:05:56,980 --> 00:05:59,380
+and you can verify that the status is
+或拒绝送货电话接受送货，您可以验证状态为
+
+109
+00:05:59,380 --> 00:06:02,970
+now equal to two which is equal to
+现在等于2，等于已接受，如果您尝试拒绝
+
+110
+00:06:02,970 --> 00:06:06,340
+accepted and if you try to reject the
+现在等于2，等于已接受，如果您尝试拒绝
+
+111
+00:06:06,340 --> 00:06:08,710
+delivery after it's been accepted you'll
+交付后，您会注意到交易将失败
+
+112
+00:06:08,710 --> 00:06:12,510
+notice that the transaction will fail
+交付后，您会注意到交易将失败
+
+113
+00:06:14,400 --> 00:06:17,200
+again this is because you can only
+同样，这是因为您只能在状态为
+
+114
+00:06:17,200 --> 00:06:19,990
+reject the delivery if the status is to
+同样，这是因为您只能在状态为
+
+115
+00:06:19,990 --> 00:06:22,420
+equal to shipped now let's try
+等于现在发货，让我们尝试取消订单，以便
+
+116
+00:06:22,420 --> 00:06:25,180
+cancelling the order so we're going to
+等于现在发货，让我们尝试取消订单，以便
+
+117
+00:06:25,180 --> 00:06:27,940
+delete this contract and redeploy a new
+删除此合同并重新部署新合同
+
+118
+00:06:27,940 --> 00:06:30,150
+one
+删除此合同并重新部署新合同
+
+119
+00:06:31,650 --> 00:06:35,020
+as before the initial status of the
+与之前一样，订单的初始状态为零，等于待处理状态
+
+120
+00:06:35,020 --> 00:06:38,040
+order is zero which is equal to pending
+与之前一样，订单的初始状态为零，等于待处理状态
+
+121
+00:06:38,040 --> 00:06:43,740
+next call cancel and check the status
+下次通话取消并检查状态，现在状态等于4，其中
+
+122
+00:06:43,740 --> 00:06:47,700
+the status is now equal to four which
+下次通话取消并检查状态，现在状态等于4，其中
+
+123
+00:06:47,700 --> 00:06:51,130
+corresponds to the fifth element in our
+对应于我们的状态枚举中的第五个元素，它等于cancel和
+
+124
+00:06:51,130 --> 00:06:55,480
+status enum which is equal to cancel and
+对应于我们的状态枚举中的第五个元素，它等于cancel和
+
+125
+00:06:55,480 --> 00:06:57,790
+once the order is canceled we won't be
+订单取消后，我们将无法发货，您可以验证
+
+126
+00:06:57,790 --> 00:07:01,690
+able to ship it you can verify that the
+订单取消后，我们将无法发货，您可以验证
+
+127
+00:07:01,690 --> 00:07:04,900
+transaction failed and that's because we
+交易失败，这是因为我们无法塑造已经存在的订单
+
+128
+00:07:04,900 --> 00:07:06,820
+cannot shape an order that's been
+交易失败，这是因为我们无法塑造已经存在的订单
+
+129
+00:07:06,820 --> 00:07:10,690
+cancelled and that's how you use enum to
+已取消，这就是您使用枚举为状态转换建模的方式，即
+
+130
+00:07:10,690 --> 00:07:13,840
+model state transition in other words by
+已取消，这就是您使用枚举为状态转换建模的方式，即
+
+131
+00:07:13,840 --> 00:07:16,060
+using enum you can control when a
+使用枚举，您可以控制何时可以调用函数以及不能调用函数
+
+132
+00:07:16,060 --> 00:07:19,720
+function can and cannot be called well
+使用枚举，您可以控制何时可以调用函数以及不能调用函数
+
+133
+00:07:19,720 --> 00:07:21,910
+that's all I'd offer this video thanks
+这就是我要提供的所有视频，感谢您的观看，我们将在
+
+134
+00:07:21,910 --> 00:07:23,590
+for watching and I'll see you in the
+这就是我要提供的所有视频，感谢您的观看，我们将在
+
+135
+00:07:23,590 --> 00:07:26,280
+next video
+下一个视频
+

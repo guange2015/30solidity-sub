@@ -1,0 +1,365 @@
+1
+00:00:00,469 --> 00:00:03,840
+here I have two contracts test and port
+在这里，我有两个合同测试以及灵魂和食物的移植，所有这些都在测试之内
+
+2
+00:00:03,840 --> 00:00:07,740
+on soul and food that's all inside test
+在这里，我有两个合同测试以及灵魂和食物的移植，所有这些都在测试之内
+
+3
+00:00:07,740 --> 00:00:10,740
+and port I want to use the food contract
+和港口我想使用食物合同，所以在此视频中，我将向您展示
+
+4
+00:00:10,740 --> 00:00:12,900
+so in this video I'm going to show you
+和港口我想使用食物合同，所以在此视频中，我将向您展示
+
+5
+00:00:12,900 --> 00:00:16,079
+two examples how to import local files
+两个示例如何导入本地文件以及如何从中导入合同
+
+6
+00:00:16,079 --> 00:00:19,050
+and also how to import contracts from
+两个示例如何导入本地文件以及如何从中导入合同
+
+7
+00:00:19,050 --> 00:00:22,710
+Jacob calm now the examples I'm going to
+雅各布现在冷静，我将向您展示如何导入合同的示例
+
+8
+00:00:22,710 --> 00:00:24,990
+show you for how to import contracts
+雅各布现在冷静，我将向您展示如何导入合同的示例
+
+9
+00:00:24,990 --> 00:00:28,560
+from github only works in remix first
+来自github的文件只能在混音中工作首先让我们看一下如何导入本地文件
+
+10
+00:00:28,560 --> 00:00:30,890
+let's go over how to import local files
+来自github的文件只能在混音中工作首先让我们看一下如何导入本地文件
+
+11
+00:00:30,890 --> 00:00:33,540
+you can see here that inside the browser
+您可以在这里看到，在浏览器文件夹中，我们在学校进行了测试导入，
+
+12
+00:00:33,540 --> 00:00:36,510
+folder we have test import at school and
+您可以在这里看到，在浏览器文件夹中，我们在学校进行了测试导入，
+
+13
+00:00:36,510 --> 00:00:40,350
+food Seoul and to import a solidity file
+食物首尔，要导入一个坚固性文件，您首先要输入单词import，然后
+
+14
+00:00:40,350 --> 00:00:43,829
+you start with the word import and then
+食物首尔，要导入一个坚固性文件，您首先要输入单词import，然后
+
+15
+00:00:43,829 --> 00:00:45,960
+followed by the relative path to the
+紧随其后的是您从食物开始要导入的文件的相对路径
+
+16
+00:00:45,960 --> 00:00:48,480
+file that you want to import since food
+紧随其后的是您从食物开始要导入的文件的相对路径
+
+17
+00:00:48,480 --> 00:00:50,730
+dog soul is inside the same folder as
+狗的灵魂与测试导入在同一文件夹中，我们要说的是
+
+18
+00:00:50,730 --> 00:00:53,309
+test import here we're gonna say that
+狗的灵魂与测试导入在同一文件夹中，我们要说的是
+
+19
+00:00:53,309 --> 00:00:55,289
+food that soul is in the current
+放在句号后面的那个灵魂在当前目录中的食物
+
+20
+00:00:55,289 --> 00:00:58,590
+directory by putting a period followed
+放在句号后面的那个灵魂在当前目录中的食物
+
+21
+00:00:58,590 --> 00:01:01,140
+by a slash and then followed by the name
+以斜线开头，然后以文件名命名，然后是灵魂，然后不要
+
+22
+00:01:01,140 --> 00:01:05,309
+of the file food uh soul and then don't
+以斜线开头，然后以文件名命名，然后是灵魂，然后不要
+
+23
+00:01:05,309 --> 00:01:08,189
+forget to put a semicolon now let's say
+现在忘了放分号，让我们说那个灵魂在我的文件夹里的食物
+
+24
+00:01:08,189 --> 00:01:10,820
+that food that soul was inside my folder
+现在忘了放分号，让我们说那个灵魂在我的文件夹里的食物
+
+25
+00:01:10,820 --> 00:01:14,010
+then back here you would have to say my
+然后回到这里，您将不得不说我的文件夹将食物砍了出来，一旦我们
+
+26
+00:01:14,010 --> 00:01:18,689
+folder slash food out soul and once we
+然后回到这里，您将不得不说我的文件夹将食物砍了出来，一旦我们
+
+27
+00:01:18,689 --> 00:01:21,090
+import food out so we can use the
+进口食物，以便我们可以使用此文件中的合同食物，所以在这里
+
+28
+00:01:21,090 --> 00:01:24,270
+contract food inside this file so here
+进口食物，以便我们可以使用此文件中的合同食物，所以在这里
+
+29
+00:01:24,270 --> 00:01:30,780
+I'll initialize a food contract and then
+我将初始化一份食物合同，然后创建一个名为“获取全名”的函数
+
+30
+00:01:30,780 --> 00:01:33,030
+create a function called get full name
+我将初始化一份食物合同，然后创建一个名为“获取全名”的函数
+
+31
+00:01:33,030 --> 00:01:35,430
+and then return the value of the state
+然后返回食品合同中的状态变量名称的值
+
+32
+00:01:35,430 --> 00:01:39,680
+variable name inside the food contract
+然后返回食品合同中的状态变量名称的值
+
+33
+00:01:39,680 --> 00:01:42,180
+next I'm going to show you how to import
+接下来，我将向您展示如何从github导入文件，我们将导入
+
+34
+00:01:42,180 --> 00:01:45,270
+files from github and we'll import the
+接下来，我将向您展示如何从github导入文件，我们将导入
+
+35
+00:01:45,270 --> 00:01:48,119
+ERC xx talking contract from the open
+ERC xx正在讨论的日本公开合同中的合同，并将其导入
+
+36
+00:01:48,119 --> 00:01:51,149
+Japan contracts and to import this
+ERC xx正在讨论的日本公开合同中的合同，并将其导入
+
+37
+00:01:51,149 --> 00:01:54,329
+contract we first need to copy the URL
+合同，我们首先需要复制网址，然后再像之前一样从导入和
+
+38
+00:01:54,329 --> 00:01:58,520
+and then as before start with import and
+合同，我们首先需要复制网址，然后再像之前一样从导入和
+
+39
+00:01:58,520 --> 00:02:02,729
+then paste the URL and then from the URL
+然后粘贴网址，然后从网址中删除HTTPS
+
+40
+00:02:02,729 --> 00:02:06,540
+we need to remove HTTPS
+然后粘贴网址，然后从网址中删除HTTPS
+
+41
+00:02:06,540 --> 00:02:10,430
+and don't forget to put the semicolon
+并且不要忘了现在放分号，这样导入将无法正常工作
+
+42
+00:02:10,430 --> 00:02:13,950
+now this import will not work as you can
+并且不要忘了现在放分号，这样导入将无法正常工作
+
+43
+00:02:13,950 --> 00:02:16,680
+see here and the reason is because the
+看到这里，原因是因为我们刚导入的坚固性是为了
+
+44
+00:02:16,680 --> 00:02:19,200
+solidity that we just imported is for
+看到这里，原因是因为我们刚导入的坚固性是为了
+
+45
+00:02:19,200 --> 00:02:23,160
+solidity version 0.6 and above but here
+实体版本0.6及更高版本，但在这里我们使用的字面上是0.5，因此
+
+46
+00:02:23,160 --> 00:02:26,760
+we're working with so literally 0.5 so
+实体版本0.6及更高版本，但在这里我们使用的字面上是0.5，因此
+
+47
+00:02:26,760 --> 00:02:28,890
+what we actually want to do is import
+我们实际上想要做的是导入ERC 24 solidity 0.5，我们可以做到这一点
+
+48
+00:02:28,890 --> 00:02:33,630
+ERC 24 solidity 0.5 and we can do that
+我们实际上想要做的是导入ERC 24 solidity 0.5，我们可以做到这一点
+
+49
+00:02:33,630 --> 00:02:35,970
+by switching over to github branch 2
+通过切换到github分支2 2.5版，您可以看到
+
+50
+00:02:35,970 --> 00:02:40,440
+version 2.5 and as you can see the
+通过切换到github分支2 2.5版，您可以看到
+
+51
+00:02:40,440 --> 00:02:44,250
+solidity is now 0.5 so we'll copy this
+坚固性现在为0.5，因此我们将复制此URL，然后放置此URL，然后
+
+52
+00:02:44,250 --> 00:02:53,820
+URL and then we place this URL and then
+坚固性现在为0.5，因此我们将复制此URL，然后放置此URL，然后
+
+53
+00:02:53,820 --> 00:02:58,170
+again we move the HTTP and when you hit
+再次，我们移动HTTP，当您按ctrl进行编译时，您会注意到
+
+54
+00:02:58,170 --> 00:03:01,080
+ctrl s for compile you'll notice that
+再次，我们移动HTTP，当您按ctrl进行编译时，您会注意到
+
+55
+00:03:01,080 --> 00:03:04,080
+solidity compile and now we can create
+编译，现在我们可以创建自己的ERC 20令牌，因此我将其命名为
+
+56
+00:03:04,080 --> 00:03:07,860
+our own ERC 20 token so I'll name this
+编译，现在我们可以创建自己的ERC 20令牌，因此我将其命名为
+
+57
+00:03:07,860 --> 00:03:12,300
+ERC 20 token my token and it's gonna
+ERC 20令牌是我的令牌，它将扩展我们刚刚使用的ERC 20令牌
+
+58
+00:03:12,300 --> 00:03:15,270
+extend that ERC 20 token that we just
+ERC 20令牌是我的令牌，它将扩展我们刚刚使用的ERC 20令牌
+
+59
+00:03:15,270 --> 00:03:20,040
+imported from here and when you deploy
+从这里导入，以及在部署合同时测试导入我的令牌
+
+60
+00:03:20,040 --> 00:03:23,570
+the contracts test import my token
+从这里导入，以及在部署合同时测试导入我的令牌
+
+61
+00:03:23,570 --> 00:03:26,880
+you'll notice that get foo name returns
+您会注意到get foo name返回foo，这是状态的值
+
+62
+00:03:26,880 --> 00:03:29,910
+foo which is the value of the state
+您会注意到get foo name返回foo，这是状态的值
+
+63
+00:03:29,910 --> 00:03:34,380
+variable here and we imported ERC 20
+这里的变量，我们从github导入了ERC 20令牌并创建了我们自己的
+
+64
+00:03:34,380 --> 00:03:36,959
+token from github and created our own
+这里的变量，我们从github导入了ERC 20令牌并创建了我们自己的
+
+65
+00:03:36,959 --> 00:03:40,680
+SB 20 token and you can see here all of
+SB 20令牌，您可以在此处看到IRC 20令牌的所有功能，因此
+
+66
+00:03:40,680 --> 00:03:45,510
+the functionalities of IRC 20 token so
+SB 20令牌，您可以在此处看到IRC 20令牌的所有功能，因此
+
+67
+00:03:45,510 --> 00:03:47,310
+I'll show you how to import contracts
+我将向您展示如何从github上的本地文件和合同导入合同
+
+68
+00:03:47,310 --> 00:03:50,280
+from local files and contracts on github
+我将向您展示如何从github上的本地文件和合同导入合同
+
+69
+00:03:50,280 --> 00:03:53,640
+and knowing how to import contracts from
+知道如何从github导入合同到remix是一个有用的技巧
+
+70
+00:03:53,640 --> 00:03:56,550
+github into remix is a useful trick to
+知道如何从github导入合同到remix是一个有用的技巧
+
+71
+00:03:56,550 --> 00:03:58,709
+remember when you want to quickly test
+记得当您想快速测试合同时，在下一个视频中见
+
+72
+00:03:58,709 --> 00:04:01,620
+out contracts see you in the next video
+记得当您想快速测试合同时，在下一个视频中见
+
+73
+00:04:01,620 --> 00:04:05,000
+and have a nice weekend
+周末愉快
+

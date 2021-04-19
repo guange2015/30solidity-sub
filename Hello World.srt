@@ -1,0 +1,335 @@
+1
+00:00:00,000 --> 00:00:02,250
+hey guys I'm Tara and welcome to the
+大家好，我是Tara，欢迎收看学习扎实的第一集
+
+2
+00:00:02,250 --> 00:00:04,529
+very first episode of learning solidity
+大家好，我是Tara，欢迎收看学习扎实的第一集
+
+3
+00:00:04,529 --> 00:00:07,890
+by example in this video I'm gonna show
+通过该视频中的示例，我将向您展示如何编写基本的智能合约
+
+4
+00:00:07,890 --> 00:00:10,230
+you how to write a basic smart contract
+通过该视频中的示例，我将向您展示如何编写基本的智能合约
+
+5
+00:00:10,230 --> 00:00:12,719
+in solidity I'll show you how to write
+我将向您展示如何编写您的第一个智能合约
+
+6
+00:00:12,719 --> 00:00:15,360
+your first smart contract compile it
+我将向您展示如何编写您的第一个智能合约
+
+7
+00:00:15,360 --> 00:00:18,050
+deploy to above change simulator and
+部署到上述变更模拟器，最后运行合约或在您的内部
+
+8
+00:00:18,050 --> 00:00:21,390
+finally run the contract or inside your
+部署到上述变更模拟器，最后运行合约或在您的内部
+
+9
+00:00:21,390 --> 00:00:24,240
+browser links to the code are in the
+浏览器到代码的链接在下面的描述中，因此请先进行混音
+
+10
+00:00:24,240 --> 00:00:27,050
+description below so first go to remix
+浏览器到代码的链接在下面的描述中，因此请去remix
+
+11
+00:00:27,050 --> 00:00:30,810
+Eternia morg this is our online code
+remix这是我们的在线代码编辑器和我们的区块链模拟器
+
+12
+00:00:30,810 --> 00:00:33,690
+editor and our blockchain simulator once
+remix这是我们的在线代码编辑器和我们的区块链模拟器
+
+13
+00:00:33,690 --> 00:00:36,030
+the page loads click on the solidity
+该页面加载后，单击“ solidity”按钮以创建您的第一个合约
+
+14
+00:00:36,030 --> 00:00:39,690
+button to create your first contract go
+该页面加载后，单击“ solidity”按钮以创建您的第一个合约
+
+15
+00:00:39,690 --> 00:00:42,600
+to the file explorer and click this plus
+到文件浏览器，然后单击此加号按钮并创建一个新文件，我们将其命名为
+
+16
+00:00:42,600 --> 00:00:46,200
+button and create a new file we'll name
+到文件浏览器，然后单击此加号按钮并创建一个新文件，我们将其命名为
+
+17
+00:00:46,200 --> 00:00:49,670
+our smart contract hello world
+我们的智能合约，您要做的第一件事
+
+18
+00:00:49,670 --> 00:00:52,700
+the very first thing that you want to do
+我们的智能合约，您要做的第一件事
+
+19
+00:00:52,700 --> 00:00:55,610
+in your contract is to specify the
+您合约中的内容是在此处指定编译器版本
+
+20
+00:00:55,610 --> 00:00:58,340
+compiler version at the moment there
+您合约中的内容是在此处指定编译器版本
+
+21
+00:00:58,340 --> 00:01:00,470
+seems to be a bug in remix where the
+似乎是混音中的错误，其中版本零的编译器指向第五点
+
+22
+00:01:00,470 --> 00:01:02,900
+compiler with version zero point five
+似乎是混音中的错误，其中版本零的编译器指向第五点
+
+23
+00:01:02,900 --> 00:01:05,660
+point one and zero point five point two
+第一点和零点五点第二点不起作用，因此我们将指定
+
+24
+00:01:05,660 --> 00:01:09,020
+do not work so we'll specify our
+第一点和零点五点第二点不起作用，因此我们将指定
+
+25
+00:01:09,020 --> 00:01:11,180
+contract version 2 the greater than or
+合约版本2大于或等于零分五分三
+
+26
+00:01:11,180 --> 00:01:13,370
+equal to zero point five point three and
+合约版本2大于或等于零分五分三
+
+27
+00:01:13,370 --> 00:01:17,690
+that stands your politics we start with
+这代表了您的政治，我们从关键字合约开始，我们将其命名为
+
+28
+00:01:17,690 --> 00:01:20,240
+a keyword contract and we'll name it
+这代表了您的政治，我们从关键字合约开始，我们将其命名为
+
+29
+00:01:20,240 --> 00:01:23,090
+hello world this is actually a valid
+你好世界，这实际上是有效的合约，但它什么也没做，所以
+
+30
+00:01:23,090 --> 00:01:26,300
+contract but it does nothing at all so
+你好世界，这实际上是有效的合约，但它什么也没做，所以
+
+31
+00:01:26,300 --> 00:01:27,920
+let's make it a little more interesting
+让我们通过存储问候语使它更加有趣
+
+32
+00:01:27,920 --> 00:01:30,740
+by storing the greeting message we
+让我们通过存储问候语使它更加有趣
+
+33
+00:01:30,740 --> 00:01:33,140
+create a string variable that's named
+创建一个名为的字符串变量，该变量与我们的消息问候世界在
+
+34
+00:01:33,140 --> 00:01:37,190
+agree with our message hello world at
+创建一个名为的字符串变量，该变量与我们的消息问候世界在
+
+35
+00:01:37,190 --> 00:01:39,200
+the moment this variable is only
+当此变量只能在此合约内访问时，我们可以
+
+36
+00:01:39,200 --> 00:01:42,020
+accessible inside this contract we can
+当此变量只能在此合约内访问时，我们可以
+
+37
+00:01:42,020 --> 00:01:44,240
+make it accessible outside the contract
+通过将关键字“ public”（公共）设置为可在合约外部访问
+
+38
+00:01:44,240 --> 00:01:46,940
+by putting the keyword public I'll
+通过将关键字“ public”（公共）设置为可在合约外部访问
+
+39
+00:01:46,940 --> 00:01:49,310
+explain more about the keyword public in
+在其他视频中详细说明有关“公共”关键字的内容，我们的合约是
+
+40
+00:01:49,310 --> 00:01:52,580
+another video and our contract is
+在其他视频中详细说明有关“公共”关键字的内容，我们的合约是
+
+41
+00:01:52,580 --> 00:01:56,299
+completed so now let's compile it take
+完成后，现在让我们编译一下该编译图标
+
+42
+00:01:56,299 --> 00:01:59,620
+this solidity icon
+完成后，现在让我们编译一下该编译图标
+
+43
+00:02:00,090 --> 00:02:02,820
+the compiler is within our range greater
+编译器在我们的范围内，大于等于零点，五点
+
+44
+00:02:02,820 --> 00:02:04,619
+than equal to zero point five point
+编译器在我们的范围内，大于等于零点，五点
+
+45
+00:02:04,619 --> 00:02:06,810
+three and less than zero point six
+3，且小于零点，六，如果您单击下一步，则单击此编译按钮
+
+46
+00:02:06,810 --> 00:02:10,019
+next click on this compile button if you
+3，且小于零点，六，如果您单击下一步，则单击此编译按钮
+
+47
+00:02:10,019 --> 00:02:12,720
+don't see any errors or warnings here
+在这里看不到任何错误或警告，这意味着您很好
+
+48
+00:02:12,720 --> 00:02:14,879
+that means you're good to go
+在这里看不到任何错误或警告，这意味着您很好
+
+49
+00:02:14,879 --> 00:02:19,200
+also you'll see a green check here next
+另外，您还会在此处看到绿色的对勾，接下来，我们会将合约部署到
+
+50
+00:02:19,200 --> 00:02:21,390
+we'll deploy our contract onto a
+另外，您还会在此处看到绿色的对勾，接下来，我们会将合约部署到
+
+51
+00:02:21,390 --> 00:02:24,360
+blockchain simulator running inside your
+区块链模拟器在您的浏览器中运行，因此请进行部署和运行
+
+52
+00:02:24,360 --> 00:02:27,120
+browser so go to deploy and run
+区块链模拟器在您的浏览器中运行，因此请进行部署和运行
+
+53
+00:02:27,120 --> 00:02:30,000
+transactions make sure that our smart
+交易确保我们的智能合约hello world dot soul是
+
+54
+00:02:30,000 --> 00:02:32,730
+contract hello world dot soul is
+交易确保我们的智能合约hello world dot soul是
+
+55
+00:02:32,730 --> 00:02:36,200
+selected in hit deploy
+在热门部署中选择
+
+56
+00:02:36,540 --> 00:02:38,819
+you can see that our contract is
+您可以看到我们的合约已经部署在这里，让我们检查一下是否可以
+
+57
+00:02:38,819 --> 00:02:42,659
+deployed here let's check that we can
+您可以看到我们的合约已经部署在这里，让我们检查一下是否可以
+
+58
+00:02:42,659 --> 00:02:44,909
+get the greeting message click on the
+收到问候消息，单击灰色按钮，您可以在此处看到我们
+
+59
+00:02:44,909 --> 00:02:47,250
+grey button and you can see here that we
+收到问候消息，单击灰色按钮，您可以在此处看到我们
+
+60
+00:02:47,250 --> 00:02:50,030
+get our message
+得到我们的消息
+
+61
+00:02:51,400 --> 00:02:54,310
+recap we learned how to write our first
+回顾一下，我们学习了如何编写第一个智能合约集的编译器版本
+
+62
+00:02:54,310 --> 00:02:57,040
+smart contract set the compiler version
+回顾一下，我们学习了如何编写第一个智能合约集的编译器版本
+
+63
+00:02:57,040 --> 00:02:59,590
+using the keyword pragma and how to
+使用关键字pragma以及如何创建可公开访问的变量
+
+64
+00:02:59,590 --> 00:03:02,110
+create a publicly accessible variable
+使用关键字pragma以及如何创建可公开访问的变量
+
+65
+00:03:02,110 --> 00:03:05,819
+using the keyword public
+使用关键字public
+
+66
+00:03:06,540 --> 00:03:08,310
+for watching and see you in the next
+观看并在下一个视频中与您见面
+
+67
+00:03:08,310 --> 00:03:10,579
+video
+观看并在下一个视频中与您见面
+

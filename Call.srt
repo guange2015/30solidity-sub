@@ -1,0 +1,1220 @@
+1
+00:00:00,089 --> 00:00:02,159
+call is a low-level method that is
+调用是一种低层方法，适用于所有地址类型和一种
+
+2
+00:00:02,159 --> 00:00:05,460
+available on all address types and one
+调用是一种低层方法，适用于所有地址类型和一种
+
+3
+00:00:05,460 --> 00:00:07,770
+way to use it is to send ether which we
+使用它的方式是发送以太币，这在我们之前的视频中已经看到
+
+4
+00:00:07,770 --> 00:00:10,559
+already seen in a previous video in this
+使用它的方式是发送以太币，这在我们之前的视频中已经看到
+
+5
+00:00:10,559 --> 00:00:12,269
+video I'm gonna show you how to use the
+我将向您展示如何使用call方法调用现有函数的视频
+
+6
+00:00:12,269 --> 00:00:14,490
+call method to call existing functions
+我将向您展示如何使用call方法调用现有函数的视频
+
+7
+00:00:14,490 --> 00:00:17,789
+and to call non-existing functions which
+并调用会触发后备功能的不存在的功能，
+
+8
+00:00:17,789 --> 00:00:20,460
+would trigger the fallback function the
+并调用会触发后备功能的不存在的功能，
+
+9
+00:00:20,460 --> 00:00:22,350
+examples that I'm about to show you are
+我将向您展示的示例不建议与之交互的方法
+
+10
+00:00:22,350 --> 00:00:24,449
+not to recommend a way to interact with
+我将向您展示的示例不建议与之交互的方法
+
+11
+00:00:24,449 --> 00:00:27,240
+other contracts but knowing how to use
+其他合同，但知道如何使用call方法将是一项很好的技能，
+
+12
+00:00:27,240 --> 00:00:29,310
+the call method will be a good skill to
+其他合同，但知道如何使用call方法将是一项很好的技能，
+
+13
+00:00:29,310 --> 00:00:31,590
+have under your tool belt as a smart
+身为智能合约开发者，在我们的工具之下，让我们开始吧
+
+14
+00:00:31,590 --> 00:00:34,800
+contract developer so let's get started
+身为智能合约开发者，在我们的工具之下，让我们开始吧
+
+15
+00:00:34,800 --> 00:00:37,380
+first we're going to need two contracts
+首先，我们将需要两个合同
+
+16
+00:00:37,380 --> 00:00:39,180
+the contract that's going to be
+首先，我们将需要两个合同
+
+17
+00:00:39,180 --> 00:00:41,280
+receiving the calls and we're gonna call
+接听电话，我们将致电此接听人和合同
+
+18
+00:00:41,280 --> 00:00:44,070
+this one receiver and the contract
+接听电话，我们将致电此接听人和合同
+
+19
+00:00:44,070 --> 00:00:45,780
+that's going to be making the calls and
+这将成为通话对象，我们将在内部呼叫该呼叫者
+
+20
+00:00:45,780 --> 00:00:48,809
+we're gonna call this one caller inside
+这将成为通话对象，我们将在内部呼叫该呼叫者
+
+21
+00:00:48,809 --> 00:00:50,879
+the receiver contract we're gonna define
+接收者合同，我们将定义名为foo的函数，这将是
+
+22
+00:00:50,879 --> 00:00:53,850
+function called foo and this will be the
+接收者合同，我们将定义名为foo的函数，这将是
+
+23
+00:00:53,850 --> 00:00:55,980
+function that we're gonna call from the
+我们将使用以下调用从调用方合同中调用的功能
+
+24
+00:00:55,980 --> 00:00:58,680
+caller contract below using the call
+我们将使用以下调用从调用方合同中调用的功能
+
+25
+00:00:58,680 --> 00:01:01,350
+method the function foo will take in an
+方法函数foo将接受字符串的输入，并且您将结束类型
+
+26
+00:01:01,350 --> 00:01:04,769
+input of string and a you end the type
+方法函数foo将接受字符串的输入，并且您将结束类型
+
+27
+00:01:04,769 --> 00:01:07,080
+of inputs here are not important I just
+我在此示例中选择并展示的输入的输入并不重要
+
+28
+00:01:07,080 --> 00:01:09,780
+picked in for this example and to show
+我在此示例中选择并展示的输入的输入并不重要
+
+29
+00:01:09,780 --> 00:01:11,520
+you that we can send eater to this
+您，我们可以将进食者发送到此功能，我们将宣布这一点
+
+30
+00:01:11,520 --> 00:01:13,229
+function we're gonna declare this
+您，我们可以将进食者发送到此功能，我们将宣布这一点
+
+31
+00:01:13,229 --> 00:01:16,170
+function as payable and to show you that
+用作应付款功能，并向您显示call方法可以捕获回报
+
+32
+00:01:16,170 --> 00:01:18,240
+the call method can capture the return
+用作应付款功能，并向您显示call方法可以捕获回报
+
+33
+00:01:18,240 --> 00:01:20,729
+value here we're gonna return a new end
+值，我们将在部署合同后返回新的结局，
+
+34
+00:01:20,729 --> 00:01:23,610
+after we deploy the contract and
+值，我们将在部署合同后返回新的结局，
+
+35
+00:01:23,610 --> 00:01:26,340
+actually execute the functions we want a
+实际执行我们想要的一种能够跟踪代码执行的功能
+
+36
+00:01:26,340 --> 00:01:28,770
+way to be able to track code execution
+实际执行我们想要的一种能够跟踪代码执行的功能
+
+37
+00:01:28,770 --> 00:01:31,799
+so we're gonna create an event that will
+因此，我们将创建一个事件，以帮助我们跟踪哪些功能
+
+38
+00:01:31,799 --> 00:01:33,720
+help us track which functions were
+因此，我们将创建一个事件，以帮助我们跟踪哪些功能
+
+39
+00:01:33,720 --> 00:01:36,509
+called and we're gonna omit this event
+调用，当在内部调用foo函数时，我们将忽略此事件
+
+40
+00:01:36,509 --> 00:01:39,390
+when the foo function is called inside
+调用，当在内部调用foo函数时，我们将忽略此事件
+
+41
+00:01:39,390 --> 00:01:41,280
+the event it's gonna log message dot
+该事件将记录消息点发件人消息点值和消息
+
+42
+00:01:41,280 --> 00:01:44,520
+sender message dot value and the message
+该事件将记录消息点发件人消息点值和消息
+
+43
+00:01:44,520 --> 00:01:47,399
+that we pass from the Foo function and
+我们通过Foo功能传递的信息，只是发送给发件人的快速提醒消息
+
+44
+00:01:47,399 --> 00:01:49,560
+just a quick reminder message the sender
+我们通过Foo功能传递的信息，只是发送给发件人的快速提醒消息
+
+45
+00:01:49,560 --> 00:01:51,720
+will hold address that call this
+将保留调用该合同的地址，并且消息点值将保留
+
+46
+00:01:51,720 --> 00:01:54,780
+contract and message dot value will hold
+将保留调用该合同的地址，并且消息点值将保留
+
+47
+00:01:54,780 --> 00:01:57,630
+the amount of ether that was sent and to
+发送的以太币数量，并向您显示call方法可以
+
+48
+00:01:57,630 --> 00:01:59,070
+show you that the call method can
+发送的以太币数量，并向您显示call方法可以
+
+49
+00:01:59,070 --> 00:02:01,079
+receive the output of the function that
+接收被调用函数的输出
+
+50
+00:02:01,079 --> 00:02:01,890
+was called
+接收被调用函数的输出
+
+51
+00:02:01,890 --> 00:02:04,530
+here we're gonna add one to the input X
+在这里，我们将一个添加到输入X中，然后将其返回，这样就完成了
+
+52
+00:02:04,530 --> 00:02:07,200
+and then return it so that completes the
+在这里，我们将一个添加到输入X中，然后将其返回，这样就完成了
+
+53
+00:02:07,200 --> 00:02:09,270
+function that's gonna be called when we
+当我们在某个函数上使用call方法时，该函数将被调用
+
+54
+00:02:09,270 --> 00:02:11,640
+use the call method on a function that
+当我们在某个函数上使用call方法时，该函数将被调用
+
+55
+00:02:11,640 --> 00:02:13,810
+exists now when we
+当我们在函数上使用call方法时，现在存在
+
+56
+00:02:13,810 --> 00:02:16,090
+we use the call method on a function
+当我们在函数上使用call方法时，现在存在
+
+57
+00:02:16,090 --> 00:02:18,700
+that does not exist solidity will call
+不存在稳定性的对象将调用后备功能，因此让我们定义
+
+58
+00:02:18,700 --> 00:02:21,010
+the fallback function so let's define
+不存在稳定性的对象将调用后备功能，因此让我们定义
+
+59
+00:02:21,010 --> 00:02:22,750
+the fallback function inside the
+接收者合约中的后备功能我们称为
+
+60
+00:02:22,750 --> 00:02:25,209
+receiver contract we call that the
+接收者合约中的后备功能我们称为
+
+61
+00:02:25,209 --> 00:02:27,430
+visibility of the fallback function must
+后备功能的可见性必须是外部的，在此示例中，
+
+62
+00:02:27,430 --> 00:02:30,010
+be external and for this example we're
+后备功能的可见性必须是外部的，在此示例中，
+
+63
+00:02:30,010 --> 00:02:31,750
+gonna make it payable so that the
+使其成为可付款项，以便后备功能可以接收和
+
+64
+00:02:31,750 --> 00:02:34,480
+fallback function can receive either and
+使其成为可付款项，以便后备功能可以接收和
+
+65
+00:02:34,480 --> 00:02:36,400
+similar to the function foo for
+与用于调试目的的功能foo类似，我们将省略
+
+66
+00:02:36,400 --> 00:02:38,890
+debugging purposes we're gonna omit the
+与用于调试目的的功能foo类似，我们将省略
+
+67
+00:02:38,890 --> 00:02:40,959
+received event inside the fallback
+后备功能内收到的事件，前两个值将是
+
+68
+00:02:40,959 --> 00:02:43,569
+function the first two values will be
+后备功能内收到的事件，前两个值将是
+
+69
+00:02:43,569 --> 00:02:46,239
+the address of the color and amount of
+发送的食用者的颜色和数量的地址以及该消息
+
+70
+00:02:46,239 --> 00:02:48,640
+eater that was sent and the message that
+发送的食用者的颜色和数量的地址以及该消息
+
+71
+00:02:48,640 --> 00:02:50,980
+we're gonna log here will be fallback
+我们将在此处记录将被称为fallback，以使我们感冒
+
+72
+00:02:50,980 --> 00:02:53,380
+was called so that completes our cold
+我们将在此处记录将被称为fallback，以使我们感冒
+
+73
+00:02:53,380 --> 00:02:55,510
+for a contract that's gonna get called
+可以通过call方法调用的合同，所以接下来让我们写
+
+74
+00:02:55,510 --> 00:02:58,750
+by the call method so next let's write
+可以通过call方法调用的合同，所以接下来让我们写
+
+75
+00:02:58,750 --> 00:03:00,760
+some code for the contract that's gonna
+合同的一些代码会先将接收方合同称为双倍合同
+
+76
+00:03:00,760 --> 00:03:03,519
+call the receiver contract double first
+合同的一些代码会先将接收方合同称为双倍合同
+
+77
+00:03:03,519 --> 00:03:05,560
+let's create a function that will call
+让我们创建一个函数，该函数将使用调用上面的Foo函数
+
+78
+00:03:05,560 --> 00:03:07,989
+the Foo function above using the call
+让我们创建一个函数，该函数将使用调用上面的Foo函数
+
+79
+00:03:07,989 --> 00:03:10,599
+method later after we deploy the
+方法，稍后我们在这里部署合同后，我们将传递
+
+80
+00:03:10,599 --> 00:03:12,849
+contract here we're gonna pass in the
+方法，稍后我们在这里部署合同后，我们将传递
+
+81
+00:03:12,849 --> 00:03:15,459
+address of the receiver contract and
+收货人合同的地址，由于我们要发送的地址是
+
+82
+00:03:15,459 --> 00:03:17,110
+since we're gonna send either we're
+收货人合同的地址，由于我们要发送的地址是
+
+83
+00:03:17,110 --> 00:03:19,690
+gonna declare the address as payable and
+将要声明的地址为应付款，并且我们还将函数声明为
+
+84
+00:03:19,690 --> 00:03:21,670
+we're also gonna declare the function as
+将要声明的地址为应付款，并且我们还将函数声明为
+
+85
+00:03:21,670 --> 00:03:23,890
+payable since we're gonna forward the
+应付帐款，因为我们会将食客从我们的帐户转发至此功能
+
+86
+00:03:23,890 --> 00:03:26,410
+eater from our account to this function
+应付帐款，因为我们会将食客从我们的帐户转发至此功能
+
+87
+00:03:26,410 --> 00:03:29,920
+and to the receiver contract about in a
+并与接收方合同有关，在上一个视频中，我向您展示了如何发送
+
+88
+00:03:29,920 --> 00:03:31,810
+previous video I showed you how to send
+并与接收方合同有关，在上一个视频中，我向您展示了如何发送
+
+89
+00:03:31,810 --> 00:03:33,819
+eater to an address using the call
+食用者使用这样的调用方法将地址转到默认地址
+
+90
+00:03:33,819 --> 00:03:37,090
+method like this by default the call
+食用者使用这样的调用方法将地址转到默认地址
+
+91
+00:03:37,090 --> 00:03:39,489
+method will forward all of the gas but
+方法将转发所有气体，但是如果您只想发送特定的
+
+92
+00:03:39,489 --> 00:03:41,109
+if you only want to send a certain
+方法将转发所有气体，但是如果您只想发送特定的
+
+93
+00:03:41,109 --> 00:03:43,630
+amount of gas you do it like this here
+像这样做的汽油量我在告诉固体只发送5,000
+
+94
+00:03:43,630 --> 00:03:46,569
+I'm telling solidity to send only 5,000
+像这样做的汽油量我在告诉固体只发送5,000
+
+95
+00:03:46,569 --> 00:03:49,000
+gas now if you want to call function
+如果您要调用后备函数以外的函数，请立即执行
+
+96
+00:03:49,000 --> 00:03:51,549
+other than the fallback function you
+如果您要调用后备函数以外的函数，请立即执行
+
+97
+00:03:51,549 --> 00:03:53,650
+will need to pass in the parameters here
+将需要在括号内以及您的方式中传递参数
+
+98
+00:03:53,650 --> 00:03:56,859
+inside the parentheses and the way you
+将需要在括号内以及您的方式中传递参数
+
+99
+00:03:56,859 --> 00:03:59,769
+would do it is like this first we need
+首先要做的就是这样，我们需要调用称为ABI点的特殊功能
+
+100
+00:03:59,769 --> 00:04:02,440
+to call special function called ABI dot
+首先要做的就是这样，我们需要调用称为ABI点的特殊功能
+
+101
+00:04:02,440 --> 00:04:06,100
+and cold wave signature and inside the
+和冷波签名，并在ABI点编码内将签名功能
+
+102
+00:04:06,100 --> 00:04:08,470
+ABI dot encode will signature function
+和冷波签名，并在ABI点编码内将签名功能
+
+103
+00:04:08,470 --> 00:04:11,560
+we need to pass in some parameters the
+我们需要传递一些参数，第一个参数是
+
+104
+00:04:11,560 --> 00:04:13,720
+first parameter is the signature of the
+我们需要传递一些参数，第一个参数是
+
+105
+00:04:13,720 --> 00:04:16,298
+function that we want to call and the
+我们要调用的函数以及创建函数签名的方法是
+
+106
+00:04:16,298 --> 00:04:18,310
+way to create a function signature is
+我们要调用的函数以及创建函数签名的方法是
+
+107
+00:04:18,310 --> 00:04:19,988
+similar to how you would declare a
+类似于您声明具有一些细微差异的函数的方式
+
+108
+00:04:19,988 --> 00:04:22,330
+function with some minor differences
+类似于您声明具有一些细微差异的函数的方式
+
+109
+00:04:22,330 --> 00:04:24,970
+first you start with the function name
+首先，从函数名称开始，在这种情况下，我们将调用
+
+110
+00:04:24,970 --> 00:04:26,830
+in this case we're going to call the
+首先，从函数名称开始，在这种情况下，我们将调用
+
+111
+00:04:26,830 --> 00:04:27,760
+food
+食物，所以我们接下来要开始食物
+
+112
+00:04:27,760 --> 00:04:30,730
+so here we're gonna start with food next
+食物，所以我们接下来要开始食物
+
+113
+00:04:30,730 --> 00:04:33,130
+we declare the type of inputs that this
+我们声明此函数自完整输入以来将要采用的输入类型
+
+114
+00:04:33,130 --> 00:04:35,710
+function is going to take since the full
+我们声明此函数自完整输入以来将要采用的输入类型
+
+115
+00:04:35,710 --> 00:04:37,810
+function above takes a string and
+上面的函数将字符串和参数作为输入，在这里我们要
+
+116
+00:04:37,810 --> 00:04:40,690
+argument as inputs here we're going to
+上面的函数将字符串和参数作为输入，在这里我们要
+
+117
+00:04:40,690 --> 00:04:43,090
+declare a string followed by you end
+声明一个字符串，然后结束，首先请注意没有空格
+
+118
+00:04:43,090 --> 00:04:45,670
+first note that there is no space
+声明一个字符串，然后结束，首先请注意没有空格
+
+119
+00:04:45,670 --> 00:04:48,550
+between the comma and this is important
+逗号之间，这很重要接下来请注意，您需要使用联合国代替联合国
+
+120
+00:04:48,550 --> 00:04:51,610
+next note that instead of UN you need to
+逗号之间，这很重要接下来请注意，您需要使用联合国代替联合国
+
+121
+00:04:51,610 --> 00:04:54,760
+declare the full name since UN is an
+声明全名，因为联合国是联合国2:56的别名，我们需要
+
+122
+00:04:54,760 --> 00:04:57,700
+alias for UN 2:56 here we need to
+声明全名，因为联合国是联合国2:56的别名，我们需要
+
+123
+00:04:57,700 --> 00:05:01,510
+declare you into 256 and finally notice
+将您声明为256，最后在这里注意，我们没有声明
+
+124
+00:05:01,510 --> 00:05:03,670
+here that we don't declare the type of
+将您声明为256，最后在这里注意，我们没有声明
+
+125
+00:05:03,670 --> 00:05:06,130
+output the next parameters that we need
+输出我们需要传递的下一个参数是实际的输入
+
+126
+00:05:06,130 --> 00:05:08,470
+to pass are the actual inputs that are
+输出我们需要传递的下一个参数是实际的输入
+
+127
+00:05:08,470 --> 00:05:10,090
+going to be passed to the function that
+因为函数foo将被传递给我们正在调用的函数
+
+128
+00:05:10,090 --> 00:05:12,670
+we're calling since the function foo
+因为函数foo将被传递给我们正在调用的函数
+
+129
+00:05:12,670 --> 00:05:15,570
+takes a string and a youant as inputs
+在这里输入一个字符串和一个youant作为我要传递的第一个输入的输入
+
+130
+00:05:15,570 --> 00:05:18,310
+here for the first input I'm gonna pass
+在这里输入一个字符串和一个youant作为我要传递的第一个输入的输入
+
+131
+00:05:18,310 --> 00:05:21,850
+a string value of call foo followed by a
+调用foo的字符串值，后跟UN输入1 2 3，调用函数将
+
+132
+00:05:21,850 --> 00:05:26,230
+UN input of 1 2 3 the call function will
+调用foo的字符串值，后跟UN输入1 2 3，调用函数将
+
+133
+00:05:26,230 --> 00:05:29,650
+return to outputs the first output will
+返回输出第一个输出将告诉我们函数调用是否为
+
+134
+00:05:29,650 --> 00:05:31,570
+tell us whether the function call was
+返回输出第一个输出将告诉我们函数调用是否为
+
+135
+00:05:31,570 --> 00:05:34,690
+successful or not the second output will
+第二个输出是否成功将是该函数的输出
+
+136
+00:05:34,690 --> 00:05:36,550
+be the output of the function that was
+第二个输出是否成功将是该函数的输出
+
+137
+00:05:36,550 --> 00:05:40,150
+called encoded in bytes so when we call
+称为以字节为单位的编码，因此当我们调用Foo函数时，它将返回youant，因此
+
+138
+00:05:40,150 --> 00:05:43,360
+the Foo function it returns a youant so
+称为以字节为单位的编码，因此当我们调用Foo函数时，它将返回youant，因此
+
+139
+00:05:43,360 --> 00:05:45,880
+here the variable data will contain the
+在这里，变量数据将包含以字节为单位的youant编码，现在我们要
+
+140
+00:05:45,880 --> 00:05:49,090
+youant encoded in bytes now we want to
+在这里，变量数据将包含以字节为单位的youant编码，现在我们要
+
+141
+00:05:49,090 --> 00:05:51,280
+see the output of calling the function
+看到通过call方法调用foo函数的输出，所以在这里
+
+142
+00:05:51,280 --> 00:05:53,950
+foo by the call method so here we're
+看到通过call方法调用foo函数的输出，所以在这里
+
+143
+00:05:53,950 --> 00:05:56,260
+gonna log two outputs and we're gonna
+将记录两个输出，我们将同时记录输出成功和数据，因此
+
+144
+00:05:56,260 --> 00:06:00,340
+log both the outputs success and data so
+将记录两个输出，我们将同时记录输出成功和数据，因此
+
+145
+00:06:00,340 --> 00:06:02,020
+that completes our function that's going
+这将完成我们的功能，该功能将使用该调用来调用Foo函数
+
+146
+00:06:02,020 --> 00:06:04,240
+to call the Foo function using the call
+这将完成我们的功能，该功能将使用该调用来调用Foo函数
+
+147
+00:06:04,240 --> 00:06:06,460
+method so next let's write a function
+方法，所以接下来让我们编写一个函数，该函数将调用
+
+148
+00:06:06,460 --> 00:06:08,860
+that's gonna call function that does not
+方法，所以接下来让我们编写一个函数，该函数将调用
+
+149
+00:06:08,860 --> 00:06:09,580
+exist
+存在，我们将从复制和粘贴开始
+
+150
+00:06:09,580 --> 00:06:12,040
+we'll start by copying and pasting this
+存在，我们将从复制和粘贴开始
+
+151
+00:06:12,040 --> 00:06:14,950
+existing code and then modify it first
+现有代码，然后先对其进行修改，我们将名称更改为测试
+
+152
+00:06:14,950 --> 00:06:16,780
+we're gonna change the name to a test
+现有代码，然后先对其进行修改，我们将名称更改为测试
+
+153
+00:06:16,780 --> 00:06:19,780
+call does not exist and just to show you
+电话不存在，只是告诉您我们什么时候都不必发送
+
+154
+00:06:19,780 --> 00:06:22,030
+that we don't have to send either when
+电话不存在，只是告诉您我们什么时候都不必发送
+
+155
+00:06:22,030 --> 00:06:24,160
+using the call method here we're going
+在这里使用call方法，我们将删除payable关键字
+
+156
+00:06:24,160 --> 00:06:27,470
+to remove the payable keywords
+在这里使用call方法，我们将删除payable关键字
+
+157
+00:06:27,470 --> 00:06:30,260
+we call that specifying the amount of
+我们称指定气量是可选的，所以在这里我们要
+
+158
+00:06:30,260 --> 00:06:32,510
+gas is optional so here we're going to
+我们称指定气量是可选的，所以在这里我们要
+
+159
+00:06:32,510 --> 00:06:35,450
+remove this also and we're not gonna
+也将其删除，我们将不发送任何食者，因此我们将删除
+
+160
+00:06:35,450 --> 00:06:37,580
+send any eater so we're gonna remove
+也将其删除，我们将不发送任何食者，因此我们将删除
+
+161
+00:06:37,580 --> 00:06:40,310
+this as well and we're gonna call a
+这也是如此，我们将调用一个不存在的函数调用
+
+162
+00:06:40,310 --> 00:06:43,040
+function call does not exist which as
+这也是如此，我们将调用一个不存在的函数调用
+
+163
+00:06:43,040 --> 00:06:45,620
+you can see from here does not exist
+您可以从这里看到任何地方都不存在，我们可以删除
+
+164
+00:06:45,620 --> 00:06:49,580
+anywhere and we can remove the
+您可以从这里看到任何地方都不存在，我们可以删除
+
+165
+00:06:49,580 --> 00:06:52,100
+parameters here since these parameters
+参数，因为这些参数将作为输入传递给
+
+166
+00:06:52,100 --> 00:06:54,140
+will be passed as an input to the
+参数，因为这些参数将作为输入传递给
+
+167
+00:06:54,140 --> 00:06:56,330
+function that we're calling and the
+我们正在调用的函数以及我们正在调用的函数
+
+168
+00:06:56,330 --> 00:06:57,470
+function that we're calling
+我们正在调用的函数以及我们正在调用的函数
+
+169
+00:06:57,470 --> 00:07:01,480
+does not exist does not take any inputs
+不存在不会接受任何输入，因此在执行此代码时，因为
+
+170
+00:07:01,480 --> 00:07:05,150
+so when this code is executed since the
+不存在不会接受任何输入，因此在执行此代码时，因为
+
+171
+00:07:05,150 --> 00:07:06,620
+function that we're trying to call it
+我们尝试调用的函数不存在，它将调用后备
+
+172
+00:07:06,620 --> 00:07:08,750
+does not exist it will call the fallback
+我们尝试调用的函数不存在，它将调用后备
+
+173
+00:07:08,750 --> 00:07:11,720
+function and since the fallback function
+功能，并且由于后备功能不返回任何输出，因此该数据
+
+174
+00:07:11,720 --> 00:07:14,630
+does not return any outputs this data
+功能，并且由于后备功能不返回任何输出，因此该数据
+
+175
+00:07:14,630 --> 00:07:17,540
+variable will be 0 bytes so that
+变量将为0字节，以便完成代码以调用现有代码
+
+176
+00:07:17,540 --> 00:07:20,000
+completes the code to call an existing
+变量将为0字节，以便完成代码以调用现有代码
+
+177
+00:07:20,000 --> 00:07:22,280
+function and a function that does not
+函数和使用调用方法不存在的函数
+
+178
+00:07:22,280 --> 00:07:25,310
+exist using the call method let's now
+函数和使用调用方法不存在的函数
+
+179
+00:07:25,310 --> 00:07:27,620
+deploy the contract and actually call
+部署合同并实际调用这两个功能，所以在这里
+
+180
+00:07:27,620 --> 00:07:30,260
+these two functions so here I've
+部署合同并实际调用这两个功能，所以在这里
+
+181
+00:07:30,260 --> 00:07:32,570
+deployed the two contracts collar and
+部署了两个合同项圈和接收方，我将执行测试
+
+182
+00:07:32,570 --> 00:07:35,540
+receiver and I'm gonna execute the test
+部署了两个合同项圈和接收方，我将执行测试
+
+183
+00:07:35,540 --> 00:07:37,910
+call flu function which we'll call the
+调用flu函数，我们将在接收方合同中调用flu函数，因此
+
+184
+00:07:37,910 --> 00:07:41,090
+flu function in the receiver contract so
+调用flu函数，我们将在接收方合同中调用flu函数，因此
+
+185
+00:07:41,090 --> 00:07:42,860
+I'm gonna copy the address of the
+我要复制接收方合同的地址并将其粘贴到此处
+
+186
+00:07:42,860 --> 00:07:46,479
+receiver contract and paste it in here
+我要复制接收方合同的地址并将其粘贴到此处
+
+187
+00:07:46,479 --> 00:07:49,790
+so when we executed the test call foo
+因此，当我们执行测试调用foo函数时，它在
+
+188
+00:07:49,790 --> 00:07:52,340
+function it called a function foo in the
+因此，当我们执行测试调用foo函数时，它在
+
+189
+00:07:52,340 --> 00:07:54,500
+receiver contract with the parameters
+接收者契约，其中的参数称为foo，且其中的一二三
+
+190
+00:07:54,500 --> 00:07:57,530
+called foo and one two three inside the
+接收者契约，其中的参数称为foo，且其中的一二三
+
+191
+00:07:57,530 --> 00:07:59,870
+function foo it emitted the event of
+函数foo发出了接收到的事件，您可以在此处看到
+
+192
+00:07:59,870 --> 00:08:02,479
+received and you can see here in the
+函数foo发出了接收到的事件，您可以在此处看到
+
+193
+00:08:02,479 --> 00:08:04,820
+transaction log that the event received
+接收到的事件已发出的事务日志，函数foo返回
+
+194
+00:08:04,820 --> 00:08:07,970
+was emitted function foo returned the
+接收到的事件已发出的事务日志，函数foo返回
+
+195
+00:08:07,970 --> 00:08:10,970
+output of X plus one this output was
+X的输出加一，此输出在此数据变量中捕获，并且
+
+196
+00:08:10,970 --> 00:08:14,000
+captured here in this data variable and
+X的输出加一，此输出在此数据变量中捕获，并且
+
+197
+00:08:14,000 --> 00:08:16,100
+since we bought the data variable in the
+由于我们在响应事件中购买了数据变量，因此您可以在此处查看
+
+198
+00:08:16,100 --> 00:08:18,530
+response event you can see down here
+由于我们在响应事件中购买了数据变量，因此您可以在此处查看
+
+199
+00:08:18,530 --> 00:08:22,280
+that the response event was logged and
+记录了响应事件并跟踪数据，该数据是出埃及记
+
+200
+00:08:22,280 --> 00:08:26,060
+dog the data this data is an exodus mo
+记录了响应事件并跟踪数据，该数据是出埃及记
+
+201
+00:08:26,060 --> 00:08:29,060
+notation and down here I opened the
+表示法和此处，我在网络浏览器中打开了JavaScript控制台
+
+202
+00:08:29,060 --> 00:08:31,100
+JavaScript console in the web browser
+表示法和此处，我在网络浏览器中打开了JavaScript控制台
+
+203
+00:08:31,100 --> 00:08:34,969
+and decoded the hexadecimal data and you
+并解码了十六进制数据，您可以看到返回了
+
+204
+00:08:34,969 --> 00:08:36,409
+can see that a return
+并解码了十六进制数据，您可以看到返回了
+
+205
+00:08:36,409 --> 00:08:41,059
+124 we passed 123 as input and the
+124我们将123作为输入传递，并且函数foo返回123加1，其中
+
+206
+00:08:41,059 --> 00:08:45,139
+function foo returned 123 plus 1 which
+124我们将123作为输入传递，并且函数foo返回123加1，其中
+
+207
+00:08:45,139 --> 00:08:49,430
+is equal to 124 and this data down below
+等于124，此下方的数据等于124，紧挨着
+
+208
+00:08:49,430 --> 00:08:52,730
+here is equal to 124 and next to the
+等于124，此下方的数据等于124，紧挨着
+
+209
+00:08:52,730 --> 00:08:55,160
+small notation next I'm gonna walk you
+小写法接下来，当我们调用时，我将带您逐步执行代码
+
+210
+00:08:55,160 --> 00:08:57,379
+through the code execution when we call
+小写法接下来，当我们调用时，我将带您逐步执行代码
+
+211
+00:08:57,379 --> 00:09:00,379
+test call does not exist so again I'm
+测试电话不存在，所以我要再次复制接收方的地址
+
+212
+00:09:00,379 --> 00:09:02,269
+gonna copy the address of the receiver
+测试电话不存在，所以我要再次复制接收方的地址
+
+213
+00:09:02,269 --> 00:09:05,720
+contract paste it in here and call test
+合同将其粘贴到此处，然后调用测试调用不存在，让我们检查一下
+
+214
+00:09:05,720 --> 00:09:08,990
+call does not exist and let's check the
+合同将其粘贴到此处，然后调用测试调用不存在，让我们检查一下
+
+215
+00:09:08,990 --> 00:09:11,870
+transaction log as you can see from the
+从事件狗可以看到的事务日志，回退功能是
+
+216
+00:09:11,870 --> 00:09:14,209
+event dog the fallback function was
+从事件狗可以看到的事务日志，回退功能是
+
+217
+00:09:14,209 --> 00:09:16,910
+called and they returned the data of Geo
+调用后，他们返回了地理字节的数据，因此发生的情况是当我们调用
+
+218
+00:09:16,910 --> 00:09:19,459
+bytes so what happened was when we call
+调用后，他们返回了地理字节的数据，因此发生的情况是当我们调用
+
+219
+00:09:19,459 --> 00:09:21,889
+the test call does not exist function it
+测试调用不存在功能，它试图调用不存在的功能
+
+220
+00:09:21,889 --> 00:09:23,870
+tried to call a function that does not
+测试调用不存在功能，它试图调用不存在的功能
+
+221
+00:09:23,870 --> 00:09:26,209
+exist and since the function does not
+存在，并且由于该函数不存在，因此接收器内部不存在
+
+222
+00:09:26,209 --> 00:09:29,149
+exist does not exist inside the receiver
+存在，并且由于该函数不存在，因此接收器内部不存在
+
+223
+00:09:29,149 --> 00:09:31,730
+contract solidity called the fallback
+合约稳固性称为后备功能，它使用
+
+224
+00:09:31,730 --> 00:09:34,370
+function and it bout the event with the
+合约稳固性称为后备功能，它使用
+
+225
+00:09:34,370 --> 00:09:36,860
+message fall back was called after the
+消息回退被调用后，回退被称为返回0个字节，并且
+
+226
+00:09:36,860 --> 00:09:39,949
+fallback was called a return 0 bytes and
+消息回退被调用后，回退被称为返回0个字节，并且
+
+227
+00:09:39,949 --> 00:09:42,319
+we saw in the transaction though that 0
+我们在事务中看到，尽管响应事件中有0个字节是狗
+
+228
+00:09:42,319 --> 00:09:46,360
+bytes was dog inside the response event
+我们在事务中看到，尽管响应事件中有0个字节是狗
+
+229
+00:09:46,360 --> 00:09:49,130
+so in summary you can use the call
+因此，总的来说，如果
+
+230
+00:09:49,130 --> 00:09:51,769
+method to call other functions if the
+因此，总的来说，如果
+
+231
+00:09:51,769 --> 00:09:53,779
+function being called does not exist
+被调用的函数不存在，则回退函数将是
+
+232
+00:09:53,779 --> 00:09:55,819
+then the fallback function will be
+被调用的函数不存在，则回退函数将是
+
+233
+00:09:55,819 --> 00:09:58,430
+called now this function is not to
+现在调用此功能不是建议一种方法来调用所有
+
+234
+00:09:58,430 --> 00:10:00,259
+recommend a way to call all the
+现在调用此功能不是建议一种方法来调用所有
+
+235
+00:10:00,259 --> 00:10:02,930
+functions since it's very easy to mess
+函数，因为很容易弄乱函数签名，因此
+
+236
+00:10:02,930 --> 00:10:05,300
+up the function signatures so for
+函数，因为很容易弄乱函数签名，因此
+
+237
+00:10:05,300 --> 00:10:07,519
+example even though if you know that the
+即使您知道如果弄乱了函数foo的存在，该示例
+
+238
+00:10:07,519 --> 00:10:10,250
+function foo exists if you mess up the
+即使您知道如果弄乱了函数foo的存在，该示例
+
+239
+00:10:10,250 --> 00:10:12,410
+function signature then the fallback
+函数签名，然后将调用后备函数，仅此而已
+
+240
+00:10:12,410 --> 00:10:15,079
+function will be called well that's all
+函数签名，然后将调用后备函数，仅此而已
+
+241
+00:10:15,079 --> 00:10:17,389
+I got for this video if you have any
+如果您有任何反馈或疑问，请在
+
+242
+00:10:17,389 --> 00:10:19,579
+feedback or questions let me know in the
+如果您有任何反馈或疑问，请在
+
+243
+00:10:19,579 --> 00:10:21,620
+comments below have a good night and
+以下评论度过了一个美好的夜晚，下个视频再见
+
+244
+00:10:21,620 --> 00:10:25,000
+I'll see you in the next video
+以下评论度过了一个美好的夜晚，下个视频再见
+

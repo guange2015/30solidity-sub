@@ -1,0 +1,640 @@
+1
+00:00:00,380 --> 00:00:02,970
+let's talk about the cryptographic hash
+让我们来谈谈加密哈希函数的坚固性
+
+2
+00:00:02,970 --> 00:00:05,819
+function in solidity it's called to
+让我们来谈谈加密哈希函数的坚固性
+
+3
+00:00:05,819 --> 00:00:09,510
+check 256 in this video I'll explain
+检查此视频中的256，我将解释什么是密码哈希函数
+
+4
+00:00:09,510 --> 00:00:12,530
+what a cryptographic hash function is
+检查此视频中的256，我将解释什么是密码哈希函数
+
+5
+00:00:12,530 --> 00:00:14,940
+and I'll show your example about
+我将向您展示有关使用伪随机猜游戏的示例
+
+6
+00:00:14,940 --> 00:00:16,890
+guessing game using the pseudo-random
+我将向您展示有关使用伪随机猜游戏的示例
+
+7
+00:00:16,890 --> 00:00:19,910
+nature of a cryptographic hash function
+哈希函数的本质，因此首先是什么是哈希函数
+
+8
+00:00:19,910 --> 00:00:23,330
+so first off what is a hash function a
+哈希函数的本质，因此首先是什么是哈希函数
+
+9
+00:00:23,330 --> 00:00:25,980
+hash function is a function that takes
+散列函数是接受任意大小的输入和输出数据的函数
+
+10
+00:00:25,980 --> 00:00:29,460
+in arbitrary size input and output data
+散列函数是接受任意大小的输入和输出数据的函数
+
+11
+00:00:29,460 --> 00:00:31,219
+of fixed sized
+固定大小的哈希函数的一些属性是
+
+12
+00:00:31,219 --> 00:00:34,940
+some properties of a hash functions are
+固定大小的哈希函数的一些属性是
+
+13
+00:00:34,940 --> 00:00:38,790
+that it is deterministic which means
+这是确定性的，这意味着如果X的哈希等于H，则
+
+14
+00:00:38,790 --> 00:00:41,579
+that if hash of X is equal to H then
+这是确定性的，这意味着如果X的哈希等于H，则
+
+15
+00:00:41,579 --> 00:00:43,950
+every time you compute the hash of X and
+每次您计算X的哈希值时，总等于H
+
+16
+00:00:43,950 --> 00:00:47,160
+then there will always equal to H the
+每次您计算X的哈希值时，总等于H
+
+17
+00:00:47,160 --> 00:00:49,350
+cryptographic hash function should be
+加密散列函数应快速计算，这是不可逆的
+
+18
+00:00:49,350 --> 00:00:54,750
+quick to compute it's irreversible this
+加密散列函数应快速计算，这是不可逆的
+
+19
+00:00:54,750 --> 00:00:57,000
+means that given some hash age it is
+意味着在给定哈希年龄的情况下，很难找到X使得X的哈希为
+
+20
+00:00:57,000 --> 00:00:59,579
+hard to find X such that hash of X is
+意味着在给定哈希年龄的情况下，很难找到X使得X的哈希为
+
+21
+00:00:59,579 --> 00:01:03,690
+equal to H small changing input changes
+等于H小变化的输入会显着改变输出，这是
+
+22
+00:01:03,690 --> 00:01:06,510
+that output significantly and it is
+等于H小变化的输入会显着改变输出，这是
+
+23
+00:01:06,510 --> 00:01:09,450
+collision resistant which means that
+防碰撞，这意味着很难找到X和Y这样的散列
+
+24
+00:01:09,450 --> 00:01:12,390
+it's hard to find X & Y such that hash
+防碰撞，这意味着很难找到X和Y这样的散列
+
+25
+00:01:12,390 --> 00:01:16,560
+of x is equal to hash of 1 now there are
+的x等于1的哈希，现在有几个加密哈希函数
+
+26
+00:01:16,560 --> 00:01:18,479
+several cryptographic hash functions
+的x等于1的哈希，现在有几个加密哈希函数
+
+27
+00:01:18,479 --> 00:01:22,350
+available in civility but the one that
+可以使用，但使用最多的是番茄酱
+
+28
+00:01:22,350 --> 00:01:24,689
+is used the most often is the ketchup
+可以使用，但使用最多的是番茄酱
+
+29
+00:01:24,689 --> 00:01:28,920
+256 and to call this function you
+256并调用此函数，您传递字节作为输入和一种方法
+
+30
+00:01:28,920 --> 00:01:32,970
+passing bytes as input and one way to
+256并调用此函数，您传递字节作为输入和一种方法
+
+31
+00:01:32,970 --> 00:01:36,509
+pass bytes as input to catch up to 56 is
+通过调用VI点编码压缩的ABI传递字节作为输入以捕获多达56个
+
+32
+00:01:36,509 --> 00:01:41,579
+by calling a VI dot encode packed ABI
+通过调用VI点编码压缩的ABI传递字节作为输入以捕获多达56个
+
+33
+00:01:41,579 --> 00:01:44,159
+encode pack takes in all types of data
+编码包接受所有类型的数据和任意数量的输入，例如
+
+34
+00:01:44,159 --> 00:01:48,540
+and any amount of inputs so for example
+编码包接受所有类型的数据和任意数量的输入，例如
+
+35
+00:01:48,540 --> 00:01:53,720
+we could pass in a string some you end
+我们可以传递一个字符串，您可以结束一些，并解决所有问题
+
+36
+00:01:53,720 --> 00:01:59,280
+and address it will take in all the way
+我们可以传递一个字符串，您可以结束一些，并解决所有问题
+
+37
+00:01:59,280 --> 00:02:03,540
+put and turn it into bytes catch up 256
+把它变成字节赶上256将采取ABI点的输出和
+
+38
+00:02:03,540 --> 00:02:06,090
+will take the output of ABI dot and
+把它变成字节赶上256将采取ABI点的输出和
+
+39
+00:02:06,090 --> 00:02:08,869
+compact and turn it into a 30
+压缩，然后将其转换为30个购买哈希值，我将向您展示
+
+40
+00:02:08,869 --> 00:02:12,590
+buying hash later I'm gonna show your
+压缩，然后将其转换为30个购买哈希值，我将向您展示
+
+41
+00:02:12,590 --> 00:02:14,629
+example that a small change in the input
+例如，哈希函数输入的微小变化将改变
+
+42
+00:02:14,629 --> 00:02:17,959
+of the hash function will change the
+例如，哈希函数输入的微小变化将改变
+
+43
+00:02:17,959 --> 00:02:21,140
+output by a lot so I'm gonna create a
+输出很多，所以在这个示例中，我将创建一个名为hash的函数
+
+44
+00:02:21,140 --> 00:02:24,440
+function called hash for this example
+输出很多，所以在这个示例中，我将创建一个名为hash的函数
+
+45
+00:02:24,440 --> 00:02:27,530
+it's gonna take in some string and you
+它需要输入一些字符串，然后您结束并输入一个地址，
+
+46
+00:02:27,530 --> 00:02:31,819
+end and an address and it's going to
+它需要输入一些字符串，然后您结束并输入一个地址，
+
+47
+00:02:31,819 --> 00:02:35,269
+return the 32 bytes of hash and inside
+返回哈希的32个字节，并且在函数内部将调用ketchup 256
+
+48
+00:02:35,269 --> 00:02:38,580
+the function will call the ketchup 256
+返回哈希的32个字节，并且在函数内部将调用ketchup 256
+
+49
+00:02:38,580 --> 00:02:40,660
+[Music]
+ [音乐]并传递文字num和地址
+
+50
+00:02:40,660 --> 00:02:46,299
+and passing the text num and the address
+ [音乐]并传递文字num和地址
+
+51
+00:02:46,299 --> 00:02:49,040
+I've compiled and deployed the contract
+我已经编译并部署了现在称为哈希函数的合同，并且
+
+52
+00:02:49,040 --> 00:02:51,769
+that's now called a hash function and
+我已经编译并部署了现在称为哈希函数的合同，并且
+
+53
+00:02:51,769 --> 00:02:55,519
+see what the output looks like so for
+看看输出是什么样子，所以对于输入我要打个招呼世界
+
+54
+00:02:55,519 --> 00:02:59,209
+the input I'm gonna call hello world for
+看看输出是什么样子，所以对于输入我要打个招呼世界
+
+55
+00:02:59,209 --> 00:03:01,640
+the first input for the number I'll put
+我将在1 2 3中输入的数字的第一个输入和我将输入的地址的第一个输入
+
+56
+00:03:01,640 --> 00:03:05,569
+in 1 2 3 and for the address I'll just
+我将在1 2 3中输入的数字的第一个输入和我将输入的地址的第一个输入
+
+57
+00:03:05,569 --> 00:03:08,390
+copy the address of the contract and
+复制合同的地址并粘贴到此处，我将向您展示
+
+58
+00:03:08,390 --> 00:03:13,549
+paste it here now I'm gonna show you
+复制合同的地址并粘贴到此处，我将向您展示
+
+59
+00:03:13,549 --> 00:03:15,650
+that a slight change in the input is
+输入的微小变化会改变哈希值，所以首先
+
+60
+00:03:15,650 --> 00:03:19,609
+gonna change the hash a lot so first I'm
+输入的微小变化会改变哈希值，所以首先
+
+61
+00:03:19,609 --> 00:03:24,519
+gonna copy this and paste it here and
+将其复制并粘贴到此处，然后我将调用相同的函数，但是
+
+62
+00:03:24,519 --> 00:03:26,870
+then I'll call the same function but
+将其复制并粘贴到此处，然后我将调用相同的函数，但是
+
+63
+00:03:26,870 --> 00:03:29,480
+from the hello world I'll remove the H
+从hello world中，我将删除H，它表示hello world，您可以看到
+
+64
+00:03:29,480 --> 00:03:35,030
+and it says hello world and you can see
+从hello world中，我将删除H，它表示hello world，您可以看到
+
+65
+00:03:35,030 --> 00:03:37,370
+that we change the input by only one
+我们只用一个字符更改输入，但哈希值完全是
+
+66
+00:03:37,370 --> 00:03:41,090
+character but the hashes are totally
+我们只用一个字符更改输入，但哈希值完全是
+
+67
+00:03:41,090 --> 00:03:43,970
+different because of the property that
+由于具有给定哈希值的属性，因此几乎不可能
+
+68
+00:03:43,970 --> 00:03:46,730
+given a hash it is almost impossible to
+由于具有给定哈希值的属性，因此几乎不可能
+
+69
+00:03:46,730 --> 00:03:50,750
+find the input that produced a hash we
+找到产生哈希值的输入，我们可以创建一个游戏，您可以在其中猜测
+
+70
+00:03:50,750 --> 00:03:52,699
+can create a game where you try to guess
+找到产生哈希值的输入，我们可以创建一个游戏，您可以在其中猜测
+
+71
+00:03:52,699 --> 00:03:55,400
+the word that computes to a certain edge
+可以计算到特定边的单词，例如，在这里，我们有一个散列和
+
+72
+00:03:55,400 --> 00:03:59,209
+for example here we have a hash and the
+可以计算到特定边的单词，例如，在这里，我们有一个散列和
+
+73
+00:03:59,209 --> 00:04:01,370
+goal of the game is to find the word
+游戏的目标是找到等于该哈希值的单词，因此您将创建一个
+
+74
+00:04:01,370 --> 00:04:04,730
+that equals this hash so you'll create a
+游戏的目标是找到等于该哈希值的单词，因此您将创建一个
+
+75
+00:04:04,730 --> 00:04:07,760
+function called gas and for the input
+函数称为gas，输入的内容是
+
+76
+00:04:07,760 --> 00:04:09,019
+it's going to take in a word that's
+函数称为gas，输入的内容是
+
+77
+00:04:09,019 --> 00:04:11,599
+going to be hashed it's going to return
+将被散列，如果输入的散列相等，则将返回true
+
+78
+00:04:11,599 --> 00:04:13,879
+true if the hash of the input is equal
+将被散列，如果输入的散列相等，则将返回true
+
+79
+00:04:13,879 --> 00:04:17,959
+to our target hash over here inside the
+功能帐单中的目标哈希值有两个输入
+
+80
+00:04:17,959 --> 00:04:19,730
+function bill has two input
+功能帐单中的目标哈希值有两个输入
+
+81
+00:04:19,730 --> 00:04:22,730
+compared with the answer hash and then
+与答案哈希进行比较，然后返回true或false
+
+82
+00:04:22,730 --> 00:04:24,140
+return true or false
+与答案哈希进行比较，然后返回true或false
+
+83
+00:04:24,140 --> 00:04:26,630
+here I've compiled and deployed a
+在这里，我已经编译并部署了一个猜谜游戏合同，我将制作一个
+
+84
+00:04:26,630 --> 00:04:29,750
+guessing game contract and I'll make a
+在这里，我已经编译并部署了一个猜谜游戏合同，我将制作一个
+
+85
+00:04:29,750 --> 00:04:33,050
+step the word hello hashes to the target
+将单词hello hash踩到目标哈希，然后返回false
+
+86
+00:04:33,050 --> 00:04:38,750
+hash over here and it returns false I'll
+将单词hello hash踩到目标哈希，然后返回false
+
+87
+00:04:38,750 --> 00:04:43,790
+try it terraeum and it also returns
+尝试terraeum，它也返回false，所以魔术词慢慢地带有一个
+
+88
+00:04:43,790 --> 00:04:47,690
+false so the magic word is slowly with a
+尝试terraeum，它也返回false，所以魔术词慢慢地带有一个
+
+89
+00:04:47,690 --> 00:04:51,740
+capital S and you can see that it turns
+大写的S，您会看到它变成了真，因此这就是您可以创建一个
+
+90
+00:04:51,740 --> 00:04:55,550
+true so this is how you can create a
+大写的S，您会看到它变成了真，因此这就是您可以创建一个
+
+91
+00:04:55,550 --> 00:04:59,750
+simple guessing game now catch up 256 is
+简单的猜谜游戏现在赶上256是耐碰撞的
+
+92
+00:04:59,750 --> 00:05:01,130
+collision resistant
+简单的猜谜游戏现在赶上256是耐碰撞的
+
+93
+00:05:01,130 --> 00:05:03,500
+but there is one easy way that you can
+但是有一种简单的方法可以创建碰撞，其中涉及使用
+
+94
+00:05:03,500 --> 00:05:07,700
+create a collision and it involves using
+但是有一种简单的方法可以创建碰撞，其中涉及使用
+
+95
+00:05:07,700 --> 00:05:11,870
+a VI dot and compact and the way you can
+VI点和紧凑型，创建碰撞的方法是传递更多
+
+96
+00:05:11,870 --> 00:05:14,270
+create a collision is by passing more
+VI点和紧凑型，创建碰撞的方法是传递更多
+
+97
+00:05:14,270 --> 00:05:17,180
+than one dynamic data type to encode
+而不是一种动态数据类型来对事实进行编码，所以这里我要对PAC进行编码
+
+98
+00:05:17,180 --> 00:05:21,470
+fact so here to encode PAC I'm passing
+而不是一种动态数据类型来对事实进行编码，所以这里我要对PAC进行编码
+
+99
+00:05:21,470 --> 00:05:25,670
+in two strings and what encode pad does
+在两个字符串中，编码垫的作用是将两个字符串连接起来
+
+100
+00:05:25,670 --> 00:05:28,160
+is it will concatenate the two strings
+在两个字符串中，编码垫的作用是将两个字符串连接起来
+
+101
+00:05:28,160 --> 00:05:32,930
+so that if you pass in AAA as your first
+因此，如果您将AAA作为第一个字符串，将BBB作为第二个字符串，
+
+102
+00:05:32,930 --> 00:05:36,850
+string and BBB as your second string a
+因此，如果您将AAA作为第一个字符串，将BBB作为第二个字符串，
+
+103
+00:05:36,850 --> 00:05:41,690
+bi encode that pact will return a BBB
+ bi编码该协议将返回BBB，如果您第一次输入aa
+
+104
+00:05:41,690 --> 00:05:45,530
+and if you pass in a a as your first
+ bi编码该协议将返回BBB，如果您第一次输入aa
+
+105
+00:05:45,530 --> 00:05:48,350
+string and for the second input passing
+字符串，对于第二个通过BBB的输入，再次调用了一个打包的双向对象
+
+106
+00:05:48,350 --> 00:05:53,630
+a BBB a bi thing called packed again
+字符串，对于第二个通过BBB的输入，再次调用了一个打包的双向对象
+
+107
+00:05:53,630 --> 00:05:58,460
+will return a BBB so notice that we have
+将返回一个BBB，因此请注意，我们有两个不同的输入，但是
+
+108
+00:05:58,460 --> 00:06:01,220
+two different inputs but what's being
+将返回一个BBB，因此请注意，我们有两个不同的输入，但是
+
+109
+00:06:01,220 --> 00:06:05,020
+passed to the catch at 256 is the same
+传递给256的渔获量是相同的，所以这意味着我们有不同的
+
+110
+00:06:05,020 --> 00:06:07,790
+so this will mean that we have different
+传递给256的渔获量是相同的，所以这意味着我们有不同的
+
+111
+00:06:07,790 --> 00:06:11,330
+inputs but the same output which is
+输入但将产生哈希冲突以显示的相同输出
+
+112
+00:06:11,330 --> 00:06:14,690
+going to create a hash collision to show
+输入但将产生哈希冲突以显示的相同输出
+
+113
+00:06:14,690 --> 00:06:16,940
+you an actual example I'm gonna type in
+你是一个实际的例子，我要输入aaa然后是BBB并获取哈希
+
+114
+00:06:16,940 --> 00:06:21,220
+a a a followed by BBB and get the hash
+你是一个实际的例子，我要输入aaa然后是BBB并获取哈希
+
+115
+00:06:21,220 --> 00:06:25,670
+and next for the first input it's going
+接下来的第一个输入将是aa，第二个输入将是
+
+116
+00:06:25,670 --> 00:06:29,330
+to be a a and for the second input it's
+接下来的第一个输入将是aa，第二个输入将是
+
+117
+00:06:29,330 --> 00:06:30,740
+gonna be
+会成为BBB，当您调用该函数时
+
+118
+00:06:30,740 --> 00:06:36,080
+a BBB and when you call the function
+会成为BBB，当您调用该函数时
+
+119
+00:06:36,080 --> 00:06:39,050
+again you'll notice that the hash didn't
+再次，您会注意到哈希值没有变化，因此当您编码超过
+
+120
+00:06:39,050 --> 00:06:43,069
+change so when you're encoding more than
+再次，您会注意到哈希值没有变化，因此当您编码超过
+
+121
+00:06:43,069 --> 00:06:45,979
+one dynamic data type what you need to
+一种动态数据类型，您需要在此处执行的操作不是调用和冷
+
+122
+00:06:45,979 --> 00:06:49,099
+do here is instead of calling and cold
+一种动态数据类型，您需要在此处执行的操作不是调用和冷
+
+123
+00:06:49,099 --> 00:06:54,830
+pack you'll need to call encode and this
+包，您将需要调用编码，这将防止哈希冲突
+
+124
+00:06:54,830 --> 00:06:56,630
+will prevent a hash collision from
+包，您将需要调用编码，这将防止哈希冲突
+
+125
+00:06:56,630 --> 00:07:00,259
+occurring well that's all I got for this
+一切顺利，这是我为这部影片所获得的一切，任何反馈或问题都让我
+
+126
+00:07:00,259 --> 00:07:03,770
+video any feedbacks or questions let me
+一切顺利，这是我为这部影片所获得的一切，任何反馈或问题都让我
+
+127
+00:07:03,770 --> 00:07:06,949
+know in the comments below and see you
+在下面的评论中知道，然后在下一个视频中见
+
+128
+00:07:06,949 --> 00:07:09,880
+in the next video
+在下面的评论中知道，然后在下一个视频中见
+

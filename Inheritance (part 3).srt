@@ -1,0 +1,850 @@
+1
+00:00:00,230 --> 00:00:02,850
+in this video we'll go over how to
+在此视频中，我们将介绍如何初始化银行讲师如何赢得
+
+2
+00:00:02,850 --> 00:00:05,250
+initialize Bank instructors win a
+在此视频中，我们将介绍如何初始化银行讲师如何赢得
+
+3
+00:00:05,250 --> 00:00:07,620
+contract and heads from multiple pen
+合同和多个笔合同的负责人，我们将首先探讨如何
+
+4
+00:00:07,620 --> 00:00:10,230
+contracts first we'll go over how to
+合同和多个笔合同的负责人，我们将首先探讨如何
+
+5
+00:00:10,230 --> 00:00:13,080
+call pan constructors in solidity
+实体构造函数中的call pan构造函数始终在
+
+6
+00:00:13,080 --> 00:00:15,570
+constructors are always executed in a
+实体构造函数中的call pan构造函数始终在
+
+7
+00:00:15,570 --> 00:00:18,029
+certain order so you'll go through some
+特定顺序，因此您将通过一些示例来了解该顺序是什么
+
+8
+00:00:18,029 --> 00:00:20,520
+examples and find out what that order is
+特定顺序，因此您将通过一些示例来了解该顺序是什么
+
+9
+00:00:20,520 --> 00:00:23,699
+and lastly you cannot override a state
+最后，您不能覆盖父合同中声明的状态变量
+
+10
+00:00:23,699 --> 00:00:26,039
+variable declared in a parent contract
+最后，您不能覆盖父合同中声明的状态变量
+
+11
+00:00:26,039 --> 00:00:29,429
+by simply reading it in a child contract
+通过简单地在子合同中阅读它，所以我将向您展示如何
+
+12
+00:00:29,429 --> 00:00:31,890
+so I'll show you an example of how to
+通过简单地在子合同中阅读它，所以我将向您展示如何
+
+13
+00:00:31,890 --> 00:00:34,320
+correctly override a state variable that
+正确覆盖首先在父合同中声明的状态变量
+
+14
+00:00:34,320 --> 00:00:37,380
+was declared in a parent contract first
+正确覆盖首先在父合同中声明的状态变量
+
+15
+00:00:37,380 --> 00:00:40,110
+let's step back and review how to call a
+让我们退后一步，回顾一下如何调用单亲构造函数。
+
+16
+00:00:40,110 --> 00:00:44,430
+single parent constructor here we have a
+让我们退后一步，回顾一下如何调用单亲构造函数。
+
+17
+00:00:44,430 --> 00:00:47,070
+contract named X and we'll use this as a
+名为X的合同，我们将其用作其他合同的基本合同，以
+
+18
+00:00:47,070 --> 00:00:49,710
+base contract for other contracts to
+名为X的合同，我们将其用作其他合同的基本合同，以
+
+19
+00:00:49,710 --> 00:00:52,770
+inherit from from a child contract we'll
+从子合同继承，我们将一个字符串传递给
+
+20
+00:00:52,770 --> 00:00:54,840
+pass in a string to the constructor of
+从子合同继承，我们将一个字符串传递给
+
+21
+00:00:54,840 --> 00:00:57,809
+contract X and save that string in the
+合约X并将该字符串保存在状态变量名称中，这里我们有
+
+22
+00:00:57,809 --> 00:01:00,270
+state variable name here we have
+合约X并将该字符串保存在状态变量名称中，这里我们有
+
+23
+00:01:00,270 --> 00:01:03,960
+contract B that adds from contract X and
+从合约X添加的合约B和一种传递参数以追加的方式
+
+24
+00:01:03,960 --> 00:01:06,330
+one way to pass parameters to append
+从合约X添加的合约B和一种传递参数以追加的方式
+
+25
+00:01:06,330 --> 00:01:09,450
+constructor is like this and another way
+构造函数就是这样，另一种方式是像
+
+26
+00:01:09,450 --> 00:01:11,580
+is to calling the parent contract like a
+构造函数就是这样，另一种方式是像
+
+27
+00:01:11,580 --> 00:01:14,159
+function next to the constructor of the
+子合同的构造函数旁边的函数，您还可以传递一个
+
+28
+00:01:14,159 --> 00:01:16,920
+child contract and you can also pass a
+子合同的构造函数旁边的函数，您还可以传递一个
+
+29
+00:01:16,920 --> 00:01:19,350
+variable input to a parent constructor
+像这样的例子，输入到父构造函数的变量类似于
+
+30
+00:01:19,350 --> 00:01:22,470
+like this this example is similar to the
+像这样的例子，输入到父构造函数的变量类似于
+
+31
+00:01:22,470 --> 00:01:25,290
+example above here we're passing in a
+在上面的示例中，我们将固定输入传递给父合约
+
+32
+00:01:25,290 --> 00:01:27,240
+fixed input to the parent contract
+在上面的示例中，我们将固定输入传递给父合约
+
+33
+00:01:27,240 --> 00:01:29,909
+whereas here we're passing in a variable
+而在这里，我们传递一个变量输入，接下来让我们看一下如何调用
+
+34
+00:01:29,909 --> 00:01:32,640
+input next let's go over how to call
+而在这里，我们传递一个变量输入，接下来让我们看一下如何调用
+
+35
+00:01:32,640 --> 00:01:35,250
+parent constructors when a contract has
+父构造函数当一个合同有许多父合同时，我们将创建一个
+
+36
+00:01:35,250 --> 00:01:38,100
+many parent contracts we'll create a
+父构造函数当一个合同有许多父合同时，我们将创建一个
+
+37
+00:01:38,100 --> 00:01:40,560
+parent contract named Y and declare
+名为Y的父合约并向存储字符串声明状态变量
+
+38
+00:01:40,560 --> 00:01:43,350
+state variable to a storage string we
+名为Y的父合约并向存储字符串声明状态变量
+
+39
+00:01:43,350 --> 00:01:45,000
+don't want the state variable to
+不想状态变量覆盖内部的状态变量
+
+40
+00:01:45,000 --> 00:01:47,040
+override the state variable inside
+不想状态变量覆盖内部的状态变量
+
+41
+00:01:47,040 --> 00:01:49,170
+contract X so we will name it
+合约X，所以我们将其命名为不同
+
+42
+00:01:49,170 --> 00:01:49,799
+differently
+合约X，所以我们将其命名为不同
+
+43
+00:01:49,799 --> 00:01:54,869
+call text and if you want to call the
+调用文本，如果您想调用构造函数或多个父代，这是
+
+44
+00:01:54,869 --> 00:01:57,299
+constructors or several parents this is
+调用文本，如果您想调用构造函数或多个父代，这是
+
+45
+00:01:57,299 --> 00:02:00,899
+one way to do it another way is to call
+一种方法是在内部调用父构造函数
+
+46
+00:02:00,899 --> 00:02:02,969
+the parent constructor inside the
+一种方法是在内部调用父构造函数
+
+47
+00:02:02,969 --> 00:02:06,630
+constructor of the child contract here
+子合同的构造函数在这里，我们不在父母之间插入逗号
+
+48
+00:02:06,630 --> 00:02:08,550
+we don't put commas in between parent
+子合同的构造函数在这里，我们不在父母之间插入逗号
+
+49
+00:02:08,550 --> 00:02:11,940
+contracts and this is how you pass
+合同，这就是您将变量传递给父级的方式
+
+50
+00:02:11,940 --> 00:02:13,380
+variables to parent
+合同，这就是您将变量传递给父级的方式
+
+51
+00:02:13,380 --> 00:02:17,520
+jug's the syntax is similar to the
+水罐的语法类似于上面的示例，除了这里我们要传递
+
+52
+00:02:17,520 --> 00:02:21,120
+example above except here we're passing
+水罐的语法类似于上面的示例，除了这里我们要传递
+
+53
+00:02:21,120 --> 00:02:23,760
+in fixed input whereas here we're
+在固定输入中，而在这里我们将游戏变量传递给配对
+
+54
+00:02:23,760 --> 00:02:25,800
+passing game variables to pair
+在固定输入中，而在这里我们将游戏变量传递给配对
+
+55
+00:02:25,800 --> 00:02:28,530
+constructors and you can pass different
+构造函数，您可以将不同的参数传递给父构造函数
+
+56
+00:02:28,530 --> 00:02:30,720
+parameters to the parent constructors
+构造函数，您可以将不同的参数传递给父构造函数
+
+57
+00:02:30,720 --> 00:02:33,600
+like this here the constructor of
+像这样，合同D的构造函数接受两个输入name和
+
+58
+00:02:33,600 --> 00:02:36,930
+contract D takes in two inputs name and
+像这样，合同D的构造函数接受两个输入name和
+
+59
+00:02:36,930 --> 00:02:40,110
+text and it passes the name variable to
+文本，并将名称变量传递给父合约X并传递文本
+
+60
+00:02:40,110 --> 00:02:43,170
+parent contract X and passes the text
+文本，并将名称变量传递给父合约X并传递文本
+
+61
+00:02:43,170 --> 00:02:46,380
+variable to a parent contract Y let's
+将变量分配给父合同Y让我们部署此合同并验证
+
+62
+00:02:46,380 --> 00:02:49,170
+deploy this contract and verify that the
+将变量分配给父合同Y让我们部署此合同并验证
+
+63
+00:02:49,170 --> 00:02:51,630
+state variable for contract X and
+合约X和合约的状态变量为什么我将变量设置为
+
+64
+00:02:51,630 --> 00:02:54,600
+contract why I set to the variables that
+合约X和合约的状态变量为什么我将变量设置为
+
+65
+00:02:54,600 --> 00:02:56,730
+we pass in to the constructor of
+我们传递给合同II的构造者编译和部署合同
+
+66
+00:02:56,730 --> 00:03:00,450
+contract II compile and deploy contract
+我们传递给合同II的构造者编译和部署合同
+
+67
+00:03:00,450 --> 00:03:04,890
+D I'm going to pass in the string food
+D我将传递字符串食物作为第一个参数，并输入bar作为
+
+68
+00:03:04,890 --> 00:03:07,860
+for the first parameter and bar for the
+D我将传递字符串食物作为第一个参数，并输入bar作为
+
+69
+00:03:07,860 --> 00:03:10,920
+second parameter once the contract is
+部署合同后，您可以验证是否调用了第二个参数
+
+70
+00:03:10,920 --> 00:03:13,740
+deployed you can verify that calling the
+部署合同后，您可以验证是否调用了第二个参数
+
+71
+00:03:13,740 --> 00:03:15,600
+state variable name returns the string
+状态变量名称返回字符串foo并调用状态变量文本
+
+72
+00:03:15,600 --> 00:03:18,390
+foo and calling the state variable text
+状态变量名称返回字符串foo并调用状态变量文本
+
+73
+00:03:18,390 --> 00:03:22,560
+returns a string bar so I just showed
+返回一个字符串条，所以我只是向您展示了三种调用的构造函数的方法
+
+74
+00:03:22,560 --> 00:03:24,690
+you three ways to call constructors of
+返回一个字符串条，所以我只是向您展示了三种调用的构造函数的方法
+
+75
+00:03:24,690 --> 00:03:27,900
+parent contracts next that's what do
+父合同接下来是什么，将显示一些示例
+
+76
+00:03:27,900 --> 00:03:30,180
+some examples that will show in what
+父合同接下来是什么，将显示一些示例
+
+77
+00:03:30,180 --> 00:03:33,660
+water parent constructors are called we
+水父构造函数被称为我们希望能够看到顺序
+
+78
+00:03:33,660 --> 00:03:35,700
+want to be able to see the order in
+水父构造函数被称为我们希望能够看到顺序
+
+79
+00:03:35,700 --> 00:03:38,580
+which the pen constructors are called so
+笔构造函数被调用的原因，所以首先让我们在内部创建一个事件
+
+80
+00:03:38,580 --> 00:03:40,800
+first let's create an event inside
+笔构造函数被调用的原因，所以首先让我们在内部创建一个事件
+
+81
+00:03:40,800 --> 00:03:44,130
+contract X and fire that event when the
+合约X并在调用构造函数时触发该事件
+
+82
+00:03:44,130 --> 00:03:45,360
+constructor is called
+合约X并在调用构造函数时触发该事件
+
+83
+00:03:45,360 --> 00:03:47,970
+and we'll do something similar for
+我们将对合同Y进行类似的操作接下来，我们将创建两个
+
+84
+00:03:47,970 --> 00:03:53,970
+contract Y as well next we'll create two
+我们将对合同Y进行类似的操作接下来，我们将创建两个
+
+85
+00:03:53,970 --> 00:03:56,940
+contracts that both in here from the pen
+来自笔合约X＆Y的合约
+
+86
+00:03:56,940 --> 00:04:00,260
+contract X&Y
+来自笔合约X＆Y的合约
+
+87
+00:04:06,730 --> 00:04:08,790
+you
+你
+
+88
+00:04:09,360 --> 00:04:12,490
+looking at the constructor for culture D
+看文化D的构造函数，看起来父合约X是
+
+89
+00:04:12,490 --> 00:04:15,040
+it looks like the parent contract X is
+看文化D的构造函数，看起来父合约X是
+
+90
+00:04:15,040 --> 00:04:19,480
+called before the pen contract Y and for
+在笔合约Y之前调用，对于合约F的构造函数，它看起来像
+
+91
+00:04:19,480 --> 00:04:21,910
+the constructor of contract F it looks
+在笔合约Y之前调用，对于合约F的构造函数，它看起来像
+
+92
+00:04:21,910 --> 00:04:24,460
+like the pen contact Y is called before
+就像在您调用笔合约x之前先调用笔联系人Y
+
+93
+00:04:24,460 --> 00:04:32,620
+the pen contract x is called when you
+就像在您调用笔合约x之前先调用笔联系人Y
+
+94
+00:04:32,620 --> 00:04:35,410
+deploy contract e inside the transaction
+在交易日志中部署合同e，您会看到构造函数X
+
+95
+00:04:35,410 --> 00:04:37,660
+log you'll see that the constructor X
+在交易日志中部署合同e，您会看到构造函数X
+
+96
+00:04:37,660 --> 00:04:39,490
+was called and then the constructor
+被调用，然后在调用我时以及在部署时构造函数
+
+97
+00:04:39,490 --> 00:04:42,010
+while I was called and when you deployed
+被调用，然后在调用我时以及在部署时构造函数
+
+98
+00:04:42,010 --> 00:04:44,110
+contract F you will see that the
+合约F，您会看到调用了构造函数X，然后
+
+99
+00:04:44,110 --> 00:04:46,420
+constructor X was called and then the
+合约F，您会看到调用了构造函数X，然后
+
+100
+00:04:46,420 --> 00:04:49,150
+constructor Y was called even though
+即使在这里我们按Y的顺序列出它，也调用了构造函数Y
+
+101
+00:04:49,150 --> 00:04:52,690
+here we have it listed in order from Y
+即使在这里我们按Y的顺序列出它，也调用了构造函数Y
+
+102
+00:04:52,690 --> 00:04:56,230
+to X so in summary the order in which
+到X，因此总之，笔构造函数的调用顺序为
+
+103
+00:04:56,230 --> 00:04:58,360
+the pen constructors are called is
+到X，因此总之，笔构造函数的调用顺序为
+
+104
+00:04:58,360 --> 00:05:01,900
+determined by the inheritance and not by
+由继承而不是由父级的顺序确定
+
+105
+00:05:01,900 --> 00:05:03,730
+the order in which the parent
+由继承而不是由父级的顺序确定
+
+106
+00:05:03,730 --> 00:05:07,090
+constructors are called next let's see
+接下来调用构造函数，让我们看一个如何覆盖状态的示例
+
+107
+00:05:07,090 --> 00:05:09,130
+an example of how to override a state
+接下来调用构造函数，让我们看一个如何覆盖状态的示例
+
+108
+00:05:09,130 --> 00:05:11,800
+variable in a parent contract in a wrong
+父合同中的变量以错误的方式显示，之后我将向您展示
+
+109
+00:05:11,800 --> 00:05:14,290
+way and after that I'll show you the
+父合同中的变量以错误的方式显示，之后我将向您展示
+
+110
+00:05:14,290 --> 00:05:17,080
+right way to do it first we'll create a
+首先正确的方法，我们将创建基本合同并存储地址
+
+111
+00:05:17,080 --> 00:05:19,570
+base contract and store an address
+首先正确的方法，我们将创建基本合同并存储地址
+
+112
+00:05:19,570 --> 00:05:22,600
+inside a state variable next we'll
+在状态变量中，接下来我们将创建一个引用该函数的函数
+
+113
+00:05:22,600 --> 00:05:25,120
+create a function that references this
+在状态变量中，接下来我们将创建一个引用该函数的函数
+
+114
+00:05:25,120 --> 00:05:28,450
+state variable for simplicity we'll just
+为了简单起见，我们只返回状态变量的值
+
+115
+00:05:28,450 --> 00:05:30,810
+return the value of the state variable
+为了简单起见，我们只返回状态变量的值
+
+116
+00:05:30,810 --> 00:05:33,970
+next we'll create a child contract that
+接下来，我们将创建一个以错误方式从合同继承的子合同
+
+117
+00:05:33,970 --> 00:05:37,330
+inherits from contract a the wrong way
+接下来，我们将创建一个以错误方式从合同继承的子合同
+
+118
+00:05:37,330 --> 00:05:39,850
+to override a state variable of a parent
+覆盖父合同的状态变量是在
+
+119
+00:05:39,850 --> 00:05:42,669
+contract is to read eclair it in the
+覆盖父合同的状态变量是在
+
+120
+00:05:42,669 --> 00:05:45,700
+child contract so in this case we try to
+子合同，因此在这种情况下，我们尝试覆盖地址状态变量
+
+121
+00:05:45,700 --> 00:05:47,860
+override the address state variable
+子合同，因此在这种情况下，我们尝试覆盖地址状态变量
+
+122
+00:05:47,860 --> 00:05:50,560
+declared in a parent contract by V
+在父合同中通过V在子合同中声明而声明，以及
+
+123
+00:05:50,560 --> 00:05:52,710
+declaring it in the child contract and
+在父合同中通过V在子合同中声明而声明，以及
+
+124
+00:05:52,710 --> 00:05:59,200
+assigning the different value after you
+部署合同B后分配不同的值，您可以在此处注意到
+
+125
+00:05:59,200 --> 00:06:01,750
+deploy contract B you can notice here
+部署合同B后分配不同的值，您可以在此处注意到
+
+126
+00:06:01,750 --> 00:06:04,060
+that the value of the state variable is
+状态变量的值是在此内部分配的值
+
+127
+00:06:04,060 --> 00:06:07,120
+the value that was assigned here inside
+状态变量的值是在此内部分配的值
+
+128
+00:06:07,120 --> 00:06:10,120
+contract B but calling the function get
+合约B，但调用该函数得到的只是返回状态变量，即
+
+129
+00:06:10,120 --> 00:06:12,280
+a just return the state variable that
+合约B，但调用该函数得到的只是返回状态变量，即
+
+130
+00:06:12,280 --> 00:06:15,190
+was initialized here inside contract a
+是在合约内部初始化的，因此此示例表明您无法
+
+131
+00:06:15,190 --> 00:06:18,100
+so this example shows that you cannot
+是在合约内部初始化的，因此此示例表明您无法
+
+132
+00:06:18,100 --> 00:06:20,969
+override a state variable declared in a
+覆盖我们在子对象中声明的合同中声明的状态变量
+
+133
+00:06:20,969 --> 00:06:24,059
+contract by we declared inside a child
+覆盖我们在子对象中声明的合同中声明的状态变量
+
+134
+00:06:24,059 --> 00:06:27,089
+contract next let's see the correct way
+接下来，让我们看看覆盖状态变量的正确方法
+
+135
+00:06:27,089 --> 00:06:29,509
+of overriding state variables will
+接下来，让我们看看覆盖状态变量的正确方法
+
+136
+00:06:29,509 --> 00:06:32,399
+create another contract that also
+创建另一个合同，该合同也继承自合同日内的
+
+137
+00:06:32,399 --> 00:06:35,309
+inherits from contract day inside the
+创建另一个合同，该合同也继承自合同日内的
+
+138
+00:06:35,309 --> 00:06:38,189
+constructor we just override the state
+构造函数，我们只是覆盖从继承的状态变量
+
+139
+00:06:38,189 --> 00:06:40,349
+variable that was inherited from the
+构造函数，我们只是覆盖从继承的状态变量
+
+140
+00:06:40,349 --> 00:06:42,569
+parent contract in this case we'll just
+在这种情况下，我们只需将地址变量分配给
+
+141
+00:06:42,569 --> 00:06:44,909
+reassign the address variable to a
+在这种情况下，我们只需将地址变量分配给
+
+142
+00:06:44,909 --> 00:06:48,539
+different value deploy contract C and
+不同的价值部署合同C并调用这两个函数，您可以在此处看到
+
+143
+00:06:48,539 --> 00:06:56,009
+call the two functions you can see here
+不同的价值部署合同C并调用这两个函数，您可以在此处看到
+
+144
+00:06:56,009 --> 00:06:58,229
+that the state variable was set to the
+将状态变量设置为合同的构造函数中的值
+
+145
+00:06:58,229 --> 00:07:00,749
+value inside the constructor of contract
+将状态变量设置为合同的构造函数中的值
+
+146
+00:07:00,749 --> 00:07:03,539
+C and calling the function get address
+C并调用函数get address也会返回设置的值
+
+147
+00:07:03,539 --> 00:07:05,610
+also return the value that was set
+C并调用函数get address也会返回设置的值
+
+148
+00:07:05,610 --> 00:07:08,789
+inside contract C to reiterate if you
+如果您想覆盖a的状态变量，请在合同C中进行重申
+
+149
+00:07:08,789 --> 00:07:10,860
+want to override the state variable of a
+如果您想覆盖a的状态变量，请在合同C中进行重申
+
+150
+00:07:10,860 --> 00:07:13,709
+parent contract you just reassign it and
+父合同，您只需重新分配它，我们就在
+
+151
+00:07:13,709 --> 00:07:16,829
+we declaring state variable inside the
+父合同，您只需重新分配它，我们就在
+
+152
+00:07:16,829 --> 00:07:18,989
+child contract is a big mistake
+个人合同是一个大错误，我个人已将其寄给了错误的人
+
+153
+00:07:18,989 --> 00:07:21,179
+personally I've sent either to the wrong
+个人合同是一个大错误，我个人已将其寄给了错误的人
+
+154
+00:07:21,179 --> 00:07:24,269
+digest with this mistake and notice the
+消化此错误并注意坚固性不会发出任何警告
+
+155
+00:07:24,269 --> 00:07:26,550
+solidity does not give off any warnings
+消化此错误并注意坚固性不会发出任何警告
+
+156
+00:07:26,550 --> 00:07:29,159
+for state variables that are we declared
+对于我们在此视频中的子合同中声明的状态变量，我们去了
+
+157
+00:07:29,159 --> 00:07:34,589
+in child contracts in this video we went
+对于我们在此视频中的子合同中声明的状态变量，我们去了
+
+158
+00:07:34,589 --> 00:07:37,050
+over how to call constructors of parent
+关于如何调用父合约的构造函数，父构造函数将
+
+159
+00:07:37,050 --> 00:07:39,509
+contracts parent constructors will
+关于如何调用父合约的构造函数，父构造函数将
+
+160
+00:07:39,509 --> 00:07:41,459
+always be called in the order in which
+总是按照它们乱扔的顺序而不是按照
+
+161
+00:07:41,459 --> 00:07:44,339
+they are in garrotted and not in the
+总是按照它们乱扔的顺序而不是按照
+
+162
+00:07:44,339 --> 00:07:46,439
+order they are called inside the
+以便在子合同的构造函数中调用它们，并
+
+163
+00:07:46,439 --> 00:07:50,129
+constructor of a child contract and to
+以便在子合同的构造函数中调用它们，并
+
+164
+00:07:50,129 --> 00:07:51,959
+override the value of a state variable
+在父合同中覆盖状态变量的值不要读eclair
+
+165
+00:07:51,959 --> 00:07:54,839
+in a parent contract don't read eclair
+在父合同中覆盖状态变量的值不要读eclair
+
+166
+00:07:54,839 --> 00:07:57,629
+it in the child contract instead just
+而是在子合同中将其重新分配，这就是本视频的结尾
+
+167
+00:07:57,629 --> 00:08:01,169
+reassign it that's the end of this video
+而是在子合同中将其重新分配，这就是本视频的结尾
+
+168
+00:08:01,169 --> 00:08:04,139
+any questions or feedback please put
+任何问题或反馈，请把它们放在下面的评论中，谢谢您
+
+169
+00:08:04,139 --> 00:08:06,449
+them in the comments below thank you so
+任何问题或反馈，请把它们放在下面的评论中，谢谢您
+
+170
+00:08:06,449 --> 00:08:10,489
+much for watching and have a nice week
+很值得看，度过了愉快的一周
+

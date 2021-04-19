@@ -1,0 +1,1165 @@
+1
+00:00:00,770 --> 00:00:03,689
+hey everyone Merry Christmas and we're
+嘿，大家圣诞快乐，我们要谈论的是一棵长大的树
+
+2
+00:00:03,689 --> 00:00:05,490
+gonna be talking about a tree that grows
+嘿，大家圣诞快乐，我们要谈论的是一棵长大的树
+
+3
+00:00:05,490 --> 00:00:07,980
+our crypto currency like Bitcoin and
+我们的加密货币，例如比特币和，它被称为默克尔树
+
+4
+00:00:07,980 --> 00:00:10,500
+eternium and it's called a Merkel tree
+我们的加密货币，例如比特币和，它被称为默克尔树
+
+5
+00:00:10,500 --> 00:00:13,650
+what is a Merkel tree the best way to
+默克尔树是什么，解释当地树的最好方法是展示
+
+6
+00:00:13,650 --> 00:00:16,740
+explain what a local tree is is to show
+默克尔树是什么，解释当地树的最好方法是展示
+
+7
+00:00:16,740 --> 00:00:19,289
+you how to build one and to construct a
+您如何构建一个树并构建Merkle树，首先要从一个树开始
+
+8
+00:00:19,289 --> 00:00:21,420
+Merkle tree you first start with a
+您如何构建一个树并构建Merkle树，首先要从一个树开始
+
+9
+00:00:21,420 --> 00:00:24,180
+non-empty array for simplicity we're
+非空数组为简单起见，我们将假设
+
+10
+00:00:24,180 --> 00:00:25,890
+going to assume that the length of the
+非空数组为简单起见，我们将假设
+
+11
+00:00:25,890 --> 00:00:28,800
+array is a power of two for example the
+数组是2的幂，例如，数组的长度可以是2 4 8 16 32
+
+12
+00:00:28,800 --> 00:00:33,350
+length of the array can be 2 4 8 16 32
+数组是2的幂，例如，数组的长度可以是2 4 8 16 32
+
+13
+00:00:33,350 --> 00:00:37,829
+but it can't be 6 since 6 is not a power
+但是它不可能是6，因为6不是2的幂
+
+14
+00:00:37,829 --> 00:00:40,530
+of 2 you'll see in a moment why we're
+但是它不可能是6，因为6不是2的幂
+
+15
+00:00:40,530 --> 00:00:42,840
+gonna need an array with a length of
+每个元素中的下一个元素将需要一个幂为2的数组
+
+16
+00:00:42,840 --> 00:00:45,930
+power 2 next for each element in the
+每个元素中的下一个元素将需要一个幂为2的数组
+
+17
+00:00:45,930 --> 00:00:47,670
+array we're gonna compute the
+数组，我们将计算元素的密码哈希，
+
+18
+00:00:47,670 --> 00:00:49,980
+cryptographic hash of the element and
+数组，我们将计算元素的密码哈希，
+
+19
+00:00:49,980 --> 00:00:52,710
+then store it in a new array from this
+然后将其存储在孵化场阵列中的新阵列中，我们采用第一个
+
+20
+00:00:52,710 --> 00:00:54,870
+array of hatcheries we take the first
+然后将其存储在孵化场阵列中的新阵列中，我们采用第一个
+
+21
+00:00:54,870 --> 00:00:57,930
+element and then compute the hash we
+元素，然后计算哈希，我们取下两个元素，然后
+
+22
+00:00:57,930 --> 00:00:59,699
+take the next two elements and then
+元素，然后计算哈希，我们取下两个元素，然后
+
+23
+00:00:59,699 --> 00:01:02,430
+compute the hash and we continue this
+计算散列，然后继续此过程，直到计算出的散列
+
+24
+00:01:02,430 --> 00:01:05,459
+process until we computed the hash of
+计算散列，然后继续此过程，直到计算出的散列
+
+25
+00:01:05,459 --> 00:01:08,159
+the last two elements next we take this
+接下来的最后两个元素我们采用此计算的哈希并重复整个
+
+26
+00:01:08,159 --> 00:01:10,619
+computed hashes and repeat the whole
+接下来的最后两个元素我们采用此计算的哈希并重复整个
+
+27
+00:01:10,619 --> 00:01:13,170
+process eventually you'll get a single
+最后，您将获得一个哈希，这称为根哈希，
+
+28
+00:01:13,170 --> 00:01:16,380
+hash and this is called a root hash and
+最后，您将获得一个哈希，这称为根哈希，
+
+29
+00:01:16,380 --> 00:01:18,600
+this is how you construct the Merkle
+如果元素中的数量众多，这就是您现在构造Merkle树的方式
+
+30
+00:01:18,600 --> 00:01:21,150
+tree now if the number of elements in
+如果元素中的数量众多，这就是您现在构造Merkle树的方式
+
+31
+00:01:21,150 --> 00:01:24,240
+the original array is not a pal - then
+原始数组不是好朋友-然后在本地树的某个点
+
+32
+00:01:24,240 --> 00:01:26,159
+at some point of the local tree
+原始数组不是好朋友-然后在本地树的某个点
+
+33
+00:01:26,159 --> 00:01:28,770
+construction there will be an odd number
+构造，例如，如果您计算的哈希数将是奇数
+
+34
+00:01:28,770 --> 00:01:31,590
+of computed hashes for example if you
+构造，例如，如果您计算的哈希数将是奇数
+
+35
+00:01:31,590 --> 00:01:34,140
+start out with 6 elements then you'll
+从6个元素开始，然后在计算
+
+36
+00:01:34,140 --> 00:01:37,229
+get 3 hashes after computing the hash of
+从6个元素开始，然后在计算
+
+37
+00:01:37,229 --> 00:01:37,799
+the pair's
+这对的，就像你从这里看到的那样，我们不能
+
+38
+00:01:37,799 --> 00:01:40,409
+and as you can see from here we cannot
+这对的，就像你从这里看到的那样，我们不能
+
+39
+00:01:40,409 --> 00:01:43,320
+compute the next level of hashes since
+计算哈希的下一个级别，因为我们需要4个哈希，但是只有3个
+
+40
+00:01:43,320 --> 00:01:46,439
+we need 4 hashes but there's only three
+计算哈希的下一个级别，因为我们需要4个哈希，但是只有3个
+
+41
+00:01:46,439 --> 00:01:48,960
+here so if there are odd number of
+因此，如果散列数量奇数，那么计算
+
+42
+00:01:48,960 --> 00:01:51,420
+hashes then the trick to compute the
+因此，如果散列数量奇数，那么计算
+
+43
+00:01:51,420 --> 00:01:55,020
+next level of hashes is to duplicate the
+哈希的下一个级别是复制最后一个元素，然后计算哈希
+
+44
+00:01:55,020 --> 00:01:57,450
+last element and then compute the hash
+哈希的下一个级别是复制最后一个元素，然后计算哈希
+
+45
+00:01:57,450 --> 00:02:00,509
+of the duplicates in essence this is
+从本质上讲，这些重复项就像填充数组的尾端一样
+
+46
+00:02:00,509 --> 00:02:02,549
+like filling the tail end of the array
+从本质上讲，这些重复项就像填充数组的尾端一样
+
+47
+00:02:02,549 --> 00:02:05,070
+with duplicates so that the length of
+与重复项，以便数组的长度变得明显-那么如何
+
+48
+00:02:05,070 --> 00:02:08,758
+the array becomes apparent - so how is a
+与重复项，以便数组的长度变得明显-那么如何
+
+49
+00:02:08,758 --> 00:02:11,819
+more culturally useful one application
+默克尔树在文化上更有用的一种应用是
+
+50
+00:02:11,819 --> 00:02:13,780
+of the Merkel tree is that you
+默克尔树在文化上更有用的一种应用是
+
+51
+00:02:13,780 --> 00:02:16,000
+and create a cryptographic proof that a
+并创建加密证明，证明交易包含在区块中
+
+52
+00:02:16,000 --> 00:02:18,959
+transaction was included in a block
+并创建加密证明，证明交易包含在区块中
+
+53
+00:02:18,959 --> 00:02:20,800
+imagine that there are a bunch of
+想象有很多交易正在等待
+
+54
+00:02:20,800 --> 00:02:22,900
+transactions that are waiting to be
+想象有很多交易正在等待
+
+55
+00:02:22,900 --> 00:02:25,390
+included in a block to create your
+包含在一个块中以创建您的密码证明，以证明这些未决
+
+56
+00:02:25,390 --> 00:02:27,730
+cryptographic proof that these pending
+包含在一个块中以创建您的密码证明，以证明这些未决
+
+57
+00:02:27,730 --> 00:02:30,010
+transactions are included in the next
+交易包含在下一个区块中，我们首先构建镶嵌
+
+58
+00:02:30,010 --> 00:02:32,800
+block we first construct the marquetry
+交易包含在下一个区块中，我们首先构建镶嵌
+
+59
+00:02:32,800 --> 00:02:36,100
+from these transactions and we include
+从这些交易中，我们现在将默克尔根哈希值包含在块中
+
+60
+00:02:36,100 --> 00:02:39,190
+the merkel root hash into the block now
+从这些交易中，我们现在将默克尔根哈希值包含在块中
+
+61
+00:02:39,190 --> 00:02:41,080
+if Alice wants to know if her
+爱丽丝是否想知道她的交易是否包含在该区块中
+
+62
+00:02:41,080 --> 00:02:43,209
+transaction was included in the block
+爱丽丝是否想知道她的交易是否包含在该区块中
+
+63
+00:02:43,209 --> 00:02:45,910
+all she has to do is get these four
+她要做的就是得到这四个哈希，我们计算默克尔根哈希
+
+64
+00:02:45,910 --> 00:02:48,880
+hashes we compute the Merkel root hash
+她要做的就是得到这四个哈希，我们计算默克尔根哈希
+
+65
+00:02:48,880 --> 00:02:51,790
+and then compared with the mercury ash
+然后将其与书中承诺的汞灰进行比较
+
+66
+00:02:51,790 --> 00:02:54,610
+that was committed to the book if the
+然后将其与书中承诺的汞灰进行比较
+
+67
+00:02:54,610 --> 00:02:57,220
+two merkel root hash is are equal then
+两个默克尔根哈希值相等，那么她知道我们的交易是
+
+68
+00:02:57,220 --> 00:02:59,260
+she knows that our transaction was
+两个默克尔根哈希值相等，那么她知道我们的交易是
+
+69
+00:02:59,260 --> 00:03:02,019
+included in the block now another way to
+现在包含在该区块中的另一种创建交易证明的方式
+
+70
+00:03:02,019 --> 00:03:04,540
+create a proof that a transaction was
+现在包含在该区块中的另一种创建交易证明的方式
+
+71
+00:03:04,540 --> 00:03:07,180
+included in a block is to concatenate
+包含在一个块中的是连接所有交易数据并创建一个
+
+72
+00:03:07,180 --> 00:03:10,300
+all of the transaction data and create a
+包含在一个块中的是连接所有交易数据并创建一个
+
+73
+00:03:10,300 --> 00:03:12,850
+single hash from it the problem with
+从它的单个散列这种方法的问题是，为了
+
+74
+00:03:12,850 --> 00:03:14,530
+this approach is that in order to
+从它的单个散列这种方法的问题是，为了
+
+75
+00:03:14,530 --> 00:03:17,140
+recompute the hash you need all the
+重新计算散列，您需要所有交易数据，所以如果有1,000
+
+76
+00:03:17,140 --> 00:03:20,079
+transaction data so if there was 1,000
+重新计算散列，您需要所有交易数据，所以如果有1,000
+
+77
+00:03:20,079 --> 00:03:22,540
+transactions in a block and if Alice
+交易是否完整，爱丽丝是否想知道她的交易是否
+
+78
+00:03:22,540 --> 00:03:25,000
+wants to know if her transaction was
+交易是否完整，爱丽丝是否想知道她的交易是否
+
+79
+00:03:25,000 --> 00:03:27,370
+included in the block then she will have
+包括在区块中，那么她将必须下载所有1,000笔交易，并且
+
+80
+00:03:27,370 --> 00:03:30,100
+to download all 1,000 transactions and
+包括在区块中，那么她将必须下载所有1,000笔交易，并且
+
+81
+00:03:30,100 --> 00:03:32,920
+then compute the hash however using the
+然后计算散列值，但是使用镶嵌，她只需要记录两个
+
+82
+00:03:32,920 --> 00:03:35,739
+marquetry she only needs log two of
+然后计算散列值，但是使用镶嵌，她只需要记录两个
+
+83
+00:03:35,739 --> 00:03:38,590
+1,000 which is about ten ashes
+1,000，大约是十个骨灰，因此在摘要中创建的Oracle三重奏
+
+84
+00:03:38,590 --> 00:03:41,709
+so in summary Oracle trios you to create
+1,000，大约是十个骨灰，因此在摘要中创建的Oracle三重奏
+
+85
+00:03:41,709 --> 00:03:43,870
+a small cryptographic proof that a
+证明一组数据中包含某些数据的小型密码证明
+
+86
+00:03:43,870 --> 00:03:46,390
+certain data is included in a set of
+证明一组数据中包含某些数据的小型密码证明
+
+87
+00:03:46,390 --> 00:03:49,209
+data and using this property you can
+数据并使用此属性，您可以创建证明交易是
+
+88
+00:03:49,209 --> 00:03:51,430
+create a proof that a transaction was
+数据并使用此属性，您可以创建证明交易是
+
+89
+00:03:51,430 --> 00:03:54,130
+included in a block next let's implement
+接下来，让我们实现一个功能，该功能将验证本地
+
+90
+00:03:54,130 --> 00:03:56,470
+a function that will verify a local
+接下来，让我们实现一个功能，该功能将验证本地
+
+91
+00:03:56,470 --> 00:03:59,829
+proof in solidity we'll name the
+坚实的证明，我们将函数命名为verify，它将采用
+
+92
+00:03:59,829 --> 00:04:02,290
+function verify and it's gonna taking
+坚实的证明，我们将函数命名为verify，它将采用
+
+93
+00:04:02,290 --> 00:04:05,079
+four inputs an array of hashes that I
+四个输入散列数组，我需要这些散列来计算maca根
+
+94
+00:04:05,079 --> 00:04:07,540
+needed to compute the maca root the
+四个输入散列数组，我需要这些散列来计算maca根
+
+95
+00:04:07,540 --> 00:04:10,690
+mercury itself the hash of the element
+汞本身用于构造数组的元素的哈希
+
+96
+00:04:10,690 --> 00:04:13,120
+in the array that was used to construct
+汞本身用于构造数组的元素的哈希
+
+97
+00:04:13,120 --> 00:04:14,260
+the marquetry
+镶嵌和数组中的索引，其中
+
+98
+00:04:14,260 --> 00:04:16,630
+and the index in the array where the
+镶嵌和数组中的索引，其中
+
+99
+00:04:16,630 --> 00:04:19,570
+element is stored this function will
+元素被存储，如果可以重新创建该函数，则该函数将返回true。
+
+100
+00:04:19,570 --> 00:04:22,180
+return true if it can recreate the
+元素被存储，如果可以重新创建该函数，则该函数将返回true。
+
+101
+00:04:22,180 --> 00:04:25,380
+mercury from the proof leaf and index
+证明叶子和索引中的汞，否则它将返回
+
+102
+00:04:25,380 --> 00:04:27,280
+otherwise it will return
+证明叶子和索引中的汞，否则它将返回
+
+103
+00:04:27,280 --> 00:04:29,610
+Falls we all start with the leaf
+瀑布我们都从叶子重新计算美国规则开始，然后进行比较
+
+104
+00:04:29,610 --> 00:04:32,500
+recompute America rule and then compare
+瀑布我们都从叶子重新计算美国规则开始，然后进行比较
+
+105
+00:04:32,500 --> 00:04:35,650
+with tomorrow rule that was provided to
+用明天的规则来建立我们的Marco规则，我们需要四个循环
+
+106
+00:04:35,650 --> 00:04:37,750
+build our Marco rule we need a four loop
+用明天的规则来建立我们的Marco规则，我们需要四个循环
+
+107
+00:04:37,750 --> 00:04:40,750
+that will update the hash with elements
+首先使用证明的元素更新哈希
+
+108
+00:04:40,750 --> 00:04:43,180
+of the proof first let's try to figure
+首先使用证明的元素更新哈希
+
+109
+00:04:43,180 --> 00:04:45,760
+out how to compute the parent hash from
+找出如何从Merkle树的最底部计算父哈希
+
+110
+00:04:45,760 --> 00:04:47,740
+the very bottom of the Merkle tree
+找出如何从Merkle树的最底部计算父哈希
+
+111
+00:04:47,740 --> 00:04:50,320
+notice that the indexes of the left
+请注意，左叶的索引全部为偶数，而左叶的索引为
+
+112
+00:04:50,320 --> 00:04:53,890
+leaves are all even and indexes of the
+请注意，左叶的索引全部为偶数，而左叶的索引为
+
+113
+00:04:53,890 --> 00:04:56,590
+right leaves are all odd so this means
+右边的叶子都是奇数，所以这意味着如果索引是偶数，那么我们需要
+
+114
+00:04:56,590 --> 00:04:59,110
+that if the index is even then we need
+右边的叶子都是奇数，所以这意味着如果索引是偶数，那么我们需要
+
+115
+00:04:59,110 --> 00:05:01,000
+to append the proof element to our
+将证明元素附加到我们的客户哈希中，然后更新哈希
+
+116
+00:05:01,000 --> 00:05:03,990
+client hash and then update the hash
+将证明元素附加到我们的客户哈希中，然后更新哈希
+
+117
+00:05:03,990 --> 00:05:07,030
+otherwise the index is odd which means
+否则索引为奇数，这意味着我们的哈希属于正确的
+
+118
+00:05:07,030 --> 00:05:09,250
+that our hash belongs to the right
+否则索引为奇数，这意味着我们的哈希属于正确的
+
+119
+00:05:09,250 --> 00:05:12,370
+branch and we need to pretend our proof
+分支，我们需要在更新哈希和
+
+120
+00:05:12,370 --> 00:05:15,130
+element before updating the hash and
+分支，我们需要在更新哈希和
+
+121
+00:05:15,130 --> 00:05:17,380
+this will give us the hash one double
+这将使我们从哈希表的最底部开始将哈希值提高一倍
+
+122
+00:05:17,380 --> 00:05:19,360
+above from the very bottom of the
+这将使我们从哈希表的最底部开始将哈希值提高一倍
+
+123
+00:05:19,360 --> 00:05:22,330
+marquetry we want to repeat this logic
+镶嵌，我们想在连接当前哈希值的地方重复此逻辑
+
+124
+00:05:22,330 --> 00:05:24,820
+where we concatenate our current hash
+镶嵌，我们想在连接当前哈希值的地方重复此逻辑
+
+125
+00:05:24,820 --> 00:05:27,669
+with the proof element if the current
+带有证明元素，如果当前哈希属于左分支，并且
+
+126
+00:05:27,669 --> 00:05:30,760
+hash belongs to the left branch and if
+带有证明元素，如果当前哈希属于左分支，并且
+
+127
+00:05:30,760 --> 00:05:32,710
+our crane has belongs to the right
+我们的起重机属于正确的分支，那么我们想将我们的起重机连接起来
+
+128
+00:05:32,710 --> 00:05:35,470
+branch then we want to concatenate our
+我们的起重机属于正确的分支，那么我们想将我们的起重机连接起来
+
+129
+00:05:35,470 --> 00:05:38,110
+proof element with the hash and then
+带有散列的证明元素，然后更新散列，现在请注意，如果我们
+
+130
+00:05:38,110 --> 00:05:41,200
+update the hash now notice that if our
+带有散列的证明元素，然后更新散列，现在请注意，如果我们
+
+131
+00:05:41,200 --> 00:05:44,440
+starting index is t then our pan index
+起始索引是t，那么我们的全景索引是1，如果起始索引是2，那么
+
+132
+00:05:44,440 --> 00:05:48,820
+is 1 and if our starting index is 2 then
+起始索引是t，那么我们的全景索引是1，如果起始索引是2，那么
+
+133
+00:05:48,820 --> 00:05:52,870
+I pan index is also 1 and in general if
+I pan索引也为1，通常，如果我们的索引为2k或2k加1，则
+
+134
+00:05:52,870 --> 00:05:57,100
+our index is either 2k or 2k plus 1 then
+I pan索引也为1，通常，如果我们的索引为2k或2k加1，则
+
+135
+00:05:57,100 --> 00:06:00,669
+our parent index is equal to K in other
+我们的父索引等于K，换句话说，我们将客户索引除以2
+
+136
+00:06:00,669 --> 00:06:02,830
+words we divide our client index by 2
+我们的父索引等于K，换句话说，我们将客户索引除以2
+
+137
+00:06:02,830 --> 00:06:05,640
+and round down to the nearest integer
+并四舍五入到最接近的整数以及您的处理方式，因此D为
+
+138
+00:06:05,640 --> 00:06:08,680
+and the way you do it in so the D is
+并四舍五入到最接近的整数以及您的处理方式，因此D为
+
+139
+00:06:08,680 --> 00:06:11,890
+like this and this completes the code to
+像这样，这样就完成了验证我们的默克尔证明的代码，现在开始
+
+140
+00:06:11,890 --> 00:06:14,950
+verify our merkel proof now let's go
+像这样，这样就完成了验证我们的默克尔证明的代码，现在开始
+
+141
+00:06:14,950 --> 00:06:17,320
+over how this function would work let's
+关于此功能的工作原理，我们假设有8个元素，
+
+142
+00:06:17,320 --> 00:06:19,630
+say that there are 8 elements and we
+关于此功能的工作原理，我们假设有8个元素，
+
+143
+00:06:19,630 --> 00:06:21,940
+want to verify that the third element is
+要验证此Merkle树中是否包含第三个元素，因此
+
+144
+00:06:21,940 --> 00:06:24,940
+contained in this Merkle tree so the
+要验证此Merkle树中是否包含第三个元素，因此
+
+145
+00:06:24,940 --> 00:06:27,370
+proof must be an array of hash of the
+证明必须是第四个元素的哈希数组，哈希的哈希值
+
+146
+00:06:27,370 --> 00:06:30,190
+fourth element the hash of the hashes of
+证明必须是第四个元素的哈希数组，哈希的哈希值
+
+147
+00:06:30,190 --> 00:06:32,860
+the first and second element and the
+第一个和第二个元素以及从右侧计算出的哈希
+
+148
+00:06:32,860 --> 00:06:35,500
+hash computed from the right side of the
+第一个和第二个元素以及从右侧计算出的哈希
+
+149
+00:06:35,500 --> 00:06:36,250
+marquetry
+镶嵌，叶子将是第三个散列
+
+150
+00:06:36,250 --> 00:06:39,099
+the leaf will be the hash of the third
+镶嵌，叶子将是第三个散列
+
+151
+00:06:39,099 --> 00:06:39,970
+element
+元素和索引将是两个，我们从
+
+152
+00:06:39,970 --> 00:06:43,390
+and the index will be two we start from
+元素和索引将是两个，我们从
+
+153
+00:06:43,390 --> 00:06:44,950
+the hash of the third element
+第三个元素的哈希值，因为索引等于我们的证明
+
+154
+00:06:44,950 --> 00:06:47,830
+since the index is equal to our proof
+第三个元素的哈希值，因为索引等于我们的证明
+
+155
+00:06:47,830 --> 00:06:50,560
+element must come from the right so we
+元素必须来自右侧，因此我们将散列与的散列连接在一起
+
+156
+00:06:50,560 --> 00:06:53,530
+concatenate our hash with the hash of
+元素必须来自右侧，因此我们将散列与的散列连接在一起
+
+157
+00:06:53,530 --> 00:06:55,720
+the fourth element and then update our
+第四个元素，然后更新我们的哈希，然后更新我们的索引我们的索引
+
+158
+00:06:55,720 --> 00:06:59,560
+hash and then update our index our index
+第四个元素，然后更新我们的哈希，然后更新我们的索引我们的索引
+
+159
+00:06:59,560 --> 00:07:03,040
+was two before so two divided by two is
+在之前是二，所以二除以二等于一，犯罪指数现在是
+
+160
+00:07:03,040 --> 00:07:06,790
+equal to one and crime index is now
+在之前是二，所以二除以二等于一，犯罪指数现在是
+
+161
+00:07:06,790 --> 00:07:09,880
+equal to one and we move on to the next
+等于1，我们继续进行for循环的下一个迭代
+
+162
+00:07:09,880 --> 00:07:12,460
+iteration of the for loop since our
+等于1，我们继续进行for循环的下一个迭代
+
+163
+00:07:12,460 --> 00:07:15,040
+current index is equal to one this means
+当前索引等于1，这意味着我们的证明元素必须位于
+
+164
+00:07:15,040 --> 00:07:17,230
+that our proof element must be on the
+当前索引等于1，这意味着我们的证明元素必须位于
+
+165
+00:07:17,230 --> 00:07:20,590
+left side so we append occurring hash to
+左侧，因此我们将出现的哈希值附加到第二个证明元素，然后更新
+
+166
+00:07:20,590 --> 00:07:22,750
+the second proof element and then update
+左侧，因此我们将出现的哈希值附加到第二个证明元素，然后更新
+
+167
+00:07:22,750 --> 00:07:26,290
+the hash and then update the index the
+哈希，然后更新索引，索引等于1，所以1除以2是
+
+168
+00:07:26,290 --> 00:07:30,060
+index is equal to 1 so 1 divided by 2 is
+哈希，然后更新索引，索引等于1，所以1除以2是
+
+169
+00:07:30,060 --> 00:07:33,400
+0.5 but since we're doing integer
+0.5，但由于我们要进行整数除法，因此四舍五入到最接近的值
+
+170
+00:07:33,400 --> 00:07:35,920
+division we round down to the nearest
+0.5，但由于我们要进行整数除法，因此四舍五入到最接近的值
+
+171
+00:07:35,920 --> 00:07:39,670
+integer and the 0.5 round the town will
+整数，城镇的0.5舍入将为0，因此我们的索引现在等于0且
+
+172
+00:07:39,670 --> 00:07:43,510
+be 0 so our index is now equal to 0 and
+整数，城镇的0.5舍入将为0，因此我们的索引现在等于0且
+
+173
+00:07:43,510 --> 00:07:47,680
+that completes the second iteration for
+这样就完成了第二次迭代，第三次也是最后一次迭代索引
+
+174
+00:07:47,680 --> 00:07:50,020
+the third and final iteration the index
+这样就完成了第二次迭代，第三次也是最后一次迭代索引
+
+175
+00:07:50,020 --> 00:07:53,260
+is now equal to 0 so the proof element
+现在等于0，因此证明元素来自
+
+176
+00:07:53,260 --> 00:07:54,790
+comes from the right side of the
+现在等于0，因此证明元素来自
+
+177
+00:07:54,790 --> 00:07:55,419
+marquetry
+镶嵌，这意味着我们需要将其附加到
+
+178
+00:07:55,419 --> 00:07:58,150
+which means that we need to append it to
+镶嵌，这意味着我们需要将其附加到
+
+179
+00:07:58,150 --> 00:08:00,310
+our client hash and then update the hash
+我们的客户哈希，然后更新哈希，最后我们检查
+
+180
+00:08:00,310 --> 00:08:02,890
+and lastly we check that
+我们的客户哈希，然后更新哈希，最后我们检查
+
+181
+00:08:02,890 --> 00:08:05,919
+mirco root that we computed is equal to
+我们计算的mirco根等于提供的maca根，因此
+
+182
+00:08:05,919 --> 00:08:08,530
+the maca root that was provided so
+我们计算的mirco根等于提供的maca根，因此
+
+183
+00:08:08,530 --> 00:08:11,500
+that's how this function works now let's
+这就是现在该功能的工作方式，现在让我们在混音中尝试一下
+
+184
+00:08:11,500 --> 00:08:15,100
+try this function out in remix now
+这就是现在该功能的工作方式，现在让我们在混音中尝试一下
+
+185
+00:08:15,100 --> 00:08:17,800
+created a separate contract that I'll
+创建了一个单独的合同，我将在下面的描述中进行链接
+
+186
+00:08:17,800 --> 00:08:19,540
+link in the description below
+创建了一个单独的合同，我将在下面的描述中进行链接
+
+187
+00:08:19,540 --> 00:08:22,360
+that creates a marquetry from these data
+根据这些数据创建镶嵌，并根据此数组计算出的默克尔
+
+188
+00:08:22,360 --> 00:08:25,180
+and the merkel computed from this array
+根据这些数据创建镶嵌，并根据此数组计算出的默克尔
+
+189
+00:08:25,180 --> 00:08:27,940
+is this and these are the two issues
+是这个，这是我们需要证明的第三个问题
+
+190
+00:08:27,940 --> 00:08:29,980
+that we need to prove that the third
+是这个，这是我们需要证明的第三个问题
+
+191
+00:08:29,980 --> 00:08:32,530
+element is contained in this Merkle tree
+元素包含在此Merkle树中，第一个证明元素是
+
+192
+00:08:32,530 --> 00:08:35,500
+the first proof element is the hash of
+元素包含在此Merkle树中，第一个证明元素是
+
+193
+00:08:35,500 --> 00:08:37,719
+the fourth element and the second proof
+第四元素和第二证明元素是通过对
+
+194
+00:08:37,719 --> 00:08:40,299
+element is computed by hashing the
+第四元素和第二证明元素是通过对
+
+195
+00:08:40,299 --> 00:08:42,880
+hashes of the first and second element
+验证的第一个参数的第一个和第二个元素的哈希
+
+196
+00:08:42,880 --> 00:08:45,460
+for the first argument of the verify
+验证的第一个参数的第一个和第二个元素的哈希
+
+197
+00:08:45,460 --> 00:08:47,620
+function we need to pass an array of
+函数我们需要传递一个字节数组32我们通过键入
+
+198
+00:08:47,620 --> 00:08:51,310
+bytes 32 we do that by typing
+函数我们需要传递一个字节数组32我们通过键入
+
+199
+00:08:51,310 --> 00:08:53,500
+in a pair of brackets inside the
+在方括号内的一对方括号中，我们输入要证明的元素
+
+200
+00:08:53,500 --> 00:08:56,380
+brackets we enter our to proof elements
+在方括号内的一对方括号中，我们输入要证明的元素
+
+201
+00:08:56,380 --> 00:08:59,230
+notice that we wrap each proof element
+请注意，我们将每个证明元素都用双引号引起来，还请注意，
+
+202
+00:08:59,230 --> 00:09:02,350
+in double quotes also notice that the
+请注意，我们将每个证明元素都用双引号引起来，还请注意，
+
+203
+00:09:02,350 --> 00:09:05,440
+order of proof element is important if
+如果您改变顺序，那么证明顺序就很重要，那么您
+
+204
+00:09:05,440 --> 00:09:07,630
+you switch the orders around then you
+如果您改变顺序，那么证明顺序就很重要，那么您
+
+205
+00:09:07,630 --> 00:09:09,430
+won't be able to compute the correct
+下次我们通过路线时，将无法计算正确的标记或路线
+
+206
+00:09:09,430 --> 00:09:12,490
+mark or route next we pass in the route
+下次我们通过路线时，将无法计算正确的标记或路线
+
+207
+00:09:12,490 --> 00:09:15,640
+the leaf and the index of the leaf which
+叶子和叶子的索引是2
+
+208
+00:09:15,640 --> 00:09:18,180
+is 2
+叶子和叶子的索引是2
+
+209
+00:09:20,290 --> 00:09:24,199
+hit purify and every tongues true so
+击中净化，并且所有的舌头都是真实的，所以这证明了这个骇人听闻的
+
+210
+00:09:24,199 --> 00:09:26,240
+this proves that the macabre was
+击中净化，并且所有的舌头都是真实的，所以这证明了这个骇人听闻的
+
+211
+00:09:26,240 --> 00:09:28,670
+constructed from an array where the dead
+由一个数组构成，其中的死元素等于此数据，并且
+
+212
+00:09:28,670 --> 00:09:31,790
+element is equal to this data and the
+由一个数组构成，其中的死元素等于此数据，并且
+
+213
+00:09:31,790 --> 00:09:34,399
+way you can mathematically verify it is
+您可以通过采用此哈希和的哈希值来数学验证它的方式
+
+214
+00:09:34,399 --> 00:09:37,459
+by taking this hash and the hashes of
+您可以通过采用此哈希和的哈希值来数学验证它的方式
+
+215
+00:09:37,459 --> 00:09:40,249
+the proof and if you change any part of
+证明，如果您更改输入的任何部分，则验证功能将
+
+216
+00:09:40,249 --> 00:09:43,069
+the input then the verify function will
+证明，如果您更改输入的任何部分，则验证功能将
+
+217
+00:09:43,069 --> 00:09:47,300
+return false in this video we went over
+在此视频中返回false，我们讨论了镶嵌是默克尔树是
+
+218
+00:09:47,300 --> 00:09:50,240
+what a marquetry is the Merkel tree is a
+在此视频中返回false，我们讨论了镶嵌是默克尔树是
+
+219
+00:09:50,240 --> 00:09:52,339
+tree that is constructed by taking
+通过获取配对数据并对配对的哈希进行哈希处理而构成的树
+
+220
+00:09:52,339 --> 00:09:55,670
+paired data and hashing a pairing the
+通过获取配对数据并对配对的哈希进行哈希处理而构成的树
+
+221
+00:09:55,670 --> 00:09:58,160
+resulting hashes and then hashing them
+产生的散列，然后再次对其进行散列，直到剩下一个散列为止
+
+222
+00:09:58,160 --> 00:10:01,399
+again until a single hash remains this
+产生的散列，然后再次对其进行散列，直到剩下一个散列为止
+
+223
+00:10:01,399 --> 00:10:04,309
+is called the Merkel root and it can be
+称为默克尔根，可用于加密lipu数据元素
+
+224
+00:10:04,309 --> 00:10:07,490
+used to cryptographic lipu data element
+称为默克尔根，可用于加密lipu数据元素
+
+225
+00:10:07,490 --> 00:10:10,370
+is contained in array without revealing
+包含在数组中而不显示数组中的所有元素之一
+
+226
+00:10:10,370 --> 00:10:13,189
+all of the elements in the array one
+包含在数组中而不显示数组中的所有元素之一
+
+227
+00:10:13,189 --> 00:10:15,350
+example of this is proving that a
+这样的例子证明了一个交易包含在一个区块中
+
+228
+00:10:15,350 --> 00:10:17,300
+transaction is included in a block
+这样的例子证明了一个交易包含在一个区块中
+
+229
+00:10:17,300 --> 00:10:19,069
+without revealing all of the
+没有很好地揭示所有交易，这就是为什么我要
+
+230
+00:10:19,069 --> 00:10:21,680
+transactions well that's why I got for
+没有很好地揭示所有交易，这就是为什么我要
+
+231
+00:10:21,680 --> 00:10:24,589
+this video Merry Christmas Happy New
+这个视频圣诞快乐，新年快乐，我会在下一个见
+
+232
+00:10:24,589 --> 00:10:26,689
+Year's and I'll see you in the next
+这个视频圣诞快乐，新年快乐，我会在下一个见
+
+233
+00:10:26,689 --> 00:10:29,110
+video
+视频
+

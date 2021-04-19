@@ -1,0 +1,334 @@
+0
+00:00:00,220 --> 00:00:08,220
+欢迎回到上一个视频 我提到过交易费用等于gas的使用量乘以gas价格 但为什么gas和gas价格是
+Welcome back in the previous video, I've mentioned that transaction fee equals gas used times gas price, but why are gas and gas price.
+
+1
+00:00:08,930 --> 00:00:10,450
+让我们在这个视频中回顾一下
+Let's go over them in this video.
+
+2
+00:00:12,250 --> 00:00:15,090
+想象一下 我在区块链上部署了一个智能合约
+Imagine I have a smart contract deployed on the block train.
+
+3
+00:00:15,770 --> 00:00:18,330
+在契约内部 变量存储一些数据
+Inside the contract, the variable stores some data.
+
+4
+00:00:18,650 --> 00:00:25,570
+我发送一个事务来更新要处理的事务的变量 有许多操作必须完成
+I send a transaction to update the variable for this transaction to be processed. There are number of operations that must be done.
+
+5
+00:00:25,940 --> 00:00:30,820
+例如将输入的每个字节复制到智能合约中存储的变量中
+Such as copying over each bite from the input into the variable stored in the smart contract.
+
+6
+00:00:31,090 --> 00:00:36,730
+用于处理这一交易的总计算量比一个叫做gas的特殊单位来测量
+The total amount of computation used to process this transaction is measured than a special unit called gas.
+
+7
+00:00:38,140 --> 00:00:46,300
+例如 用于部署合同的gas数量可能超过12个gas 而调用一个函数来更新一个变量可能需要200个gas
+For example, the amount of gas used to deploy a contract might beat their dozen gas, and calling a function to update a variable might be two hundred gas.
+
+8
+00:00:47,010 --> 00:00:53,810
+如何将metalgas用于事务计算事务需要执行一组更小的计算
+How are the metal gas used for transaction calculated A transaction needs to perform a bunch of smaller computations.
+
+9
+00:00:54,730 --> 00:01:02,530
+每次计算都需要特定数量的gas来执行 例如 两个数字相加 x和y可能需要10个气体
+Every computation needs a specific amount of gas to execute. For example, adding two numbers, x and y might require ten gas.
+
+10
+00:01:03,230 --> 00:01:12,230
+以太坊的一份白皮书指出 给一个变量赋值可能需要5个gas 这是每次计算或定义所需的确切gas数
+And assigning a number to a variable might need five gas, the exact number of gas require for each computation or defined, an Italian white paper.
+
+11
+00:01:13,430 --> 00:01:15,870
+计算的每一步 都扣除气体
+Every step of computation, gas is deducted.
+
+12
+00:01:16,650 --> 00:01:23,050
+直到函数完成执行或所有的气体都用完 此时执行将中止
+Until either the function finishes execution or all the gases used up, at which point the execution is aborted.
+
+13
+00:01:23,760 --> 00:01:24,920
+gas的用途是什么
+What is the purpose of gas.
+
+14
+00:01:25,790 --> 00:01:30,310
+gas的目的是限制交易可以执行的计算量
+The purpose of gas is to limit the amount of computations that a transaction can do.
+
+15
+00:01:30,870 --> 00:01:40,150
+假设我有一个永远不会停止的代码 我发送一个带有1000个gas的事务来执行这个函数
+How does gas limit the amount of computations Imagine I have a code that would never stop, I send a transaction with 1000 gas to execute this function.
+
+16
+00:01:40,640 --> 00:01:45,600
+在第一次迭代之后 它使用了300个气体 我只剩下700个气体
+After the first iteration, it uses 300 gas, and I am left with 700 gas.
+
+17
+00:01:46,430 --> 00:01:51,070
+在第二次迭代之后 它使用了300种gas 还剩下400种
+After the second iteration, it uses 300 gas, and there's 400 gas left.
+
+18
+00:01:51,920 --> 00:02:00,360
+第三次循环后剩下100个气体 在第四个迭代中 它会在迭代的中途耗尽剩下的100个gas
+And one hundred gases left after the third iteration. On the fourth iteration, it uses up all remaining one hundred gas midway through the iteration.
+
+19
+00:02:01,330 --> 00:02:03,050
+强制停止该功能
+And the function is forcefully stopped.
+
+20
+00:02:05,790 --> 00:02:11,190
+当你在发送交易的同时 你需要发送气体限额
+When you send a transaction along with your transaction that are, you need to send the gas limit.
+
+21
+00:02:12,190 --> 00:02:17,470
+这是你在这次交易中愿意使用的最大汽油量 汽油价格
+This is the maximum amount of gas you're willing to use for this transaction, the gas price.
+
+22
+00:02:18,330 --> 00:02:25,050
+你愿意为你和eater一起付的每一笔汽油付多少钱 汽油限制时间 eater里的汽油价格
+How much you're willing to pay for each gas you pay with eater and gas limit times, gas price in Eater.
+
+23
+00:02:26,110 --> 00:02:30,630
+您设置的guest越高 您的事务可以处理的计算就越多
+The higher you set the guest, the more computation your transaction can process.
+
+24
+00:02:31,530 --> 00:02:36,130
+他们让你设定的猜测越低 你的交易可以处理的计算就越少
+And the lower guess they make you set, the less computation your transaction can process.
+
+25
+00:02:36,920 --> 00:02:42,680
+你说 汽油价格越高 你要花的钱就越多 但你的交易会处理得更快
+The higher gas price, you said, the more eater you will have to spend, but your transaction will be processed faster.
+
+26
+00:02:43,420 --> 00:02:51,700
+如果你设定了汽油价格 你将为你的交易支付更少的费用 但你将不得不等待更长的时间来将交易包含在一个区块中
+And if you set the gas price, though, you'll have to pay less fee for your transaction, but you would have to wait longer for the transaction to be included in a Block.
+
+27
+00:02:52,590 --> 00:02:58,270
+在您的交易被发送到一个区块后 您的帐户将被退还onspangas
+After your transaction is sent in its including in a block, your account will be refunded for the onspan gas.
+
+28
+00:02:58,980 --> 00:03:06,780
+例如 我有一个交易要发送 我愿意用完我的交易的一千个汽油 所以我把汽油的限制设为
+For example, I have a transaction that I'm going to send, I'm willing to use up the thousand gas for my transactions, so I set the gas limit at.
+
+29
+00:03:07,800 --> 00:03:14,200
+我不急着把这笔交易纳入区块 所以我把汽油价格定在了低于平均值的两个灰色点
+I'm not in a hurry to get the transaction included in a block, so I set the gas price lower than the average at two grey.
+
+30
+00:03:14,710 --> 00:03:20,710
+所以我发了一笔交易 3000个气体乘以2个气体 重量是6000个
+So I send a transaction with 3000 gas times two great per gas, which is 6000 great in weight.
+
+31
+00:03:21,770 --> 00:03:26,850
+交易完成后 使用1000gas 这是2000灰色
+After the transaction is processed, which uses 1000 gas. So that's 2000 gray.
+
+32
+00:03:27,800 --> 00:03:30,200
+我得到了4000元的退款
+I get 4000 Yuan refunded to my account.
+
+33
+00:03:30,900 --> 00:03:39,620
+让我们来看一个例子 在这里的Remix中 我们有一个名为testGasrefund的函数 在函数内部 它除了返回汽油价格之外没有做什么
+Let's see an example. In Remix here, we have a function called test Gas refund. Inside the function, it doesn't do much other than return the gas price.
+
+34
+00:03:40,630 --> 00:03:44,550
+当你将交易发送到真正的以太坊网络时 你就设定了gas的价格
+When you send the transaction to the real etherium network, you set the gas price.
+
+35
+00:03:45,190 --> 00:03:51,750
+但是gas价格和混合是固定的 我们可以通过检查这个函数的输出来验证
+But gas price and remix is fixed that one way, and we can verify that by checking the output of this function.
+
+36
+00:03:52,730 --> 00:03:58,570
+在编译和部署合同时 我们不希望我们的初始账户余额是这个难以记住的数字
+Compiling and deploy the contract, we don't want our starting account balance to be this number that is hard to remember.
+
+37
+00:03:59,710 --> 00:04:06,270
+那么 让我们转到第二个帐户 它有更多的百乙醚 在交易后更容易检查我们的余额
+So let's switch over to the second account, which has more hundred ether, and it's easier to check our balance after the transaction.
+
+38
+00:04:07,140 --> 00:04:10,980
+我们将gas限制为300万gas并执行该函数
+We set our gas limit to three million gas and execute the function.
+
+39
+00:04:11,850 --> 00:04:20,410
+点击事务日志并向下滚动 你可以看到在标签旁边 事务成本 使用的是21462气体
+Prick on the transaction log and scroll down, you see here next to the label, transaction costs. The 21462 gas was used.
+
+40
+00:04:21,310 --> 00:04:25,070
+我们希望我们的账户能退还我们没用过的马拉煤气
+We expect our account to be refunded for the mala gas that we didn't use.
+
+41
+00:04:25,830 --> 00:04:32,030
+所以他们的账户应该按21462的方式扣除 点击帐户查看余额
+So their account should be deducted by 21462 way. Click on the account to check the balance.
+
+42
+00:04:32,720 --> 00:04:39,000
+您可以验证将21462添加到当前余额等于100ether
+You can verify that adding 21462 to the current balance equals one hundred ether.
+
+43
+00:04:39,830 --> 00:04:44,670
+我们猜想它们并没有被使用 却得到了退款 如果你的车没油了怎么办
+We were refunded for them at a guess that was not used. What happens if you run out of gas.
+
+44
+00:04:45,560 --> 00:04:54,320
+如果您的事务耗尽了气井 可能会在执行过程中等待 事务将失败 对状态变量的任何更改都将被撤消
+If your transaction runs out of gas well may wait through an execution, the transaction will fail, and any changes to the state variable will be undone.
+
+45
+00:04:55,110 --> 00:04:56,910
+但你还是要付油钱
+But you still have to pay for the gas spent.
+
+46
+00:04:58,220 --> 00:05:07,100
+让我们看看remix中的一个例子 回到我们的合同中 我们有一个称为永久功能障碍的函数将增加状态 不断变化的眼睛
+Let's see an example in remix, back in our contract, we have a function called Forever Dysfunction will increment the state, variable eye without ever stopping.
+
+47
+00:05:07,940 --> 00:05:16,420
+然而 一旦所有的气体消耗完 这个函数将被中止 状态可忍受眼将被重置到事务开始前的状态
+However, once all gases consumed, this function will be aborted, and the state bearable eye will be reset to the previous state before the transaction started.
+
+48
+00:05:16,920 --> 00:05:19,480
+首先让我们看看价值购买是0
+First let's see what the value buy is zero.
+
+49
+00:05:20,240 --> 00:05:26,040
+在我们一直打电话之后 我们希望这个号码保持不变 接下来让我们永远测试我们的函数
+After we call forever, we expect this number to be unchanged. Next let's test our function forever.
+
+50
+00:05:26,280 --> 00:05:29,880
+但首先 我们不想等300万gas都用完等太久
+But first, we don't want to wait long for all three million gas to be used.
+
+51
+00:05:31,030 --> 00:05:35,830
+相反 我们希望我们的交易尽快失败 所以我们把gas限额降低到30000
+Instead, we want our transaction to fail fast, so let's decrease the gas limit to 30000.
+
+52
+00:05:36,460 --> 00:05:41,620
+单击该函数 我们可以在事务日志中看到事务出现了错误
+Click on the function, and we can see here in the transaction log that there was an error with the transaction.
+
+53
+00:05:42,750 --> 00:05:50,310
+向下滚动 我们可以看到我们发送了30000个gas 并且用光了30000个 我们再来看看眼睛的价值
+Scroll down and we can see here that we've sent 30000 gas and used up all 30000 of it. Let's check the value of eye again,
+
+54
+00:05:51,220 --> 00:06:00,140
+当函数永远被调用时 它会增加变量 但是由于事务耗尽了gas 我们希望对变量eye的任何更改都可以撤消
+When the function forever was called, it incremented the variable, but since the transaction ran out of gas, we expect any changes to the variable eye to be undone.
+
+55
+00:06:01,650 --> 00:06:07,610
+检查返回值 它是零 正如我们所期望的 这是我们调用forever函数之前的值
+Check the return value, it is zero, as we expected, this is the value before we called forever Function.
+
+56
+00:06:08,440 --> 00:06:16,280
+我们的余额点击计数 你可以看到它比以前少了 我们没有因为无效的交易得到退款
+How about our balance click on the count, and you can see here that it is less than before. We didn't get a refund for the invalid transaction.
+
+57
+00:06:19,640 --> 00:06:23,000
+有两个上限来限制你可以花的钱
+There are two upper bounds to limit the amount I guess you can spend.
+
+58
+00:06:23,510 --> 00:06:29,550
+汽油限额 这是你在交易中愿意使用的最高金额或汽油 这是你设定的
+Gas limit, this is the maximum amount or gas you're willing to use for your transaction. This is set by you.
+
+59
+00:06:30,230 --> 00:06:36,390
+以及区块气限 即区块内允许的最大气量 这是由网络设置的
+And block gas limit, which is the maximum amount of gas allowed in a block. This is set by the network.
+
+60
+00:06:37,230 --> 00:06:46,230
+在这个视频中 我们介绍了交易费用等于gas使用次数 gas价格 gas是在交易中扣除的一个单位计算
+In this video, we cover that transaction fee equals gas use times, gas price, gas is a unit computation deducted during a transaction.
+
+61
+00:06:47,210 --> 00:06:49,770
+它用来防止函数永远运行
+It's used to prevent functions from running forever.
+
+62
+00:06:50,740 --> 00:06:54,220
+汽油价格是你愿意为每一汽油支付ITER的金额
+Gas price is the amount of ITER you're willing to pay per gas.
+
+63
+00:06:55,390 --> 00:07:00,750
+价格越高的gas交易处理速度越快 onspan的gas将得到退款
+Transaction with higher gas price will be processed faster, and onspan gas will be refunded.
+
+64
+00:07:01,670 --> 00:07:08,070
+如果您的事务用完gas 则更改状态变量或重新启动 但您仍然需要为gas付费
+If your transaction runs out of gas changes to the state variable or rebirted, but you still have to pay for the gas.
+
+65
+00:07:09,280 --> 00:07:15,840
+有两个上限来限制它们 我想您可以使用您在发送事务时设置的yes限制
+There are two upper bounds to limit them, and I guess you can use yes limit set by you when you send a transaction.
+
+66
+00:07:16,630 --> 00:07:24,270
+还有博客 让他们在网络设置下毒气 我就到这里了 感谢收看 下个视频再见
+And Blog, gas them at set by the network, I'm gonna wrap up around here, thanks for watching, and I'll see you soon in the next video.

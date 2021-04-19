@@ -1,0 +1,1125 @@
+1
+00:00:00,680 --> 00:00:03,899
+contracts can receive and send ether by
+合同可以通过使用关键字payable来接收和发送以太币，因此在此
+
+2
+00:00:03,899 --> 00:00:06,720
+using the keyword payable so in this
+合同可以通过使用关键字payable来接收和发送以太币，因此在此
+
+3
+00:00:06,720 --> 00:00:08,639
+video I'm gonna give you examples of how
+视频，我将为您提供一些示例，说明如何创建应付款功能以及如何
+
+4
+00:00:08,639 --> 00:00:11,130
+to create payable functions and how to
+视频，我将为您提供一些示例，说明如何创建应付款功能以及如何
+
+5
+00:00:11,130 --> 00:00:14,099
+use payable for addresses and a good way
+使用应付帐款作为地址，以及解释这些示例的好方法
+
+6
+00:00:14,099 --> 00:00:16,199
+to explain about these examples that I'm
+使用应付帐款作为地址，以及解释这些示例的好方法
+
+7
+00:00:16,199 --> 00:00:18,330
+about to show you is by building a
+即将显示您正在通过建立一个钱包，所以我们要建立一个钱包
+
+8
+00:00:18,330 --> 00:00:20,850
+wallet so we're gonna build a wallet
+即将显示您正在通过建立一个钱包，所以我们要建立一个钱包
+
+9
+00:00:20,850 --> 00:00:23,160
+that supports depositing ether
+支持先存醚再提取醚
+
+10
+00:00:23,160 --> 00:00:25,320
+withdrawing ether and then also
+支持先存醚再提取醚
+
+11
+00:00:25,320 --> 00:00:27,529
+transferring ether to another address
+首先将以太转移到另一个地址，我们将定义一些事件
+
+12
+00:00:27,529 --> 00:00:30,090
+first we're going to define some events
+首先将以太转移到另一个地址，我们将定义一些事件
+
+13
+00:00:30,090 --> 00:00:31,800
+that will be emitted when we either
+当我们存入提款或从中转账时将发出
+
+14
+00:00:31,800 --> 00:00:35,370
+deposit withdraw or transfer from this
+当我们存入提款或从中转账时将发出
+
+15
+00:00:35,370 --> 00:00:37,649
+wallet now if you're building the user
+现在创建钱包，如果您要在此合同的基础上构建用户界面，则
+
+16
+00:00:37,649 --> 00:00:40,800
+interface on top of this contract then
+现在创建钱包，如果您要在此合同的基础上构建用户界面，则
+
+17
+00:00:40,800 --> 00:00:43,410
+emitting the events is essential if you
+如果您想实时获取更新，则发出事件是必不可少的
+
+18
+00:00:43,410 --> 00:00:45,590
+want to get your updates in real time
+如果您想实时获取更新，则发出事件是必不可少的
+
+19
+00:00:45,590 --> 00:00:48,059
+but for the examples that I'm about to
+但对于我要向您展示的示例，我将使用事件来展示
+
+20
+00:00:48,059 --> 00:00:50,250
+show you I'm gonna use events to show
+但对于我要向您展示的示例，我将使用事件来展示
+
+21
+00:00:50,250 --> 00:00:52,890
+you some features and solidity that are
+您发送和接收以太币时相关的一些功能和坚固性
+
+22
+00:00:52,890 --> 00:00:55,530
+relevant when you send and receive ether
+您发送和接收以太币时相关的一些功能和坚固性
+
+23
+00:00:55,530 --> 00:00:58,680
+to a contract when someone deposits into
+当某人将钱存入我们的钱包时，我们将要存入一份合同
+
+24
+00:00:58,680 --> 00:01:00,960
+our wallet we're gonna deposit the
+当某人将钱存入我们的钱包时，我们将要存入一份合同
+
+25
+00:01:00,960 --> 00:01:03,840
+sender of the ether the amount that was
+以太币的发送者发送的金额和以太币的总余额
+
+26
+00:01:03,840 --> 00:01:06,510
+sent and the total balance of the ether
+以太币的发送者发送的金额和以太币的总余额
+
+27
+00:01:06,510 --> 00:01:09,869
+in this contract after the deposit one
+在本合同中，入金一提后便要登上这座山
+
+28
+00:01:09,869 --> 00:01:11,909
+withdrawal were gonna log the mountain
+在本合同中，入金一提后便要登上这座山
+
+29
+00:01:11,909 --> 00:01:14,040
+that was withdrawn and the total amount
+撤出后，我们做完之后剩下的乙醚总量
+
+30
+00:01:14,040 --> 00:01:16,500
+of ether that is left after we do the
+撤出后，我们做完之后剩下的乙醚总量
+
+31
+00:01:16,500 --> 00:01:19,380
+withdrawal unlike the deposit we don't
+提款不同于存款，我们不需要登录发件人的地址，因为
+
+32
+00:01:19,380 --> 00:01:22,080
+need to log address of the sender since
+提款不同于存款，我们不需要登录发件人的地址，因为
+
+33
+00:01:22,080 --> 00:01:24,479
+we only want the owner of this contract
+我们只希望该合同的所有者能够撤回，并且最后
+
+34
+00:01:24,479 --> 00:01:27,090
+to be able to withdraw and the last
+我们只希望该合同的所有者能够撤回，并且最后
+
+35
+00:01:27,090 --> 00:01:29,880
+event is transfer we're gonna log the
+如果是转移，我们将记录我们将加热器发送到的地址
+
+36
+00:01:29,880 --> 00:01:32,549
+address that we sent the heater to the
+如果是转移，我们将记录我们将加热器发送到的地址
+
+37
+00:01:32,549 --> 00:01:34,890
+Mount and the total balance of ether
+挂载和以太转移后的总余额中的第一个功能
+
+38
+00:01:34,890 --> 00:01:38,070
+after the transfer the first function
+挂载和以太转移后的总余额中的第一个功能
+
+39
+00:01:38,070 --> 00:01:40,079
+that we're gonna define is the deposit
+我们要定义的是存款功能，以使该功能能够
+
+40
+00:01:40,079 --> 00:01:42,750
+function to make this function be able
+我们要定义的是存款功能，以使该功能能够
+
+41
+00:01:42,750 --> 00:01:45,570
+to receive ether into this contract all
+接收以太币到这个合约中，我们要做的就是声明这个功能
+
+42
+00:01:45,570 --> 00:01:48,030
+we have to do is declare this function
+接收以太币到这个合约中，我们要做的就是声明这个功能
+
+43
+00:01:48,030 --> 00:01:53,040
+as payable and we're gonna omit the
+作为应付款项，我们将省略存款事件的发送者
+
+44
+00:01:53,040 --> 00:01:55,470
+deposit event the sender of the
+作为应付款项，我们将省略存款事件的发送者
+
+45
+00:01:55,470 --> 00:01:57,719
+transaction will be stored in a global
+交易将存储在一个称为消息点发送者的全局变量中
+
+46
+00:01:57,719 --> 00:01:59,969
+variable called message dot sender
+交易将存储在一个称为消息点发送者的全局变量中
+
+47
+00:01:59,969 --> 00:02:02,549
+message the value will hold the amount
+消息，该值将包含与此一起发送的以太币数量
+
+48
+00:02:02,549 --> 00:02:04,380
+of ether that was sent with this
+消息，该值将包含与此一起发送的以太币数量
+
+49
+00:02:04,380 --> 00:02:06,990
+transaction and to get the current
+交易并获取此合约中以太币的当前余额，您可以
+
+50
+00:02:06,990 --> 00:02:09,660
+balance of ether in this contract you do
+交易并获取此合约中以太币的当前余额，您可以
+
+51
+00:02:09,660 --> 00:02:12,060
+it like this here we're casting this
+像这样在这里，我们将其投射到地址中
+
+52
+00:02:12,060 --> 00:02:13,230
+into address
+像这样在这里，我们将其投射到地址中
+
+53
+00:02:13,230 --> 00:02:15,690
+like where this refers to the contract
+就像这里指的是合同，然后在此处访问余额
+
+54
+00:02:15,690 --> 00:02:18,900
+and then accessing the balance here the
+就像这里指的是合同，然后在此处访问余额
+
+55
+00:02:18,900 --> 00:02:21,000
+balance is the amount of ether that is
+余额是合约中存储在该合约中的以太币数量
+
+56
+00:02:21,000 --> 00:02:23,220
+stored in this contract after the
+余额是合约中存储在该合约中的以太币数量
+
+57
+00:02:23,220 --> 00:02:25,709
+deposit so let me give you an example
+存入资金，所以让我给您举个例子，假设该合同存储了10个
+
+58
+00:02:25,709 --> 00:02:28,739
+let's say that this contract stores 10
+存入资金，所以让我给您举个例子，假设该合同存储了10个
+
+59
+00:02:28,739 --> 00:02:31,769
+litres and the generous user calls this
+升，慷慨的用户调用此功能发送一个以太消息
+
+60
+00:02:31,769 --> 00:02:35,010
+function sending one ether so message
+升，慷慨的用户调用此功能发送一个以太消息
+
+61
+00:02:35,010 --> 00:02:37,260
+that sender will be the address of the
+该发件人将是慷慨的用户消息点值的地址，将是
+
+62
+00:02:37,260 --> 00:02:40,349
+generous user message dot value will be
+该发件人将是慷慨的用户消息点值的地址，将是
+
+63
+00:02:40,349 --> 00:02:43,409
+one liter and the balance will be 11
+一公升，因为我们从10乙醚开始，剩下的就是11乙醚
+
+64
+00:02:43,409 --> 00:02:46,349
+ether since we started out with 10 ether
+一公升，因为我们从10乙醚开始，剩下的就是11乙醚
+
+65
+00:02:46,349 --> 00:02:49,349
+in this contract and the user sent 1
+在此合同中，如果
+
+66
+00:02:49,349 --> 00:02:53,879
+meter and 10 plus 1 is 11 now if the
+在此合同中，如果
+
+67
+00:02:53,879 --> 00:02:56,700
+function is not marked as payable then
+该功能未标记为应付款，那么当您调用此功能时，您将不会
+
+68
+00:02:56,700 --> 00:02:58,799
+when you call this function you won't be
+该功能未标记为应付款，那么当您调用此功能时，您将不会
+
+69
+00:02:58,799 --> 00:03:02,459
+able to send and either if you do then
+能够发送，如果您这样做，则交易将失败，我将向您显示
+
+70
+00:03:02,459 --> 00:03:04,980
+the transaction will fail and I'll show
+能够发送，如果您这样做，则交易将失败，我将向您显示
+
+71
+00:03:04,980 --> 00:03:07,980
+you example this later in the video now
+您可以稍后在视频中举例说明，现在我们也希望能够存入
+
+72
+00:03:07,980 --> 00:03:10,470
+we also want to be able to deposit into
+您可以稍后在视频中举例说明，现在我们也希望能够存入
+
+73
+00:03:10,470 --> 00:03:12,690
+this contract when the contract is
+该合同在创建合同后即可执行，您可以像这样
+
+74
+00:03:12,690 --> 00:03:15,349
+created and you can do it like this
+该合同在创建合同后即可执行，您可以像这样
+
+75
+00:03:15,349 --> 00:03:18,419
+similar to the deposit function all you
+与存款功能类似，您所要做的就是将构造函数声明为
+
+76
+00:03:18,419 --> 00:03:21,150
+have to do is declare the constructor as
+与存款功能类似，您所要做的就是将构造函数声明为
+
+77
+00:03:21,150 --> 00:03:23,669
+payable so now when we deploy this
+应付的，所以现在当我们部署此合同时，我们可以随其一起发送
+
+78
+00:03:23,669 --> 00:03:26,190
+contract we can send either with it
+应付的，所以现在当我们部署此合同时，我们可以随其一起发送
+
+79
+00:03:26,190 --> 00:03:28,500
+again when you don't have the payable
+再次，当您没有构造函数的payable关键字时，您
+
+80
+00:03:28,500 --> 00:03:31,169
+keyword for the constructor then you
+再次，当您没有构造函数的payable关键字时，您
+
+81
+00:03:31,169 --> 00:03:33,450
+won't be able to send an either when you
+我们在存入资金后部署此合同时将无法发送任何一个
+
+82
+00:03:33,450 --> 00:03:36,329
+deploy this contract after we deposit
+我们在存入资金后部署此合同时将无法发送任何一个
+
+83
+00:03:36,329 --> 00:03:39,120
+some meter into this contract later on
+稍后，我们将希望能够撤出该合同中的几米
+
+84
+00:03:39,120 --> 00:03:41,310
+we will want to be able to withdraw from
+稍后，我们将希望能够撤出该合同中的几米
+
+85
+00:03:41,310 --> 00:03:43,739
+it so let's create a function to
+因此，我们创建一个函数以撤消我们正在输入的其他任何内容
+
+86
+00:03:43,739 --> 00:03:46,200
+withdraw either further input we're
+因此，我们创建一个函数以撤消我们正在输入的其他任何内容
+
+87
+00:03:46,200 --> 00:03:47,970
+gonna pass the amount of ether to
+要通过以太币提取，我们只想要这个拥有者
+
+88
+00:03:47,970 --> 00:03:50,519
+withdraw we only want the owner of this
+要通过以太币提取，我们只想要这个拥有者
+
+89
+00:03:50,519 --> 00:03:53,250
+contract to be able to withdraw so let's
+合约以能够撤回，因此让我们创建一个函数修饰符，称为
+
+90
+00:03:53,250 --> 00:03:55,590
+create a function modifier called
+合约以能够撤回，因此让我们创建一个函数修饰符，称为
+
+91
+00:03:55,590 --> 00:03:58,650
+only owner the function modifier only
+仅拥有者函数修饰符仅拥有者将要求
+
+92
+00:03:58,650 --> 00:04:01,139
+owner will require that the sender of
+仅拥有者函数修饰符仅拥有者将要求
+
+93
+00:04:01,139 --> 00:04:03,720
+the transaction is equal to the owner so
+交易等于所有者，因此我们需要定义此所有者
+
+94
+00:04:03,720 --> 00:04:06,000
+we need to define the owner of this
+交易等于所有者，因此我们需要定义此所有者
+
+95
+00:04:06,000 --> 00:04:09,329
+contract that we're gonna do now up on
+我们现在要执行的合同我们定义了一个状态变量，称为
+
+96
+00:04:09,329 --> 00:04:11,579
+top we define a state variable called
+我们现在要执行的合同我们定义了一个状态变量，称为
+
+97
+00:04:11,579 --> 00:04:14,459
+owner and when the contract is deployed
+所有者，并且在部署合同后，我们将所有者分配给
+
+98
+00:04:14,459 --> 00:04:17,459
+we assign the owner to the sender of the
+所有者，并且在部署合同后，我们将所有者分配给
+
+99
+00:04:17,459 --> 00:04:20,220
+transaction and lastly we append the
+交易，最后我们将唯一的所有者修饰符附加到函数中
+
+100
+00:04:20,220 --> 00:04:22,500
+only owner modifier to the function
+交易，最后我们将唯一的所有者修饰符附加到函数中
+
+101
+00:04:22,500 --> 00:04:25,320
+withdraw so now this function can only
+退出，所以现在该函数只能由所有者调用
+
+102
+00:04:25,320 --> 00:04:26,910
+be called by the owner
+退出，所以现在该函数只能由所有者调用
+
+103
+00:04:26,910 --> 00:04:29,430
+this contract now to send dieter to the
+现在将此合同发送给节食者，您称其为功能所有者
+
+104
+00:04:29,430 --> 00:04:31,920
+owner you call a chance for a function
+现在将此合同发送给节食者，您称其为功能所有者
+
+105
+00:04:31,920 --> 00:04:34,050
+and passing the amount that we're gonna
+并把我们要转给所有者的金额转给您，如果您尝试
+
+106
+00:04:34,050 --> 00:04:36,300
+transfer to the owner if you try to
+并把我们要转给所有者的金额转给您，如果您尝试
+
+107
+00:04:36,300 --> 00:04:38,160
+compile this you'll get an error saying
+编译此内容，您会收到一条错误消息，提示所有者不付款，这是
+
+108
+00:04:38,160 --> 00:04:46,590
+that the owner is not payable this is
+编译此内容，您会收到一条错误消息，提示所有者不付款，这是
+
+109
+00:04:46,590 --> 00:04:48,810
+because in order for any address to be
+因为为了使任何地址都能收到，您需要
+
+110
+00:04:48,810 --> 00:04:51,240
+able to receive either you need to
+因为为了使任何地址都能收到，您需要
+
+111
+00:04:51,240 --> 00:04:53,970
+declare as payable so we're gonna do
+声明为应付账款，所以我们现在就要做
+
+112
+00:04:53,970 --> 00:04:54,900
+that right now
+声明为应付账款，所以我们现在就要做
+
+113
+00:04:54,900 --> 00:04:59,790
+and declare the owner as payable now
+并在编译时将所有者声明为应付账款，错误将是
+
+114
+00:04:59,790 --> 00:05:01,890
+when you compile it the error will be
+并在编译时将所有者声明为应付账款，错误将是
+
+115
+00:05:01,890 --> 00:05:05,070
+gone after the ether is transferred to
+以太转移到捐助者之后消失了，我们将省略提款
+
+116
+00:05:05,070 --> 00:05:07,410
+donor we're gonna omit the withdrawal
+以太转移到捐助者之后消失了，我们将省略提款
+
+117
+00:05:07,410 --> 00:05:10,050
+event and we're gonna omit the amount
+事件，我们将忽略已提取的金额以及剩余的金额
+
+118
+00:05:10,050 --> 00:05:12,660
+that was withdrawn and the remaining
+事件，我们将忽略已提取的金额以及剩余的金额
+
+119
+00:05:12,660 --> 00:05:14,910
+ether in this contract after the
+以太币在这份合同退出后实际上有三种方式
+
+120
+00:05:14,910 --> 00:05:17,370
+withdrawal actually there are three ways
+以太币在这份合同退出后实际上有三种方式
+
+121
+00:05:17,370 --> 00:05:19,740
+to send either to another address which
+发送到另一个地址，我将在下一个视频中介绍
+
+122
+00:05:19,740 --> 00:05:21,840
+I will cover in the next video
+发送到另一个地址，我将在下一个视频中介绍
+
+123
+00:05:21,840 --> 00:05:25,260
+so that's withdrawal function next let's
+因此，这是取款功能，接下来让我们编写将以太币转移至
+
+124
+00:05:25,260 --> 00:05:27,750
+write the function to transfer ether to
+因此，这是取款功能，接下来让我们编写将以太币转移至
+
+125
+00:05:27,750 --> 00:05:29,790
+another address we're gonna name the
+另一个地址，我们将命名函数传递，就像
+
+126
+00:05:29,790 --> 00:05:31,920
+function transfer and like the
+另一个地址，我们将命名函数传递，就像
+
+127
+00:05:31,920 --> 00:05:34,320
+withdrawal function we only want the
+提取功能，我们只希望合同所有者能够
+
+128
+00:05:34,320 --> 00:05:36,420
+owner of the contract to be able to
+提取功能，我们只希望合同所有者能够
+
+129
+00:05:36,420 --> 00:05:38,940
+withdraw eager to another address so
+急于提款至另一个地址，所以我们将追加唯一的所有者
+
+130
+00:05:38,940 --> 00:05:40,710
+we're gonna append the only owner
+急于提款至另一个地址，所以我们将追加唯一的所有者
+
+131
+00:05:40,710 --> 00:05:44,910
+function modifier to this function for
+此输入的功能修饰符，我们将输入地址
+
+132
+00:05:44,910 --> 00:05:46,890
+the input we're gonna person the address
+此输入的功能修饰符，我们将输入地址
+
+133
+00:05:46,890 --> 00:05:49,890
+to send the ether to and amount of ether
+发送以太币和以太币的发送量类似于我们将以太币发送到的方式
+
+134
+00:05:49,890 --> 00:05:53,100
+to send similar to how we send ether to
+发送以太币和以太币的发送量类似于我们将以太币发送到的方式
+
+135
+00:05:53,100 --> 00:05:55,560
+the owner we're gonna send ether to this
+我们将通过呼叫将所有者发送以太币到该地址的所有者-点转移和
+
+136
+00:05:55,560 --> 00:05:59,700
+address by calling - dot transfer and in
+我们将通过呼叫将所有者发送以太币到该地址的所有者-点转移和
+
+137
+00:05:59,700 --> 00:06:01,380
+order for this address to be able to
+为了使该地址能够接收，我们需要将其声明为
+
+138
+00:06:01,380 --> 00:06:03,630
+receive either we need to declare it as
+为了使该地址能够接收，我们需要将其声明为
+
+139
+00:06:03,630 --> 00:06:06,240
+payable so we're gonna do that right now
+应付帐款，所以我们现在就要做，类似于我们将以太币发送到
+
+140
+00:06:06,240 --> 00:06:08,970
+and similar to how we send ether to the
+应付帐款，所以我们现在就要做，类似于我们将以太币发送到
+
+141
+00:06:08,970 --> 00:06:12,000
+owner in the withdrawal function here
+提款功能的所有者在这里，我们要做的就是调用转账
+
+142
+00:06:12,000 --> 00:06:14,490
+all we have to do is call the transfer
+提款功能的所有者在这里，我们要做的就是调用转账
+
+143
+00:06:14,490 --> 00:06:17,760
+function on the to address now it's a
+上的功能来解决，这有点令人困惑，但是这种转移
+
+144
+00:06:17,760 --> 00:06:19,890
+little bit confusing but this transfer
+上的功能来解决，这有点令人困惑，但是这种转移
+
+145
+00:06:19,890 --> 00:06:22,320
+function is different from this function
+函数与我们在此传输上方定义的函数不同
+
+146
+00:06:22,320 --> 00:06:25,260
+that we defined above this transfer
+函数与我们在此传输上方定义的函数不同
+
+147
+00:06:25,260 --> 00:06:27,660
+function is a built-in function that is
+函数是一个内置函数，仅适用于应付账款地址
+
+148
+00:06:27,660 --> 00:06:30,030
+only available to payable addresses
+函数是一个内置函数，仅适用于应付账款地址
+
+149
+00:06:30,030 --> 00:06:32,820
+whereas this transfer function is a
+而该传递函数是我们定义并避免的函数
+
+150
+00:06:32,820 --> 00:06:35,580
+function that we define and to avoid
+而该传递函数是我们定义并避免的函数
+
+151
+00:06:35,580 --> 00:06:37,919
+confusion it might be better to name
+混淆，最好将此传递函数命名为
+
+152
+00:06:37,919 --> 00:06:39,730
+this transfer function
+混淆，最好将此传递函数命名为
+
+153
+00:06:39,730 --> 00:06:43,090
+something like transfer eater after the
+在功能转移食者后，转移食者之类的东西
+
+154
+00:06:43,090 --> 00:06:45,490
+function transfers the eater it's going
+在功能转移食者后，转移食者之类的东西
+
+155
+00:06:45,490 --> 00:06:48,340
+to omit the transfer event with the
+省略转移事件，其地址为我们以金额为单位
+
+156
+00:06:48,340 --> 00:06:51,070
+address that we centiliter to the amount
+省略转移事件，其地址为我们以金额为单位
+
+157
+00:06:51,070 --> 00:06:53,140
+and the balance of eater in this
+以及转移后的合同中食者的余额，最后
+
+158
+00:06:53,140 --> 00:06:56,500
+contract after the transfer and lastly
+以及转移后的合同中食者的余额，最后
+
+159
+00:06:56,500 --> 00:06:58,510
+you'll create a helper function so that
+您将创建一个辅助函数，以便我们可以检查所存储的食者的余额
+
+160
+00:06:58,510 --> 00:07:01,120
+we can check the balance of eater stored
+您将创建一个辅助函数，以便我们可以检查所存储的食者的余额
+
+161
+00:07:01,120 --> 00:07:03,820
+in this contract and we've already seen
+在此合同中，我们已经在上面的代码中看到了如何执行此操作
+
+162
+00:07:03,820 --> 00:07:06,070
+how to do this in the code above
+在此合同中，我们已经在上面的代码中看到了如何执行此操作
+
+163
+00:07:06,070 --> 00:07:08,770
+so now let's deploy this contract and
+现在让我们部署此合同并对其进行测试，注意部署
+
+164
+00:07:08,770 --> 00:07:14,740
+test it out notice that the deploy
+现在让我们部署此合同并对其进行测试，注意部署
+
+165
+00:07:14,740 --> 00:07:18,640
+button is red usually it is orange this
+按钮通常是红色，这是因为我们将构造函数设为应付款
+
+166
+00:07:18,640 --> 00:07:21,430
+is because we made a constructor payable
+按钮通常是红色，这是因为我们将构造函数设为应付款
+
+167
+00:07:21,430 --> 00:07:24,250
+which means that we can send either when
+这意味着我们可以在部署此合同时发送
+
+168
+00:07:24,250 --> 00:07:26,710
+we deploy this contract which is what
+这意味着我们可以在部署此合同时发送
+
+169
+00:07:26,710 --> 00:07:29,110
+we're gonna do now so I'm gonna deploy
+我们现在要做，所以我要以100方式部署此合同，
+
+170
+00:07:29,110 --> 00:07:33,400
+this contract with 100 way and the
+我们现在要做，所以我要以100方式部署此合同，
+
+171
+00:07:33,400 --> 00:07:40,000
+balance should now be 100 next
+余额现在应该是100，这是该合约的10种存款方式
+
+172
+00:07:40,000 --> 00:07:42,790
+that's deposit 10 way into this contract
+余额现在应该是100，这是该合约的10种存款方式
+
+173
+00:07:42,790 --> 00:07:45,100
+so I'm gonna call the deposit function
+所以我要调用存款功能并用它发送10种方式
+
+174
+00:07:45,100 --> 00:07:55,780
+and send 10 way with it and when we
+所以我要调用存款功能并用它发送10种方式
+
+175
+00:07:55,780 --> 00:07:58,120
+check the balance it is now a hundred
+检查余额，现在已经是一百零一了，我提到您不会
+
+176
+00:07:58,120 --> 00:08:00,880
+ten earlier I mentioned that you won't
+检查余额，现在已经是一百零一了，我提到您不会
+
+177
+00:08:00,880 --> 00:08:03,400
+be able to send either to a non payable
+能够发送到非付费功能，所以我给你一个
+
+178
+00:08:03,400 --> 00:08:05,500
+function so let me give you a
+能够发送到非付费功能，所以我给你一个
+
+179
+00:08:05,500 --> 00:08:07,930
+demonstration of that here this function
+此功能不付款的说明未声明为应付款
+
+180
+00:08:07,930 --> 00:08:11,140
+not payable is not declared as payable
+此功能不付款的说明未声明为应付款
+
+181
+00:08:11,140 --> 00:08:14,500
+and when we send some way to it the
+当我们向其发送某种方式时，交易应会失败，所以我在这里
+
+182
+00:08:14,500 --> 00:08:17,020
+transaction should fail so here I'm
+当我们向其发送某种方式时，交易应会失败，所以我在这里
+
+183
+00:08:17,020 --> 00:08:19,360
+gonna send one way and call it not
+将发送一种方式，并称它不付款，您可以看到
+
+184
+00:08:19,360 --> 00:08:21,640
+payable and you can see that the
+将发送一种方式，并称它不付款，您可以看到
+
+185
+00:08:21,640 --> 00:08:23,800
+transaction to the function not payable
+交易到不付款的功能失败，这是因为我们尝试发送
+
+186
+00:08:23,800 --> 00:08:26,320
+failed this is because we try to send
+交易到不付款的功能失败，这是因为我们尝试发送
+
+187
+00:08:26,320 --> 00:08:28,120
+either to a function that is not
+要么对未声明为应付款的函数进行下一步，请尝试
+
+188
+00:08:28,120 --> 00:08:31,330
+declared as payable next let's try the
+要么对未声明为应付款的函数进行下一步，请尝试
+
+189
+00:08:31,330 --> 00:08:33,460
+withdrawal function first I'm going to
+提款功能首先，我要在此合约中存入10米，
+
+190
+00:08:33,460 --> 00:08:36,280
+deposit 10 meter into this contract and
+提款功能首先，我要在此合约中存入10米，
+
+191
+00:08:36,280 --> 00:08:41,070
+deduct this account by 10 liters
+将此账户扣除10升
+
+192
+00:08:45,980 --> 00:08:49,170
+so now the temp element should be around
+所以现在温度元素应该在90左右，接下来我们放一公升
+
+193
+00:08:49,170 --> 00:08:55,560
+90 next let's deposit one liter we call
+所以现在温度元素应该在90左右，接下来我们放一公升
+
+194
+00:08:55,560 --> 00:08:57,870
+that one ether is equal to 10 to the
+一个以太币等于18到10的十倍，现在当我们检查城镇时
+
+195
+00:08:57,870 --> 00:09:00,810
+18th and now when we check our town
+一个以太币等于18到10的十倍，现在当我们检查城镇时
+
+196
+00:09:00,810 --> 00:09:03,529
+balance it should've went up by one
+平衡它应该增加一个
+
+197
+00:09:03,529 --> 00:09:05,129
+which it did
+平衡它应该增加一个
+
+198
+00:09:05,129 --> 00:09:09,269
+and finally that transfer one liter to
+最后将一升转移到第二个帐户，所以我要复制
+
+199
+00:09:09,269 --> 00:09:12,870
+account number two so I'm gonna copy the
+最后将一升转移到第二个帐户，所以我要复制
+
+200
+00:09:12,870 --> 00:09:15,240
+address of account number two switch
+第二个帐户的地址切换回第一个帐户，因为
+
+201
+00:09:15,240 --> 00:09:17,970
+back to account number one because this
+第二个帐户的地址切换回第一个帐户，因为
+
+202
+00:09:17,970 --> 00:09:21,000
+is the owner of the contract and only
+是合同的所有者，只有所有者才能转让和复制
+
+203
+00:09:21,000 --> 00:09:24,000
+the owner can transfer and copy the
+是合同的所有者，只有所有者才能转让和复制
+
+204
+00:09:24,000 --> 00:09:27,649
+address of account number two to here
+第二个帐户的地址到这里，我们要寄一个以太币
+
+205
+00:09:27,649 --> 00:09:31,670
+and we're gonna send one ether
+第二个帐户的地址到这里，我们要寄一个以太币
+
+206
+00:09:31,670 --> 00:09:34,759
+[Music]
+[音乐]转移后，我们需要检查回来
+
+207
+00:09:34,759 --> 00:09:37,680
+after the transfer we need to check back
+[音乐]转移后，我们需要检查回来
+
+208
+00:09:37,680 --> 00:09:39,689
+on the account balance of hotel number
+在二号酒店的帐户余额中，您可以看到现在是101以太
+
+209
+00:09:39,689 --> 00:09:42,990
+two you can see that it is now 101 ether
+在二号酒店的帐户余额中，您可以看到现在是101以太
+
+210
+00:09:42,990 --> 00:09:48,810
+so the transfer was successful so in
+因此传输成功，因此在此视频中，我们介绍了如何使用T
+
+211
+00:09:48,810 --> 00:09:51,149
+this video we went over how to use the T
+因此传输成功，因此在此视频中，我们介绍了如何使用T
+
+212
+00:09:51,149 --> 00:09:53,699
+word payable when you declare a function
+当您将某个功能声明为应付款时，应付款一词可以使该功能
+
+213
+00:09:53,699 --> 00:09:56,639
+as payable then that function can
+当您将某个功能声明为应付款时，应付款一词可以使该功能
+
+214
+00:09:56,639 --> 00:09:59,309
+receive either and when you declare a
+接收其中一个，并且当您将构造函数声明为可付款时，则可以发送
+
+215
+00:09:59,309 --> 00:10:02,490
+constructor as payable then you can send
+接收其中一个，并且当您将构造函数声明为可付款时，则可以发送
+
+216
+00:10:02,490 --> 00:10:05,000
+either when you deploy the contract and
+要么在部署合同时发送，要么最后如果您想发送到
+
+217
+00:10:05,000 --> 00:10:07,680
+finally if you want to send either to
+要么在部署合同时发送，要么最后如果您想发送到
+
+218
+00:10:07,680 --> 00:10:10,050
+another address then you have to declare
+另一个地址，那么您必须声明该地址为应付账款，这就是我的全部
+
+219
+00:10:10,050 --> 00:10:13,019
+the address as payable well that's all I
+另一个地址，那么您必须声明该地址为应付账款，这就是我的全部
+
+220
+00:10:13,019 --> 00:10:16,050
+got to say about the key word payable in
+在下一个视频中必须谈到应付的关键词，我将继续讨论
+
+221
+00:10:16,050 --> 00:10:17,730
+the next video I'll be talking more
+在下一个视频中必须谈到应付的关键词，我将继续讨论
+
+222
+00:10:17,730 --> 00:10:20,550
+about how to transfer ether to another
+关于如何将以太币转移到另一个地址，感谢您的收看
+
+223
+00:10:20,550 --> 00:10:23,129
+address thanks for watching see you in
+关于如何将以太币转移到另一个地址，感谢您的收看
+
+224
+00:10:23,129 --> 00:10:25,500
+the next video and until then have a
+下一个视频，直到今天过得愉快
+
+225
+00:10:25,500 --> 00:10:27,980
+nice day
+下一个视频，直到今天过得愉快
+

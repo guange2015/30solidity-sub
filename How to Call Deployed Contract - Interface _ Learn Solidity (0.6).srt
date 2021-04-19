@@ -1,0 +1,964 @@
+1
+00:00:00,719 --> 00:00:03,360
+over here i have a deployed contract
+
+2
+00:00:03,360 --> 00:00:05,440
+the functionalities that this contract
+
+3
+00:00:05,440 --> 00:00:07,680
+provide is you can get the count
+
+4
+00:00:07,680 --> 00:00:10,080
+and you could increment the count so
+
+5
+00:00:10,080 --> 00:00:11,440
+let's say that i want to write a
+
+6
+00:00:11,440 --> 00:00:12,160
+contract
+
+7
+00:00:12,160 --> 00:00:14,240
+that interacts with this contract
+
+8
+00:00:14,240 --> 00:00:15,839
+without knowing the code of this
+
+9
+00:00:15,839 --> 00:00:16,560
+contract
+
+10
+00:00:16,560 --> 00:00:18,720
+but we do know the function signatures
+
+11
+00:00:18,720 --> 00:00:21,439
+of the functions that we want to call
+
+12
+00:00:21,439 --> 00:00:23,760
+we know that calling the function count
+
+13
+00:00:23,760 --> 00:00:25,039
+will give us back
+
+14
+00:00:25,039 --> 00:00:27,680
+a unit and we also know that calling the
+
+15
+00:00:27,680 --> 00:00:28,160
+function
+
+16
+00:00:28,160 --> 00:00:30,800
+increment will increment that count so
+
+17
+00:00:30,800 --> 00:00:32,880
+the question here is how do we write a
+
+18
+00:00:32,880 --> 00:00:33,600
+contract
+
+19
+00:00:33,600 --> 00:00:36,000
+that interacts with this contract
+
+20
+00:00:36,000 --> 00:00:38,079
+without having to copy paste
+
+21
+00:00:38,079 --> 00:00:41,040
+all the source code of this contract the
+
+22
+00:00:41,040 --> 00:00:44,160
+way you do it is by using interfaces so
+
+23
+00:00:44,160 --> 00:00:45,760
+in this video i'm going to show you how
+
+24
+00:00:45,760 --> 00:00:47,440
+to use the interface to
+
+25
+00:00:47,440 --> 00:00:50,079
+interact with the counter contract and
+
+26
+00:00:50,079 --> 00:00:52,000
+then we'll take a look at a real world
+
+27
+00:00:52,000 --> 00:00:52,719
+example
+
+28
+00:00:52,719 --> 00:00:55,199
+using uni swap to interact with our
+
+29
+00:00:55,199 --> 00:00:56,320
+example contract
+
+30
+00:00:56,320 --> 00:00:58,480
+we'll first need to write an interface
+
+31
+00:00:58,480 --> 00:01:00,239
+to the counter contract
+
+32
+00:01:00,239 --> 00:01:04,400
+and we do that by typing interface
+
+33
+00:01:04,400 --> 00:01:07,600
+i'll name this interface as i
+
+34
+00:01:07,600 --> 00:01:10,880
+counter and the two functions that we
+
+35
+00:01:10,880 --> 00:01:13,600
+want to call from the counter contract
+
+36
+00:01:13,600 --> 00:01:16,880
+is get the count and call the function
+
+37
+00:01:16,880 --> 00:01:18,000
+increment
+
+38
+00:01:18,000 --> 00:01:20,880
+so back in our i counter interface we'll
+
+39
+00:01:20,880 --> 00:01:21,280
+first
+
+40
+00:01:21,280 --> 00:01:24,840
+define the function count by saying
+
+41
+00:01:24,840 --> 00:01:28,400
+function count
+
+42
+00:01:28,960 --> 00:01:33,920
+external view and it returns
+
+43
+00:01:33,920 --> 00:01:38,400
+a uint and then we type in a semicolon
+
+44
+00:01:38,400 --> 00:01:40,720
+notice that unlike a contract we don't
+
+45
+00:01:40,720 --> 00:01:42,960
+define the function body
+
+46
+00:01:42,960 --> 00:01:45,040
+and we also put a semicolon after the
+
+47
+00:01:45,040 --> 00:01:46,880
+function signature
+
+48
+00:01:46,880 --> 00:01:48,799
+the other function that we want to call
+
+49
+00:01:48,799 --> 00:01:50,240
+from this counter contract
+
+50
+00:01:50,240 --> 00:01:52,880
+is the increment function so again here
+
+51
+00:01:52,880 --> 00:01:55,360
+we'll just define the function signature
+
+52
+00:01:55,360 --> 00:01:58,560
+by saying function
+
+53
+00:01:58,719 --> 00:02:02,320
+increment and
+
+54
+00:02:02,320 --> 00:02:05,759
+external and then we put a semicolon
+
+55
+00:02:05,759 --> 00:02:07,520
+so that's how you declare interface
+
+56
+00:02:07,520 --> 00:02:09,598
+let's now write our contract
+
+57
+00:02:09,598 --> 00:02:11,200
+that will actually make the calls to the
+
+58
+00:02:11,200 --> 00:02:13,920
+counter contract so inside my contract
+
+59
+00:02:13,920 --> 00:02:15,840
+i'll first write a function to call
+
+60
+00:02:15,840 --> 00:02:17,760
+increment on the counter
+
+61
+00:02:17,760 --> 00:02:21,120
+contract so we'll say function i'll name
+
+62
+00:02:21,120 --> 00:02:21,440
+it
+
+63
+00:02:21,440 --> 00:02:25,040
+increment counter
+
+64
+00:02:25,040 --> 00:02:27,680
+and it's going to take in the address of
+
+65
+00:02:27,680 --> 00:02:28,959
+the
+
+66
+00:02:28,959 --> 00:02:32,000
+counter contract this function will be
+
+67
+00:02:32,000 --> 00:02:34,480
+external
+
+68
+00:02:34,480 --> 00:02:35,840
+and the way you call the counter
+
+69
+00:02:35,840 --> 00:02:38,319
+contract is by saying i
+
+70
+00:02:38,319 --> 00:02:43,440
+counter at the counter address
+
+71
+00:02:43,440 --> 00:02:46,640
+and then we call increment
+
+72
+00:02:46,640 --> 00:02:48,640
+let's also get the count stored inside
+
+73
+00:02:48,640 --> 00:02:52,080
+the counter contract so we'll say
+
+74
+00:02:52,080 --> 00:02:55,440
+function get count
+
+75
+00:02:55,440 --> 00:02:58,480
+and again it's going to take the address
+
+76
+00:02:58,480 --> 00:03:00,239
+of the counter
+
+77
+00:03:00,239 --> 00:03:02,400
+and this is a read function that returns
+
+78
+00:03:02,400 --> 00:03:04,400
+a unit of the count
+
+79
+00:03:04,400 --> 00:03:08,640
+so you'll say external view
+
+80
+00:03:08,640 --> 00:03:11,680
+returns you
+
+81
+00:03:11,680 --> 00:03:16,000
+and and we'll say return
+
+82
+00:03:16,000 --> 00:03:19,920
+i counter at the counter
+
+83
+00:03:19,920 --> 00:03:24,799
+address dot count
+
+84
+00:03:24,799 --> 00:03:26,879
+and that's how you write a contract that
+
+85
+00:03:26,879 --> 00:03:28,720
+interacts with other contracts
+
+86
+00:03:28,720 --> 00:03:30,959
+without having to copy paste the code
+
+87
+00:03:30,959 --> 00:03:32,879
+for the contract that you're calling
+
+88
+00:03:32,879 --> 00:03:34,640
+and this is done by declaring the
+
+89
+00:03:34,640 --> 00:03:36,799
+interface and defining the function
+
+90
+00:03:36,799 --> 00:03:37,599
+signatures
+
+91
+00:03:37,599 --> 00:03:40,080
+for the functions that you want to call
+
+92
+00:03:40,080 --> 00:03:41,680
+inside your contract
+
+93
+00:03:41,680 --> 00:03:44,400
+all right let's see a demo in remix so
+
+94
+00:03:44,400 --> 00:03:47,040
+i'm gonna compile this code
+
+95
+00:03:47,040 --> 00:03:50,480
+and then deploy
+
+96
+00:03:50,480 --> 00:03:55,439
+my contract i'm gonna scroll down
+
+97
+00:03:55,439 --> 00:03:57,360
+first i'm gonna copy the address of the
+
+98
+00:03:57,360 --> 00:03:59,040
+counter contract
+
+99
+00:03:59,040 --> 00:04:02,480
+and then expand my contract and we'll
+
+100
+00:04:02,480 --> 00:04:02,879
+call
+
+101
+00:04:02,879 --> 00:04:04,799
+increment counter by passing in the
+
+102
+00:04:04,799 --> 00:04:06,879
+address that we just copied
+
+103
+00:04:06,879 --> 00:04:09,680
+and we can get the count by pasting in
+
+104
+00:04:09,680 --> 00:04:11,439
+the address of the counter contract
+
+105
+00:04:11,439 --> 00:04:13,519
+again
+
+106
+00:04:13,519 --> 00:04:16,399
+and we get the count two just to double
+
+107
+00:04:16,399 --> 00:04:16,798
+check
+
+108
+00:04:16,798 --> 00:04:19,279
+let's see what the count is on the
+
+109
+00:04:19,279 --> 00:04:21,680
+counter contract itself
+
+110
+00:04:21,680 --> 00:04:23,759
+so inside the counter contract i'll
+
+111
+00:04:23,759 --> 00:04:25,040
+click count
+
+112
+00:04:25,040 --> 00:04:28,080
+and it equals to over here too
+
+113
+00:04:28,080 --> 00:04:29,520
+next i'm going to show you example of
+
+114
+00:04:29,520 --> 00:04:31,199
+how to use interfaces
+
+115
+00:04:31,199 --> 00:04:34,080
+to interact with uni swap for this
+
+116
+00:04:34,080 --> 00:04:35,919
+example i'm going to show you how to get
+
+117
+00:04:35,919 --> 00:04:37,120
+the token reserve
+
+118
+00:04:37,120 --> 00:04:40,240
+of the die with pool in other words
+
+119
+00:04:40,240 --> 00:04:42,240
+we're going to get the amount of dye
+
+120
+00:04:42,240 --> 00:04:45,040
+and the amount of weft that is stored in
+
+121
+00:04:45,040 --> 00:04:46,479
+the uni swap
+
+122
+00:04:46,479 --> 00:04:48,560
+to get the token reserves the first
+
+123
+00:04:48,560 --> 00:04:49,759
+thing that we will need to do
+
+124
+00:04:49,759 --> 00:04:53,520
+is get the contract address that manages
+
+125
+00:04:53,520 --> 00:04:56,720
+these two tokens die and with
+
+126
+00:04:56,720 --> 00:04:59,199
+inside the uni-swap documentations if i
+
+127
+00:04:59,199 --> 00:05:01,280
+scroll down
+
+128
+00:05:01,280 --> 00:05:03,280
+i can see that this is the function that
+
+129
+00:05:03,280 --> 00:05:04,479
+i need to call
+
+130
+00:05:04,479 --> 00:05:06,800
+in order to get the contract addresses
+
+131
+00:05:06,800 --> 00:05:08,000
+that manages
+
+132
+00:05:08,000 --> 00:05:10,240
+die and with so i'm going to copy this
+
+133
+00:05:10,240 --> 00:05:11,759
+function signature
+
+134
+00:05:11,759 --> 00:05:14,080
+and back inside remix we'll define our
+
+135
+00:05:14,080 --> 00:05:15,120
+interface
+
+136
+00:05:15,120 --> 00:05:18,960
+so we'll say interface
+
+137
+00:05:19,520 --> 00:05:24,240
+uni swap version 2.
+
+138
+00:05:24,240 --> 00:05:26,960
+factory and then we'll paste the
+
+139
+00:05:26,960 --> 00:05:29,199
+function signature that we copied over
+
+140
+00:05:29,199 --> 00:05:31,120
+from the uniswap website
+
+141
+00:05:31,120 --> 00:05:32,960
+and calling this function will give us
+
+142
+00:05:32,960 --> 00:05:35,039
+back the contract address
+
+143
+00:05:35,039 --> 00:05:37,840
+that keeps track of how much dye and
+
+144
+00:05:37,840 --> 00:05:38,560
+weft
+
+145
+00:05:38,560 --> 00:05:41,120
+that is locked in unispot once we know
+
+146
+00:05:41,120 --> 00:05:43,440
+the contract address of the pair
+
+147
+00:05:43,440 --> 00:05:46,080
+we can get the token reserves by calling
+
+148
+00:05:46,080 --> 00:05:48,639
+get reserves
+
+149
+00:05:48,639 --> 00:05:50,080
+so i'm going to copy the function
+
+150
+00:05:50,080 --> 00:05:51,680
+signature here
+
+151
+00:05:51,680 --> 00:05:53,840
+and then inside remix we'll define an
+
+152
+00:05:53,840 --> 00:05:56,400
+interface
+
+153
+00:05:56,720 --> 00:06:00,400
+we'll call it uni swap b2
+
+154
+00:06:00,400 --> 00:06:04,840
+pair and then paste the function
+
+155
+00:06:04,840 --> 00:06:06,240
+signature
+
+156
+00:06:06,240 --> 00:06:08,080
+all right we define the interfaces we're
+
+157
+00:06:08,080 --> 00:06:10,000
+now ready to implement the
+
+158
+00:06:10,000 --> 00:06:12,479
+get token reserves so you'll get the
+
+159
+00:06:12,479 --> 00:06:15,039
+address of the pair by saying
+
+160
+00:06:15,039 --> 00:06:18,479
+address pair is equal to
+
+161
+00:06:18,479 --> 00:06:22,240
+uni swap version 2 factory
+
+162
+00:06:22,240 --> 00:06:25,600
+at the factory address
+
+163
+00:06:25,600 --> 00:06:28,080
+and then we'll call the get pair
+
+164
+00:06:28,080 --> 00:06:30,240
+function
+
+165
+00:06:30,240 --> 00:06:33,759
+passing in the address of die and
+
+166
+00:06:33,759 --> 00:06:37,199
+with once we have the pair address
+
+167
+00:06:37,199 --> 00:06:40,800
+we can get the reserves by saying
+
+168
+00:06:40,800 --> 00:06:44,080
+uint reserve
+
+169
+00:06:44,080 --> 00:06:48,479
+zero and you and
+
+170
+00:06:48,479 --> 00:06:51,680
+reserve one is
+
+171
+00:06:51,680 --> 00:06:54,319
+equal to
+
+172
+00:06:54,720 --> 00:06:59,360
+uni swap v2 pair
+
+173
+00:06:59,360 --> 00:07:03,840
+at pair and then calling get
+
+174
+00:07:03,840 --> 00:07:08,000
+reserves and then lastly we'll return
+
+175
+00:07:08,000 --> 00:07:09,039
+the reserves
+
+176
+00:07:09,039 --> 00:07:14,000
+so by saying reserve zero
+
+177
+00:07:14,240 --> 00:07:17,360
+reserve one let's go over what this
+
+178
+00:07:17,360 --> 00:07:18,720
+function does
+
+179
+00:07:18,720 --> 00:07:21,919
+it calls uni swap b2 factory
+
+180
+00:07:21,919 --> 00:07:25,039
+at the factory and gets the address of
+
+181
+00:07:25,039 --> 00:07:26,080
+the contract
+
+182
+00:07:26,080 --> 00:07:29,280
+that manages die and with
+
+183
+00:07:29,280 --> 00:07:32,400
+next we call get reserves on the pair
+
+184
+00:07:32,400 --> 00:07:35,280
+contract which returns the two token
+
+185
+00:07:35,280 --> 00:07:36,319
+amounts
+
+186
+00:07:36,319 --> 00:07:38,960
+managed under this contract and we just
+
+187
+00:07:38,960 --> 00:07:40,479
+returned the number
+
+188
+00:07:40,479 --> 00:07:42,800
+that was returned from here all right
+
+189
+00:07:42,800 --> 00:07:44,720
+let's see a demo in remix
+
+190
+00:07:44,720 --> 00:07:48,000
+so i'm gonna first compile this i forgot
+
+191
+00:07:48,000 --> 00:07:50,000
+to mention git reserve returns
+
+192
+00:07:50,000 --> 00:07:52,400
+three parameters but we don't need the
+
+193
+00:07:52,400 --> 00:07:54,879
+third one so here we'll say hey
+
+194
+00:07:54,879 --> 00:07:57,440
+ignore the third output all right let's
+
+195
+00:07:57,440 --> 00:07:59,759
+try compiling again
+
+196
+00:07:59,759 --> 00:08:01,840
+so i'm going to hit compile and then
+
+197
+00:08:01,840 --> 00:08:02,960
+under the tab to
+
+198
+00:08:02,960 --> 00:08:05,520
+deploy and run transactions i'm going to
+
+199
+00:08:05,520 --> 00:08:06,319
+click on
+
+200
+00:08:06,319 --> 00:08:09,440
+injected web 3 and this will connect
+
+201
+00:08:09,440 --> 00:08:13,039
+your meta mask to remix and we're now
+
+202
+00:08:13,039 --> 00:08:15,120
+connected to the mainnet network
+
+203
+00:08:15,120 --> 00:08:17,440
+now i don't want to waste either
+
+204
+00:08:17,440 --> 00:08:19,039
+deploying this contract
+
+205
+00:08:19,039 --> 00:08:22,080
+so what i'll do instead here is show you
+
+206
+00:08:22,080 --> 00:08:24,080
+how to use interface directly
+
+207
+00:08:24,080 --> 00:08:27,120
+to communicate with uni swap and we'll
+
+208
+00:08:27,120 --> 00:08:30,000
+manually go over the steps inside here
+
+209
+00:08:30,000 --> 00:08:31,520
+so the first thing that we'll need to do
+
+210
+00:08:31,520 --> 00:08:33,440
+is get the address of the pair
+
+211
+00:08:33,440 --> 00:08:36,958
+and we can do that by selecting
+
+212
+00:08:36,958 --> 00:08:40,320
+unison b to factory the address of the
+
+213
+00:08:40,320 --> 00:08:41,760
+factory is this
+
+214
+00:08:41,760 --> 00:08:44,880
+so i'm going to copy it
+
+215
+00:08:44,880 --> 00:08:48,240
+paste it here and then click address
+
+216
+00:08:48,240 --> 00:08:50,000
+this will get the contract at this
+
+217
+00:08:50,000 --> 00:08:51,440
+address
+
+218
+00:08:51,440 --> 00:08:54,480
+so i'm going to expand here and we can
+
+219
+00:08:54,480 --> 00:08:55,279
+get the pair
+
+220
+00:08:55,279 --> 00:08:58,720
+by passing in the address of
+
+221
+00:08:58,720 --> 00:09:02,959
+die and wef
+
+222
+00:09:05,200 --> 00:09:08,000
+and then calling get pair so that's the
+
+223
+00:09:08,000 --> 00:09:09,680
+address of the pair that i'm going to
+
+224
+00:09:09,680 --> 00:09:10,240
+copy
+
+225
+00:09:10,240 --> 00:09:14,160
+scrolling up we'll click on uni swap b2
+
+226
+00:09:14,160 --> 00:09:15,839
+pair
+
+227
+00:09:15,839 --> 00:09:18,240
+and then get the contract at the address
+
+228
+00:09:18,240 --> 00:09:23,839
+of the pair then call get reserves
+
+229
+00:09:23,839 --> 00:09:26,560
+so we just manually went through the
+
+230
+00:09:26,560 --> 00:09:28,320
+code over here
+
+231
+00:09:28,320 --> 00:09:30,000
+all right so that was an example of how
+
+232
+00:09:30,000 --> 00:09:32,800
+to use interface inside your contract
+
+233
+00:09:32,800 --> 00:09:34,560
+furthermore i showed you how to use
+
+234
+00:09:34,560 --> 00:09:36,880
+interfaces to directly
+
+235
+00:09:36,880 --> 00:09:39,120
+interact with smart contracts on the
+
+236
+00:09:39,120 --> 00:09:40,080
+main net
+
+237
+00:09:40,080 --> 00:09:42,720
+and we did that by using these
+
+238
+00:09:42,720 --> 00:09:43,839
+interfaces
+
+239
+00:09:43,839 --> 00:09:46,080
+and and directly pasting in the
+
+240
+00:09:46,080 --> 00:09:47,360
+addresses
+
+241
+00:09:47,360 --> 00:09:51,360
+thanks for watching and see you soon
+

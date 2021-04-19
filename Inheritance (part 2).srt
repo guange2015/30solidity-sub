@@ -1,0 +1,1265 @@
+1
+00:00:00,140 --> 00:00:03,449
+in this video you'll go to some examples
+在此视频中，您将转到有关多个继承针固定性的一些示例
+
+2
+00:00:03,449 --> 00:00:06,990
+of multiple inheritance pin solidity for
+在此视频中，您将转到有关多个继承针固定性的一些示例
+
+3
+00:00:06,990 --> 00:00:09,030
+the first example we will consider the
+在第一个示例中，我们将考虑合同c继承自的情况
+
+4
+00:00:09,030 --> 00:00:11,370
+case where a contract c inherits from
+在第一个示例中，我们将考虑合同c继承自的情况
+
+5
+00:00:11,370 --> 00:00:16,260
+contract a and contract B here we have
+合同a和合同B在这里，我们有三个合同合同a合同B
+
+6
+00:00:16,260 --> 00:00:19,199
+three contracts contract a contract B
+合同a和合同B在这里，我们有三个合同合同a合同B
+
+7
+00:00:19,199 --> 00:00:22,619
+and contract C for a contract C to
+以及合同C，以使合同C继承合同a和合同B
+
+8
+00:00:22,619 --> 00:00:25,800
+inherit both contract a and contract B
+以及合同C，以使合同C继承合同a和合同B
+
+9
+00:00:25,800 --> 00:00:27,990
+we first start with the keyword a's
+我们首先以关键字a开头，后跟合约名称，因此
+
+10
+00:00:27,990 --> 00:00:30,960
+followed by the name of the contract so
+我们首先以关键字a开头，后跟合约名称，因此
+
+11
+00:00:30,960 --> 00:00:34,890
+contract a comma and then V and if
+收缩一个逗号，然后收缩V，如果contact包含一个称为foo的函数，
+
+12
+00:00:34,890 --> 00:00:37,649
+contact a has a function called foo and
+收缩一个逗号，然后收缩V，如果contact包含一个称为foo的函数，
+
+13
+00:00:37,649 --> 00:00:40,160
+contract B as a function called Bar
+合约B作为称为Bar合约的函数具有合约foo和foo
+
+14
+00:00:40,160 --> 00:00:43,410
+contract C has both functions foo and
+合约B作为称为Bar合约的函数具有合约foo和foo
+
+15
+00:00:43,410 --> 00:00:46,950
+bar you can verify this for yourself by
+栏，您可以通过编译合同和部署来自己验证
+
+16
+00:00:46,950 --> 00:00:49,289
+compiling the contracts and deploying
+栏，您可以通过编译合同和部署来自己验证
+
+17
+00:00:49,289 --> 00:00:51,680
+contract C
+合同C，如果父母双方相同
+
+18
+00:00:51,680 --> 00:00:54,780
+and if both the parents had the same
+合同C，如果父母双方相同
+
+19
+00:00:54,780 --> 00:00:58,110
+function function food then contract see
+功能功能食物然后收缩在这里只看到功能之一
+
+20
+00:00:58,110 --> 00:01:01,320
+in here only one of the functions so
+功能功能食物然后收缩在这里只看到功能之一
+
+21
+00:01:01,320 --> 00:01:03,600
+which function food that contract see
+哪些功能可以让您看清合约和发丝，让我们找出来
+
+22
+00:01:03,600 --> 00:01:05,970
+and hair let's find out
+哪些功能可以让您看清合约和发丝，让我们找出来
+
+23
+00:01:05,970 --> 00:01:08,250
+go ahead and compile and redeploy the
+继续编译并重新部署合同
+
+24
+00:01:08,250 --> 00:01:10,730
+contract
+继续编译并重新部署合同
+
+25
+00:01:13,049 --> 00:01:16,140
+when you execute the function foo you'll
+当您执行函数foo时，当我们调用
+
+26
+00:01:16,140 --> 00:01:18,810
+get the string be back when we call the
+当您执行函数foo时，当我们调用
+
+27
+00:01:18,810 --> 00:01:21,930
+function food inside contract see the
+合同中的函数food参见合同B中的函数foo是
+
+28
+00:01:21,930 --> 00:01:24,330
+function foo inside contract B was
+合同中的函数food参见合同B中的函数foo是
+
+29
+00:01:24,330 --> 00:01:27,360
+called and it returned the string B if
+调用，并且如果您反转继承并重新部署，它将返回字符串B
+
+30
+00:01:27,360 --> 00:01:30,390
+you reverse the inheritance and redeploy
+调用，并且如果您反转继承并重新部署，它将返回字符串B
+
+31
+00:01:30,390 --> 00:01:33,090
+the contract and execute the function
+合同并执行功能foo yo，将字符串取回，所以现在
+
+32
+00:01:33,090 --> 00:01:37,590
+foo yo get the string a back so now
+合同并执行功能foo yo，将字符串取回，所以现在
+
+33
+00:01:37,590 --> 00:01:39,000
+we've seen that when the order of
+我们已经看到，当继承顺序是内部的B函数食物时
+
+34
+00:01:39,000 --> 00:01:42,330
+inheritance was a B function food inside
+我们已经看到，当继承顺序是内部的B函数食物时
+
+35
+00:01:42,330 --> 00:01:44,850
+contract B was called an in return the
+另一方面，合约B被称为“返回”字符串B
+
+36
+00:01:44,850 --> 00:01:46,709
+string B on the other hand when the
+另一方面，合约B被称为“返回”字符串B
+
+37
+00:01:46,709 --> 00:01:49,860
+order of inheritance was be a function
+继承的顺序是合同a中的功能食品
+
+38
+00:01:49,860 --> 00:01:52,560
+food inside contract a was called in a
+继承的顺序是合同a中的功能食品
+
+39
+00:01:52,560 --> 00:01:55,020
+return the string gay you can see from
+从这两个示例返回的字符串gay可以看到
+
+40
+00:01:55,020 --> 00:01:57,030
+these two examples that the order of
+从这两个示例返回的字符串gay可以看到
+
+41
+00:01:57,030 --> 00:01:59,970
+inheritance determines which function
+继承决定了我们合同继承的功能，那么您应该如何
+
+42
+00:01:59,970 --> 00:02:03,810
+our contract inherits so how should you
+继承决定了我们合同继承的功能，那么您应该如何
+
+43
+00:02:03,810 --> 00:02:05,819
+order the contracts that you want to
+根据以下命令订购要签订合同的合同
+
+44
+00:02:05,819 --> 00:02:08,880
+enter into your contract according to
+根据以下命令订购要签订合同的合同
+
+45
+00:02:08,880 --> 00:02:11,430
+the solidity documentation you have to
+实体文档，您必须在订单中列出明显的合同
+
+46
+00:02:11,430 --> 00:02:13,530
+list apparent contracts in the order
+实体文档，您必须在订单中列出明显的合同
+
+47
+00:02:13,530 --> 00:02:17,100
+from most baseline to most derived what
+从大多数基准到大多数派生，我们所说的“最基础的”和“大多数”是什么意思
+
+48
+00:02:17,100 --> 00:02:19,470
+do we mean by most based like and most
+从大多数基准到大多数派生，我们所说的“最基础的”和“大多数”是什么意思
+
+49
+00:02:19,470 --> 00:02:23,519
+derived so for example contract a is
+派生的，例如合同a比合同更像
+
+50
+00:02:23,519 --> 00:02:25,980
+more based like than contract see
+派生的，例如合同a比合同更像
+
+51
+00:02:25,980 --> 00:02:29,100
+because contract a does not inherit any
+因为合同a不会继承任何其他合同
+
+52
+00:02:29,100 --> 00:02:30,239
+other contracts
+因为合同a不会继承任何其他合同
+
+53
+00:02:30,239 --> 00:02:33,299
+likewise contract B is more based I
+同样，合同B的依据更多，我认为出租车和合同的依据更多
+
+54
+00:02:33,299 --> 00:02:37,049
+think on taxi and contract see is more
+同样，合同B的依据更多，我认为出租车和合同的依据更多
+
+55
+00:02:37,049 --> 00:02:39,660
+derived than both contract B and
+比合同B和合同日都衍生，因为合同C继承了
+
+56
+00:02:39,660 --> 00:02:43,230
+contract day because contract C inherits
+比合同B和合同日都衍生，因为合同C继承了
+
+57
+00:02:43,230 --> 00:02:46,650
+from a and B and if you had a contract D
+来自a和B的合同，并且如果您拥有从a和C继承的合同D
+
+58
+00:02:46,650 --> 00:02:50,519
+that inherits from a and C the contract
+来自a和B的合同，并且如果您拥有从a和C继承的合同D
+
+59
+00:02:50,519 --> 00:02:53,730
+D is more derived than C and also more
+ D比C更衍生，也更衍生和签订合同通知书
+
+60
+00:02:53,730 --> 00:02:56,519
+derived and contract a notice the order
+ D比C更衍生，也更衍生和签订合同通知书
+
+61
+00:02:56,519 --> 00:02:59,670
+of inheritance for contract D is from
+合同D的继承权是从更多的空间到大多数衍生的空间，因为
+
+62
+00:02:59,670 --> 00:03:02,250
+more space like to most derived since
+合同D的继承权是从更多的空间到大多数衍生的空间，因为
+
+63
+00:03:02,250 --> 00:03:06,030
+contract C inherits from contract a it
+合同C从合同a继承，如果您继承合同c
+
+64
+00:03:06,030 --> 00:03:08,970
+is more derived than contract a if you
+合同C从合同a继承，如果您继承合同c
+
+65
+00:03:08,970 --> 00:03:10,889
+were to switch the order of inheritance
+将继承的顺序从大多数派生切换到大多数基础派，例如
+
+66
+00:03:10,889 --> 00:03:14,220
+from most derived to most based like the
+将继承的顺序从大多数派生切换到大多数基础派，例如
+
+67
+00:03:14,220 --> 00:03:16,650
+solidity compiler might earn air like
+坚固的编译器可能会像这样赚钱
+
+68
+00:03:16,650 --> 00:03:18,280
+this
+坚固的编译器可能会像这样赚钱
+
+69
+00:03:18,280 --> 00:03:21,610
+once we order our inheritance from most
+一旦我们从大多数基本类型到大多数派生命令继承
+
+70
+00:03:21,610 --> 00:03:24,670
+base type to most derived how does
+一旦我们从大多数基本类型到大多数派生命令继承
+
+71
+00:03:24,670 --> 00:03:26,800
+solidity determine which function to
+坚固性根据坚固性确定要调用的功能
+
+72
+00:03:26,800 --> 00:03:29,610
+call according to the solidity
+坚固性根据坚固性确定要调用的功能
+
+73
+00:03:29,610 --> 00:03:32,050
+documentation when a function is called
+多次定义的函数调用时的文档
+
+74
+00:03:32,050 --> 00:03:34,420
+that is defined multiple times in
+多次定义的函数调用时的文档
+
+75
+00:03:34,420 --> 00:03:37,030
+different contracts solidity searches
+不同的合同稳定性从右到左搜索功能，然后
+
+76
+00:03:37,030 --> 00:03:39,370
+for the function from right to left and
+不同的合同稳定性从右到左搜索功能，然后
+
+77
+00:03:39,370 --> 00:03:43,390
+in a depth first manner right to left is
+以深度优先的方式从右到左很容易理解，但让我们来看一下
+
+78
+00:03:43,390 --> 00:03:45,490
+easy to understand but let's go over a
+以深度优先的方式从右到左很容易理解，但让我们来看一下
+
+79
+00:03:45,490 --> 00:03:49,360
+quick example using contracts see when
+使用合同的简单示例，请参见何时在内部调用函数foo
+
+80
+00:03:49,360 --> 00:03:51,070
+we call the function foo inside
+使用合同的简单示例，请参见何时在内部调用函数foo
+
+81
+00:03:51,070 --> 00:03:53,680
+contracts see you'll get the string B
+合约看到您将获得字符串B，这是因为搜索了牢固性
+
+82
+00:03:53,680 --> 00:03:56,650
+back this is because solidity searched
+合约看到您将获得字符串B，这是因为搜索了牢固性
+
+83
+00:03:56,650 --> 00:03:59,110
+for the function foo starting from the
+对于从最右边的裤装协定开始的功能foo
+
+84
+00:03:59,110 --> 00:04:01,810
+rightmost pant contract which is
+对于从最右边的裤装协定开始的功能foo
+
+85
+00:04:01,810 --> 00:04:05,020
+contract e and inside contract be a
+合同e和合同内部都是发现函数foo
+
+86
+00:04:05,020 --> 00:04:06,690
+found the function foo
+合同e和合同内部都是发现函数foo
+
+87
+00:04:06,690 --> 00:04:09,760
+if contract B didn't have the function
+如果合同B不具有函数foo，我们在内部调用函数food
+
+88
+00:04:09,760 --> 00:04:12,670
+foo and we call the function food inside
+如果合同B不具有函数foo，我们在内部调用函数food
+
+89
+00:04:12,670 --> 00:04:16,000
+contract C then solidity will start from
+合同C，那么稳固性将从最右边的裤子合同开始，发现
+
+90
+00:04:16,000 --> 00:04:18,760
+the rightmost pant contract finding that
+合同C，那么稳固性将从最右边的裤子合同开始，发现
+
+91
+00:04:18,760 --> 00:04:20,980
+contract B does not have the function
+合约B没有功能foo next solid将搜索
+
+92
+00:04:20,980 --> 00:04:24,160
+foo next solidity will search for the
+合约B没有功能foo next solid将搜索
+
+93
+00:04:24,160 --> 00:04:27,190
+function food inside contract a since
+合约内的功能食品，因为合约内定义了功能foo
+
+94
+00:04:27,190 --> 00:04:30,010
+function foo is defined inside contract
+合约内的功能食品，因为合约内定义了功能foo
+
+95
+00:04:30,010 --> 00:04:33,550
+a the function foo inside contract C
+合同C内的函数foo将导致合同内的函数foo
+
+96
+00:04:33,550 --> 00:04:36,430
+will result to the function foo inside
+合同C内的函数foo将导致合同内的函数foo
+
+97
+00:04:36,430 --> 00:04:39,430
+contract a and when we execute the
+收缩a，当我们执行功能时，如果我们返回字符串，
+
+98
+00:04:39,430 --> 00:04:43,090
+function we get our string a back if we
+收缩a，当我们执行功能时，如果我们返回字符串，
+
+99
+00:04:43,090 --> 00:04:45,070
+were to switch the order of inheritance
+切换继承顺序，使合同a是最右边的坦克
+
+100
+00:04:45,070 --> 00:04:47,919
+so that contract a is the rightmost tank
+切换继承顺序，使合同a是最右边的坦克
+
+101
+00:04:47,919 --> 00:04:51,010
+object then solidity will first search
+对象，然后坚固性将首先在合同内搜索功能食品
+
+102
+00:04:51,010 --> 00:04:53,380
+for the function food inside contract
+对象，然后坚固性将首先在合同内搜索功能食品
+
+103
+00:04:53,380 --> 00:04:55,750
+day before searching for that function
+在合同E中搜索该功能的前一天，您可以在此处进行验证
+
+104
+00:04:55,750 --> 00:04:58,960
+in contract E and you can verify here
+在合同E中搜索该功能的前一天，您可以在此处进行验证
+
+105
+00:04:58,960 --> 00:05:01,180
+that the function food inside contract
+接下来称为合同日内的功能食品
+
+106
+00:05:01,180 --> 00:05:04,120
+day was called next let's go over what
+接下来称为合同日内的功能食品
+
+107
+00:05:04,120 --> 00:05:07,330
+it means to search depth first here we
+这意味着首先要搜索深度，我们有从D和D继承的合同D
+
+108
+00:05:07,330 --> 00:05:10,270
+have contract D that inherits from a and
+这意味着首先要搜索深度，我们有从D和D继承的合同D
+
+109
+00:05:10,270 --> 00:05:13,450
+C when we call the function foo on
+ C当我们在联系人D上调用函数foo时，它首先返回字符串B
+
+110
+00:05:13,450 --> 00:05:16,840
+contact D it returns the string B first
+ C当我们在联系人D上调用函数foo时，它首先返回字符串B
+
+111
+00:05:16,840 --> 00:05:19,030
+solidity search for the function foo
+自该功能以来，在契约密钥内部进行功能性foo搜索
+
+112
+00:05:19,030 --> 00:05:21,729
+inside contract key since the function
+自该功能以来，在契约密钥内部进行功能性foo搜索
+
+113
+00:05:21,729 --> 00:05:24,720
+foo is not defined inside contract D
+在合同D实体内部未定义foo的情况下搜索了功能foo
+
+114
+00:05:24,720 --> 00:05:27,460
+solidity searched for the function foo
+在合同D实体内部未定义foo的情况下搜索了功能foo
+
+115
+00:05:27,460 --> 00:05:30,550
+in the rightmost parent contract in this
+在这种情况下最右边的父合同中
+
+116
+00:05:30,550 --> 00:05:31,810
+case contract
+在这种情况下最右边的父合同中
+
+117
+00:05:31,810 --> 00:05:34,420
+again the function food is not defined
+再次，功能性食品未在接触中定义，请参见“坚固性搜索”
+
+118
+00:05:34,420 --> 00:05:37,960
+inside contact see so solidity searches
+再次，功能性食品未在接触中定义，请参见“坚固性搜索”
+
+119
+00:05:37,960 --> 00:05:40,660
+for the function food in the rightmost
+在这种情况下，最右边的父合同中的功能食品为
+
+120
+00:05:40,660 --> 00:05:43,980
+parent contract in this case contract be
+在这种情况下，最右边的父合同中的功能食品为
+
+121
+00:05:43,980 --> 00:05:47,139
+function food is defined inside contract
+合同中定义了功能食品，因此坚固性称为此功能，并且
+
+122
+00:05:47,139 --> 00:05:50,200
+be so solidity calls this function and
+合同中定义了功能食品，因此坚固性称为此功能，并且
+
+123
+00:05:50,200 --> 00:05:52,690
+it turns the string B and we get our
+它将字符串B变成字符串，如果函数foo，我们将字符串V返回到此处
+
+124
+00:05:52,690 --> 00:05:55,660
+string V back here if the function foo
+它将字符串B变成字符串，如果函数foo，我们将字符串V返回到此处
+
+125
+00:05:55,660 --> 00:05:59,020
+was not defined in contract B and the
+未在合同B中定义，并且函数foo被称为合同D
+
+126
+00:05:59,020 --> 00:06:01,840
+function foo was called a contract D
+未在合同B中定义，并且函数foo被称为合同D
+
+127
+00:06:01,840 --> 00:06:04,870
+then solidity will first search for the
+然后坚固性将首先在合约D内搜索功能食物
+
+128
+00:06:04,870 --> 00:06:08,050
+function food inside contract D next it
+然后坚固性将首先在合约D内搜索功能食物
+
+129
+00:06:08,050 --> 00:06:09,820
+will search for the function in the
+在这种情况下，将在最右边的平移合约中搜索功能
+
+130
+00:06:09,820 --> 00:06:12,040
+rightmost pan contract in this case
+在这种情况下，将在最右边的平移合约中搜索功能
+
+131
+00:06:12,040 --> 00:06:14,980
+contract C again the function foo is not
+再次与合同C一起在合同C中未定义函数foo，因此具有坚固性
+
+132
+00:06:14,980 --> 00:06:18,190
+defined inside contract C so solidity
+再次与合同C一起在合同C中未定义函数foo，因此具有坚固性
+
+133
+00:06:18,190 --> 00:06:20,620
+will search for that function in the
+将在最右边的平移合约中搜索该功能
+
+134
+00:06:20,620 --> 00:06:22,120
+rightmost pan contract
+将在最右边的平移合约中搜索该功能
+
+135
+00:06:22,120 --> 00:06:25,180
+in this case contract B function foo is
+在这种情况下，合约B函数foo没有在合约内定义
+
+136
+00:06:25,180 --> 00:06:27,970
+not defined inside contract be so
+在这种情况下，合约B函数foo没有在合约内定义
+
+137
+00:06:27,970 --> 00:06:31,000
+solidity comes back to contract C and
+坚固性回到合同C，例如平底锅中的功能
+
+138
+00:06:31,000 --> 00:06:33,790
+such as for the function in the pan
+坚固性回到合同C，例如平底锅中的功能
+
+139
+00:06:33,790 --> 00:06:37,570
+contract left of contract B in this case
+在这种情况下，合同B的合同左，因为合同a定义了
+
+140
+00:06:37,570 --> 00:06:41,140
+contract a since contract a defines the
+在这种情况下，合同B的合同左，因为合同a定义了
+
+141
+00:06:41,140 --> 00:06:43,630
+function foo this is the function that
+函数foo这是被调用的函数，这是值
+
+142
+00:06:43,630 --> 00:06:45,910
+is being called and this is the value
+函数foo这是被调用的函数，这是值
+
+143
+00:06:45,910 --> 00:06:48,430
+that's being returned
+那是返回的，所以我们已经看到房屋Liddy覆盖
+
+144
+00:06:48,430 --> 00:06:51,250
+so we've seen house Liddy overrides
+那是返回的，所以我们已经看到房屋Liddy覆盖
+
+145
+00:06:51,250 --> 00:06:53,680
+functions that are defined multiple
+接下来在不同合约中多次定义的函数
+
+146
+00:06:53,680 --> 00:06:57,520
+times in different contracts next let's
+接下来在不同合约中多次定义的函数
+
+147
+00:06:57,520 --> 00:06:59,710
+go over how to call functions of parent
+仔细研究一下如何调用父合约的功能，但是在执行此操作之前，我要
+
+148
+00:06:59,710 --> 00:07:03,190
+contracts but before we do that I want
+仔细研究一下如何调用父合约的功能，但是在执行此操作之前，我要
+
+149
+00:07:03,190 --> 00:07:05,740
+to first introduce you to feature
+首先向您介绍功能不稳定（可以触发的事件）
+
+150
+00:07:05,740 --> 00:07:09,160
+instability called events you can fire
+首先向您介绍功能不稳定（可以触发的事件）
+
+151
+00:07:09,160 --> 00:07:11,800
+events inside the function and these
+函数内部的事件，这些事件将被记录到
+
+152
+00:07:11,800 --> 00:07:14,050
+events will be recorded into the
+函数内部的事件，这些事件将被记录到
+
+153
+00:07:14,050 --> 00:07:16,960
+transaction logs so how is it useful to
+交易日志，所以对我们现在有什么用，对我们的跟踪很有用
+
+154
+00:07:16,960 --> 00:07:20,380
+us now it will be useful for us to trace
+交易日志，所以对我们现在有什么用，对我们的跟踪很有用
+
+155
+00:07:20,380 --> 00:07:23,199
+function calls I'll make another video
+函数调用我将制作另一个有关事件主题的视频
+
+156
+00:07:23,199 --> 00:07:26,110
+for the topic of events where we will
+函数调用我将制作另一个有关事件主题的视频
+
+157
+00:07:26,110 --> 00:07:29,440
+explore in more details for now I'll
+现在详细探讨，我将向您展示如何声明事件
+
+158
+00:07:29,440 --> 00:07:31,570
+just show you how to declare an event
+现在详细探讨，我将向您展示如何声明事件
+
+159
+00:07:31,570 --> 00:07:34,300
+file your event inside the function and
+在函数中归档事件以及如何在事务中查看事件
+
+160
+00:07:34,300 --> 00:07:37,180
+how to see event inside the transaction
+在函数中归档事件以及如何在事务中查看事件
+
+161
+00:07:37,180 --> 00:07:40,270
+log you can define an event by starting
+日志中，您可以通过以下方式定义事件：以关键字event开头，然后以
+
+162
+00:07:40,270 --> 00:07:42,520
+with the keyword event followed by the
+日志中，您可以通过以下方式定义事件：以关键字event开头，然后以
+
+163
+00:07:42,520 --> 00:07:45,699
+name of event that you want to define in
+在这种情况下，您想要定义的事件的名称我将其命名为nog
+
+164
+00:07:45,699 --> 00:07:49,060
+this case I'll just name it nog inside
+在这种情况下，您想要定义的事件的名称我将其命名为nog
+
+165
+00:07:49,060 --> 00:07:51,130
+the event you can pass parameters that
+如果您可以传递您现在要登录的参数，那么真实的狗
+
+166
+00:07:51,130 --> 00:07:54,099
+you want to log in nowadays real dog the
+如果您可以传递您现在要登录的参数，那么真实的狗
+
+167
+00:07:54,099 --> 00:07:56,560
+name of the function by passing it as a
+通过将其作为字符串传递给您可以触发的函数内部的函数名称
+
+168
+00:07:56,560 --> 00:08:00,880
+string inside the function you can fire
+通过将其作为字符串传递给您可以触发的函数内部的函数名称
+
+169
+00:08:00,880 --> 00:08:03,160
+the event by starting with the keyword
+该事件以关键字email开头，后跟事件名称
+
+170
+00:08:03,160 --> 00:08:06,130
+email followed by the name of the event
+该事件以关键字email开头，后跟事件名称
+
+171
+00:08:06,130 --> 00:08:09,010
+that you want to fire and passing in the
+您想要触发并传递您想要的参数
+
+172
+00:08:09,010 --> 00:08:12,250
+parameters that you want along
+您想要触发并传递您想要的参数
+
+173
+00:08:12,250 --> 00:08:15,590
+compile and deploy contract day and then
+编译并部署合同日，然后执行功能foo，然后单击
+
+174
+00:08:15,590 --> 00:08:19,550
+execute the function foo click on the
+编译并部署合同日，然后执行功能foo，然后单击
+
+175
+00:08:19,550 --> 00:08:24,020
+transaction dog and scroll down on the
+交易狗并向下滚动狗，您可以看到该事件名为
+
+176
+00:08:24,020 --> 00:08:26,300
+dogs you can see that the event named
+交易狗并向下滚动狗，您可以看到该事件名为
+
+177
+00:08:26,300 --> 00:08:30,740
+dog was fired with the message a dot foo
+狗被解雇了一个消息，点号为foo
+
+178
+00:08:30,740 --> 00:08:33,250
+was called
+狗被解雇了一个消息，点号为foo
+
+179
+00:08:33,970 --> 00:08:36,250
+and that's all you need to know about
+这就是您现在需要了解的所有事件，所以现在让我们回到
+
+180
+00:08:36,250 --> 00:08:39,159
+events for now so now let's go back to
+这就是您现在需要了解的所有事件，所以现在让我们回到
+
+181
+00:08:39,159 --> 00:08:41,200
+the topic of how to call parent
+可以调用父合约的主题可以称为父合约
+
+182
+00:08:41,200 --> 00:08:44,200
+contracts parent contracts can be called
+可以调用父合约的主题可以称为父合约
+
+183
+00:08:44,200 --> 00:08:46,750
+directly or by using the keyword super
+直接或通过使用关键字super通过使用关键字super
+
+184
+00:08:46,750 --> 00:08:49,720
+by using the keyword super all of the
+直接或通过使用关键字super通过使用关键字super
+
+185
+00:08:49,720 --> 00:08:52,270
+parent contracts will be called let's go
+父合同将被称为让我们来看一个使用实际代码的示例
+
+186
+00:08:52,270 --> 00:08:54,220
+through an example using actual code
+父合同将被称为让我们来看一个使用实际代码的示例
+
+187
+00:08:54,220 --> 00:08:57,160
+here we have contract II that inherits
+在这里，我们有从合同a和合同继承的合同II
+
+188
+00:08:57,160 --> 00:09:01,090
+from contract a and contract see also n
+在这里，我们有从合同a和合同继承的合同II
+
+189
+00:09:01,090 --> 00:09:04,270
+heads from contract a and contact e
+合同a的负责人和联系人e从B和C继承而来
+
+190
+00:09:04,270 --> 00:09:08,020
+inherits from both B and C next both
+合同a的负责人和联系人e从B和C继承而来
+
+191
+00:09:08,020 --> 00:09:10,990
+contract B and C overrides the function
+当我们调用合约B和C时，合约B和C会覆盖合约a中的函数foo
+
+192
+00:09:10,990 --> 00:09:14,350
+foo from contract a when we call the
+当我们调用合约B和C时，合约B和C会覆盖合约a中的函数foo
+
+193
+00:09:14,350 --> 00:09:16,870
+function foo on contact E we want to be
+联系E上的函数foo，我们希望能够看到哪些父函数是
+
+194
+00:09:16,870 --> 00:09:19,180
+able to see which parent functions were
+联系E上的函数foo，我们希望能够看到哪些父函数是
+
+195
+00:09:19,180 --> 00:09:22,720
+called so we'll fire any bank before
+打电话给我们，所以我们会在调用母合同之前解雇任何银行
+
+196
+00:09:22,720 --> 00:09:26,190
+calling the parent contract
+打电话给我们，所以我们会在调用母合同之前解雇任何银行
+
+197
+00:09:28,170 --> 00:09:31,720
+compile and deploy contract D and
+编译和部署合同D并在内部执行功能食物
+
+198
+00:09:31,720 --> 00:09:33,760
+execute the function food inside
+编译和部署合同D并在内部执行功能食物
+
+199
+00:09:33,760 --> 00:09:36,540
+contract D
+合同D
+
+200
+00:09:40,630 --> 00:09:43,000
+click on the transaction and scroll down
+点击交易并向下滚动到您在交易模式下的日志
+
+201
+00:09:43,000 --> 00:09:46,269
+to logs inside the transaction mode you
+点击交易并向下滚动到您在交易模式下的日志
+
+202
+00:09:46,269 --> 00:09:49,630
+can see the C dot foo was called and
+可以看到C点foo被调用，然后点foo被调用，所以当我们
+
+203
+00:09:49,630 --> 00:09:53,470
+then a dot foo was called so when we
+可以看到C点foo被调用，然后点foo被调用，所以当我们
+
+204
+00:09:53,470 --> 00:09:56,800
+call the function foo on contract D it
+在合同D上调用函数foo在合同C内调用函数food
+
+205
+00:09:56,800 --> 00:09:59,529
+called a function food inside contract C
+在合同D上调用函数foo在合同C内调用函数food
+
+206
+00:09:59,529 --> 00:10:03,430
+and fighter this event next called the
+和战斗机此事件接下来在合同a上调用函数foo，并且此
+
+207
+00:10:03,430 --> 00:10:06,459
+function foo on contract a and this
+和战斗机此事件接下来在合同a上调用函数foo，并且此
+
+208
+00:10:06,459 --> 00:10:10,329
+event was fired next let's see how the
+接下来触发事件，让我们看看使用时如何调用pan函数
+
+209
+00:10:10,329 --> 00:10:12,670
+pan functions will be called when we use
+接下来触发事件，让我们看看使用时如何调用pan函数
+
+210
+00:10:12,670 --> 00:10:16,240
+the keyword super first we'll create a
+关键字super首先，我们将在合约a和中创建一个名为bar的函数。
+
+211
+00:10:16,240 --> 00:10:19,319
+function named bar in contract a and
+关键字super首先，我们将在合约a和中创建一个名为bar的函数。
+
+212
+00:10:19,319 --> 00:10:22,300
+then we'll override the function and
+然后我们将覆盖该功能并收缩B和C
+
+213
+00:10:22,300 --> 00:10:25,949
+contract B and C
+然后我们将覆盖该功能并收缩B和C
+
+214
+00:10:26,090 --> 00:10:29,640
+the function bar inside both contract B
+合约B和C内的功能栏首先发出一个事件，紧接着原因
+
+215
+00:10:29,640 --> 00:10:33,810
+and C first emits an event next to cause
+合约B和C内的功能栏首先发出一个事件，紧接着原因
+
+216
+00:10:33,810 --> 00:10:36,060
+the pan contract by using the keyword
+使用关键字super进行平移合约让我们看看将要发生的事件
+
+217
+00:10:36,060 --> 00:10:38,880
+super let's see which events will be
+使用关键字super进行平移合约让我们看看将要发生的事件
+
+218
+00:10:38,880 --> 00:10:41,550
+fired when we call the function bar on
+当我们在合同D上调用功能栏时重新触发并重新部署时触发
+
+219
+00:10:41,550 --> 00:10:44,760
+contract D recompile and redeploy
+当我们在合同D上调用功能栏时重新触发并重新部署时触发
+
+220
+00:10:44,760 --> 00:10:47,630
+contract D
+合同D
+
+221
+00:10:49,100 --> 00:10:52,380
+execute the function bar and scroll down
+执行功能栏并向下滚动并单击交易
+
+222
+00:10:52,380 --> 00:10:56,480
+and click on the transaction
+执行功能栏并向下滚动并单击交易
+
+223
+00:10:58,510 --> 00:11:01,760
+you can see in the transaction logs that
+您可以在交易日志中看到该栏先被称为下一个B
+
+224
+00:11:01,760 --> 00:11:05,690
+see that bar was called first next B
+您可以在交易日志中看到该栏先被称为下一个B
+
+225
+00:11:05,690 --> 00:11:09,529
+that bar was called and finally a dot
+该条被调用，最后一个点条被调用，所以当我们执行
+
+226
+00:11:09,529 --> 00:11:14,000
+bar was called so when we executed the
+该条被调用，最后一个点条被调用，所以当我们执行
+
+227
+00:11:14,000 --> 00:11:17,570
+function bar on contract D it first
+合同D上的功能栏它首先称为合同内的功能栏
+
+228
+00:11:17,570 --> 00:11:20,270
+called the function bar inside contract
+合同D上的功能栏它首先称为合同内的功能栏
+
+229
+00:11:20,270 --> 00:11:22,880
+C next instead of calling the pan
+C接下来而不是先调用pan合同，而是先调用函数
+
+230
+00:11:22,880 --> 00:11:25,610
+contract it first called the function
+C接下来而不是先调用pan合同，而是先调用函数
+
+231
+00:11:25,610 --> 00:11:29,120
+bar inside contract D and finally it
+合约D内的功能条，最后它称为合约内的功能条
+
+232
+00:11:29,120 --> 00:11:31,310
+called the function bar inside contract
+合约D内的功能条，最后它称为合约内的功能条
+
+233
+00:11:31,310 --> 00:11:34,730
+a notice that super dive bar was called
+超级潜水栏被两次调用但在事务日志中的通知
+
+234
+00:11:34,730 --> 00:11:37,720
+twice but inside the transaction log
+超级潜水栏被两次调用但在事务日志中的通知
+
+235
+00:11:37,720 --> 00:11:42,880
+data bar was emitted only once
+数据条仅发射一次
+
+236
+00:11:45,130 --> 00:11:48,190
+in summary you can explicitly call the
+总之，您可以显式调用父合约或使用关键字super
+
+237
+00:11:48,190 --> 00:11:51,610
+parent contract or use the keyword super
+总之，您可以显式调用父合约或使用关键字super
+
+238
+00:11:51,610 --> 00:11:55,410
+to call all parent contracts
+调用所有母合同
+
+239
+00:11:56,410 --> 00:11:59,080
+in this video we went over how to write
+在本视频中，我们讨论了当我们
+
+240
+00:11:59,080 --> 00:12:02,920
+multiple inheritance in solidity when we
+在本视频中，我们讨论了当我们
+
+241
+00:12:02,920 --> 00:12:04,120
+this two inheritance
+这两个继承顺序很重要，您需要
+
+242
+00:12:04,120 --> 00:12:07,600
+ordering is important and you need to
+这两个继承顺序很重要，您需要
+
+243
+00:12:07,600 --> 00:12:10,660
+this Japan contracts from most base type
+这个日本合同从大多数基本类型到大多数派生类型，有两种方法可以
+
+244
+00:12:10,660 --> 00:12:13,750
+to most derived there are two ways to
+这个日本合同从大多数基本类型到大多数派生类型，有两种方法可以
+
+245
+00:12:13,750 --> 00:12:16,540
+call parent contracts you can explicitly
+调用父合约您可以显式调用父合约的功能
+
+246
+00:12:16,540 --> 00:12:18,880
+call the function of a parent contract
+调用父合约您可以显式调用父合约的功能
+
+247
+00:12:18,880 --> 00:12:22,750
+or use the keyword super in this case
+或在这种情况下使用关键字“超级”，则所有即时平移合约都将是
+
+248
+00:12:22,750 --> 00:12:25,090
+all immediate pan contracts will be
+或在这种情况下使用关键字“超级”，则所有即时平移合约都将是
+
+249
+00:12:25,090 --> 00:12:28,870
+called thank you so much for watching if
+打电话非常感谢您的观看，如果有什么不清楚的地方，请把您的
+
+250
+00:12:28,870 --> 00:12:31,090
+anything was unclear please put your
+打电话非常感谢您的观看，如果有什么不清楚的地方，请把您的
+
+251
+00:12:31,090 --> 00:12:33,790
+questions in the comments below have a
+下方评论中的问题度过了愉快的一周，下周再见
+
+252
+00:12:33,790 --> 00:12:35,770
+nice week and I'll see you in the next
+下方评论中的问题度过了愉快的一周，下周再见
+
+253
+00:12:35,770 --> 00:12:38,040
+video
+视频
+

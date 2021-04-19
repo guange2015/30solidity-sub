@@ -1,0 +1,960 @@
+1
+00:00:00,060 --> 00:00:02,639
+what were functional modifiers in this
+该视频中的功能修改器是什么，我将解释什么
+
+2
+00:00:02,639 --> 00:00:04,290
+video I'm going to explain what
+该视频中的功能修改器是什么，我将解释什么
+
+3
+00:00:04,290 --> 00:00:06,990
+functional modifiers I show you how to
+功能修饰符我向您展示如何编写功能修饰符并解释原因
+
+4
+00:00:06,990 --> 00:00:09,630
+write function modifier and explain why
+功能修饰符我向您展示如何编写功能修饰符并解释原因
+
+5
+00:00:09,630 --> 00:00:13,530
+they are useful function modifiers are
+它们是有用的函数修饰符，是可重用的代码，可以附加到
+
+6
+00:00:13,530 --> 00:00:15,960
+reusable code that can be attached to a
+它们是有用的函数修饰符，是可重用的代码，可以附加到
+
+7
+00:00:15,960 --> 00:00:18,660
+function this reusable code can be
+可以在代码之前和/或之后执行此可重用代码的功能
+
+8
+00:00:18,660 --> 00:00:21,359
+executed before and/or after the
+可以在代码之前和/或之后执行此可重用代码的功能
+
+9
+00:00:21,359 --> 00:00:24,289
+function is executed
+功能执行
+
+10
+00:00:25,360 --> 00:00:29,590
+we'll go over the examples in remix in
+在第一个示例中，我们将讨论混音中的示例。
+
+11
+00:00:29,590 --> 00:00:31,570
+the first example we'll go over the
+在第一个示例中，我们将讨论混音中的示例。
+
+12
+00:00:31,570 --> 00:00:33,520
+basic syntax for writing a function
+编写函数修饰符的基本语法，我们将创建一个函数
+
+13
+00:00:33,520 --> 00:00:36,280
+modifier and we'll create a function
+编写函数修饰符的基本语法，我们将创建一个函数
+
+14
+00:00:36,280 --> 00:00:39,190
+modifier to restrict write access to a
+修饰符以限制对第二个示例的函数的写访问
+
+15
+00:00:39,190 --> 00:00:42,280
+function in the second example I'll go
+修饰符以限制对第二个示例的函数的写访问
+
+16
+00:00:42,280 --> 00:00:44,590
+over the syntax for passing parameters
+传递参数到函数修饰符中的语法，我们将
+
+17
+00:00:44,590 --> 00:00:47,290
+into a function modifier and we'll
+传递参数到函数修饰符中的语法，我们将
+
+18
+00:00:47,290 --> 00:00:49,780
+create a function modifier for input
+在这一点上，为输入验证创建一个函数修饰符，我还将
+
+19
+00:00:49,780 --> 00:00:52,300
+validation at this point I'll also
+在这一点上，为输入验证创建一个函数修饰符，我还将
+
+20
+00:00:52,300 --> 00:00:54,820
+explain why a function modifier is
+解释为什么函数修饰符对第三个示例有用
+
+21
+00:00:54,820 --> 00:00:57,729
+useful for the third example I'll
+解释为什么函数修饰符对第三个示例有用
+
+22
+00:00:57,729 --> 00:01:00,430
+quickly explain what a reaction C hat is
+快速解释一下什么是C hat是什么反应，我们将编写一个函数修饰符来
+
+23
+00:01:00,430 --> 00:01:03,610
+and we'll write a function modifier to
+快速解释一下什么是C hat是什么反应，我们将编写一个函数修饰符来
+
+24
+00:01:03,610 --> 00:01:05,890
+prevent this hack here we have a
+在这里防止这种黑客入侵，我们有合同
+
+25
+00:01:05,890 --> 00:01:06,760
+contract
+在这里防止这种黑客入侵，我们有合同
+
+26
+00:01:06,760 --> 00:01:09,220
+when this contract is deployed is sets
+部署此合同时，将所有者变量设置为在发件人上发送消息
+
+27
+00:01:09,220 --> 00:01:12,270
+the owner variable to messaged on sender
+部署此合同时，将所有者变量设置为在发件人上发送消息
+
+28
+00:01:12,270 --> 00:01:15,159
+message the sender is the sender of the
+消息发件人是交易的发件人，因此在这种情况下
+
+29
+00:01:15,159 --> 00:01:18,159
+transaction so in this case it will be
+消息发件人是交易的发件人，因此在这种情况下
+
+30
+00:01:18,159 --> 00:01:20,530
+the sender of this transaction that
+在合同内部署了该合同的交易的发送者
+
+31
+00:01:20,530 --> 00:01:23,680
+deployed this contract inside a contract
+在合同内部署了该合同的交易的发送者
+
+32
+00:01:23,680 --> 00:01:25,710
+we have a function called change owner
+我们有一个叫做变更拥有者的功能变更拥有者接收了
+
+33
+00:01:25,710 --> 00:01:28,420
+change owner takes in the address of the
+我们有一个叫做变更拥有者的功能变更拥有者接收了
+
+34
+00:01:28,420 --> 00:01:31,360
+new owner as input inside this function
+新所有者作为此函数内部的输入，它首先调用该函数的唯一所有者
+
+35
+00:01:31,360 --> 00:01:33,850
+it first calls the function only owner
+新所有者作为此函数内部的输入，它首先调用该函数的唯一所有者
+
+36
+00:01:33,850 --> 00:01:36,610
+the function only owner checks that
+该功能仅所有者检查该消息，即发件人等于
+
+37
+00:01:36,610 --> 00:01:38,770
+message that sender is equal to the
+该功能仅所有者检查该消息，即发件人等于
+
+38
+00:01:38,770 --> 00:01:41,230
+current owner if it is not equal to the
+当前所有者，如果它不等于当前所有者，则此函数
+
+39
+00:01:41,230 --> 00:01:42,790
+current owner then this function
+当前所有者，如果它不等于当前所有者，则此函数
+
+40
+00:01:42,790 --> 00:01:45,210
+thousand-aire and the transaction fails
+千人游戏，然后交易失败，功能有效地址检查
+
+41
+00:01:45,210 --> 00:01:48,220
+next the function valid address checks
+千人游戏，然后交易失败，功能有效地址检查
+
+42
+00:01:48,220 --> 00:01:50,530
+that the new owner is not equal to the 0
+如果新所有者等于0地址，则新所有者不等于0地址
+
+43
+00:01:50,530 --> 00:01:53,260
+address if it is equal to the 0 address
+如果新所有者等于0地址，则新所有者不等于0地址
+
+44
+00:01:53,260 --> 00:01:56,140
+again this function throws an error and
+再次，此函数引发错误，并且一旦两个交易失败
+
+45
+00:01:56,140 --> 00:01:58,630
+the transaction fails once the two
+再次，此函数引发错误，并且一旦两个交易失败
+
+46
+00:01:58,630 --> 00:02:01,360
+functions execute without any errors the
+函数执行没有任何错误，当前所有者已设置为新所有者
+
+47
+00:02:01,360 --> 00:02:03,630
+current owner is set to the new owner
+函数执行没有任何错误，当前所有者已设置为新所有者
+
+48
+00:02:03,630 --> 00:02:06,670
+let's go over how we will use function
+让我们研究一下如何使用函数修饰符来限制仅写访问
+
+49
+00:02:06,670 --> 00:02:09,610
+modifiers to restrict write access only
+让我们研究一下如何使用函数修饰符来限制仅写访问
+
+50
+00:02:09,610 --> 00:02:12,550
+to the current owner and how we use a
+当前所有者，以及我们如何使用功能修饰符来验证
+
+51
+00:02:12,550 --> 00:02:15,310
+function modifier to validate the
+当前所有者，以及我们如何使用功能修饰符来验证
+
+52
+00:02:15,310 --> 00:02:17,980
+address of the new owner first we'll
+首先，将新功能所有者的地址转换为新所有者的地址
+
+53
+00:02:17,980 --> 00:02:20,590
+turn the function only owner into a
+首先，将新功能所有者的地址转换为新所有者的地址
+
+54
+00:02:20,590 --> 00:02:23,650
+function modifier so replace the keyword
+函数修饰符，因此将关键字函数替换为关键字修饰符，然后
+
+55
+00:02:23,650 --> 00:02:26,349
+function with the keyword modifier and
+函数修饰符，因此将关键字函数替换为关键字修饰符，然后
+
+56
+00:02:26,349 --> 00:02:30,150
+remove the keyword public
+删除关键字public
+
+57
+00:02:30,959 --> 00:02:32,400
+we won't need
+我们将不需要修改用于检查
+
+58
+00:02:32,400 --> 00:02:34,290
+modify the code that checks that the
+我们将不需要修改用于检查
+
+59
+00:02:34,290 --> 00:02:36,480
+sender of the transaction is equal to
+交易的发送者等于所有者，因此我们不会修改此部分
+
+60
+00:02:36,480 --> 00:02:39,540
+the owner so we won't modify this part
+交易的发送者等于所有者，因此我们不会修改此部分
+
+61
+00:02:39,540 --> 00:02:42,150
+of the code on the next time type
+下一次的代码的类型是下划线，然后是分号
+
+62
+00:02:42,150 --> 00:02:44,480
+underscore and followed by a semicolon
+下一次的代码的类型是下划线，然后是分号
+
+63
+00:02:44,480 --> 00:02:47,459
+the underscore is a special character
+下划线是一个特殊字符，您只能在内部使用
+
+64
+00:02:47,459 --> 00:02:49,349
+that you can only use inside the
+下划线是一个特殊字符，您只能在内部使用
+
+65
+00:02:49,349 --> 00:02:52,709
+function modifier and it tells ability
+函数修饰符，它告诉您执行其余代码的能力，因此一旦执行
+
+66
+00:02:52,709 --> 00:02:55,829
+to execute the rest of the code so once
+函数修饰符，它告诉您执行其余代码的能力，因此一旦执行
+
+67
+00:02:55,829 --> 00:02:58,140
+this modifier is attached to the
+此修饰符附加到功能更改所有者此下划线
+
+68
+00:02:58,140 --> 00:03:00,569
+function change owner this underscore
+此修饰符附加到功能更改所有者此下划线
+
+69
+00:03:00,569 --> 00:03:03,299
+would tell solidity to execute code
+会告诉我们在函数内执行代码的坚固性，您可以附加一个
+
+70
+00:03:03,299 --> 00:03:06,389
+inside the function and you can attach a
+会告诉我们在函数内执行代码的坚固性，您可以附加一个
+
+71
+00:03:06,389 --> 00:03:08,970
+function modifier to a function by
+通过在函数中声明修饰符来对函数进行修饰
+
+72
+00:03:08,970 --> 00:03:11,639
+declaring the modifier in the function
+通过在函数中声明修饰符来对函数进行修饰
+
+73
+00:03:11,639 --> 00:03:14,030
+signature
+签名
+
+74
+00:03:15,640 --> 00:03:18,190
+and go ahead and delete the function
+并继续删除该函数的唯一所有者，因为我们将其重写为
+
+75
+00:03:18,190 --> 00:03:20,590
+only owner since we rewrote it as a
+并继续删除该函数的唯一所有者，因为我们将其重写为
+
+76
+00:03:20,590 --> 00:03:23,099
+function modifier
+函数修饰符接下来让我们看一下如何传递
+
+77
+00:03:23,099 --> 00:03:25,379
+next let's go over how to pass
+函数修饰符接下来让我们看一下如何传递
+
+78
+00:03:25,379 --> 00:03:27,840
+parameters into a function modifier
+参数放入函数修饰符中，首先将关键字函数替换为
+
+79
+00:03:27,840 --> 00:03:31,170
+first replace the keyword function with
+参数放入函数修饰符中，首先将关键字函数替换为
+
+80
+00:03:31,170 --> 00:03:34,260
+the keyword modifier and also remove the
+关键字修饰符，并删除关键字public
+
+81
+00:03:34,260 --> 00:03:37,280
+keyword public
+关键字修饰符，并删除关键字public
+
+82
+00:03:38,360 --> 00:03:40,470
+we won't need to change
+我们不需要在下一行更改输入验证
+
+83
+00:03:40,470 --> 00:03:43,650
+for input validation on the next line
+我们不需要在下一行更改输入验证
+
+84
+00:03:43,650 --> 00:03:46,310
+type underscore followed by a semicolon
+键入下划线，后跟一个分号，所以在这里，我们再次要说的是
+
+85
+00:03:46,310 --> 00:03:49,500
+so here again we're telling solidity to
+键入下划线，后跟一个分号，所以在这里，我们再次要说的是
+
+86
+00:03:49,500 --> 00:03:52,410
+execute the rest of the code and we can
+执行其余代码，我们可以通过以下方式附加功能修饰符
+
+87
+00:03:52,410 --> 00:03:54,540
+attach the function modifier by
+执行其余代码，我们可以通过以下方式附加功能修饰符
+
+88
+00:03:54,540 --> 00:03:56,550
+declaring it in the function signature
+在函数签名中声明它，您可以将参数传递给
+
+89
+00:03:56,550 --> 00:03:59,910
+and you can pass parameters into a
+在函数签名中声明它，您可以将参数传递给
+
+90
+00:03:59,910 --> 00:04:02,460
+function modifier the same way that you
+函数修饰符，就像您在函数中继续前进一样
+
+91
+00:04:02,460 --> 00:04:05,760
+would in a function finally go ahead and
+函数修饰符，就像您在函数中继续前进一样
+
+92
+00:04:05,760 --> 00:04:08,160
+delete the function valid address since
+删除函数有效地址，因为我们已将该函数转换为函数
+
+93
+00:04:08,160 --> 00:04:10,470
+we turned that function into a function
+删除函数有效地址，因为我们已将该函数转换为函数
+
+94
+00:04:10,470 --> 00:04:14,040
+modifier function modifiers can make
+修饰符函数修饰符可以使您的代码更具可读性，这是
+
+95
+00:04:14,040 --> 00:04:17,040
+your code more readable here is the
+修饰符函数修饰符可以使您的代码更具可读性，这是
+
+96
+00:04:17,040 --> 00:04:19,410
+function change owner before we use the
+函数更改所有者，然后在函数内部使用函数修饰符
+
+97
+00:04:19,410 --> 00:04:22,530
+function modifier inside the function we
+函数更改所有者，然后在函数内部使用函数修饰符
+
+98
+00:04:22,530 --> 00:04:25,380
+do some validations before we update the
+在将所有者更新为新所有者之前进行一些验证，然后移动
+
+99
+00:04:25,380 --> 00:04:27,930
+owner to the new owner we move the
+在将所有者更新为新所有者之前进行一些验证，然后移动
+
+100
+00:04:27,930 --> 00:04:29,730
+validation that was done inside the
+在函数内部完成的验证到函数签名中
+
+101
+00:04:29,730 --> 00:04:32,480
+function into the function signature
+在函数内部完成的验证到函数签名中
+
+102
+00:04:32,480 --> 00:04:35,640
+using the function modifier we made our
+使用功能修饰符，我们明确了谁可以调用它的意图
+
+103
+00:04:35,640 --> 00:04:37,770
+intent clear on who can call this
+使用功能修饰符，我们明确了谁可以调用它的意图
+
+104
+00:04:37,770 --> 00:04:40,080
+function and what kind of inputs are
+函数以及该函数允许什么样的输入
+
+105
+00:04:40,080 --> 00:04:42,639
+allowed into this function
+函数以及该函数允许什么样的输入
+
+106
+00:04:42,639 --> 00:04:45,030
+so now let's cover the third example
+现在让我们介绍第三个示例可重入的海纳格（Sea Hag），让我们看看
+
+107
+00:04:45,030 --> 00:04:48,490
+reentrant Sea Hag and let's see how a
+现在让我们介绍第三个示例可重入的海纳格（Sea Hag），让我们看看
+
+108
+00:04:48,490 --> 00:04:50,650
+function modifier can prevent this
+函数修饰符可以防止这种攻击，首先让我们谈谈
+
+109
+00:04:50,650 --> 00:04:53,500
+attack first let's talk about what a
+函数修饰符可以防止这种攻击，首先让我们谈谈
+
+110
+00:04:53,500 --> 00:04:56,650
+reaction C hat is imagine there are two
+反应C帽子想象有两个合同a和一个合同a
+
+111
+00:04:56,650 --> 00:04:59,979
+contracts contract a and contract be a
+反应C帽子想象有两个合同a和一个合同a
+
+112
+00:04:59,979 --> 00:05:03,099
+function f inside contract a is called
+合同a内部的函数f在调用a的函数内部被调用
+
+113
+00:05:03,099 --> 00:05:05,740
+inside the function that calls a
+合同a内部的函数f在调用a的函数内部被调用
+
+114
+00:05:05,740 --> 00:05:08,889
+function inside contract B and contract
+合约B和合约B内部的函数导致返回到函数f
+
+115
+00:05:08,889 --> 00:05:11,710
+B cause back into the function f the
+合约B和合约B内部的函数导致返回到函数f
+
+116
+00:05:11,710 --> 00:05:14,560
+function f inside contract a starts
+合同a中的函数f在上一个合同之前开始执行其代码
+
+117
+00:05:14,560 --> 00:05:17,199
+executing its code before the previous
+合同a中的函数f在上一个合同之前开始执行其代码
+
+118
+00:05:17,199 --> 00:05:19,569
+call to the function completes it calls
+对该函数的调用完成后，它将再次调用函数G和合同B，并且
+
+119
+00:05:19,569 --> 00:05:22,500
+function G and contract B again and
+对该函数的调用完成后，它将再次调用函数G和合同B，并且
+
+120
+00:05:22,500 --> 00:05:25,750
+function G calls back into function f
+函数G回调到函数f，这可以无限期地继续使用
+
+121
+00:05:25,750 --> 00:05:29,020
+and this can continue indefinitely using
+函数G回调到函数f，这可以无限期地继续使用
+
+122
+00:05:29,020 --> 00:05:30,849
+the sack millions of dollars were stolen
+在未来的视频中，数百万美元的麻袋被盗了，我将在
+
+123
+00:05:30,849 --> 00:05:33,699
+in the future video I'll go over this in
+在未来的视频中，数百万美元的麻袋被盗了，我将在
+
+124
+00:05:33,699 --> 00:05:36,699
+more details so how can we prevent this
+更多细节，以便我们如何防止这种情况的发生，我们可以防止这种情况的发生
+
+125
+00:05:36,699 --> 00:05:39,069
+from happening we can guard against this
+更多细节，以便我们如何防止这种情况的发生，我们可以防止这种情况的发生
+
+126
+00:05:39,069 --> 00:05:41,289
+act by preventing a function to be
+通过阻止函数在其首先执行时被调用来执行操作
+
+127
+00:05:41,289 --> 00:05:44,560
+called while it is still executing first
+通过阻止函数在其首先执行时被调用来执行操作
+
+128
+00:05:44,560 --> 00:05:46,629
+let's see an example of a function that
+我们来看一个可以在静止状态下调用的函数的示例
+
+129
+00:05:46,629 --> 00:05:48,520
+can be called while it is still
+我们来看一个可以在静止状态下调用的函数的示例
+
+130
+00:05:48,520 --> 00:05:51,430
+executing here we have a function called
+在这里执行，我们有一个称为减量的函数，该注释取一个整数
+
+131
+00:05:51,430 --> 00:05:54,099
+decrement that comment takes an integer
+在这里执行，我们有一个称为减量的函数，该注释取一个整数
+
+132
+00:05:54,099 --> 00:05:57,520
+valuable named I and it documents the
+有价值的名为I的文件，如果I仍在，它通过I记录状态变量X
+
+133
+00:05:57,520 --> 00:06:00,819
+state variable X by I if I is still
+有价值的名为I的文件，如果I仍在，它通过I记录状态变量X
+
+134
+00:06:00,819 --> 00:06:03,580
+greater than 1 it calls back into itself
+大于1时，它会以I减1回调回自身，所以让我们看看会发生什么
+
+135
+00:06:03,580 --> 00:06:06,940
+with I minus 1 so let's see what happens
+大于1时，它会以I减1回调回自身，所以让我们看看会发生什么
+
+136
+00:06:06,940 --> 00:06:09,159
+with the function decrement when we pass
+当我们传入3作为输入时函数递减
+
+137
+00:06:09,159 --> 00:06:11,960
+in 3 as input
+当我们传入3作为输入时函数递减
+
+138
+00:06:11,960 --> 00:06:14,630
+on the top you see the current value of
+在顶部，您可以看到状态变量X的当前值为10。
+
+139
+00:06:14,630 --> 00:06:18,470
+the state variable X which is 10 on the
+在顶部，您可以看到状态变量X的当前值为10。
+
+140
+00:06:18,470 --> 00:06:20,419
+right you'll see a stack of functions
+正确，您会看到一堆被调用但尚未完成的函数
+
+141
+00:06:20,419 --> 00:06:22,490
+that are called and have not finished
+正确，您会看到一堆被调用但尚未完成的函数
+
+142
+00:06:22,490 --> 00:06:25,310
+executing it decrements the state
+执行它会将状态变量X减3，所以现在X的值是
+
+143
+00:06:25,310 --> 00:06:28,699
+variable X by 3 so now the value of X is
+执行它会将状态变量X减3，所以现在X的值是
+
+144
+00:06:28,699 --> 00:06:32,090
+7 since 3 is greater than 1 we call
+7因为3大于1，所以我们用3减1再次调用文档，所以
+
+145
+00:06:32,090 --> 00:06:35,449
+document again with 3 minus 1 so the
+7因为3大于1，所以我们用3减1再次调用文档，所以
+
+146
+00:06:35,449 --> 00:06:38,150
+function document with the input 2 is
+输入为2的功能文档称为递减状态变量
+
+147
+00:06:38,150 --> 00:06:41,330
+called it decrements the state variable
+输入为2的功能文档称为递减状态变量
+
+148
+00:06:41,330 --> 00:06:44,990
+X by 2 and since 2 is greater than 1 we
+X乘2，由于2大于1，我们称文档为2减1
+
+149
+00:06:44,990 --> 00:06:47,389
+call document with 2 minus 1
+X乘2，由于2大于1，我们称文档为2减1
+
+150
+00:06:47,389 --> 00:06:50,449
+we again decrement the state variable X
+我们再次将状态变量X减1，所以现在X的客户值是
+
+151
+00:06:50,449 --> 00:06:53,539
+by 1 so now the client value of X is
+我们再次将状态变量X减1，所以现在X的客户值是
+
+152
+00:06:53,539 --> 00:06:57,139
+equal to 4 since 1 is not greater than 1
+等于4，因为1不大于1不会调用文档并递减
+
+153
+00:06:57,139 --> 00:07:00,830
+document is not called and decrement
+等于4，因为1不大于1不会调用文档并递减
+
+154
+00:07:00,830 --> 00:07:03,650
+want finished executing so we'll remove
+要完成执行，因此我们将其从函数调用堆栈中删除
+
+155
+00:07:03,650 --> 00:07:05,860
+it from the stack of function calls
+要完成执行，因此我们将其从函数调用堆栈中删除
+
+156
+00:07:05,860 --> 00:07:09,229
+now decrement twos execution is also
+现在减法二的执行也完成了，因此我们也将其从
+
+157
+00:07:09,229 --> 00:07:11,660
+finished so we also remove it from the
+现在减法二的执行也完成了，因此我们也将其从
+
+158
+00:07:11,660 --> 00:07:14,750
+stack of function calls and finally
+函数调用堆栈，最后文档3完成了执行，我们
+
+159
+00:07:14,750 --> 00:07:18,680
+document 3 finished its execution and we
+函数调用堆栈，最后文档3完成了执行，我们
+
+160
+00:07:18,680 --> 00:07:23,220
+are left to state variable x equals 4
+留给状态变量x等于4，所以现在让我们看看如果我们
+
+161
+00:07:23,220 --> 00:07:25,800
+so now let's see what would happen if we
+留给状态变量x等于4，所以现在让我们看看如果我们
+
+162
+00:07:25,800 --> 00:07:28,350
+had a function modifier that prevented
+具有防止递归调用的函数修饰符，我们将创建一个
+
+163
+00:07:28,350 --> 00:07:30,780
+recursive calls we will create a
+具有防止递归调用的函数修饰符，我们将创建一个
+
+164
+00:07:30,780 --> 00:07:33,870
+modifier called Nouri entrance e inside
+在修饰符内称为Nouri入口e的修饰符，我们首先检查了
+
+165
+00:07:33,870 --> 00:07:36,330
+the modifier we first checked that the
+在修饰符内称为Nouri入口e的修饰符，我们首先检查了
+
+166
+00:07:36,330 --> 00:07:39,680
+boolean variable lock is set to false
+布尔变量lock设置为false接下来，我们将其设置为true，然后调用
+
+167
+00:07:39,680 --> 00:07:42,840
+next we set it to true and then call the
+布尔变量lock设置为false接下来，我们将其设置为true，然后调用
+
+168
+00:07:42,840 --> 00:07:45,300
+function and then after the function we
+函数，然后在函数之后将其设置回false
+
+169
+00:07:45,300 --> 00:07:48,290
+set it back to false
+函数，然后在函数之后将其设置回false
+
+170
+00:07:55,380 --> 00:07:58,169
+finally we attach this modifier
+最后，我们将此修饰符附加到功能文档中，让我们来看一下
+
+171
+00:07:58,169 --> 00:08:01,169
+to the function document let's go over
+最后，我们将此修饰符附加到功能文档中，让我们来看一下
+
+172
+00:08:01,169 --> 00:08:03,330
+how this modifier would prevent a
+该修饰符如何防止递归调用
+
+173
+00:08:03,330 --> 00:08:06,070
+recursive call
+该修饰符如何防止递归调用
+
+174
+00:08:06,070 --> 00:08:08,320
+first the state barrier bollocked is set
+首先，在功能文档为
+
+175
+00:08:08,320 --> 00:08:10,990
+to false when the function document is
+首先，在功能文档为
+
+176
+00:08:10,990 --> 00:08:14,650
+called it first sets the law to true and
+调用它首先将定律设置为true，然后开始执行其代码，
+
+177
+00:08:14,650 --> 00:08:17,560
+it starts executing its code and it
+调用它首先将定律设置为true，然后开始执行其代码，
+
+178
+00:08:17,560 --> 00:08:20,100
+calls itself again with three minus one
+再次用三减一来调用自己，但现在由于阁楼等于二，所以
+
+179
+00:08:20,100 --> 00:08:23,470
+but now since loft is equal to two the
+再次用三减一来调用自己，但现在由于阁楼等于二，所以
+
+180
+00:08:23,470 --> 00:08:25,750
+required statement fails and the
+此视频中的必填语句失败，交易失败，我们
+
+181
+00:08:25,750 --> 00:08:28,780
+transaction fails in this video we
+此视频中的必填语句失败，交易失败，我们
+
+182
+00:08:28,780 --> 00:08:30,810
+talked about functional modifiers
+谈到功能修饰符功能修饰符是可重用的代码
+
+183
+00:08:30,810 --> 00:08:33,640
+function modifiers are reusable code
+谈到功能修饰符功能修饰符是可重用的代码
+
+184
+00:08:33,640 --> 00:08:36,370
+that can be run before and/or after a
+可以在功能的一些常见用例之前和/或之后运行
+
+185
+00:08:36,370 --> 00:08:39,520
+function some common use cases of
+可以在功能的一些常见用例之前和/或之后运行
+
+186
+00:08:39,520 --> 00:08:42,070
+function modifiers are to restrict write
+函数修饰符用于限制输入验证和输入的写访问权限
+
+187
+00:08:42,070 --> 00:08:45,610
+access for an input validation and for
+函数修饰符用于限制输入验证和输入的写访问权限
+
+188
+00:08:45,610 --> 00:08:46,690
+reentrant seagard
+未来影片中的可重入的Seagard，我们将重新审视v
+
+189
+00:08:46,690 --> 00:08:50,020
+in a future video we'll revisit the v
+未来影片中的可重入的Seagard，我们将重新审视v
+
+190
+00:08:50,020 --> 00:08:52,840
+entrance e act in more details so stay
+请更详细地了解我们的表演，敬请关注，非常感谢您的观看和
+
+191
+00:08:52,840 --> 00:08:56,260
+tuned thank you so much for watching and
+请更详细地了解我们的表演，敬请关注，非常感谢您的观看和
+
+192
+00:08:56,260 --> 00:08:59,160
+I'll see you soon
+一会儿见
+

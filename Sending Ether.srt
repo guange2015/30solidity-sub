@@ -1,0 +1,1164 @@
+1
+00:00:00,089 --> 00:00:02,429
+there are three ways to send either from
+有三种方法可以将合同中的任何一个发送到另一个合同
+
+2
+00:00:02,429 --> 00:00:04,859
+contract to another contract the three
+有三种方法可以将合同中的任何一个发送到另一个合同
+
+3
+00:00:04,859 --> 00:00:07,410
+methods are transferred sand and coal
+的方法是转移沙和煤，并建议在2019年后采用的方法
+
+4
+00:00:07,410 --> 00:00:10,590
+and the recommended way after 2019
+的方法是转移沙和煤，并建议在2019年后采用的方法
+
+5
+00:00:10,590 --> 00:00:13,620
+December is to use coal so in this video
+12月将使用煤炭，因此在此视频中，我们将介绍一些细微之处
+
+6
+00:00:13,620 --> 00:00:15,089
+we're going to go over the subtle
+12月将使用煤炭，因此在此视频中，我们将介绍一些细微之处
+
+7
+00:00:15,089 --> 00:00:17,039
+differences between the three methods
+三种方法之间的差异，并查看为什么调用是推荐的方法
+
+8
+00:00:17,039 --> 00:00:20,039
+and see why call is the recommended way
+三种方法之间的差异，并查看为什么调用是推荐的方法
+
+9
+00:00:20,039 --> 00:00:21,480
+to send either
+在合同使用转移方式时发送
+
+10
+00:00:21,480 --> 00:00:24,330
+when a contract uses the transfer method
+在合同使用转移方式时发送
+
+11
+00:00:24,330 --> 00:00:28,529
+to send either it forwards 2300 gas on
+在收到合同时向另一方发送2300天然气
+
+12
+00:00:28,529 --> 00:00:30,720
+the other side when a contract receives
+在收到合同时向另一方发送2300天然气
+
+13
+00:00:30,720 --> 00:00:32,969
+an either by any of these three methods
+这三种方法中的任何一种都有一个特殊的功能
+
+14
+00:00:32,969 --> 00:00:35,610
+there is a special function that gets
+这三种方法中的任何一种都有一个特殊的功能
+
+15
+00:00:35,610 --> 00:00:38,579
+called and that function is called the
+被调用，该函数被称为后备函数，并且自转移以来
+
+16
+00:00:38,579 --> 00:00:41,489
+fallback function and since the transfer
+被调用，该函数被称为后备函数，并且自转移以来
+
+17
+00:00:41,489 --> 00:00:45,210
+function for 2,800 gas this means that
+2800种气体的功能，这意味着后备功能最多具有2200种气体
+
+18
+00:00:45,210 --> 00:00:48,690
+the fallback function has at most 2200
+2800种气体的功能，这意味着后备功能最多具有2200种气体
+
+19
+00:00:48,690 --> 00:00:51,960
+gas to spend and if the transfer fails
+花费的汽油，以及由于某种原因（例如，用完了）而导致转移失败的情况
+
+20
+00:00:51,960 --> 00:00:54,510
+for some reason such as running out of
+花费的汽油，以及由于某种原因（例如，用完了）而导致转移失败的情况
+
+21
+00:00:54,510 --> 00:00:57,180
+gas trying to send more ether than the
+试图发送比合约电话更多的以太币或试图发送给
+
+22
+00:00:57,180 --> 00:00:59,730
+contract calls or trying to send to a
+试图发送比合约电话更多的以太币或试图发送给
+
+23
+00:00:59,730 --> 00:01:02,250
+non payable address then the function
+非应付款地址，然后功能为千人，交易失败
+
+24
+00:01:02,250 --> 00:01:04,970
+thousand-aire and the transaction fails
+非应付款地址，然后功能为千人，交易失败
+
+25
+00:01:04,970 --> 00:01:07,890
+let the transfer function above the
+让函数上方的传递函数将其2300气体发送到
+
+26
+00:01:07,890 --> 00:01:11,340
+function send for its 2300 gas to the
+让函数上方的传递函数将其2300气体发送到
+
+27
+00:01:11,340 --> 00:01:13,260
+contract receiving the heater
+接收加热器的合同与转移不同，它返回布尔值
+
+28
+00:01:13,260 --> 00:01:16,350
+unlike transfer it returns a boolean
+接收加热器的合同与转移不同，它返回布尔值
+
+29
+00:01:16,350 --> 00:01:19,080
+value when the send function is
+发送函数成功时返回的值，否则返回true
+
+30
+00:01:19,080 --> 00:01:22,080
+successful it returns true otherwise it
+发送函数成功时返回的值，否则返回true
+
+31
+00:01:22,080 --> 00:01:25,560
+returns false using the call function
+使用调用函数返回false，您可以负担所有费用或
+
+32
+00:01:25,560 --> 00:01:27,780
+you can it afford all of the gas or
+使用调用函数返回false，您可以负担所有费用或
+
+33
+00:01:27,780 --> 00:01:30,060
+specify the amount of gas that you're
+指定您要转发的气体量，例如发送的气体量
+
+34
+00:01:30,060 --> 00:01:32,850
+going to forward and like the send
+指定您要转发的气体量，例如发送的气体量
+
+35
+00:01:32,850 --> 00:01:35,400
+function it returns a boolean value and
+函数将返回布尔值，并且在2019年12月之后，这是
+
+36
+00:01:35,400 --> 00:01:38,909
+after December of 2019 this is the
+函数将返回布尔值，并且在2019年12月之后，这是
+
+37
+00:01:38,909 --> 00:01:41,729
+recommended method to use the reason is
+推荐使用的方法的原因是，将来天然气的成本可以
+
+38
+00:01:41,729 --> 00:01:44,009
+that in the future the cost of gas can
+推荐使用的方法的原因是，将来天然气的成本可以
+
+39
+00:01:44,009 --> 00:01:46,950
+change for different operations at the
+这两个功能转移时，针对不同的操作而改变
+
+40
+00:01:46,950 --> 00:01:49,320
+moment these two functions transference
+这两个功能转移时，针对不同的操作而改变
+
+41
+00:01:49,320 --> 00:01:51,689
+and guard against the reaction see hack
+并防止反应，仅转发2300汽油即可看到骇客，您
+
+42
+00:01:51,689 --> 00:01:55,530
+by forwarding only 2300 gas and you
+并防止反应，仅转发2300汽油即可看到骇客，您
+
+43
+00:01:55,530 --> 00:01:59,040
+can't do much with 2300 gas so if a
+2300汽油不能做太多事情，所以如果收到以太币的合约回电了
+
+44
+00:01:59,040 --> 00:02:01,350
+contract receiving the ether calls back
+2300汽油不能做太多事情，所以如果收到以太币的合约回电了
+
+45
+00:02:01,350 --> 00:02:04,590
+into the contract that CELTA ether then
+进入CELTA醚的合同中，那么它只需要消耗2,300瓦斯，现在让我们
+
+46
+00:02:04,590 --> 00:02:08,520
+it only has 2,300 gas to spend now let's
+进入CELTA醚的合同中，那么它只需要消耗2,300瓦斯，现在让我们
+
+47
+00:02:08,520 --> 00:02:10,860
+imagine a case where in the future the
+想象一个情况，将来某个操作的天然气成本为
+
+48
+00:02:10,860 --> 00:02:14,019
+cost of gas for some operation is
+想象一个情况，将来某个操作的天然气成本为
+
+49
+00:02:14,019 --> 00:02:17,620
+and now all of a sudden 2,300 gas might
+现在突然有2300种汽油可能足以造成一些破坏
+
+50
+00:02:17,620 --> 00:02:19,329
+be enough to do some damage
+现在突然有2300种汽油可能足以造成一些破坏
+
+51
+00:02:19,329 --> 00:02:23,109
+so in summary from now on use call to
+因此，从现在开始，总而言之，请致电将其发送给另一个合同并保卫
+
+52
+00:02:23,109 --> 00:02:25,750
+send it to another contract and guard
+因此，从现在开始，总而言之，请致电将其发送给另一个合同并保卫
+
+53
+00:02:25,750 --> 00:02:27,879
+against the engine see by making all
+在调用另一个之前，先进行所有状态更改，然后再对引擎进行查看
+
+54
+00:02:27,879 --> 00:02:30,430
+state changes before you call another
+在调用另一个之前，先进行所有状态更改，然后再对引擎进行查看
+
+55
+00:02:30,430 --> 00:02:33,220
+contract and also by using modifiers
+以及使用防止引擎发动的修饰语，请参见
+
+56
+00:02:33,220 --> 00:02:36,250
+that guard against to the engine see in
+以及使用防止引擎发动的修饰语，请参见
+
+57
+00:02:36,250 --> 00:02:38,200
+a future video we'll go over the
+未来的视频中，我们将进行反应，请参阅hack和更多详细信息，因此
+
+58
+00:02:38,200 --> 00:02:40,870
+reaction see hack and more details so
+未来的视频中，我们将进行反应，请参阅hack和更多详细信息，因此
+
+59
+00:02:40,870 --> 00:02:43,569
+stay tuned now that we went over the
+请继续关注，我们已经详细了解了团队努力的技术细节，
+
+60
+00:02:43,569 --> 00:02:46,389
+technical details of the team efforts to
+请继续关注，我们已经详细了解了团队努力的技术细节，
+
+61
+00:02:46,389 --> 00:02:48,819
+send eater to another contract let's
+将食客发送到另一个合同让我们编写一些实际代码以将食客发送到
+
+62
+00:02:48,819 --> 00:02:51,129
+write some actual code to send eater to
+将食客发送到另一个合同让我们编写一些实际代码以将食客发送到
+
+63
+00:02:51,129 --> 00:02:53,379
+another contract first we're gonna
+首先要签订另一个合同，我们将要创建一个合同
+
+64
+00:02:53,379 --> 00:02:55,150
+create a contract that is going to
+首先要签订另一个合同，我们将要创建一个合同
+
+65
+00:02:55,150 --> 00:02:57,579
+receive the eater and in order for this
+接收食者，并且为了使该合同能够通过三者接收以太币
+
+66
+00:02:57,579 --> 00:03:00,400
+contract to receive ether via the three
+接收食者，并且为了使该合同能够通过三者接收以太币
+
+67
+00:03:00,400 --> 00:03:02,709
+methods mentioned above we need to
+上面提到的方法，我们需要声明一个称为后备功能的函数
+
+68
+00:03:02,709 --> 00:03:04,419
+declare a function called a fallback
+上面提到的方法，我们需要声明一个称为后备功能的函数
+
+69
+00:03:04,419 --> 00:03:07,540
+function and you declare it like this
+函数，并且您像这样声明它，该函数不能为其命名
+
+70
+00:03:07,540 --> 00:03:10,120
+this function cannot have a name it
+函数，并且您像这样声明它，该函数不能为其命名
+
+71
+00:03:10,120 --> 00:03:12,280
+cannot take any inputs and it cannot
+不能接受任何输入，也不能返回任何输出
+
+72
+00:03:12,280 --> 00:03:14,709
+return any outputs furthermore the
+不能接受任何输入，也不能返回任何输出
+
+73
+00:03:14,709 --> 00:03:17,079
+visibility of the fallback function must
+后备功能的可见性必须在外部，并且为了
+
+74
+00:03:17,079 --> 00:03:19,569
+be external and in order for the
+后备功能的可见性必须在外部，并且为了
+
+75
+00:03:19,569 --> 00:03:22,090
+fallback function to receive either it
+后备功能以接收它必须被声明为应付款，我们也是
+
+76
+00:03:22,090 --> 00:03:24,459
+has to be declared as payable we're also
+后备功能以接收它必须被声明为应付款，我们也是
+
+77
+00:03:24,459 --> 00:03:26,560
+going to create a helper function so
+要创建一个辅助函数，以便我们可以检查以太币的余额
+
+78
+00:03:26,560 --> 00:03:28,150
+that we could check the balance of ether
+要创建一个辅助函数，以便我们可以检查以太币的余额
+
+79
+00:03:28,150 --> 00:03:30,849
+in this contract and I explained how
+在这份合同中，我在上一个视频中解释了此功能的工作原理
+
+80
+00:03:30,849 --> 00:03:32,889
+this function works in a previous video
+在这份合同中，我在上一个视频中解释了此功能的工作原理
+
+81
+00:03:32,889 --> 00:03:36,280
+about payable in short all address type
+简而言之，所有地址类型都有一个称为余额的特殊属性
+
+82
+00:03:36,280 --> 00:03:38,560
+has a special property called balance
+简而言之，所有地址类型都有一个称为余额的特殊属性
+
+83
+00:03:38,560 --> 00:03:40,690
+which stores the amount of ether that
+它存储了该地址持有的以太币数量，在这里我们要说的是
+
+84
+00:03:40,690 --> 00:03:43,629
+the address holds and here we're saying
+它存储了该地址持有的以太币数量，在这里我们要说的是
+
+85
+00:03:43,629 --> 00:03:45,669
+get the balance of ether stored in this
+获取此合同中存储的以太币余额，从而完成合同
+
+86
+00:03:45,669 --> 00:03:48,190
+contract so this completes the contract
+获取此合同中存储的以太币余额，从而完成合同
+
+87
+00:03:48,190 --> 00:03:50,349
+that will receive the ether and now
+将会接收到以太币，现在继续前进，我们来写合约
+
+88
+00:03:50,349 --> 00:03:52,389
+moving on let's write the contract that
+将会接收到以太币，现在继续前进，我们来写合约
+
+89
+00:03:52,389 --> 00:03:53,560
+will send the heater
+将向加热器发送我要说明的第一种方法
+
+90
+00:03:53,560 --> 00:03:55,780
+the first method that I'm gonna explain
+将向加热器发送我要说明的第一种方法
+
+91
+00:03:55,780 --> 00:03:58,540
+is the transfer method so I'm gonna name
+是转移方法，所以我将这个函数命名为转移发送，我们
+
+92
+00:03:58,540 --> 00:04:01,299
+this function send by transfer and we're
+是转移方法，所以我将这个函数命名为转移发送，我们
+
+93
+00:04:01,299 --> 00:04:02,889
+gonna pass the address that we're gonna
+要传递我们要发送给食客的地址，现在为了回想起
+
+94
+00:04:02,889 --> 00:04:06,189
+send eater to now recall that in order
+要传递我们要发送给食客的地址，现在为了回想起
+
+95
+00:04:06,189 --> 00:04:08,019
+for this address to be able to receive
+为了使该地址能够接收以太币，必须声明该地址
+
+96
+00:04:08,019 --> 00:04:10,540
+an ether this address has to be declared
+为了使该地址能够接收以太币，必须声明该地址
+
+97
+00:04:10,540 --> 00:04:12,909
+as payable so we're gonna do that right
+应付帐款，所以我们现在要去做，我要命名这个地址
+
+98
+00:04:12,909 --> 00:04:15,340
+now and I'm gonna name this address
+应付帐款，所以我们现在要去做，我要命名这个地址
+
+99
+00:04:15,340 --> 00:04:19,149
+input as to this function will be public
+关于此功能的输入将是公开的，并且也将是有偿的，因为
+
+100
+00:04:19,149 --> 00:04:21,789
+and it's also going to be payable since
+关于此功能的输入将是公开的，并且也将是有偿的，因为
+
+101
+00:04:21,789 --> 00:04:24,130
+we're gonna send Ito from our account to
+我们将从帐户中将伊藤发送到此合同
+
+102
+00:04:24,130 --> 00:04:25,240
+this contract
+我们将从帐户中将伊藤发送到此合同
+
+103
+00:04:25,240 --> 00:04:27,460
+and forward the ether to the receive
+并把以太转发给上面的接收者合同，然后将其发送出去
+
+104
+00:04:27,460 --> 00:04:30,729
+eater contract above and to send it over
+并把以太转发给上面的接收者合同，然后将其发送出去
+
+105
+00:04:30,729 --> 00:04:34,060
+transfer you call the transfer method on
+转移您可以在括号内的地址上调用转移方法
+
+106
+00:04:34,060 --> 00:04:36,789
+the address inside the parentheses we
+转移您可以在括号内的地址上调用转移方法
+
+107
+00:04:36,789 --> 00:04:38,680
+put in the amount of ether that we're
+放入我们将要转移的乙醚量，我们将全部转移
+
+108
+00:04:38,680 --> 00:04:41,289
+gonna transfer we're gonna forward all
+放入我们将要转移的乙醚量，我们将全部转移
+
+109
+00:04:41,289 --> 00:04:43,150
+of the ether that we send from our
+从我们的帐户发送的以太币中，我们可以通过放置
+
+110
+00:04:43,150 --> 00:04:45,819
+account and we can do that by putting
+从我们的帐户发送的以太币中，我们可以通过放置
+
+111
+00:04:45,819 --> 00:04:48,669
+message top value here which holds that
+消息的最高值，此处包含随此发送的以太币数量
+
+112
+00:04:48,669 --> 00:04:50,620
+amount of ether that was sent with this
+消息的最高值，此处包含随此发送的以太币数量
+
+113
+00:04:50,620 --> 00:04:53,410
+transaction and in this case it will be
+交易，在这种情况下，这将是我们将成为食客的数量
+
+114
+00:04:53,410 --> 00:04:55,120
+the amount of eater that we'll be
+交易，在这种情况下，这将是我们将成为食客的数量
+
+115
+00:04:55,120 --> 00:04:57,789
+sending from our account so this is how
+从我们的帐户发送，这样您就可以使用以下方式将食客发送到另一个地址
+
+116
+00:04:57,789 --> 00:05:00,070
+you send eater to another address using
+从我们的帐户发送，这样您就可以使用以下方式将食客发送到另一个地址
+
+117
+00:05:00,070 --> 00:05:02,740
+the transfer method now the transfer
+现在的传输方式传输方式会将2300瓦斯输送到
+
+118
+00:05:02,740 --> 00:05:05,830
+method will forward 2300 gas to this
+现在的传输方式传输方式会将2300瓦斯输送到
+
+119
+00:05:05,830 --> 00:05:08,470
+address and if for some reason this
+地址，如果由于某种原因该功能未能发送进餐者，则此
+
+120
+00:05:08,470 --> 00:05:11,020
+function fails to send eater then this
+地址，如果由于某种原因该功能未能发送进餐者，则此
+
+121
+00:05:11,020 --> 00:05:13,030
+method will turn error and the
+方法将转为错误，并且交易将失败，因此，如果您尝试
+
+122
+00:05:13,030 --> 00:05:15,520
+transaction will fail so if you try to
+方法将转为错误，并且交易将失败，因此，如果您尝试
+
+123
+00:05:15,520 --> 00:05:18,009
+send eternal contract that does not have
+发送没有应付款回退功能的永恒合同，则此
+
+124
+00:05:18,009 --> 00:05:21,159
+a payable fallback function then this
+发送没有应付款回退功能的永恒合同，则此
+
+125
+00:05:21,159 --> 00:05:23,650
+transfer method will fail and the
+转移方法将失败，并且事务也将失败
+
+126
+00:05:23,650 --> 00:05:26,380
+transaction will also fail another
+转移方法将失败，并且事务也将失败
+
+127
+00:05:26,380 --> 00:05:28,630
+possible reason that this method can
+该方法失败的可能原因是当您尝试发送更多食者时
+
+128
+00:05:28,630 --> 00:05:31,419
+fail is when you try to send more eater
+该方法失败的可能原因是当您尝试发送更多食者时
+
+129
+00:05:31,419 --> 00:05:34,300
+than the contract holes so for example
+而不是合同孔，例如，如果合同孔了一个食者，而您
+
+130
+00:05:34,300 --> 00:05:37,389
+if the contract holes one eater and you
+而不是合同孔，例如，如果合同孔了一个食者，而您
+
+131
+00:05:37,389 --> 00:05:40,210
+try to send 10 meters then this function
+尝试发送10米，然后此功能将失败接下来让我们谈谈发送
+
+132
+00:05:40,210 --> 00:05:43,150
+will fail next let's talk about the send
+尝试发送10米，然后此功能将失败接下来让我们谈谈发送
+
+133
+00:05:43,150 --> 00:05:45,190
+method we're gonna create another
+方法，我们将创建另一个函数，并且函数签名将
+
+134
+00:05:45,190 --> 00:05:47,830
+function and the function signature will
+方法，我们将创建另一个函数，并且函数签名将
+
+135
+00:05:47,830 --> 00:05:50,590
+be mostly the same as sent by transfer
+基本上与转帐发送的相同，我们称此功能为转寄
+
+136
+00:05:50,590 --> 00:05:53,259
+and we'll call this function send by
+基本上与转帐发送的相同，我们称此功能为转寄
+
+137
+00:05:53,259 --> 00:05:56,650
+send and the syntax to send either using
+send和使用send方法发送的语法类似于
+
+138
+00:05:56,650 --> 00:05:59,020
+the send method is similar to the
+send和使用send方法发送的语法类似于
+
+139
+00:05:59,020 --> 00:06:01,270
+transfer method I like to transfer a
+转移方法我喜欢转移如果失败会引发错误的方法
+
+140
+00:06:01,270 --> 00:06:03,190
+method that throws an error if it fails
+转移方法我喜欢转移如果失败会引发错误的方法
+
+141
+00:06:03,190 --> 00:06:06,159
+to send either the send method returns a
+发送方法send方法返回一个布尔值，该布尔值指示是否
+
+142
+00:06:06,159 --> 00:06:08,650
+boolean value that indicates whether it
+发送方法send方法返回一个布尔值，该布尔值指示是否
+
+143
+00:06:08,650 --> 00:06:11,289
+was able to send the heater or not so
+是否能够发送加热器，所以在这里我们将捕获结果
+
+144
+00:06:11,289 --> 00:06:13,690
+here we're gonna capture the result in a
+是否能够发送加热器，所以在这里我们将捕获结果
+
+145
+00:06:13,690 --> 00:06:17,050
+boolean variable called sent and since
+布尔值变量send，因为我们希望事务在失败的情况下失败
+
+146
+00:06:17,050 --> 00:06:19,599
+we want the transaction to fail if it
+布尔值变量send，因为我们希望事务在失败的情况下失败
+
+147
+00:06:19,599 --> 00:06:22,090
+fails to send eater here we're going to
+无法在此处发送食者，我们将要求发送的布尔值是
+
+148
+00:06:22,090 --> 00:06:24,550
+require that the boolean value sent is
+无法在此处发送食者，我们将要求发送的布尔值是
+
+149
+00:06:24,550 --> 00:06:27,550
+equal to true if it is false then the
+如果它为假，则等于true，那么require将变成错误，并且
+
+150
+00:06:27,550 --> 00:06:29,500
+require will turn error and the
+如果它为假，则等于true，那么require将变成错误，并且
+
+151
+00:06:29,500 --> 00:06:31,690
+transaction will fail so that's how you
+事务将失败，因此这就是您使用send方法和
+
+152
+00:06:31,690 --> 00:06:33,789
+send either using the send method and
+事务将失败，因此这就是您使用send方法和
+
+153
+00:06:33,789 --> 00:06:36,590
+finally let's talk about how to send
+最后，让我们讨论一下如何使用call方法将名称发送
+
+154
+00:06:36,590 --> 00:06:39,320
+either using the call method will name
+最后，让我们讨论一下如何使用call方法将名称发送
+
+155
+00:06:39,320 --> 00:06:41,900
+the function sent by call other than
+通过调用发送的函数，除了函数签名相同
+
+156
+00:06:41,900 --> 00:06:44,240
+that the function signature is the same
+通过调用发送的函数，除了函数签名相同
+
+157
+00:06:44,240 --> 00:06:46,790
+as the two functions above to send
+作为上述两个功能，您可以使用调用方法进行发送
+
+158
+00:06:46,790 --> 00:06:49,040
+either using the call method you do it
+作为上述两个功能，您可以使用调用方法进行发送
+
+159
+00:06:49,040 --> 00:06:52,370
+like this now this looks complex and it
+像现在这样看起来很复杂，看起来好像在做很多事情
+
+160
+00:06:52,370 --> 00:06:53,870
+looks like it's doing a lot of things
+像现在这样看起来很复杂，看起来好像在做很多事情
+
+161
+00:06:53,870 --> 00:06:56,780
+here but I'll go over call in more
+在这里，但我将在另一个视频中详细讨论您需要的内容
+
+162
+00:06:56,780 --> 00:07:00,050
+details in another video what you need
+在这里，但我将在另一个视频中详细讨论您需要的内容
+
+163
+00:07:00,050 --> 00:07:02,330
+to know here is that this function will
+要知道的是，此功能将转发您发送的所有来宾
+
+164
+00:07:02,330 --> 00:07:04,460
+forward all of the guests that you sent
+要知道的是，此功能将转发您发送的所有来宾
+
+165
+00:07:04,460 --> 00:07:06,970
+to the address that is receiving data
+到接收数据的地址，以及是否要指定多少汽油
+
+166
+00:07:06,970 --> 00:07:10,190
+and if you want to specify how much gas
+到接收数据的地址，以及是否要指定多少汽油
+
+167
+00:07:10,190 --> 00:07:11,930
+that is being forwarded
+正在转发，您现在可以这样做
+
+168
+00:07:11,930 --> 00:07:14,630
+you can do it like this now this
+正在转发，您现在可以这样做
+
+169
+00:07:14,630 --> 00:07:16,970
+function will return two values the
+函数将返回两个值，第一个输出是一个布尔值
+
+170
+00:07:16,970 --> 00:07:19,639
+first output is a boolean value that
+函数将返回两个值，第一个输出是一个布尔值
+
+171
+00:07:19,639 --> 00:07:22,010
+indicates whether it was successful as
+指示发送食者是否成功
+
+172
+00:07:22,010 --> 00:07:24,590
+sending eater or not the second part of
+指示发送食者是否成功
+
+173
+00:07:24,590 --> 00:07:27,650
+the up holds the return values from
+向上保存调用后备函数的返回值
+
+174
+00:07:27,650 --> 00:07:29,600
+calling the fallback function
+向上保存调用后备函数的返回值
+
+175
+00:07:29,600 --> 00:07:31,850
+now since the fallback function cannot
+现在，由于后备功能无法在这种情况下返回任何值，因此
+
+176
+00:07:31,850 --> 00:07:34,910
+return any values in this case this will
+现在，由于后备功能无法在这种情况下返回任何值，因此
+
+177
+00:07:34,910 --> 00:07:37,550
+be an empty value in other words zero
+为空值，换句话说为零字节，类似于send方法
+
+178
+00:07:37,550 --> 00:07:40,370
+bytes and similar to the send method
+为空值，换句话说为零字节，类似于send方法
+
+179
+00:07:40,370 --> 00:07:42,740
+above here we're going to require that
+在上面，我们将要求通过呼叫发送成功
+
+180
+00:07:42,740 --> 00:07:45,860
+sending either by call was successful
+在上面，我们将要求通过呼叫发送成功
+
+181
+00:07:45,860 --> 00:07:48,919
+and now let's deploy the contracts and
+现在让我们部署合同并测试功能
+
+182
+00:07:48,919 --> 00:07:50,479
+test the functions out
+现在让我们部署合同并测试功能
+
+183
+00:07:50,479 --> 00:07:52,700
+so here I've deployed the receive eater
+所以在这里，我已经部署了“吃食者”合同和“食蚁兽”合同，
+
+184
+00:07:52,700 --> 00:07:55,850
+contract and thus anteater contract and
+所以在这里，我已经部署了“吃食者”合同和“食蚁兽”合同，
+
+185
+00:07:55,850 --> 00:07:57,620
+we're going to be sending either to this
+我们将从该合同中发送该合同中的任何一个，让我们先
+
+186
+00:07:57,620 --> 00:08:01,400
+contract from this contract let's first
+我们将从该合同中发送该合同中的任何一个，让我们先
+
+187
+00:08:01,400 --> 00:08:04,400
+try the send by transfer function so I'm
+尝试通过传送发送功能，以便将wecb的地址复制到
+
+188
+00:08:04,400 --> 00:08:06,560
+gonna copy the address of wecb to
+尝试通过传送发送功能，以便将wecb的地址复制到
+
+189
+00:08:06,560 --> 00:08:10,789
+contract and paste it in here and we'll
+合同并粘贴在这里，我们将在这里发送一些仪表，我将发送一个
+
+190
+00:08:10,789 --> 00:08:13,610
+send some meters here I'm gonna send one
+合同并粘贴在这里，我们将在这里发送一些仪表，我将发送一个
+
+191
+00:08:13,610 --> 00:08:18,260
+eater so I called this function and send
+食者，所以我调用了此功能，并向该合同发送了一个电表，因此
+
+192
+00:08:18,260 --> 00:08:21,110
+one meter to this contract so the
+食者，所以我调用了此功能，并向该合同发送了一个电表，因此
+
+193
+00:08:21,110 --> 00:08:23,270
+balance of this contract should now be
+该合同的余额现在应为一米，以便查看
+
+194
+00:08:23,270 --> 00:08:27,080
+one meter so to review what just
+该合同的余额现在应为一米，以便查看
+
+195
+00:08:27,080 --> 00:08:27,760
+happened
+当我们称其为我的传递函数时发生了
+
+196
+00:08:27,760 --> 00:08:30,830
+when we call this my transfer function
+当我们称其为我的传递函数时发生了
+
+197
+00:08:30,830 --> 00:08:34,640
+this code here was executed and they
+此代码已在此处执行，它们在内部调用了fallback函数
+
+198
+00:08:34,640 --> 00:08:36,708
+call the fallback function inside the
+此代码已在此处执行，它们在内部调用了fallback函数
+
+199
+00:08:36,708 --> 00:08:39,320
+receive eater contract and since the
+收到食人合同，并且由于将后备功能声明为应付款
+
+200
+00:08:39,320 --> 00:08:41,658
+fallback function is declared as payable
+收到食人合同，并且由于将后备功能声明为应付款
+
+201
+00:08:41,658 --> 00:08:41,659
+fallback function is declared as payable
+
+202
+00:08:41,659 --> 00:08:44,208
+it was able to receive the one eater
+它能够接收我们发送的一个食者和所有这两个功能
+
+203
+00:08:44,208 --> 00:08:47,000
+that we sent and all the two functions
+它能够接收我们发送的一个食者和所有这两个功能
+
+204
+00:08:47,000 --> 00:08:50,030
+work in a similar way here by sent one
+在此以类似的方式工作，即通过发送发送的一个涡轮和通过呼叫发送的一个涡轮
+
+205
+00:08:50,030 --> 00:08:53,510
+turbine sent by send and by sent by call
+在此以类似的方式工作，即通过发送发送的一个涡轮和通过呼叫发送的一个涡轮
+
+206
+00:08:53,510 --> 00:08:56,630
+and as expected the balance is now 30
+和预期的一样，现在的余额是30个以太币
+
+207
+00:08:56,630 --> 00:08:58,930
+ethers
+和预期的一样，现在的余额是30个以太币
+
+208
+00:08:58,930 --> 00:09:01,760
+so that covers the three ways to send
+这样就涵盖了从合同发送的三种方式和三种
+
+209
+00:09:01,760 --> 00:09:04,640
+either from a contract and the three
+这样就涵盖了从合同发送的三种方式和三种
+
+210
+00:09:04,640 --> 00:09:07,340
+ways to send dieter are transfer sand
+送节食者的方法是转移沙子，并称转移性和福特的
+
+211
+00:09:07,340 --> 00:09:11,140
+and call both transference and Ford's
+送节食者的方法是转移沙子，并称转移性和福特的
+
+212
+00:09:11,140 --> 00:09:14,120
+2300 gas to the contract that is
+如果接收数据传输的2300天然气合同拖欠了空气
+
+213
+00:09:14,120 --> 00:09:17,540
+receiving data transfer tows an air if
+如果接收数据传输的2300天然气合同拖欠了空气
+
+214
+00:09:17,540 --> 00:09:20,420
+it fails to send the ether and the send
+它无法发送以太币，并且send方法返回布尔值，因此使用
+
+215
+00:09:20,420 --> 00:09:23,840
+method returns a boolean value so using
+它无法发送以太币，并且send方法返回布尔值，因此使用
+
+216
+00:09:23,840 --> 00:09:25,520
+this method you will have to manually
+这种方法，您将必须手动检查以太已发送呼叫是
+
+217
+00:09:25,520 --> 00:09:28,550
+check that the ether was sent call is a
+这种方法，您将必须手动检查以太已发送呼叫是
+
+218
+00:09:28,550 --> 00:09:30,830
+low-level function that by default
+默认情况下转发所有气体的低级功能，例如
+
+219
+00:09:30,830 --> 00:09:34,160
+forwards all of the gas and like the
+默认情况下转发所有气体的低级功能，例如
+
+220
+00:09:34,160 --> 00:09:36,190
+send method it returns a boolean value
+send方法返回一个布尔值，您必须手动检查
+
+221
+00:09:36,190 --> 00:09:38,990
+and you will have to manually check that
+send方法返回一个布尔值，您必须手动检查
+
+222
+00:09:38,990 --> 00:09:41,480
+the ether was sent and the recommended
+已发送以太币，推荐的方法是在2019年12月之前使用
+
+223
+00:09:41,480 --> 00:09:45,140
+method to use as of December of 2019 is
+已发送以太币，推荐的方法是在2019年12月之前使用
+
+224
+00:09:45,140 --> 00:09:48,200
+to use the call method using the call
+要使用call方法来使用call方法，您必须编写防御性
+
+225
+00:09:48,200 --> 00:09:50,270
+method you'll have to write defensive
+要使用call方法来使用call方法，您必须编写防御性
+
+226
+00:09:50,270 --> 00:09:52,940
+code that will guard against three
+现在将在未来的视频中防止三引擎CX的代码
+
+227
+00:09:52,940 --> 00:09:56,360
+engine CX now in future videos we'll
+现在将在未来的视频中防止三引擎CX的代码
+
+228
+00:09:56,360 --> 00:09:59,030
+dive deeper into the topics of fallback
+深入探讨后备函数调用方法和可重入的主题
+
+229
+00:09:59,030 --> 00:10:02,120
+functions call method and the reentrant
+深入探讨后备函数调用方法和可重入的主题
+
+230
+00:10:02,120 --> 00:10:05,840
+z hack so stay tuned but for now that's
+z hack，敬请关注，但就目前而言，这就是我发送加热器的全部内容
+
+231
+00:10:05,840 --> 00:10:07,810
+all I got to say about sending heater
+z hack，敬请关注，但就目前而言，这就是我发送加热器的全部内容
+
+232
+00:10:07,810 --> 00:10:10,490
+thanks for watching and I'll see you in
+感谢您的收看，我将在下一个视频中与您见面
+
+233
+00:10:10,490 --> 00:10:13,300
+the next video
+感谢您的收看，我将在下一个视频中与您见面
+

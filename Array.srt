@@ -1,0 +1,1054 @@
+1
+00:00:00,969 --> 00:00:03,790
+let's go over how to write and use an
+让我们先来学习如何编写和使用数组。
+
+2
+00:00:03,790 --> 00:00:06,610
+array in solidity first we'll go over
+让我们先来学习如何编写和使用数组。
+
+3
+00:00:06,610 --> 00:00:09,160
+how to write an array now an array has
+现在如何写数组数组具有三个内置功能push / pop
+
+4
+00:00:09,160 --> 00:00:12,159
+three built-in functionalities push/pop
+现在如何写数组数组具有三个内置功能push / pop
+
+5
+00:00:12,159 --> 00:00:14,499
+in length so you'll go over some
+篇幅较长，因此您将分别使用每个示例以及
+
+6
+00:00:14,499 --> 00:00:17,170
+examples using each of them and for the
+篇幅较长，因此您将分别使用每个示例以及
+
+7
+00:00:17,170 --> 00:00:19,150
+last example I'll show you how to remove
+最后一个例子，我将向您展示如何从数组中删除元素以声明
+
+8
+00:00:19,150 --> 00:00:22,120
+an element from array to declare an
+最后一个例子，我将向您展示如何从数组中删除元素以声明
+
+9
+00:00:22,120 --> 00:00:24,310
+array you start with the type of array
+数组以要创建的数组类型开头，后跟一个
+
+10
+00:00:24,310 --> 00:00:26,530
+that you want to create followed by a
+数组以要创建的数组类型开头，后跟一个
+
+11
+00:00:26,530 --> 00:00:29,620
+pair of brackets for our example you'll
+在本例中，您将创建一系列联合国的
+
+12
+00:00:29,620 --> 00:00:31,750
+create an array of UN's
+在本例中，您将创建一系列联合国的
+
+13
+00:00:31,750 --> 00:00:33,879
+so we start with the type of the array
+所以我们从数组的类型开始，它是U，然后是一对
+
+14
+00:00:33,879 --> 00:00:36,730
+which is U and followed by a pair of
+所以我们从数组的类型开始，它是U，然后是一对
+
+15
+00:00:36,730 --> 00:00:39,489
+brackets and then we declare the name of
+中括号，然后我们声明数组的名称，在这种情况下，我将其命名为
+
+16
+00:00:39,489 --> 00:00:42,519
+the array in this case I'll name it my
+中括号，然后我们声明数组的名称，在这种情况下，我将其命名为
+
+17
+00:00:42,519 --> 00:00:46,479
+array for this example we want to be
+对于此示例，我们希望能够从外部访问该数组
+
+18
+00:00:46,479 --> 00:00:48,819
+able to access this array from outside
+对于此示例，我们希望能够从外部访问该数组
+
+19
+00:00:48,819 --> 00:00:51,370
+the contract so we will declare this
+合同，所以我们将这个数组声明为public，就是这样
+
+20
+00:00:51,370 --> 00:00:54,639
+array as public and that's it this is
+合同，所以我们将这个数组声明为public，就是这样
+
+21
+00:00:54,639 --> 00:00:56,679
+how you would create an array of type
+现在如何创建类型为int的数组
+
+22
+00:00:56,679 --> 00:01:00,039
+int now arrays can be either dynamically
+现在如何创建类型为int的数组
+
+23
+00:01:00,039 --> 00:01:02,829
+sized or fixed size where you declare
+大小或固定大小，您可以在编译时声明该数组的大小
+
+24
+00:01:02,829 --> 00:01:06,700
+the size at compile time this array that
+大小或固定大小，您可以在编译时声明该数组的大小
+
+25
+00:01:06,700 --> 00:01:09,160
+we just created is dynamically sized
+我们刚刚创建的是动态调整大小的，这意味着数组的大小
+
+26
+00:01:09,160 --> 00:01:11,860
+which means that the size of the array
+我们刚刚创建的是动态调整大小的，这意味着数组的大小
+
+27
+00:01:11,860 --> 00:01:14,680
+can change after the contract is
+在编译合同以创建固定大小的数组后可以更改
+
+28
+00:01:14,680 --> 00:01:17,470
+compiled to create a fixed sized array
+在编译合同以创建固定大小的数组后可以更改
+
+29
+00:01:17,470 --> 00:01:20,230
+you declare the size of the array inside
+您在方括号内声明数组的大小，这里我创建了一个固定的
+
+30
+00:01:20,230 --> 00:01:23,200
+the brackets here I've created a fixed
+您在方括号内声明数组的大小，这里我创建了一个固定的
+
+31
+00:01:23,200 --> 00:01:25,990
+size array of type U n where the size is
+类型为U n的size数组，其大小固定为10，因此此数组有10
+
+32
+00:01:25,990 --> 00:01:28,870
+fixed to ten so this array has ten
+类型为U n的size数组，其大小固定为10，因此此数组有10
+
+33
+00:01:28,870 --> 00:01:31,060
+elements and you won't be able to change
+元素，您将无法更改每个元素的数组大小
+
+34
+00:01:31,060 --> 00:01:34,240
+the size of the array each element of
+元素，您将无法更改每个元素的数组大小
+
+35
+00:01:34,240 --> 00:01:36,430
+the array is initialized to its default
+数组被初始化为其默认值，类型为youant
+
+36
+00:01:36,430 --> 00:01:39,580
+value the default value of type youant
+数组被初始化为其默认值，类型为youant
+
+37
+00:01:39,580 --> 00:01:42,790
+is zero so when the contract is created
+为零，因此在创建合同时，此数组将是包含十个数组的数组
+
+38
+00:01:42,790 --> 00:01:45,640
+this array will be an array with ten
+为零，因此在创建合同时，此数组将是包含十个数组的数组
+
+39
+00:01:45,640 --> 00:01:48,610
+zeros now you can also initialize an
+现在为零，您也可以在此处使用默认值初始化数组
+
+40
+00:01:48,610 --> 00:01:52,030
+array with default values like this here
+现在为零，您也可以在此处使用默认值初始化数组
+
+41
+00:01:52,030 --> 00:01:54,550
+we've created a dynamic array of type
+我们创建了一个类型为youant的动态数组，并存储三个值一二
+
+42
+00:01:54,550 --> 00:01:57,820
+youant and store three values one two
+我们创建了一个类型为youant的动态数组，并存储三个值一二
+
+43
+00:01:57,820 --> 00:02:00,970
+and three into this array so that covers
+和三个放入此数组，以便涵盖如何编写动态大小和固定大小的
+
+44
+00:02:00,970 --> 00:02:03,400
+how to write dynamic sized and fixed
+和三个放入此数组，以便涵盖如何编写动态大小和固定大小的
+
+45
+00:02:03,400 --> 00:02:05,920
+sized arrays next let's go over how to
+大小的数组接下来，让我们讨论如何在数组推送的长度内使用push / pop
+
+46
+00:02:05,920 --> 00:02:09,639
+use push/pop in length of an array push
+大小的数组接下来，让我们讨论如何在数组推送的长度内使用push / pop
+
+47
+00:02:09,639 --> 00:02:11,150
+is a function that
+是将元素添加到数组末尾的函数
+
+48
+00:02:11,150 --> 00:02:13,040
+adds an element to the end of the array
+是将元素添加到数组末尾的函数
+
+49
+00:02:13,040 --> 00:02:16,430
+now to show you example how to use push
+现在向您展示如何使用推的示例，我将首先创建一个公共函数
+
+50
+00:02:16,430 --> 00:02:18,950
+I'm gonna first create a public function
+现在向您展示如何使用推的示例，我将首先创建一个公共函数
+
+51
+00:02:18,950 --> 00:02:22,370
+that we can call from remix we're gonna
+可以从混音中调用的函数，我们将其命名为push并将其命名为
+
+52
+00:02:22,370 --> 00:02:24,799
+name this function push and it's gonna
+可以从混音中调用的函数，我们将其命名为push并将其命名为
+
+53
+00:02:24,799 --> 00:02:26,629
+take in the number that we're gonna push
+接受我们将要加入联合国的人数，以推动我们的组成部分
+
+54
+00:02:26,629 --> 00:02:29,690
+into the UN already to push our element
+接受我们将要加入联合国的人数，以推动我们的组成部分
+
+55
+00:02:29,690 --> 00:02:31,909
+into an array you call the push method
+到数组中，您可以在数组中调用push方法，并传入以下元素：
+
+56
+00:02:31,909 --> 00:02:34,700
+on the array passing in the element that
+到数组中，您可以在数组中调用push方法，并传入以下元素：
+
+57
+00:02:34,700 --> 00:02:37,730
+you're gonna push for this example we're
+您将在本示例中进行推送，我们将调用push方法可能数组
+
+58
+00:02:37,730 --> 00:02:40,400
+gonna call the push method might array
+您将在本示例中进行推送，我们将调用push方法可能数组
+
+59
+00:02:40,400 --> 00:02:43,190
+and this will depend on signed integers
+这将取决于有符号整数到数组的末尾接下来我们开始
+
+60
+00:02:43,190 --> 00:02:46,370
+to the end of the array next let's go
+这将取决于有符号整数到数组的末尾接下来我们开始
+
+61
+00:02:46,370 --> 00:02:49,489
+over pop called him pop on array would
+over pop叫他pop on array会删除数组中的最后一个元素，并且
+
+62
+00:02:49,489 --> 00:02:51,950
+remove the last element in the array and
+over pop叫他pop on array会删除数组中的最后一个元素，并且
+
+63
+00:02:51,950 --> 00:02:54,709
+we're also gonna wrap this in a public
+我们还将把它包装在一个公共函数中，以便我们对其进行测试
+
+64
+00:02:54,709 --> 00:02:56,720
+function so that we could test it out
+我们还将把它包装在一个公共函数中，以便我们对其进行测试
+
+65
+00:02:56,720 --> 00:02:59,480
+from remix and we're gonna call this
+从混音开始，我们将这个功能称为“ pop”
+
+66
+00:02:59,480 --> 00:03:02,510
+function pop inside the function it's
+从混音开始，我们将这个功能称为“ pop”
+
+67
+00:03:02,510 --> 00:03:05,510
+gonna call the pop method on my array in
+要在最后一个内置功能中调用数组上的pop方法
+
+68
+00:03:05,510 --> 00:03:07,760
+the last built-in functionality
+要在最后一个内置功能中调用数组上的pop方法
+
+69
+00:03:07,760 --> 00:03:11,180
+available to arrays in solidity is the
+可用于数组的长度属性是length属性，length属性是
+
+70
+00:03:11,180 --> 00:03:13,879
+length property the length property
+可用于数组的长度属性是length属性，length属性是
+
+71
+00:03:13,879 --> 00:03:17,000
+stores the length of the array we're
+存储数组的长度，我们也将其包装在公共场合
+
+72
+00:03:17,000 --> 00:03:18,680
+also gonna wrap this in a public
+存储数组的长度，我们也将其包装在公共场合
+
+73
+00:03:18,680 --> 00:03:21,139
+function so that we could get the length
+函数，以便我们可以获取数组的长度
+
+74
+00:03:21,139 --> 00:03:24,010
+of the array
+函数，以便我们可以获取数组的长度
+
+75
+00:03:24,360 --> 00:03:26,090
+now come
+现在来部署合同，让我们看看
+
+76
+00:03:26,090 --> 00:03:28,459
+and deploy the contract and let's see
+现在来部署合同，让我们看看
+
+77
+00:03:28,459 --> 00:03:31,400
+some examples of push pop and length
+一些推送弹出和长度的示例，让我们推送一些我要推送的数字
+
+78
+00:03:31,400 --> 00:03:34,610
+let's push some numbers I'm gonna push
+一些推送弹出和长度的示例，让我们推送一些我要推送的数字
+
+79
+00:03:34,610 --> 00:03:38,270
+one two and three now that we push three
+一二和三现在我们推三个元素一二和三的长度
+
+80
+00:03:38,270 --> 00:03:41,300
+elements one two and three the length of
+一二和三现在我们推三个元素一二和三的长度
+
+81
+00:03:41,300 --> 00:03:43,580
+the array should be three and you can
+该数组应为3，并且您可以检查我的数组是否存储1和2
+
+82
+00:03:43,580 --> 00:03:46,580
+check that my array stores one two and
+该数组应为3，并且您可以检查我的数组是否存储1和2
+
+83
+00:03:46,580 --> 00:03:48,920
+three by getting each element by the
+如果您尝试获取一个元素，则通过按索引获取每个元素来获取三个元素
+
+84
+00:03:48,920 --> 00:03:51,980
+index now if you try to get an element
+如果您尝试获取一个元素，则通过按索引获取每个元素来获取三个元素
+
+85
+00:03:51,980 --> 00:03:53,269
+that is out of bound
+那是越界的，您会在这里收到这样的错误
+
+86
+00:03:53,269 --> 00:03:55,459
+you'll get an error like this here the
+那是越界的，您会在这里收到这样的错误
+
+87
+00:03:55,459 --> 00:03:57,620
+array has three elements so the last
+数组具有三个元素，因此最后一个元素存储在索引2中，当我们
+
+88
+00:03:57,620 --> 00:04:00,920
+element is stored at index 2 and when we
+数组具有三个元素，因此最后一个元素存储在索引2中，当我们
+
+89
+00:04:00,920 --> 00:04:04,340
+try to get the element at index 3 we get
+尝试获取索引3处的元素，我们得到一个错误
+
+90
+00:04:04,340 --> 00:04:05,080
+an error
+尝试获取索引3处的元素，我们得到一个错误
+
+91
+00:04:05,080 --> 00:04:08,450
+next let's try calling pop several times
+接下来，让我们尝试在调用pop 1时多次调用pop，它应该删除
+
+92
+00:04:08,450 --> 00:04:11,569
+when you call pop 1 it should remove the
+接下来，让我们尝试在调用pop 1时多次调用pop，它应该删除
+
+93
+00:04:11,569 --> 00:04:13,760
+last element so the length of the array
+最后一个元素，因此数组的长度现在应该为2，而我们的元素应该
+
+94
+00:04:13,760 --> 00:04:16,850
+should now be 2 and our elements should
+最后一个元素，因此数组的长度现在应该为2，而我们的元素应该
+
+95
+00:04:16,850 --> 00:04:21,260
+be 1 and 2 and if you call pop on an
+是1和2，如果您在一个空数组上调用pop，并且抛出了空气，那么我
+
+96
+00:04:21,260 --> 00:04:24,260
+empty array this with thrown air so my
+是1和2，如果您在一个空数组上调用pop，并且抛出了空气，那么我
+
+97
+00:04:24,260 --> 00:04:26,990
+array has two elements and calling pop
+数组有两个元素，第三次调用pop将失败
+
+98
+00:04:26,990 --> 00:04:28,970
+the third time will fail
+数组有两个元素，第三次调用pop将失败
+
+99
+00:04:28,970 --> 00:04:31,850
+since my array is empty now donate for
+由于我的数组为空，现在捐赠的加薪应该为0，
+
+100
+00:04:31,850 --> 00:04:34,220
+the raise should be 0 calling the
+由于我的数组为空，现在捐赠的加薪应该为0，
+
+101
+00:04:34,220 --> 00:04:36,830
+function get length you can see that it
+函数获取长度，您可以看到它确实返回0，因此可以覆盖push pop
+
+102
+00:04:36,830 --> 00:04:40,400
+does return 0 so that covers push pop
+函数获取长度，您可以看到它确实返回0，因此可以覆盖push pop
+
+103
+00:04:40,400 --> 00:04:43,970
+and length of an array pop removes the
+如果要执行以下操作，则数组的长度和pop的长度将删除数组的最后一个元素
+
+104
+00:04:43,970 --> 00:04:46,700
+last element of an array if you want to
+如果要执行以下操作，则数组的长度和pop的长度将删除数组的最后一个元素
+
+105
+00:04:46,700 --> 00:04:48,890
+remove an element from the middle of the
+从数组的中间删除一个元素，您需要做其他的事情，所以
+
+106
+00:04:48,890 --> 00:04:51,560
+array you got to do something else so
+从数组的中间删除一个元素，您需要做其他的事情，所以
+
+107
+00:04:51,560 --> 00:04:54,440
+let's go over that again we want to be
+让我们再来看一遍，我们希望能够使用混音对其进行测试，因此我们
+
+108
+00:04:54,440 --> 00:04:56,870
+able to test it using remix so we're
+让我们再来看一遍，我们希望能够使用混音对其进行测试，因此我们
+
+109
+00:04:56,870 --> 00:04:58,580
+gonna first create a public function
+首先要创建一个包含删除功能的公共功能
+
+110
+00:04:58,580 --> 00:05:02,450
+that wraps the functionality of removing
+首先要创建一个包含删除功能的公共功能
+
+111
+00:05:02,450 --> 00:05:04,850
+the element from an array we're gonna
+数组中的元素，我们将其命名为我们移动的函数，它是
+
+112
+00:05:04,850 --> 00:05:07,190
+name this function we move and it's
+数组中的元素，我们将其命名为我们移动的函数，它是
+
+113
+00:05:07,190 --> 00:05:08,930
+gonna take in the index of the array
+要接受我们要删除的数组元素的索引
+
+114
+00:05:08,930 --> 00:05:11,960
+element that we want to remove to remove
+要接受我们要删除的数组元素的索引
+
+115
+00:05:11,960 --> 00:05:14,870
+an element from array you start with the
+数组中的元素，以关键字delete开头，后跟名称
+
+116
+00:05:14,870 --> 00:05:17,479
+keyword delete followed by the name of
+数组中的元素，以关键字delete开头，后跟名称
+
+117
+00:05:17,479 --> 00:05:19,340
+the array that we're gonna remove the
+我们要从中删除元素的数组是我的数组
+
+118
+00:05:19,340 --> 00:05:22,610
+element from in our case it's my array
+我们要从中删除元素的数组是我的数组
+
+119
+00:05:22,610 --> 00:05:25,729
+followed by two brackets and inside the
+其次是两个括号，在括号内，我们放置了索引，所以在这里
+
+120
+00:05:25,729 --> 00:05:28,700
+brackets we put the index so here we're
+其次是两个括号，在括号内，我们放置了索引，所以在这里
+
+121
+00:05:28,700 --> 00:05:30,860
+telling solidity to delete the data
+告诉实体删除该索引处的数组的数据存储
+
+122
+00:05:30,860 --> 00:05:34,909
+store that my array at this index by the
+告诉实体删除该索引处的数组的数据存储
+
+123
+00:05:34,909 --> 00:05:37,909
+way this is also the same syntax to get
+这也是获取值存储区的相同语法
+
+124
+00:05:37,909 --> 00:05:39,529
+the value store that is
+这也是获取值存储区的相同语法
+
+125
+00:05:39,529 --> 00:05:42,559
+cific index in array now let's try
+现在，让我们尝试调用数组中的cific索引，然后继续操作
+
+126
+00:05:42,559 --> 00:05:44,929
+calling the remove function so go ahead
+现在，让我们尝试调用数组中的cific索引，然后继续操作
+
+127
+00:05:44,929 --> 00:05:47,599
+and recompile and redeploy the contract
+重新编译并重新部署合同我要再推三个数字
+
+128
+00:05:47,599 --> 00:05:51,639
+I'm gonna push three numbers again
+重新编译并重新部署合同我要再推三个数字
+
+129
+00:05:51,639 --> 00:05:55,000
+let's try removing the second element so
+让我们尝试删除第二个元素，以便我们调用remove函数
+
+130
+00:05:55,000 --> 00:05:56,970
+we're gonna call the remove function
+让我们尝试删除第二个元素，以便我们调用remove函数
+
+131
+00:05:56,970 --> 00:06:00,969
+index one now deleting the element from
+索引一现在从数组中删除该元素不会更改其长度
+
+132
+00:06:00,969 --> 00:06:03,219
+array does not change the length of the
+索引一现在从数组中删除该元素不会更改其长度
+
+133
+00:06:03,219 --> 00:06:05,650
+array this is because when you call
+数组，这是因为当您在数组的索引处调用delete时，它会设置
+
+134
+00:06:05,650 --> 00:06:08,620
+delete on the array at an index it sets
+数组，这是因为当您在数组的索引处调用delete时，它会设置
+
+135
+00:06:08,620 --> 00:06:11,110
+the value at the end X to a default
+结束处的值X为默认值，结束时的默认值为
+
+136
+00:06:11,110 --> 00:06:14,439
+value the default value for you end is
+结束处的值X为默认值，结束时的默认值为
+
+137
+00:06:14,439 --> 00:06:17,560
+zero so when we call the function remove
+零，所以当我们调用函数remove时，将我的数组的值设置为X
+
+138
+00:06:17,560 --> 00:06:21,009
+it set the value of my array and X equal
+零，所以当我们调用函数remove时，将我的数组的值设置为X
+
+139
+00:06:21,009 --> 00:06:24,039
+1 to 0 which is the default value of
+ 1到0，这是youant的默认值，所以我只是向您展示了如何
+
+140
+00:06:24,039 --> 00:06:26,469
+youant so I just showed you how to
+ 1到0，这是youant的默认值，所以我只是向您展示了如何
+
+141
+00:06:26,469 --> 00:06:29,680
+delete elements from array and deleting
+从数组删除元素和从数组删除元素不会改变
+
+142
+00:06:29,680 --> 00:06:31,659
+an element from array does not change
+从数组删除元素和从数组删除元素不会改变
+
+143
+00:06:31,659 --> 00:06:34,629
+the length of the array now I want to
+现在我想告诉你一个技巧来保持数组的长度
+
+144
+00:06:34,629 --> 00:06:36,879
+show you one trick to keep your array
+现在我想告诉你一个技巧来保持数组的长度
+
+145
+00:06:36,879 --> 00:06:39,550
+compact what I mean by compact is that
+我所说的紧凑是从数组中删除元素
+
+146
+00:06:39,550 --> 00:06:41,800
+removing the element from our array will
+我所说的紧凑是从数组中删除元素
+
+147
+00:06:41,800 --> 00:06:44,050
+shrink the length of the array and
+缩小数组的长度，因为数组变小了
+
+148
+00:06:44,050 --> 00:06:45,969
+because the array gets smaller this
+缩小数组的长度，因为数组变小了
+
+149
+00:06:45,969 --> 00:06:48,669
+means that there is no space for deleted
+意味着删除元素没有空间保留数组的技巧
+
+150
+00:06:48,669 --> 00:06:51,069
+elements the trick to keep an array
+意味着删除元素没有空间保留数组的技巧
+
+151
+00:06:51,069 --> 00:06:54,490
+compact is to copy the last element into
+compact是将最后一个元素复制到要删除的索引中
+
+152
+00:06:54,490 --> 00:06:57,370
+the index that you want to delete for
+compact是将最后一个元素复制到要删除的索引中
+
+153
+00:06:57,370 --> 00:06:59,289
+example let's say that I have an array
+例如，假设我有一个元素数组1 2＆3＆4，我想
+
+154
+00:06:59,289 --> 00:07:02,710
+of elements 1 2 & 3 & 4 and I want to
+例如，假设我有一个元素数组1 2＆3＆4，我想
+
+155
+00:07:02,710 --> 00:07:05,740
+remove the second element we will copy
+删除第二个元素，我们将最后一个元素4复制到
+
+156
+00:07:05,740 --> 00:07:08,289
+the last element which is 4 into the
+删除第二个元素，我们将最后一个元素4复制到
+
+157
+00:07:08,289 --> 00:07:10,569
+second position and then remove the last
+第二个位置，然后删除最后一个元素，让我们在代码中看到
+
+158
+00:07:10,569 --> 00:07:13,839
+element let's see this in code let's
+第二个位置，然后删除最后一个元素，让我们在代码中看到
+
+159
+00:07:13,839 --> 00:07:15,839
+create a new contract
+创建一个新合约，我们需要一个数组来存储值和一个
+
+160
+00:07:15,839 --> 00:07:19,270
+we need an array to store values and a
+创建一个新合约，我们需要一个数组来存储值和一个
+
+161
+00:07:19,270 --> 00:07:21,520
+function to remove elements from the
+如前所述，从数组中删除元素的函数
+
+162
+00:07:21,520 --> 00:07:24,699
+array as explained earlier we first need
+如前所述，从数组中删除元素的函数
+
+163
+00:07:24,699 --> 00:07:26,889
+to get the last element of the array and
+获取数组的最后一个元素，这是下一步的操作，我们需要
+
+164
+00:07:26,889 --> 00:07:30,190
+this is how you do it next we need to
+获取数组的最后一个元素，这是下一步的操作，我们需要
+
+165
+00:07:30,190 --> 00:07:32,770
+copy this value over to the position
+将此值复制到删除该位置的位置
+
+166
+00:07:32,770 --> 00:07:35,620
+that were removing the position that
+将此值复制到删除该位置的位置
+
+167
+00:07:35,620 --> 00:07:39,490
+we're removing is my array index so we
+我们要删除的是我的数组索引，所以我们将Babeu索引分配给最后一个
+
+168
+00:07:39,490 --> 00:07:42,819
+assign my Babeu index to the last
+我们要删除的是我的数组索引，所以我们将Babeu索引分配给最后一个
+
+169
+00:07:42,819 --> 00:07:46,330
+element of the array and then we remove
+数组的元素，然后我们删除最后一个元素，现在让我们对其进行测试
+
+170
+00:07:46,330 --> 00:07:49,270
+the last element now let's test this out
+数组的元素，然后我们删除最后一个元素，现在让我们对其进行测试
+
+171
+00:07:49,270 --> 00:07:52,719
+and instead of manually pushing values
+而不是手动将值推入数组中以删除元素，然后
+
+172
+00:07:52,719 --> 00:07:55,449
+into array removing the element and then
+而不是手动将值推入数组中以删除元素，然后
+
+173
+00:07:55,449 --> 00:07:58,089
+checking the values afterwards that's
+之后检查值是正确的您的功能
+
+174
+00:07:58,089 --> 00:07:59,710
+right your function to
+之后检查值是正确的您的功能
+
+175
+00:07:59,710 --> 00:08:02,830
+do all of this for us so you'll create a
+为我们完成所有这些操作，因此您将创建一个称为test和push的公共函数
+
+176
+00:08:02,830 --> 00:08:05,170
+public function called test and push
+为我们完成所有这些操作，因此您将创建一个称为test和push的公共函数
+
+177
+00:08:05,170 --> 00:08:08,700
+some values into my array
+一些值进入我的数组，接下来我们将删除索引处的元素
+
+178
+00:08:08,700 --> 00:08:11,440
+next we'll remove the element at index
+一些值进入我的数组，接下来我们将删除索引处的元素
+
+179
+00:08:11,440 --> 00:08:12,930
+equal one
+除去元素后等于一
+
+180
+00:08:12,930 --> 00:08:15,910
+after removing the element the ratio now
+除去元素后等于一
+
+181
+00:08:15,910 --> 00:08:19,390
+store one four and three so you'll read
+存储一四和三，所以您将阅读一些断言来断言
+
+182
+00:08:19,390 --> 00:08:21,910
+some assertions to assert that the
+存储一四和三，所以您将阅读一些断言来断言
+
+183
+00:08:21,910 --> 00:08:23,770
+length of the array is equal to three
+数组的长度等于三，并且顺序为下一个输入
+
+184
+00:08:23,770 --> 00:08:28,270
+and the order is one for entry next
+数组的长度等于三，并且顺序为下一个输入
+
+185
+00:08:28,270 --> 00:08:31,210
+we'll remove the last element and after
+我们将删除最后一个元素，删除最后一个元素后，比率
+
+186
+00:08:31,210 --> 00:08:33,429
+removing the last element the ratio I'll
+我们将删除最后一个元素，删除最后一个元素后，比率
+
+187
+00:08:33,429 --> 00:08:36,880
+store one and four so again we'll write
+存储一个和四个，所以我们再次写一些关于长度和
+
+188
+00:08:36,880 --> 00:08:39,098
+some assertions about the length and
+存储一个和四个，所以我们再次写一些关于长度和
+
+189
+00:08:39,098 --> 00:08:39,099
+some assertions about the length and
+
+190
+00:08:39,099 --> 00:08:41,979
+order of the array we assert that the
+数组的顺序，我们断言数组的长度现在等于2
+
+191
+00:08:41,979 --> 00:08:44,290
+length of the array is now equal to two
+数组的顺序，我们断言数组的长度现在等于2
+
+192
+00:08:44,290 --> 00:08:47,050
+and that the order is one and then for
+并且该命令是一个命令，然后现在编译并部署一个紧凑数组
+
+193
+00:08:47,050 --> 00:08:50,440
+now compile and deployed a compact array
+并且该命令是一个命令，然后现在编译并部署一个紧凑数组
+
+194
+00:08:50,440 --> 00:08:54,220
+contract call the test function and you
+合同调用测试功能，您可以看到该功能成功完成，
+
+195
+00:08:54,220 --> 00:08:57,430
+can see that the function succeeded so
+合同调用测试功能，您可以看到该功能成功完成，
+
+196
+00:08:57,430 --> 00:08:59,500
+that covers how to remove elements from
+涵盖如何在保持数组紧凑的同时从数组中删除元素
+
+197
+00:08:59,500 --> 00:09:03,170
+array while keeping the array compact
+涵盖如何在保持数组紧凑的同时从数组中删除元素
+
+198
+00:09:03,170 --> 00:09:05,269
+in this video we went over how to create
+在本视频中，我们讨论了如何创建数组可以声明为固定数组
+
+199
+00:09:05,269 --> 00:09:09,019
+an array arrays can be declared as fixed
+在本视频中，我们讨论了如何创建数组可以声明为固定数组
+
+200
+00:09:09,019 --> 00:09:12,649
+size or dynamically sized arrays have
+大小或动态大小的数组具有三个内置功能push pop
+
+201
+00:09:12,649 --> 00:09:16,189
+three built-in functionalities push pop
+大小或动态大小的数组具有三个内置功能push pop
+
+202
+00:09:16,189 --> 00:09:19,459
+and Bank and the leaving the element
+银行和离开元素在数组和一个技巧中造成了差距
+
+203
+00:09:19,459 --> 00:09:22,129
+creates a gap in the array and one trick
+银行和离开元素在数组和一个技巧中造成了差距
+
+204
+00:09:22,129 --> 00:09:24,619
+to keep the array compact is to move the
+保持数组紧凑是将最后一个元素移到要删除的地方
+
+205
+00:09:24,619 --> 00:09:26,739
+last element into the place to delete
+保持数组紧凑是将最后一个元素移到要删除的地方
+
+206
+00:09:26,739 --> 00:09:29,899
+that's the basic topics of array that I
+这是我想在本视频中介绍的数组的基本主题
+
+207
+00:09:29,899 --> 00:09:32,119
+wanted to cover in this video if you
+这是我想在本视频中介绍的数组的基本主题
+
+208
+00:09:32,119 --> 00:09:34,040
+have any questions let me know in the
+有任何问题请在下面的评论中让我知道，谢谢收看
+
+209
+00:09:34,040 --> 00:09:36,859
+comments below thanks for watching have
+有任何问题请在下面的评论中让我知道，谢谢收看
+
+210
+00:09:36,859 --> 00:09:39,499
+a nice week and I'll see you in the next
+美好的一周，我会在下一个视频中再见
+
+211
+00:09:39,499 --> 00:09:41,799
+video
+美好的一周，我会在下一个视频中再见
+

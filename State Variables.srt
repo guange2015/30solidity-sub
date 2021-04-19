@@ -1,0 +1,1025 @@
+1
+00:00:00,030 --> 00:00:02,040
+using a smart contract you can store
+使用智能合约，您可以将数据永久存储在以太坊中
+
+2
+00:00:02,040 --> 00:00:03,870
+data permanently on the ethereum
+使用智能合约，您可以将数据永久存储在以太坊中
+
+3
+00:00:03,870 --> 00:00:06,509
+blockchain but it is very expensive to
+区块链，但是使用区块链作为数据非常昂贵
+
+4
+00:00:06,509 --> 00:00:08,550
+use the ethereum blockchain as a data
+区块链，但是使用以太坊区块链作为数据非常昂贵
+
+5
+00:00:08,550 --> 00:00:11,809
+storage today the price of ethereum is
+今天存储以太坊的价格为171美元，存储1兆字节的数据
+
+6
+00:00:11,809 --> 00:00:14,519
+$171 and storing one megabyte of data
+今天存储以太坊的价格为171美元，存储1兆字节的数据
+
+7
+00:00:14,519 --> 00:00:19,050
+will roughly cost you $1,100 in this
+在这部影片中大约要花费您1100美元，我将向您展示如何编写
+
+8
+00:00:19,050 --> 00:00:20,580
+video I'll show you how to write a
+在这部影片中大约要花费您1100美元，我将向您展示如何编写
+
+9
+00:00:20,580 --> 00:00:22,920
+simple contract to store arbitrary data
+简单的合同，可在区块链上存储任意数据，并简要浏览
+
+10
+00:00:22,920 --> 00:00:25,470
+on the blockchain and briefly go over an
+简单的合同，可在区块链上存储任意数据，并简要浏览
+
+11
+00:00:25,470 --> 00:00:29,380
+alternative way to store large data
+可靠地存储大型数据变量的另一种方法是存储在一个
+
+12
+00:00:29,380 --> 00:00:32,090
+variables in solidity are stored in one
+可靠地存储大型数据变量的另一种方法是存储在一个
+
+13
+00:00:32,090 --> 00:00:35,480
+of the daily locations storage this is
+日常位置存储中可以永久存储数据的位置，
+
+14
+00:00:35,480 --> 00:00:37,790
+where data can be permanently stored and
+日常位置存储中可以永久存储数据的位置，
+
+15
+00:00:37,790 --> 00:00:39,320
+these variables are called state
+这些变量称为状态变量，就像您的硬盘一样
+
+16
+00:00:39,320 --> 00:00:41,980
+variables this is like your hard drive
+这些变量称为状态变量，就像您的硬盘一样
+
+17
+00:00:41,980 --> 00:00:44,510
+memory variables are only available
+内存变量仅在函数执行时可用，这就像
+
+18
+00:00:44,510 --> 00:00:47,540
+while function is executing this is like
+内存变量仅在函数执行时可用，这就像
+
+19
+00:00:47,540 --> 00:00:50,809
+your computer memory call data this is
+您的计算机内存调用数据，这是一些函数参数的存储位置
+
+20
+00:00:50,809 --> 00:00:52,729
+where some function arguments are stored
+您的计算机内存调用数据，这是一些函数参数的存储位置
+
+21
+00:00:52,729 --> 00:00:55,070
+but we will ignore this one since we
+但由于我们不需要了解这一点，因此我们将忽略这一点
+
+22
+00:00:55,070 --> 00:00:56,870
+don't need to understand this one for
+但由于我们不需要了解这一点，因此我们将忽略这一点
+
+23
+00:00:56,870 --> 00:00:59,989
+our contract for example variables
+我们的合同，例如在合同内在此处声明的变量，但
+
+24
+00:00:59,989 --> 00:01:02,210
+declared here inside the contract but
+我们的合同，例如在合同内在此处声明的变量，但
+
+25
+00:01:02,210 --> 00:01:03,739
+outside the functions are state
+函数之外是状态变量，它们将存储在
+
+26
+00:01:03,739 --> 00:01:06,259
+variables and they'll be stored on to
+函数之外是状态变量，它们将存储在
+
+27
+00:01:06,259 --> 00:01:09,200
+the blockchain variables declared here
+函数内部在此处声明的区块链变量仅可用
+
+28
+00:01:09,200 --> 00:01:11,420
+inside the function are only available
+函数内部在此处声明的区块链变量仅可用
+
+29
+00:01:11,420 --> 00:01:13,580
+during function call and they won't be
+在函数调用期间，它们不会存储在区块链上
+
+30
+00:01:13,580 --> 00:01:16,549
+stored on to the blockchain
+在函数调用期间，它们不会存储在区块链上
+
+31
+00:01:16,549 --> 00:01:18,710
+functions and solidity can be
+功能和坚固性可分为两种类型的功能
+
+32
+00:01:18,710 --> 00:01:21,590
+categorized into two types functions
+功能和坚固性可分为两种类型的功能
+
+33
+00:01:21,590 --> 00:01:23,240
+that create transactions on the
+在区块链上创建交易的功能
+
+34
+00:01:23,240 --> 00:01:25,240
+blockchain and functions that don't
+在区块链上创建交易的功能
+
+35
+00:01:25,240 --> 00:01:27,770
+functions that create transactions write
+创建交易的功能将数据写入区块链，例如更改
+
+36
+00:01:27,770 --> 00:01:29,630
+data on the blockchain like changing the
+创建交易的功能将数据写入区块链，例如更改
+
+37
+00:01:29,630 --> 00:01:32,270
+valuable state variable which changes
+有价值的状态变量，可更改智能合约的状态或
+
+38
+00:01:32,270 --> 00:01:34,069
+the state of the smart contract or
+有价值的状态变量，可更改智能合约的状态或
+
+39
+00:01:34,069 --> 00:01:36,649
+sending later to another account which
+稍后发送到另一个帐户，该帐户会更改已记录帐户的余额
+
+40
+00:01:36,649 --> 00:01:38,840
+changes the balance of accounts recorded
+稍后发送到另一个帐户，该帐户会更改已记录帐户的余额
+
+41
+00:01:38,840 --> 00:01:41,719
+on the blockchain functions that don't
+不会在区块链上不创建任何交易的区块链功能上
+
+42
+00:01:41,719 --> 00:01:43,429
+create any transaction on the blockchain
+不会在区块链上不创建任何交易的区块链功能上
+
+43
+00:01:43,429 --> 00:01:45,530
+are free to call and they do not change
+可以免费拨打电话，并且它们不会更改区块链的状态
+
+44
+00:01:45,530 --> 00:01:47,990
+the state of the blockchain an example
+可以免费拨打电话，并且它们不会更改区块链的状态
+
+45
+00:01:47,990 --> 00:01:49,489
+will be a function that reads and
+将是一个读取并返回状态变量值的函数
+
+46
+00:01:49,489 --> 00:01:51,140
+returns the value of the state variable
+将是一个读取并返回状态变量值的函数
+
+47
+00:01:51,140 --> 00:01:54,530
+inside a smart contract now let's put
+现在，在智能合约中，我们将上面提到的所有概念放入
+
+48
+00:01:54,530 --> 00:01:56,450
+all the concepts mentioned above into
+现在，在智能合约中，我们将上面提到的所有概念放入
+
+49
+00:01:56,450 --> 00:01:58,489
+code we will create a simple smart
+代码，我们将创建一个简单的智能合约来存储文本，让我们为其命名
+
+50
+00:01:58,489 --> 00:02:00,649
+contract to store text let's name it
+代码，我们将创建一个简单的智能合约来存储文本，让我们为其命名
+
+51
+00:02:00,649 --> 00:02:03,049
+simple storage
+合同内的简单存储，我们需要声明一个
+
+52
+00:02:03,049 --> 00:02:05,090
+inside the contract we need to declare a
+合同内的简单存储，我们需要声明一个
+
+53
+00:02:05,090 --> 00:02:07,490
+state variable of type string to store
+字符串类型的状态变量来存储文本，我们还需要两个函数
+
+54
+00:02:07,490 --> 00:02:10,399
+the text we also need two functions a
+字符串类型的状态变量来存储文本，我们还需要两个函数
+
+55
+00:02:10,399 --> 00:02:12,709
+public function to update the tax
+公用函数来更新您设置的税收变量和另一个变量
+
+56
+00:02:12,709 --> 00:02:15,530
+variable your name is set and another
+公用函数来更新您设置的税收变量和另一个变量
+
+57
+00:02:15,530 --> 00:02:17,810
+public function to get the text variable
+获取文本变量的公共函数，我们将其命名为更新
+
+58
+00:02:17,810 --> 00:02:20,540
+we'll name this one get to update the
+获取文本变量的公共函数，我们将其命名为更新
+
+59
+00:02:20,540 --> 00:02:22,640
+text variable in our contract we need a
+我们合同中的text变量，我们需要一个set函数来获取新字符串
+
+60
+00:02:22,640 --> 00:02:24,530
+set function to take the new string
+我们合同中的text变量，我们需要一个set函数来获取新字符串
+
+61
+00:02:24,530 --> 00:02:27,620
+value as input in solidity you need to
+值作为可靠的输入，您需要在其中声明函数输入的类型
+
+62
+00:02:27,620 --> 00:02:29,750
+declare the type of function inputs in
+值作为可靠的输入，您需要在其中声明函数输入的类型
+
+63
+00:02:29,750 --> 00:02:32,180
+our case we have a single input of type
+在我们的案例中，对于某些数据类型，我们只有一个字符串类型的输入，包括
+
+64
+00:02:32,180 --> 00:02:35,299
+string for certain data types including
+在我们的案例中，对于某些数据类型，我们只有一个字符串类型的输入，包括
+
+65
+00:02:35,299 --> 00:02:37,640
+string you have to explicitly declare
+字符串，您必须显式声明数据位置，所以让我们考虑一下
+
+66
+00:02:37,640 --> 00:02:40,160
+the data location so let's think about
+字符串，您必须显式声明数据位置，所以让我们考虑一下
+
+67
+00:02:40,160 --> 00:02:42,019
+which keyword we need to use either
+如果我们使用哪个关键字，那么我们需要使用存储或内存
+
+68
+00:02:42,019 --> 00:02:44,720
+storage or memory if we use the keyword
+如果我们使用哪个关键字，那么我们需要使用存储或内存
+
+69
+00:02:44,720 --> 00:02:47,030
+storage then we are telling solidity
+存储，那么我们要告诉固体，我们的输入是存储的值
+
+70
+00:02:47,030 --> 00:02:49,160
+that our input is a value stored
+存储，那么我们要告诉固体，我们的输入是存储的值
+
+71
+00:02:49,160 --> 00:02:51,560
+somewhere in our contract but that
+我们合同中的某处，但事实并非如此，因为您会
+
+72
+00:02:51,560 --> 00:02:53,480
+cannot be the case since you'll be
+我们合同中的某处，但事实并非如此，因为您会
+
+73
+00:02:53,480 --> 00:02:55,489
+providing a value for the input from
+为合同外部的输入提供价值，因此我们将声明为
+
+74
+00:02:55,489 --> 00:02:58,340
+outside the contract so we'll declare as
+为合同外部的输入提供价值，因此我们将声明为
+
+75
+00:02:58,340 --> 00:03:01,430
+memory if you accidentally declare as
+内存，如果您不小心声明为存储并尝试对其进行编译，则会得到
+
+76
+00:03:01,430 --> 00:03:03,620
+storage and try to compile it you'll get
+内存，如果您不小心声明为存储并尝试对其进行编译，则会得到
+
+77
+00:03:03,620 --> 00:03:06,079
+a error like this for public functions
+对于公共功能输入的此类错误必须声明为内存
+
+78
+00:03:06,079 --> 00:03:08,170
+inputs must be declared as memory
+对于公共功能输入的此类错误必须声明为内存
+
+79
+00:03:08,170 --> 00:03:11,120
+anyways let's name this input as text
+无论如何，让我们将此输入命名为以下划线为前缀的文本
+
+80
+00:03:11,120 --> 00:03:14,359
+prefixed with an underscore in solidity
+无论如何，让我们将此输入命名为以下划线为前缀的文本
+
+81
+00:03:14,359 --> 00:03:16,850
+it is common practice to prefix function
+通常的做法是在函数输入前添加下划线
+
+82
+00:03:16,850 --> 00:03:20,269
+input with an underscore this is done to
+通常的做法是在函数输入前添加下划线
+
+83
+00:03:20,269 --> 00:03:22,160
+avoid using the same name as state
+避免在这种情况下使用与状态变量相同的名称
+
+84
+00:03:22,160 --> 00:03:25,100
+variables in this case we differentiate
+避免在这种情况下使用与状态变量相同的名称
+
+85
+00:03:25,100 --> 00:03:27,170
+the text variable with our new text
+使用下划线作为前缀的新文本输入的文本变量
+
+86
+00:03:27,170 --> 00:03:29,769
+input by prefixing with an underscore
+使用下划线作为前缀的新文本输入的文本变量
+
+87
+00:03:29,769 --> 00:03:32,690
+inside the function we update the text
+在函数内部，我们只需将文本变量更新为新值即可
+
+88
+00:03:32,690 --> 00:03:34,730
+variable to the new value simply by
+在函数内部，我们只需将文本变量更新为新值即可
+
+89
+00:03:34,730 --> 00:03:37,890
+reassigning it with our input
+用我们的输入重新分配它，有两种方法可以从中获取变量
+
+90
+00:03:37,890 --> 00:03:40,200
+there are two ways to get variables from
+用我们的输入重新分配它，有两种方法可以从中获取变量
+
+91
+00:03:40,200 --> 00:03:42,750
+a smart contract one way is to write a
+智能合约的一种方法是编写一个函数以返回值，并且
+
+92
+00:03:42,750 --> 00:03:45,270
+function to return the value and the
+智能合约的一种方法是编写一个函数以返回值，并且
+
+93
+00:03:45,270 --> 00:03:47,280
+other way is to let solidity compiler
+另一种方法是让Solidity编译器为您编写一个，为什么不使用
+
+94
+00:03:47,280 --> 00:03:50,610
+write one for you so why not vessel the
+另一种方法是让Solidity编译器为您编写一个，为什么不使用
+
+95
+00:03:50,610 --> 00:03:53,280
+DD right one for you all the time well
+始终为您正确地选择DD，在某些情况下，
+
+96
+00:03:53,280 --> 00:03:54,930
+there are cases when it's better to
+始终为您正确地选择DD，在某些情况下，
+
+97
+00:03:54,930 --> 00:03:57,270
+write your own for example you might
+编写自己的示例，例如，您可能想从
+
+98
+00:03:57,270 --> 00:03:59,400
+want to return multiple values from a
+编写自己的示例，例如，您可能想从
+
+99
+00:03:59,400 --> 00:04:01,410
+single function call instead of calling
+单个函数调用而不是调用两个单独的函数，我将解释
+
+100
+00:04:01,410 --> 00:04:04,290
+two separate functions I will explain
+单个函数调用而不是调用两个单独的函数，我将解释
+
+101
+00:04:04,290 --> 00:04:07,290
+this in a future video okay so let's go
+在以后的视频中，这很好，让我们来看一下获取变量的第一种方法
+
+102
+00:04:07,290 --> 00:04:09,090
+over the first way of getting variables
+在以后的视频中，这很好，让我们来看一下获取变量的第一种方法
+
+103
+00:04:09,090 --> 00:04:12,300
+writing our own function we need our def
+编写我们自己的函数，我们需要我们的def函数返回字符串值
+
+104
+00:04:12,300 --> 00:04:13,860
+function to return the string value
+编写我们自己的函数，我们需要我们的def函数返回字符串值
+
+105
+00:04:13,860 --> 00:04:16,079
+stored in the text variable so we
+存储在文本变量中，因此我们在函数定义中声明了这一点
+
+106
+00:04:16,079 --> 00:04:17,880
+declared that in our function definition
+存储在文本变量中，因此我们在函数定义中声明了这一点
+
+107
+00:04:17,880 --> 00:04:21,238
+here with the keyword return followed by
+这里是关键字return，后面是我们要返回的值的类型
+
+108
+00:04:21,238 --> 00:04:23,250
+the type of values we are returning in
+这里是关键字return，后面是我们要返回的值的类型
+
+109
+00:04:23,250 --> 00:04:26,520
+our case chain again we need to declare
+我们的案例链再次，我们需要声明我们的字符串类型的数据位置
+
+110
+00:04:26,520 --> 00:04:29,850
+the data location of our string type our
+我们的案例链再次，我们需要声明我们的字符串类型的数据位置
+
+111
+00:04:29,850 --> 00:04:32,040
+text variable is stored in a contract
+文本变量存储在存储的合同中，因此您可能会认为我们需要
+
+112
+00:04:32,040 --> 00:04:34,230
+stored so you might think that we need
+文本变量存储在存储的合同中，因此您可能会认为我们需要
+
+113
+00:04:34,230 --> 00:04:37,170
+to declare storage here but we need the
+在这里声明存储，但我们需要将实际值存储在文本变量中
+
+114
+00:04:37,170 --> 00:04:39,390
+actual value stored in the text variable
+在这里声明存储，但我们需要将实际值存储在文本变量中
+
+115
+00:04:39,390 --> 00:04:41,820
+not the reference to the variable so we
+不是对变量的引用，因此我们将其声明为内存，我们还需要
+
+116
+00:04:41,820 --> 00:04:45,060
+will declare it as memory we also need
+不是对变量的引用，因此我们将其声明为内存，我们还需要
+
+117
+00:04:45,060 --> 00:04:47,070
+to tell solidity that this function does
+告诉我们，此功能不会修改任何状态变量
+
+118
+00:04:47,070 --> 00:04:49,860
+not modify any state variables we do
+告诉我们，此功能不会修改任何状态变量
+
+119
+00:04:49,860 --> 00:04:52,200
+this by using either the keyword view or
+通过使用关键字view或简而言之，peer可以使您关心
+
+120
+00:04:52,200 --> 00:04:54,540
+peer in short beauty cares that your
+通过使用关键字view或简而言之，peer可以使您关心
+
+121
+00:04:54,540 --> 00:04:56,190
+code does not change the state of the
+代码不会更改区块链的状态，对等方声明您的
+
+122
+00:04:56,190 --> 00:04:58,410
+blockchain and peer declares that your
+代码不会更改区块链的状态，对等方声明您的
+
+123
+00:04:58,410 --> 00:04:59,970
+function does not change the state of
+函数不会更改区块链的状态，也不会读取
+
+124
+00:04:59,970 --> 00:05:02,460
+the blockchain and it also does not read
+函数不会更改区块链的状态，也不会读取
+
+125
+00:05:02,460 --> 00:05:05,340
+any state variables for our case we want
+对于我们的情况，任何状态变量我们都想读取状态变量，所以我们把
+
+126
+00:05:05,340 --> 00:05:07,500
+to read the state variable so let's put
+对于我们的情况，任何状态变量我们都想读取状态变量，所以我们把
+
+127
+00:05:07,500 --> 00:05:10,140
+the BU keyword in a future video I'll go
+未来视频中的BU关键字，我将详细介绍它们，敬请关注
+
+128
+00:05:10,140 --> 00:05:12,840
+over them in detail so stay tuned inside
+未来视频中的BU关键字，我将详细介绍它们，敬请关注
+
+129
+00:05:12,840 --> 00:05:14,610
+the function we just return the text
+我们只返回文本变量的函数，我将得到一个函数
+
+130
+00:05:14,610 --> 00:05:16,620
+variable and I'll get a function is
+我们只返回文本变量的函数，我将得到一个函数
+
+131
+00:05:16,620 --> 00:05:19,050
+completed the second way of accessing
+完成访问变量的第二种方法是让solidity编译器
+
+132
+00:05:19,050 --> 00:05:21,630
+variable is to let solidity compiler
+完成访问变量的第二种方法是让solidity编译器
+
+133
+00:05:21,630 --> 00:05:23,640
+automatically create getter functions
+自动创建getter函数，我们所要做的就是为我们的状态添加前缀
+
+134
+00:05:23,640 --> 00:05:26,430
+all we have to do is to prefix our state
+自动创建getter函数，我们所要做的就是为我们的状态添加前缀
+
+135
+00:05:26,430 --> 00:05:28,740
+variables with a public key word I have
+具有公共关键字的变量我必须重新编译并部署我们的合同
+
+136
+00:05:28,740 --> 00:05:30,600
+to recompile and deploy our contract
+具有公共关键字的变量我必须重新编译并部署我们的合同
+
+137
+00:05:30,600 --> 00:05:32,430
+you'll see that we have access to public
+您会看到我们可以通过执行
+
+138
+00:05:32,430 --> 00:05:34,770
+state variables by executing the
+您会看到我们可以通过执行
+
+139
+00:05:34,770 --> 00:05:36,600
+function with the same name as our
+与我们的变量同名的函数，现在让我们编译和测试
+
+140
+00:05:36,600 --> 00:05:38,880
+variable now let's compile and test the
+与我们的变量同名的函数，现在让我们编译和测试
+
+141
+00:05:38,880 --> 00:05:41,310
+contract make sure that the compiler is
+合同应确保编译器与以下版本中定义的版本兼容
+
+142
+00:05:41,310 --> 00:05:43,230
+compatible with the version defined in
+合同应确保编译器与以下版本中定义的版本兼容
+
+143
+00:05:43,230 --> 00:05:45,660
+our smart contract compile and then
+我们的智能合约先编译然后部署
+
+144
+00:05:45,660 --> 00:05:47,290
+deploy
+我们的智能合约先编译然后部署
+
+145
+00:05:47,290 --> 00:05:49,300
+you can see here that we have three
+您可以在此处看到我们设置了三个函数来更新税款变量
+
+146
+00:05:49,300 --> 00:05:51,730
+functions set to update the tax variable
+您可以在此处看到我们设置了三个函数来更新税款变量
+
+147
+00:05:51,730 --> 00:05:53,950
+get to get the value stored inside the
+获取存储在文本变量中的值，我们还有一个函数
+
+148
+00:05:53,950 --> 00:05:56,290
+text variable we also have a function
+获取存储在文本变量中的值，我们还有一个函数
+
+149
+00:05:56,290 --> 00:05:58,570
+with the same name as a text variable
+与文本变量同名，这就是
+
+150
+00:05:58,570 --> 00:06:00,310
+this is the function that was
+与文本变量同名，这就是
+
+151
+00:06:00,310 --> 00:06:03,220
+automatically created by the compiler we
+由编译器自动创建，我们可以更新存储在智能文本中的文本
+
+152
+00:06:03,220 --> 00:06:04,960
+can update our text stored in a smart
+由编译器自动创建，我们可以更新存储在智能文本中的文本
+
+153
+00:06:04,960 --> 00:06:06,580
+contract by calling set
+通过在此处调用集合通知来签订合同
+
+154
+00:06:06,580 --> 00:06:08,440
+notice here that a transaction was
+通过在此处调用集合通知来签订合同
+
+155
+00:06:08,440 --> 00:06:11,080
+created also notice here that our cam
+在这里还创建了一个通知，如果他持有任何真实的
+
+156
+00:06:11,080 --> 00:06:13,990
+has spent some ether if he hold any real
+在这里还创建了一个通知，如果他持有任何真实的
+
+157
+00:06:13,990 --> 00:06:16,630
+ethereum don't worry it didn't spend any
+以太坊人不用担心它没有从钱包里花掉任何钱，这只是一个
+
+158
+00:06:16,630 --> 00:06:18,640
+of it from your wallet this is just a
+以太坊人不用担心它没有从钱包里花掉任何钱，这只是一个
+
+159
+00:06:18,640 --> 00:06:21,130
+simulation we can verify that our text
+模拟中，我们可以通过调用get来验证文本值是否已更新
+
+160
+00:06:21,130 --> 00:06:23,470
+value was updated by either calling get
+模拟中，我们可以通过调用get来验证文本值是否已更新
+
+161
+00:06:23,470 --> 00:06:25,460
+or text
+或之前提到的文字，我提到将其存储在
+
+162
+00:06:25,460 --> 00:06:27,560
+earlier I mentioned that storing that on
+或之前提到的文字，我提到将其存储在
+
+163
+00:06:27,560 --> 00:06:30,140
+the blockchain is very expensive one way
+区块链非常昂贵，解决此问题的一种方法是使用IP
+
+164
+00:06:30,140 --> 00:06:32,390
+to go around this problem is by using IP
+区块链非常昂贵，解决此问题的一种方法是使用IP
+
+165
+00:06:32,390 --> 00:06:36,050
+FS in short ipfs is a peer-to-peer file
+简称ipfs的FS是点对点文件存储，任何人都可以通过以下方式访问该文件存储
+
+166
+00:06:36,050 --> 00:06:38,390
+storage and anyone can access that up by
+简称ipfs的FS是点对点文件存储，任何人都可以通过以下方式访问该文件存储
+
+167
+00:06:38,390 --> 00:06:40,670
+knowing the hash of the data so when you
+知道数据的哈希值，因此当您将数据上传到ipfs时会得到一个哈希值
+
+168
+00:06:40,670 --> 00:06:43,250
+upload your data to ipfs you get a hash
+知道数据的哈希值，因此当您将数据上传到ipfs时会得到一个哈希值
+
+169
+00:06:43,250 --> 00:06:45,320
+bag which is the location of your data
+袋，这是您的数据所在的位置，并在我们的智能合约East或IP中
+
+170
+00:06:45,320 --> 00:06:48,140
+and in our smart contract East or the IP
+袋，这是您的数据所在的位置，并在我们的智能合约East或IP中
+
+171
+00:06:48,140 --> 00:06:50,900
+FS hash in this way you accomplish two
+通过这种方式，FS哈希可以完成两件事，为
+
+172
+00:06:50,900 --> 00:06:53,240
+things store a large amount of data for
+通过这种方式，FS哈希可以完成两件事，为
+
+173
+00:06:53,240 --> 00:06:55,370
+cheap and use the smart contract to that
+便宜，并使用智能合约使每个人都知道您的数据存储在哪里
+
+174
+00:06:55,370 --> 00:06:57,320
+everyone know where your data is stored
+便宜，并使用智能合约使每个人都知道您的数据存储在哪里
+
+175
+00:06:57,320 --> 00:07:00,380
+let me show you a quick example here we
+让我给你看一个简单的例子这里有一张猫的照片
+
+176
+00:07:00,380 --> 00:07:01,730
+have an image of a cat that's been
+让我给你看一个简单的例子这里有一张猫的照片
+
+177
+00:07:01,730 --> 00:07:04,970
+already uploaded to ipfs we copy the
+已经上传到ipfs，我们在合同中复制该图像的哈希值
+
+178
+00:07:04,970 --> 00:07:07,550
+hash of this image next in our contract
+已经上传到ipfs，我们在合同中复制该图像的哈希值
+
+179
+00:07:07,550 --> 00:07:10,130
+we store the hash now anyone can
+我们存储了哈希，现在任何人都可以下载并首先看到猫的图像
+
+180
+00:07:10,130 --> 00:07:11,900
+download and see the cat image by first
+我们存储了哈希，现在任何人都可以下载并首先看到猫的图像
+
+181
+00:07:11,900 --> 00:07:14,720
+reading the ipfs hash from our contract
+从合同中读取ipfs哈希，然后在哈希处访问ipfs
+
+182
+00:07:14,720 --> 00:07:19,390
+and then accessing ipfs at the hash
+从合同中读取ipfs哈希，然后在哈希处访问ipfs
+
+183
+00:07:19,910 --> 00:07:21,890
+in this video we talked about smart
+在本视频中，我们讨论了智能合约存储变量存储在
+
+184
+00:07:21,890 --> 00:07:24,590
+contract storage variables are stored in
+在本视频中，我们讨论了智能合约存储变量存储在
+
+185
+00:07:24,590 --> 00:07:27,200
+three locations storage memory and call
+三个位置存储内存和呼叫数据，但在大多数情况下，您只需要
+
+186
+00:07:27,200 --> 00:07:29,720
+data but in most cases you only need to
+三个位置存储内存和呼叫数据，但在大多数情况下，您只需要
+
+187
+00:07:29,720 --> 00:07:32,030
+consider storage and memory variable
+考虑将存储在智能合约中的存储和内存变量称为
+
+188
+00:07:32,030 --> 00:07:33,920
+stored in smart contracts are called
+考虑将存储在智能合约中的存储和内存变量称为
+
+189
+00:07:33,920 --> 00:07:36,230
+state variables functions can be
+状态变量函数可以分为两类：
+
+190
+00:07:36,230 --> 00:07:38,510
+categorized into two groups ones that
+状态变量函数可以分为两类：
+
+191
+00:07:38,510 --> 00:07:40,040
+create transactions on the blockchain
+在区块链上创建交易，以及不起作用的交易
+
+192
+00:07:40,040 --> 00:07:42,500
+and ones that don't functions that don't
+在区块链上创建交易，以及不起作用的交易
+
+193
+00:07:42,500 --> 00:07:44,420
+create any transactions are declared
+创建任何使用关键字视图或对等函数声明的事务
+
+194
+00:07:44,420 --> 00:07:47,120
+with the keyword view or peer functions
+创建任何使用关键字视图或对等函数声明的事务
+
+195
+00:07:47,120 --> 00:07:49,340
+that do create a transaction write data
+确实会创建交易的交易会在区块链上写入数据，例如更新
+
+196
+00:07:49,340 --> 00:07:51,500
+on the blockchain like updating the
+确实会创建交易的交易会在区块链上写入数据，例如更新
+
+197
+00:07:51,500 --> 00:07:53,570
+value of a state variable stored in your
+合约实体中存储的状态变量的值会自动创建
+
+198
+00:07:53,570 --> 00:07:56,240
+contract solidity automatically creates
+合约实体中存储的状态变量的值会自动创建
+
+199
+00:07:56,240 --> 00:07:58,490
+functions to return the value of public
+函数，用于返回将状态数据存储在智能设备上的公共状态变量的值
+
+200
+00:07:58,490 --> 00:08:01,430
+state variables storing data on a smart
+函数，用于返回将状态数据存储在智能设备上的公共状态变量的值
+
+201
+00:08:01,430 --> 00:08:04,430
+contract is expensive and by using IP FS
+合同很昂贵，通过使用IP FS，您可以有效节省大量
+
+202
+00:08:04,430 --> 00:08:06,680
+you can effectively save large amount on
+合同很昂贵，通过使用IP FS，您可以有效节省大量
+
+203
+00:08:06,680 --> 00:08:09,080
+data on a smart contract I'm gonna wrap
+智能合约的数据，我将在这里总结一下，感谢您的观看和
+
+204
+00:08:09,080 --> 00:08:11,570
+up around here thanks for watching and
+智能合约的数据，我将在这里总结一下，感谢您的观看和
+
+205
+00:08:11,570 --> 00:08:14,230
+I'll talk to you later
+我待会再跟你谈
+

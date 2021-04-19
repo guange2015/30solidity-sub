@@ -1,0 +1,330 @@
+1
+00:00:00,060 --> 00:00:02,070
+in this video we're gonna go over how to
+在本视频中，我们将介绍如何编写苏打分贝的for循环
+
+2
+00:00:02,070 --> 00:00:04,339
+write a for loop in soda dB
+在本视频中，我们将介绍如何编写苏打分贝的for循环
+
+3
+00:00:04,339 --> 00:00:06,660
+first we're going to create a function
+首先，我们要创建一个函数，该函数将执行我们的for循环
+
+4
+00:00:06,660 --> 00:00:09,480
+that will execute our for loop we're
+首先，我们要创建一个函数，该函数将执行我们的for循环
+
+5
+00:00:09,480 --> 00:00:12,269
+going to name this function do and for
+将这个函数命名为do，对于输入，我们将传递
+
+6
+00:00:12,269 --> 00:00:13,980
+the input we're going to pass in the
+将这个函数命名为do，对于输入，我们将传递
+
+7
+00:00:13,980 --> 00:00:17,190
+number of iterations to run to the write
+运行以关键字开头的for循环的迭代次数
+
+8
+00:00:17,190 --> 00:00:19,080
+a for loop you start with the keyword
+运行以关键字开头的for循环的迭代次数
+
+9
+00:00:19,080 --> 00:00:22,710
+for followed by a parentheses this loop
+for后跟一个括号，此循环应运行n次，其中n是输入
+
+10
+00:00:22,710 --> 00:00:25,439
+should run n times where n is the input
+for后跟一个括号，此循环应运行n次，其中n是输入
+
+11
+00:00:25,439 --> 00:00:27,630
+that we passed into this function so
+我们传入了此函数，因此在括号内声明了一个
+
+12
+00:00:27,630 --> 00:00:30,119
+inside the parentheses we declare a
+我们传入了此函数，因此在括号内声明了一个
+
+13
+00:00:30,119 --> 00:00:33,420
+local variable that starts with 0 and
+以0开头的局部变量，而该局部变量I小于
+
+14
+00:00:33,420 --> 00:00:36,149
+while this local variable I is less than
+以0开头的局部变量，而该局部变量I小于
+
+15
+00:00:36,149 --> 00:00:38,700
+n it's going to execute the code inside
+n一旦代码被执行，它将在花括号内执行代码
+
+16
+00:00:38,700 --> 00:00:41,700
+the curly braces once that code is
+n一旦代码被执行，它将在花括号内执行代码
+
+17
+00:00:41,700 --> 00:00:44,550
+finished executing the variable I will
+在此示例中，完成执行变量I的值将增加1
+
+18
+00:00:44,550 --> 00:00:47,730
+be incremented by 1 for this example
+在此示例中，完成执行变量I的值将增加1
+
+19
+00:00:47,730 --> 00:00:49,469
+we're gonna create a counter that
+我们将创建一个计数器，每次for循环为
+
+20
+00:00:49,469 --> 00:00:51,989
+increments every time the for loop is
+我们将创建一个计数器，每次for循环为
+
+21
+00:00:51,989 --> 00:00:55,199
+executed first we initialize a state
+首先执行，我们初始化一个名为count的状态变量，并在for中
+
+22
+00:00:55,199 --> 00:00:58,920
+variable named count and inside the for
+首先执行，我们初始化一个名为count的状态变量，并在for中
+
+23
+00:00:58,920 --> 00:01:01,550
+loop we increment the count by one
+循环，当您执行以下操作时，我们将计数增加一个编译并部署合同
+
+24
+00:01:01,550 --> 00:01:06,000
+compile and deploy the contract when you
+循环，当您执行以下操作时，我们将计数增加一个编译并部署合同
+
+25
+00:01:06,000 --> 00:01:08,460
+execute the function do before input of
+在输入10之前执行功能do，它将在内部运行for循环
+
+26
+00:01:08,460 --> 00:01:11,130
+10 it will run the for loop inside the
+在输入10之前执行功能do，它将在内部运行for循环
+
+27
+00:01:11,130 --> 00:01:13,860
+function 10 times and each iteration
+函数10次，每次迭代将使计数器加1，因此
+
+28
+00:01:13,860 --> 00:01:17,490
+will increment the counter by 1 so by
+函数10次，每次迭代将使计数器加1，因此
+
+29
+00:01:17,490 --> 00:01:19,680
+the time the function finishes execution
+函数完成执行的时间将使计数器增加
+
+30
+00:01:19,680 --> 00:01:22,290
+it would have incremented the counter by
+函数完成执行的时间将使计数器增加
+
+31
+00:01:22,290 --> 00:01:24,960
+10 now when you call the loop function
+现在，当您再次使用输入11调用循环函数时，计数为10
+
+32
+00:01:24,960 --> 00:01:28,560
+again with an input of 11 the countin
+现在，当您再次使用输入11调用循环函数时，计数为10
+
+33
+00:01:28,560 --> 00:01:31,380
+will start incrementing from 10 and you
+将从10开始递增，最后以10加上
+
+34
+00:01:31,380 --> 00:01:33,689
+end up with 10 plus you having which is
+将从10开始递增，最后以10加上
+
+35
+00:01:33,689 --> 00:01:37,860
+21 and that is a basic demonstration of
+21，这是如何现在牢固地编写for循环的基本演示
+
+36
+00:01:37,860 --> 00:01:41,280
+how to write a for loop in solidity now
+21，这是如何现在牢固地编写for循环的基本演示
+
+37
+00:01:41,280 --> 00:01:43,619
+one thing you want to be careful of when
+编写for循环时要注意的一件事是
+
+38
+00:01:43,619 --> 00:01:46,079
+writing a for loop is that you want to
+编写for循环时要注意的一件事是
+
+39
+00:01:46,079 --> 00:01:48,360
+make sure that your for loop doesn't run
+确保您的for循环不会用完气体，换句话说，
+
+40
+00:01:48,360 --> 00:01:51,630
+out of gas in other words the number of
+确保您的for循环不会用完气体，换句话说，
+
+41
+00:01:51,630 --> 00:01:53,820
+iterations should have an upper bound
+迭代应该有一个上限，并有一个上限
+
+42
+00:01:53,820 --> 00:01:56,969
+and by having the upper bound to the
+迭代应该有一个上限，并有一个上限
+
+43
+00:01:56,969 --> 00:01:59,790
+number of iterations you know that the
+您知道for循环可以消耗的Monegasque迭代次数
+
+44
+00:01:59,790 --> 00:02:02,250
+Monegasque that the for loop can consume
+您知道for循环可以消耗的Monegasque迭代次数
+
+45
+00:02:02,250 --> 00:02:05,700
+will not exceed a certain amount so for
+不会超过一定金额，例如，如果您有一份合同
+
+46
+00:02:05,700 --> 00:02:07,920
+example if you have a contract that pays
+不会超过一定金额，例如，如果您有一份合同
+
+47
+00:02:07,920 --> 00:02:11,489
+dividends to its shareholders you would
+您希望限制其股东的股利
+
+48
+00:02:11,489 --> 00:02:13,489
+want to put a limit to
+您希望限制其股东的股利
+
+49
+00:02:13,489 --> 00:02:18,110
+number of shareholders like 100 if you
+股东数量，例如100，如果您不这样做，则此功能将用尽
+
+50
+00:02:18,110 --> 00:02:20,569
+don't then this function will use up
+股东数量，例如100，如果您不这样做，则此功能将用尽
+
+51
+00:02:20,569 --> 00:02:22,879
+more and more gas as the number of
+随着股东数量的增加，天然气也越来越多
+
+52
+00:02:22,879 --> 00:02:25,069
+shareholders become larger and larger
+随着股东数量的增加，天然气也越来越多
+
+53
+00:02:25,069 --> 00:02:28,069
+since there's a limit on the amount of
+因为可以进入块内的气体数量受到限制，所以这
+
+54
+00:02:28,069 --> 00:02:30,620
+gas that can go inside the block this
+因为可以进入块内的气体数量受到限制，所以这
+
+55
+00:02:30,620 --> 00:02:32,629
+means that this function will stop
+表示此功能将在股东人数达到10时停止工作
+
+56
+00:02:32,629 --> 00:02:35,000
+working when the number of shareholders
+表示此功能将在股东人数达到10时停止工作
+
+57
+00:02:35,000 --> 00:02:37,640
+is large enough and your shareholders
+足够大，您的股东不会为他们不能
+
+58
+00:02:37,640 --> 00:02:40,310
+will not be happy that they can no
+足够大，您的股东不会为他们不能
+
+59
+00:02:40,310 --> 00:02:43,400
+longer receive the dividend so when
+更长的时间收到股息，因此在混合之前写时有
+
+60
+00:02:43,400 --> 00:02:45,769
+writing before the mixture that there is
+更长的时间收到股息，因此在混合之前写时有
+
+61
+00:02:45,769 --> 00:02:49,250
+an upper bound in this case we created
+在这种情况下，我们通过限制
+
+62
+00:02:49,250 --> 00:02:51,769
+an upper bound by limiting the number of
+在这种情况下，我们通过限制
+
+63
+00:02:51,769 --> 00:02:54,230
+shareholders that can participate in
+可以很好地参与这份合同的股东
+
+64
+00:02:54,230 --> 00:02:57,799
+this contract well that's all I got for
+可以很好地参与这份合同的股东
+
+65
+00:02:57,799 --> 00:03:00,230
+this video thanks for watching and I'll
+这部影片感谢您的收看，下次见
+
+66
+00:03:00,230 --> 00:03:02,980
+see you next time
+这部影片感谢您的收看，下次见
+

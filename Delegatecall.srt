@@ -1,0 +1,1125 @@
+1
+00:00:00,060 --> 00:00:02,340
+hi everyone in this video I'm gonna
+大家好，我要解释一下这段视频中的代表通话并显示
+
+2
+00:00:02,340 --> 00:00:04,770
+explain what delegate call is and show
+大家好，我要解释一下这段视频中的代表通话并显示
+
+3
+00:00:04,770 --> 00:00:05,790
+you how to use it
+您如何使用它委托调用是一个低级功能
+
+4
+00:00:05,790 --> 00:00:08,010
+delegate call is a low-level function
+您如何使用它委托调用是一个低级功能
+
+5
+00:00:08,010 --> 00:00:10,650
+similar to call method and it's used to
+类似于调用方法，它用于调用我要调用的所有合约
+
+6
+00:00:10,650 --> 00:00:13,110
+call all the contracts I like to call
+类似于调用方法，它用于调用我要调用的所有合约
+
+7
+00:00:13,110 --> 00:00:15,870
+method when delegate call is used inside
+在联系日之内使用委托呼叫来调用合同时的方法
+
+8
+00:00:15,870 --> 00:00:18,869
+contact day to call contract be contract
+在联系日之内使用委托呼叫来调用合同时的方法
+
+9
+00:00:18,869 --> 00:00:22,859
+beads code is run inside a context so
+珠子代码在上下文中运行，所以这意味着在合同内部
+
+10
+00:00:22,859 --> 00:00:24,900
+what this means is that inside contract
+珠子代码在上下文中运行，所以这意味着在合同内部
+
+11
+00:00:24,900 --> 00:00:28,140
+be storage will refer to contract a
+被存储将参考签约存储消息，发件人将参考
+
+12
+00:00:28,140 --> 00:00:31,740
+storage message the sender will refer to
+被存储将参考签约存储消息，发件人将参考
+
+13
+00:00:31,740 --> 00:00:35,010
+the caller who called contract day and
+呼叫合同日和消息狗值的呼叫者将是
+
+14
+00:00:35,010 --> 00:00:37,890
+message dog value will be the value that
+呼叫合同日和消息狗值的呼叫者将是
+
+15
+00:00:37,890 --> 00:00:40,950
+was sent to contract day now once you
+在您将智能合约部署到
+
+16
+00:00:40,950 --> 00:00:42,809
+deploy a smart contract onto the
+在您将智能合约部署到
+
+17
+00:00:42,809 --> 00:00:45,210
+blockchain you can't change the code of
+区块链，您无法更改该合约的代码
+
+18
+00:00:45,210 --> 00:00:46,260
+that contract
+区块链，您无法更改该合约的代码
+
+19
+00:00:46,260 --> 00:00:48,840
+however using delegate call you're able
+但是，即使您使用委托通话，您也可以更新合同
+
+20
+00:00:48,840 --> 00:00:51,030
+to update the contract even though you
+但是，即使您使用委托通话，您也可以更新合同
+
+21
+00:00:51,030 --> 00:00:53,390
+cannot change any of the code inside it
+假设有两个合同，则无法更改其中的任何代码
+
+22
+00:00:53,390 --> 00:00:56,039
+suppose that there are two contracts
+假设有两个合同，则无法更改其中的任何代码
+
+23
+00:00:56,039 --> 00:00:59,100
+contract a and contract e inside
+合约a内的合约a和合约e我们有一个称为
+
+24
+00:00:59,100 --> 00:01:00,960
+contract a we have a function called
+合约a内的合约a和合约e我们有一个称为
+
+25
+00:01:00,960 --> 00:01:03,359
+increment so when you call the function
+增量，因此当您在合同内部调用函数增量时，它会调用
+
+26
+00:01:03,359 --> 00:01:06,600
+increment inside contract a it calls
+增量，因此当您在合同内部调用函数增量时，它会调用
+
+27
+00:01:06,600 --> 00:01:08,610
+another function also called increment
+合约B内部的另一个函数也称为增量，现在假设爱丽丝
+
+28
+00:01:08,610 --> 00:01:11,970
+inside contract B now suppose Alice
+合约B内部的另一个函数也称为增量，现在假设爱丽丝
+
+29
+00:01:11,970 --> 00:01:14,159
+calls a function increment inside
+在合约a内调用函数增量并在其中发送一米
+
+30
+00:01:14,159 --> 00:01:17,670
+contract a and sends one meter inside
+在合约a内调用函数增量并在其中发送一米
+
+31
+00:01:17,670 --> 00:01:20,610
+contract a message sender will equal to
+签约消息发件人将等于爱丽丝的地址和消息点
+
+32
+00:01:20,610 --> 00:01:23,040
+the address of Alice and message dot
+签约消息发件人将等于爱丽丝的地址和消息点
+
+33
+00:01:23,040 --> 00:01:25,830
+value will equal to one ether and the
+值将等于一个以太，并且状态变量X的值等于
+
+34
+00:01:25,830 --> 00:01:28,560
+value of the state variable X is equal
+值将等于一个以太，并且状态变量X的值等于
+
+35
+00:01:28,560 --> 00:01:31,470
+to zero from contract a it calls the
+从合约a到零，它调用内部的函数增量
+
+36
+00:01:31,470 --> 00:01:33,659
+function increment which is inside
+从合约a到零，它调用内部的函数增量
+
+37
+00:01:33,659 --> 00:01:37,020
+contract be inside contract the message
+合同在合同内，消息发件人将等于合同a，因为
+
+38
+00:01:37,020 --> 00:01:40,380
+sender will equal to contract a since
+合同在合同内，消息发件人将等于合同a，因为
+
+39
+00:01:40,380 --> 00:01:43,170
+contract a is the address that called
+合同a是称为合同B消息点值的地址
+
+40
+00:01:43,170 --> 00:01:46,619
+contract B message dot value will be
+合同a是称为合同B消息点值的地址
+
+41
+00:01:46,619 --> 00:01:49,740
+zero either since contract a do not send
+零，因为合约a不向合约B发送任何以太币，而初始合约
+
+42
+00:01:49,740 --> 00:01:52,799
+any ether to contract B and the initial
+零，因为合约a不向合约B发送任何以太币，而初始合约
+
+43
+00:01:52,799 --> 00:01:55,200
+value of the state variable X will be
+状态变量X的值将等于零函数增量
+
+44
+00:01:55,200 --> 00:01:57,829
+equal to zero the function increment
+状态变量X的值将等于零函数增量
+
+45
+00:01:57,829 --> 00:02:02,850
+updates the state variable X by one now
+现在假设我们在内部使用委托调用来更新状态变量X
+
+46
+00:02:02,850 --> 00:02:05,579
+suppose that we use delegate call inside
+现在假设我们在内部使用委托调用来更新状态变量X
+
+47
+00:02:05,579 --> 00:02:07,979
+contract a to call function increment
+合约a再次调用合约B内的函数增量是
+
+48
+00:02:07,979 --> 00:02:11,980
+inside contract B is again cause of
+合约a再次调用合约B内的函数增量是
+
+49
+00:02:11,980 --> 00:02:14,349
+Chanin comment inside contract a and
+Chanin在合同a中发表评论，并发送与先前相同的Juanita
+
+50
+00:02:14,349 --> 00:02:16,959
+sends Juanita same as the previous
+Chanin在合同a中发表评论，并发送与先前相同的Juanita
+
+51
+00:02:16,959 --> 00:02:20,230
+example message the sender will be Alice
+示例消息，发件人将是爱丽丝，消息狗的值将是一米
+
+52
+00:02:20,230 --> 00:02:22,810
+and message dog value will be one meter
+示例消息，发件人将是爱丽丝，消息狗的值将是一米
+
+53
+00:02:22,810 --> 00:02:25,870
+and the state variable X will be equal
+状态变量X从合同a等于0，它称为
+
+54
+00:02:25,870 --> 00:02:29,110
+to zero from contract a it calls the
+状态变量X从合同a等于0，它称为
+
+55
+00:02:29,110 --> 00:02:31,569
+function increment inside contract be
+合同中的函数增量现在使用委托调用，这与
+
+56
+00:02:31,569 --> 00:02:34,540
+using delegate call now unlike the
+合同中的函数增量现在使用委托调用，这与
+
+57
+00:02:34,540 --> 00:02:37,120
+previous example message the sender will
+上一个示例消息，发件人将是Alice消息的终止值将是
+
+58
+00:02:37,120 --> 00:02:39,819
+be Alice message stop value will be
+上一个示例消息，发件人将是Alice消息的终止值将是
+
+59
+00:02:39,819 --> 00:02:42,610
+equal to one Eater and the initial state
+等于一个Eater，状态变量X的初始状态将等于
+
+60
+00:02:42,610 --> 00:02:45,610
+of the state variable X will be equal to
+等于一个Eater，状态变量X的初始状态将等于
+
+61
+00:02:45,610 --> 00:02:48,879
+zero so you can already see that using
+零，因此您已经看到使用委托呼叫消息，发件人和
+
+62
+00:02:48,879 --> 00:02:51,459
+delegate call message the sender and
+零，因此您已经看到使用委托呼叫消息，发件人和
+
+63
+00:02:51,459 --> 00:02:54,310
+message stop value is preserved to the
+消息停止值保留为原始值现在让我们看看
+
+64
+00:02:54,310 --> 00:02:56,829
+original values now let's see what
+消息停止值保留为原始值现在让我们看看
+
+65
+00:02:56,829 --> 00:02:59,560
+happens to the state variable when the
+当执行合同B内的代码时，状态变量发生在状态变量上
+
+66
+00:02:59,560 --> 00:03:03,069
+code inside contract B is executed it
+当执行合同B内的代码时，状态变量发生在状态变量上
+
+67
+00:03:03,069 --> 00:03:05,019
+does not change the state variable
+不会更改合约B内的状态变量和状态变量
+
+68
+00:03:05,019 --> 00:03:08,530
+inside contract B and the state variable
+不会更改合约B内的状态变量和状态变量
+
+69
+00:03:08,530 --> 00:03:12,280
+X inside contract a not inside contract
+合同内的X而不是合同B内的X已更新，所以这里发生的是
+
+70
+00:03:12,280 --> 00:03:15,609
+B is updated so what's happening here is
+合同内的X而不是合同B内的X已更新，所以这里发生的是
+
+71
+00:03:15,609 --> 00:03:17,950
+that delegate call runs the code inside
+该委托调用使用存储消息在合同内运行代码
+
+72
+00:03:17,950 --> 00:03:21,310
+contract be using the storage message
+该委托调用使用存储消息在合同内运行代码
+
+73
+00:03:21,310 --> 00:03:23,889
+dot sender and message dot value of
+点发件人和合同的消息点值a委托调用如何
+
+74
+00:03:23,889 --> 00:03:27,370
+contract a so how is delegate call
+点发件人和合同的消息点值a委托调用如何
+
+75
+00:03:27,370 --> 00:03:31,269
+useful well using delegate call you can
+使用委托调用很有用，您可以编写可升级合同，我该怎么办
+
+76
+00:03:31,269 --> 00:03:34,540
+write upgradeable contracts what do I
+使用委托调用很有用，您可以编写可升级合同，我该怎么办
+
+77
+00:03:34,540 --> 00:03:35,549
+mean by this
+因此，假设合同a和合同B
+
+78
+00:03:35,549 --> 00:03:38,799
+suppose that contract a and contract B
+因此，假设合同a和合同B
+
+79
+00:03:38,799 --> 00:03:41,459
+are already deployed on the blockchain
+已经部署在区块链上，这意味着您将无法
+
+80
+00:03:41,459 --> 00:03:44,230
+so this means that you won't be able to
+已经部署在区块链上，这意味着您将无法
+
+81
+00:03:44,230 --> 00:03:46,989
+change the code inside either contract a
+更改合同a内的代码或更改合同a内的代码
+
+82
+00:03:46,989 --> 00:03:50,530
+or contract be inside contract a we
+更改合同a内的代码或更改合同a内的代码
+
+83
+00:03:50,530 --> 00:03:54,040
+store two state variables U and named X
+存储两个状态变量U并命名为X以及合约B的地址和
+
+84
+00:03:54,040 --> 00:03:57,790
+and the address of contract B and the
+存储两个状态变量U并命名为X以及合约B的地址和
+
+85
+00:03:57,790 --> 00:03:59,889
+function increment uses the delegate
+函数增量使用委托调用方法来调用合约B，所以让我们
+
+86
+00:03:59,889 --> 00:04:03,609
+call method to call contract B so let's
+函数增量使用委托调用方法来调用合约B，所以让我们
+
+87
+00:04:03,609 --> 00:04:05,169
+say that Alice calls the function
+说爱丽丝将合同内的功能增量称为合同
+
+88
+00:04:05,169 --> 00:04:07,889
+increment inside contract a contract
+说爱丽丝将合同内的功能增量称为合同
+
+89
+00:04:07,889 --> 00:04:09,910
+they would call the increment
+他们会调用合同的增量功能
+
+90
+00:04:09,910 --> 00:04:12,129
+functioning of contract be using
+他们会调用合同的增量功能
+
+91
+00:04:12,129 --> 00:04:15,160
+delegate call the code inside contract B
+委托调用合同B中的代码被执行，并且状态变量为
+
+92
+00:04:15,160 --> 00:04:18,099
+is executed and the state variable of
+委托调用合同B中的代码被执行，并且状态变量为
+
+93
+00:04:18,099 --> 00:04:22,210
+contract a is updated now imagine we
+现在更新了合同a，假设我们将合同的版本2命名为
+
+94
+00:04:22,210 --> 00:04:25,020
+have a version 2 of contract be named
+现在更新了合同a，假设我们将合同的版本2命名为
+
+95
+00:04:25,020 --> 00:04:27,690
+be two and let's say that inside
+是两个，假设在合约内部，我们有一个函数
+
+96
+00:04:27,690 --> 00:04:29,940
+contract a we have a function where we
+是两个，假设在合约内部，我们有一个函数
+
+97
+00:04:29,940 --> 00:04:32,610
+could update the address of contract B
+可以更新合同B的地址，以便此B变量现在保存
+
+98
+00:04:32,610 --> 00:04:35,490
+so that this B variable now holds the
+可以更新合同B的地址，以便此B变量现在保存
+
+99
+00:04:35,490 --> 00:04:38,880
+address or contract B - and now let's
+地址或合同B-现在让我们看看当现在导致
+
+100
+00:04:38,880 --> 00:04:40,979
+see what happens when now has caused a
+地址或合同B-现在让我们看看当现在导致
+
+101
+00:04:40,979 --> 00:04:43,199
+function increment inside contract a
+合约内的函数增量再次如此，就像在Alice调用之前
+
+102
+00:04:43,199 --> 00:04:46,289
+again so like before Alice calls the
+合约内的函数增量再次如此，就像在Alice调用之前
+
+103
+00:04:46,289 --> 00:04:47,520
+function increment
+现在函数增加，因为地址B现在指向
+
+104
+00:04:47,520 --> 00:04:50,550
+now since the address B now points to
+现在函数增加，因为地址B现在指向
+
+105
+00:04:50,550 --> 00:04:53,220
+contract B - when Alice called the
+合同B-当爱丽丝调用增量函数时，它调用了一个函数
+
+106
+00:04:53,220 --> 00:04:55,770
+increment function it called a function
+合同B-当爱丽丝调用增量函数时，它调用了一个函数
+
+107
+00:04:55,770 --> 00:04:59,490
+increment inside contract B to the code
+将合同B内部的增量增加到合同B内部的代码-并执行
+
+108
+00:04:59,490 --> 00:05:02,340
+inside contract B - is executed and the
+将合同B内部的增量增加到合同B内部的代码-并执行
+
+109
+00:05:02,340 --> 00:05:05,520
+state variable inside contract a is
+合同a中的状态变量已更新，通知我们能够
+
+110
+00:05:05,520 --> 00:05:09,389
+updated notice that we were able to
+合同a中的状态变量已更新，通知我们能够
+
+111
+00:05:09,389 --> 00:05:11,909
+change how the state variable X is
+更改状态变量X在代理调用时如何使用委托调用进行更新
+
+112
+00:05:11,909 --> 00:05:15,150
+updated using delegate call when the
+更改状态变量X在代理调用时如何使用委托调用进行更新
+
+113
+00:05:15,150 --> 00:05:17,909
+address be pointed to contract B it
+指向合同B的地址将状态变量X递增1
+
+114
+00:05:17,909 --> 00:05:20,720
+incremented the state variable X by 1
+指向合同B的地址将状态变量X递增1
+
+115
+00:05:20,720 --> 00:05:24,030
+but after we updated the address of B to
+但是在我们更新了B的地址以指向联系人B之后-我们能够
+
+116
+00:05:24,030 --> 00:05:27,060
+point to contact B - we were able to
+但是在我们更新了B的地址以指向联系人B之后-我们能够
+
+117
+00:05:27,060 --> 00:05:30,449
+increment the state variable X by 2 so
+将状态变量X加2，所以这是如何使用
+
+118
+00:05:30,449 --> 00:05:32,159
+this is the idea of how to use the
+将状态变量X加2，所以这是如何使用
+
+119
+00:05:32,159 --> 00:05:34,560
+legate called update your contract even
+即使您无法更改其中的代码，也被称为更新您的合同的代表
+
+120
+00:05:34,560 --> 00:05:36,840
+though you cannot change the code inside
+即使您无法更改其中的代码，也被称为更新您的合同的代表
+
+121
+00:05:36,840 --> 00:05:39,389
+the contract to show how all of this
+合同，以使用我们首先要介绍的代码来展示所有这些工作原理
+
+122
+00:05:39,389 --> 00:05:41,250
+works using code we're going to first
+合同，以使用我们首先要介绍的代码来展示所有这些工作原理
+
+123
+00:05:41,250 --> 00:05:43,860
+declare some state variables for this
+在此示例中声明一些状态变量，我们将声明一个状态
+
+124
+00:05:43,860 --> 00:05:45,659
+example we're gonna declare a state
+在此示例中声明一些状态变量，我们将声明一个状态
+
+125
+00:05:45,659 --> 00:05:49,500
+variable called num sender and value for
+在本例中，我们将创建一个名为num sender和value的变量
+
+126
+00:05:49,500 --> 00:05:51,090
+this example we're gonna create a
+在本例中，我们将创建一个名为num sender和value的变量
+
+127
+00:05:51,090 --> 00:05:54,270
+function called set bars and inside this
+称为设置栏的函数，该函数内部将使用委托调用
+
+128
+00:05:54,270 --> 00:05:56,490
+function will use a delegate call to
+称为设置栏的函数，该函数内部将使用委托调用
+
+129
+00:05:56,490 --> 00:05:59,400
+call contract B now the function set
+调用合约B，现在功能设置栏将接受两个参数
+
+130
+00:05:59,400 --> 00:06:01,400
+bars is going to take two arguments
+调用合约B，现在功能设置栏将接受两个参数
+
+131
+00:06:01,400 --> 00:06:04,830
+address subcontract B and some number
+地址分包合同B和我们将在此示例中使用的一些数字
+
+132
+00:06:04,830 --> 00:06:06,659
+that we're going to use for this example
+地址分包合同B和我们将在此示例中使用的一些数字
+
+133
+00:06:06,659 --> 00:06:08,909
+and since we're going to send some meter
+而且由于我们要向该功能发送一些仪表，所以我们还将
+
+134
+00:06:08,909 --> 00:06:11,009
+to this function we're also going to
+而且由于我们要向该功能发送一些仪表，所以我们还将
+
+135
+00:06:11,009 --> 00:06:13,620
+declare this as payable the way you use
+将其声明为应付款，您使用委托调用的方式类似于该调用
+
+136
+00:06:13,620 --> 00:06:15,840
+delegate call is similar to the call
+将其声明为应付款，您使用委托调用的方式类似于该调用
+
+137
+00:06:15,840 --> 00:06:19,139
+method inside the delegate call function
+委托调用函数中的方法，您可以使用bi编码调用该函数
+
+138
+00:06:19,139 --> 00:06:22,169
+you call the function a bi encode with
+委托调用函数中的方法，您可以使用bi编码调用该函数
+
+139
+00:06:22,169 --> 00:06:25,319
+signature inside a bi dot encode with
+双点编码内的签名，您首先要在函数中传递签名
+
+140
+00:06:25,319 --> 00:06:27,690
+signature you first pass in the function
+双点编码内的签名，您首先要在函数中传递签名
+
+141
+00:06:27,690 --> 00:06:30,120
+signature of the function that we're
+我们将要调用的函数的签名，因此在合同内我们
+
+142
+00:06:30,120 --> 00:06:33,180
+going to call so inside contract the we
+我们将要调用的函数的签名，因此在合同内我们
+
+143
+00:06:33,180 --> 00:06:35,699
+later define a function called set bars
+稍后定义一个称为设置栏的函数，它将结束您的任务，因此在这里
+
+144
+00:06:35,699 --> 00:06:38,099
+that's going to take a you end so here
+稍后定义一个称为设置栏的函数，它将结束您的任务，因此在这里
+
+145
+00:06:38,099 --> 00:06:38,830
+we're passing
+我们将其作为函数签名传递给集合
+
+146
+00:06:38,830 --> 00:06:41,680
+as a function signature and to the set
+我们将其作为函数签名传递给集合
+
+147
+00:06:41,680 --> 00:06:43,449
+bars function that we're gonna call
+我们将在内部调用的Bar函数，称为Jack B，我们将向前
+
+148
+00:06:43,449 --> 00:06:46,270
+inside called Jack B we're gonna forward
+我们将在内部调用的Bar函数，称为Jack B，我们将向前
+
+149
+00:06:46,270 --> 00:06:49,780
+the input num like call method delegate
+输入num类似于调用方法委托调用，返回两个输出布尔值
+
+150
+00:06:49,780 --> 00:06:52,810
+call returns two outputs a boolean value
+输入num类似于调用方法委托调用，返回两个输出布尔值
+
+151
+00:06:52,810 --> 00:06:56,139
+called success that returns true if the
+称为成功，如果执行的函数没有任何错误，则返回true；并且
+
+152
+00:06:56,139 --> 00:06:58,599
+function executed without any errors and
+称为成功，如果执行的函数没有任何错误，则返回true；并且
+
+153
+00:06:58,599 --> 00:07:01,000
+the output of the function that was
+以字节为单位调用的函数的输出，但在此示例中，我们
+
+154
+00:07:01,000 --> 00:07:04,509
+called in bytes but for this example we
+以字节为单位调用的函数的输出，但在此示例中，我们
+
+155
+00:07:04,509 --> 00:07:06,430
+don't need to worry about the output of
+不必担心合同B内部下一个委托调用的输出
+
+156
+00:07:06,430 --> 00:07:09,759
+delegate call next inside contract B we
+不必担心合同B内部下一个委托调用的输出
+
+157
+00:07:09,759 --> 00:07:11,500
+first need to declare the state
+首先需要声明状态变量，并且这些状态变量必须
+
+158
+00:07:11,500 --> 00:07:14,590
+variables and these state variable must
+首先需要声明状态变量，并且这些状态变量必须
+
+159
+00:07:14,590 --> 00:07:17,680
+be in the exact same order as contract a
+与合同a的顺序完全相同，因此如果您要更改合同的顺序
+
+160
+00:07:17,680 --> 00:07:20,500
+so if you were to change the order of
+与合同a的顺序完全相同，因此如果您要更改合同的顺序
+
+161
+00:07:20,500 --> 00:07:24,849
+the state variables then when the code
+状态变量，那么当合约B中的代码运行时，它会混乱
+
+162
+00:07:24,849 --> 00:07:27,340
+inside contract B is run it would mess
+状态变量，那么当合约B中的代码运行时，它会混乱
+
+163
+00:07:27,340 --> 00:07:29,800
+up the state variables inside contract a
+合同内部的状态变量，因此记住
+
+164
+00:07:29,800 --> 00:07:33,009
+so it's important to remember to have
+合同内部的状态变量，因此记住
+
+165
+00:07:33,009 --> 00:07:35,409
+the exact same state variable as
+与合同a完全相同的状态变量，顺序相同
+
+166
+00:07:35,409 --> 00:07:40,240
+contract a in the same order the
+与合同a完全相同的状态变量，顺序相同
+
+167
+00:07:40,240 --> 00:07:42,430
+function set bars is going to take a
+功能集栏将占用您输入的功能，
+
+168
+00:07:42,430 --> 00:07:46,300
+youant as input inside the function will
+功能集栏将占用您输入的功能，
+
+169
+00:07:46,300 --> 00:07:48,880
+capture the input the color of the
+捕获输入的合同颜色和发送到的值
+
+170
+00:07:48,880 --> 00:07:51,279
+contract and the value that was sent to
+捕获输入的合同颜色和发送到的值
+
+171
+00:07:51,279 --> 00:07:53,580
+the contract into the state variables
+将合同转换为状态变量，现在我们可以部署合同了
+
+172
+00:07:53,580 --> 00:07:56,680
+now we're ready to deploy the contracts
+将合同转换为状态变量，现在我们可以部署合同了
+
+173
+00:07:56,680 --> 00:07:59,919
+and see a demo so here are deployed
+并查看一个演示，因此这里部署了合同a和合同B，现在我们
+
+174
+00:07:59,919 --> 00:08:03,250
+contract a and contract B and now we're
+并查看一个演示，因此这里部署了合同a和合同B，现在我们
+
+175
+00:08:03,250 --> 00:08:05,740
+gonna call the function set bars on
+会调用合约a上的函数集吧，这会改变
+
+176
+00:08:05,740 --> 00:08:08,800
+contract a and that should change the
+会调用合约a上的函数集吧，这会改变
+
+177
+00:08:08,800 --> 00:08:12,279
+state variable inside contract a but
+合约a内的状态变量，但对状态变量没有影响
+
+178
+00:08:12,279 --> 00:08:14,620
+have no effect on the state variables
+合约a内的状态变量，但对状态变量没有影响
+
+179
+00:08:14,620 --> 00:08:18,039
+inside contact B so I'm gonna copy the
+内部联系人B，所以我要复制合同B的地址，我们将
+
+180
+00:08:18,039 --> 00:08:21,009
+address of contract B and we're gonna
+内部联系人B，所以我要复制合同B的地址，我们将
+
+181
+00:08:21,009 --> 00:08:23,740
+call a set bars function so I'm going to
+调用set bar函数，所以我将在此处通过传递数字来复制该函数
+
+182
+00:08:23,740 --> 00:08:26,289
+copy that this here passing the number
+调用set bar函数，所以我将在此处通过传递数字来复制该函数
+
+183
+00:08:26,289 --> 00:08:31,320
+one two three and we're gonna send one
+一二三，我们要么寄一个
+
+184
+00:08:31,320 --> 00:08:34,320
+either
+一二三，我们要么寄一个
+
+185
+00:08:35,690 --> 00:08:39,360
+so after the function was called the NAM
+因此，在将该函数称为contact的NAM状态变量之后，
+
+186
+00:08:39,360 --> 00:08:41,789
+state variable of contact they should
+因此，在将该函数称为contact的NAM状态变量之后，
+
+187
+00:08:41,789 --> 00:08:44,610
+now be one two three the sender should
+现在是一二三，发件人应该是我们帐户的地址，
+
+188
+00:08:44,610 --> 00:08:51,780
+be the address of our account and the
+现在是一二三，发件人应该是我们帐户的地址，
+
+189
+00:08:51,780 --> 00:08:56,970
+value should be one meter and the state
+值应为一米，合同B的状态变量应不为
+
+190
+00:08:56,970 --> 00:08:59,250
+variables of contract B should have not
+值应为一米，合同B的状态变量应不为
+
+191
+00:08:59,250 --> 00:09:06,840
+changed at all so next I want to show
+完全改变了，所以接下来我想向您展示如何升级合约
+
+192
+00:09:06,840 --> 00:09:09,300
+you how to upgrade contract a that is
+完全改变了，所以接下来我想向您展示如何升级合约
+
+193
+00:09:09,300 --> 00:09:12,030
+already deployed first we'll create a
+首先已经部署完毕，我们将创建合同B的新版本，因此我们将
+
+194
+00:09:12,030 --> 00:09:14,640
+new version of contract B so we're gonna
+首先已经部署完毕，我们将创建合同B的新版本，因此我们将
+
+195
+00:09:14,640 --> 00:09:18,810
+copy contract B paste it here and then
+复制合同B，将其粘贴到此处，然后将其重命名为合同b2。
+
+196
+00:09:18,810 --> 00:09:22,710
+rename it as contract b2 now remember
+复制合同B，将其粘贴到此处，然后将其重命名为合同b2。
+
+197
+00:09:22,710 --> 00:09:24,780
+that the layout of the state variables
+状态变量的布局必须与合同a相同，并且
+
+198
+00:09:24,780 --> 00:09:28,770
+have to be the same as contract a and
+状态变量的布局必须与合同a相同，并且
+
+199
+00:09:28,770 --> 00:09:31,770
+inside the function step bars we'll
+在功能步骤栏中，我们将输入乘以2，然后存储
+
+200
+00:09:31,770 --> 00:09:34,260
+multiply the input by two and then store
+在功能步骤栏中，我们将输入乘以2，然后存储
+
+201
+00:09:34,260 --> 00:09:36,870
+the result so here I have newly deployed
+结果，因此在这里我新部署了合同b2，合同a仍然是
+
+202
+00:09:36,870 --> 00:09:40,680
+contract b2 and contract a is still the
+结果，因此在这里我新部署了合同b2，合同a仍然是
+
+203
+00:09:40,680 --> 00:09:43,590
+same contract from the previous demo and
+与上一个演示相同的合同，我们将在其中调用功能集栏
+
+204
+00:09:43,590 --> 00:09:46,920
+we'll call the function set bars inside
+与上一个演示相同的合同，我们将在其中调用功能集栏
+
+205
+00:09:46,920 --> 00:09:50,100
+contract a passing in the address of
+签约合同b2的地址中的传球，这就是您的乘数
+
+206
+00:09:50,100 --> 00:09:53,220
+contract b2 so that's your multiplier
+签约合同b2的地址中的传球，这就是您的乘数
+
+207
+00:09:53,220 --> 00:09:56,880
+input by 2 and store the result inside
+输入2并将结果存储在合同中a我要复制地址
+
+208
+00:09:56,880 --> 00:10:00,060
+contract a I'm going to copy the address
+输入2并将结果存储在合同中a我要复制地址
+
+209
+00:10:00,060 --> 00:10:06,860
+of contract V to paste it in here and
+合同V的名称将其粘贴到此处，并使用相同的输入1 2 3进行调用，并且
+
+210
+00:10:06,860 --> 00:10:10,170
+call it with the same input 1 2 3 and
+合同V的名称将其粘贴到此处，并使用相同的输入1 2 3进行调用，并且
+
+211
+00:10:10,170 --> 00:10:16,050
+this time you'll pass 2 liters so now
+这次您将通过2升，因此自我们通过1 2 3以来，现在的数量为246
+
+212
+00:10:16,050 --> 00:10:20,130
+the num to be 246 since we passed 1 2 3
+这次您将通过2升，因此自我们通过1 2 3以来，现在的数量为246
+
+213
+00:10:20,130 --> 00:10:24,750
+which was x to the center should still
+到中心的x值应该仍然相同，并且值现在应该是
+
+214
+00:10:24,750 --> 00:10:27,210
+be the same and the values should now be
+到中心的x值应该仍然相同，并且值现在应该是
+
+215
+00:10:27,210 --> 00:10:28,160
+to eaters
+食者，所以总之委托调用运行
+
+216
+00:10:28,160 --> 00:10:31,050
+so in summary delegate call runs the
+食者，所以总之委托调用运行
+
+217
+00:10:31,050 --> 00:10:34,140
+code of Kali using the colors context
+使用颜色上下文的Kali代码，Kali的状态变量必须为
+
+218
+00:10:34,140 --> 00:10:37,650
+the state variables of the Kali must be
+使用颜色上下文的Kali代码，Kali的状态变量必须为
+
+219
+00:10:37,650 --> 00:10:40,650
+the same as the color and you can use
+与颜色相同，您可以使用委托调用来更好地更新合同
+
+220
+00:10:40,650 --> 00:10:43,830
+delegate call to update contracts well
+与颜色相同，您可以使用委托调用来更好地更新合同
+
+221
+00:10:43,830 --> 00:10:46,140
+that's all I got for this video if you
+如果您有任何疑问或费用，这就是我为这部影片所获得的一切
+
+222
+00:10:46,140 --> 00:10:47,400
+have any questions or fee
+如果您有任何疑问或费用，这就是我为这部影片所获得的一切
+
+223
+00:10:47,400 --> 00:10:49,050
+but let me know in the comments below
+但请在下面的评论中让我知道您度过了一个美好的夜晚，很快我会再见
+
+224
+00:10:49,050 --> 00:10:51,480
+have a good night and I'll see you soon
+但请在下面的评论中让我知道您度过了一个美好的夜晚，很快我会再见
+
+225
+00:10:51,480 --> 00:10:54,350
+in the next video
+在下一个视频中
+

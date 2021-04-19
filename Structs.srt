@@ -1,0 +1,1175 @@
+1
+00:00:00,120 --> 00:00:02,490
+let's say that I have some things that I
+假设我有一些需要walk狗和洗狗的东西
+
+2
+00:00:02,490 --> 00:00:05,640
+needed to like walk the dog and wash the
+假设我有一些需要walk狗和洗狗的东西
+
+3
+00:00:05,640 --> 00:00:09,360
+dishes and once each of the tasks is
+菜肴，完成每项任务后，我希望能够将其标记为
+
+4
+00:00:09,360 --> 00:00:11,639
+done I want to be able to mark it as
+菜肴，完成每项任务后，我希望能够将其标记为
+
+5
+00:00:11,639 --> 00:00:15,719
+completed now when we taught you this in
+现在，当我们牢牢地教您这一点时，要做的是完成以下操作：
+
+6
+00:00:15,719 --> 00:00:18,869
+solidity is by doing the following we
+现在，当我们牢牢地教您这一点时，要做的是完成以下操作：
+
+7
+00:00:18,869 --> 00:00:21,210
+store each task in array of strings and
+将每个任务存储在字符串数组中，然后从索引创建映射
+
+8
+00:00:21,210 --> 00:00:23,580
+then we create a mapping from the index
+将每个任务存储在字符串数组中，然后从索引创建映射
+
+9
+00:00:23,580 --> 00:00:26,279
+of the array to a boolean value that we
+将数组的值转换为完成任务后Marcus完成的布尔值
+
+10
+00:00:26,279 --> 00:00:28,400
+Marcus completed when the task is done
+将数组的值转换为完成任务后Marcus完成的布尔值
+
+11
+00:00:28,400 --> 00:00:31,920
+so for example the two tasks above would
+因此，例如，上面的两个任务看起来像这样
+
+12
+00:00:31,920 --> 00:00:32,899
+look like this
+因此，例如，上面的两个任务看起来像这样
+
+13
+00:00:32,899 --> 00:00:36,000
+here we're storing the two tasks walk
+在这里，我们存储了两个任务，walk狗和洗碗
+
+14
+00:00:36,000 --> 00:00:38,399
+the dog and wash the dishes into the
+在这里，我们存储了两个任务，walk狗和洗碗
+
+15
+00:00:38,399 --> 00:00:41,070
+array of strings and since the first
+字符串数组，由于完成了第一个任务，我们将其标记为true，并且
+
+16
+00:00:41,070 --> 00:00:44,430
+task is done we mark it as true and the
+字符串数组，由于完成了第一个任务，我们将其标记为true，并且
+
+17
+00:00:44,430 --> 00:00:47,760
+second task is not yet finished so it is
+第二项任务尚未完成，因此仍然是错误的，但这不是最重要的
+
+18
+00:00:47,760 --> 00:00:51,510
+still false however this is not the most
+第二项任务尚未完成，因此仍然是错误的，但这不是最重要的
+
+19
+00:00:51,510 --> 00:00:55,110
+intuitive way of storing our data the
+直观的方式来存储我们的数据，好消息是扎实的支持
+
+20
+00:00:55,110 --> 00:00:57,360
+good news is a solidity supports a
+直观的方式来存储我们的数据，好消息是扎实的支持
+
+21
+00:00:57,360 --> 00:01:00,350
+user-defined data type called strux
+用户定义的数据类型称为strux，它将使我们能够存储更多数据
+
+22
+00:01:00,350 --> 00:01:03,300
+which will allow us to store data more
+用户定义的数据类型称为strux，它将使我们能够存储更多数据
+
+23
+00:01:03,300 --> 00:01:06,990
+or less like this so in this video I'm
+或更少这样，所以在这个视频中，我将向您展示如何创建结构
+
+24
+00:01:06,990 --> 00:01:09,180
+gonna show you how to create a struct
+或更少这样，所以在这个视频中，我将向您展示如何创建结构
+
+25
+00:01:09,180 --> 00:01:12,150
+and how to get values from a struct and
+以及如何从结构中获取值，然后如何更新它，您可以声明一个
+
+26
+00:01:12,150 --> 00:01:15,540
+then how to update it you can declare a
+以及如何从结构中获取值，然后如何更新它，您可以声明一个
+
+27
+00:01:15,540 --> 00:01:17,490
+struct by starting with the keyword
+以关键字struct开头，后跟关键字的名称
+
+28
+00:01:17,490 --> 00:01:21,060
+struct followed by the name of the
+以关键字struct开头，后跟关键字的名称
+
+29
+00:01:21,060 --> 00:01:23,159
+struct here we're going to call the
+struct在这里，我们将调用该struct在所需的struct中进行操作
+
+30
+00:01:23,159 --> 00:01:27,210
+struct to do inside the struct we need
+struct在这里，我们将调用该struct在所需的struct中进行操作
+
+31
+00:01:27,210 --> 00:01:30,299
+to store to the field a string of text
+在字段中存储文本字符串和代表以下内容的布尔值
+
+32
+00:01:30,299 --> 00:01:33,950
+and a boolean value representing
+在字段中存储文本字符串和代表以下内容的布尔值
+
+33
+00:01:33,950 --> 00:01:38,520
+completed so what we did here was we
+完成，所以我们在这里要做的是定义要存储的数据类型
+
+34
+00:01:38,520 --> 00:01:41,130
+define the data type that's gonna store
+完成，所以我们在这里要做的是定义要存储的数据类型
+
+35
+00:01:41,130 --> 00:01:44,189
+us chain value and of attribute called
+我们将链值和属性称为文本，并将布尔值存储在
+
+36
+00:01:44,189 --> 00:01:47,280
+text and store a boolean value in an
+我们将链值和属性称为文本，并将布尔值存储在
+
+37
+00:01:47,280 --> 00:01:50,670
+attribute called completed so this is
+属性称为complete，因此这是您定义自己的自定义数据类型的方式
+
+38
+00:01:50,670 --> 00:01:53,250
+how you define your own custom data type
+属性称为complete，因此这是您定义自己的自定义数据类型的方式
+
+39
+00:01:53,250 --> 00:01:56,759
+using a struct next let's go over how to
+接下来使用结构，让我们讨论如何初始化结构，然后将其存储
+
+40
+00:01:56,759 --> 00:01:59,159
+initialize our struct and then store it
+接下来使用结构，让我们讨论如何初始化结构，然后将其存储
+
+41
+00:01:59,159 --> 00:02:02,790
+in our contract storage I want to store
+在我们的合同存储中，我想在此合同中存储-会费清单，因此
+
+42
+00:02:02,790 --> 00:02:06,240
+a list of - dues in this contract so
+在我们的合同存储中，我想在此合同中存储-会费清单，因此
+
+43
+00:02:06,240 --> 00:02:08,970
+let's create an array up to do and then
+让我们创建一个要执行的数组，然后调用它执行操作以及执行操作的方式
+
+44
+00:02:08,970 --> 00:02:12,450
+call it to do and the way you would do
+让我们创建一个要执行的数组，然后调用它执行操作以及执行操作的方式
+
+45
+00:02:12,450 --> 00:02:13,810
+it is like this
+就像这样，您首先声明数组的类型
+
+46
+00:02:13,810 --> 00:02:16,959
+you first declare the type of the array
+就像这样，您首先声明数组的类型
+
+47
+00:02:16,959 --> 00:02:20,500
+in this case it will be to do and then
+在这种情况下，将要做的事，然后加上方括号，这样可以说明
+
+48
+00:02:20,500 --> 00:02:22,540
+followed by brackets so this would tell
+在这种情况下，将要做的事，然后加上方括号，这样可以说明
+
+49
+00:02:22,540 --> 00:02:25,690
+that we're creating array up to do's and
+我们正在创建要执行的数组，然后它将成为公共状态
+
+50
+00:02:25,690 --> 00:02:27,790
+then it's gonna be a public state
+我们正在创建要执行的数组，然后它将成为公共状态
+
+51
+00:02:27,790 --> 00:02:30,010
+variable so we're gonna put the public
+变量，所以我们要在该关键字后面加上public关键字
+
+52
+00:02:30,010 --> 00:02:32,770
+keyword followed by the name of this
+变量，所以我们要在该关键字后面加上public关键字
+
+53
+00:02:32,770 --> 00:02:35,980
+public state variable which we say we're
+公共状态变量，我们说我们将调用它来在此处注意
+
+54
+00:02:35,980 --> 00:02:39,700
+going to call it to do notice here that
+公共状态变量，我们说我们将调用它来在此处注意
+
+55
+00:02:39,700 --> 00:02:42,459
+we just declared an array up to do where
+我们只是声明一个要执行的数组，其中要做的数据类型就是我们定义的
+
+56
+00:02:42,459 --> 00:02:45,190
+the to do data type is what we define
+我们只是声明一个要执行的数组，其中要做的数据类型就是我们定义的
+
+57
+00:02:45,190 --> 00:02:48,750
+here and it's not any built-in datatype
+在这里，它不是任何内置数据类型，我们需要一个函数来
+
+58
+00:02:48,750 --> 00:02:51,220
+we're gonna need a function that will
+在这里，它不是任何内置数据类型，我们需要一个函数来
+
+59
+00:02:51,220 --> 00:02:53,950
+create or new to do and then append it
+创建或新建，然后将其附加到此数组中，我将其称为
+
+60
+00:02:53,950 --> 00:02:56,440
+into this array I'm gonna call this
+创建或新建，然后将其附加到此数组中，我将其称为
+
+61
+00:02:56,440 --> 00:02:59,410
+function create and it's gonna taking a
+函数创建，它将在函数内部获取一串文本
+
+62
+00:02:59,410 --> 00:03:07,750
+string of text and inside the function
+函数创建，它将在函数内部获取一串文本
+
+63
+00:03:07,750 --> 00:03:10,300
+we need to initialize a new to do and
+我们需要初始化一个新的东西，然后将其推入数组中
+
+64
+00:03:10,300 --> 00:03:13,390
+then push it into the array now there
+我们需要初始化一个新的东西，然后将其推入数组中
+
+65
+00:03:13,390 --> 00:03:16,019
+are two ways to initialize our struct
+有两种初始化结构的方法，第一种方法是像调用它一样
+
+66
+00:03:16,019 --> 00:03:18,640
+the first way is to call it like a
+有两种初始化结构的方法，第一种方法是像调用它一样
+
+67
+00:03:18,640 --> 00:03:22,340
+function so it will be like this and
+功能，它会像这样和[音乐]
+
+68
+00:03:22,340 --> 00:03:25,449
+[Music]
+功能，它会像这样和[音乐]
+
+69
+00:03:25,590 --> 00:03:28,660
+we're gonna push this newly created to
+我们将把这个新创建的东西推入一个数组中，所以在这里我们进行初始化
+
+70
+00:03:28,660 --> 00:03:39,130
+do into an array so here we initialize
+我们将把这个新创建的东西推入一个数组中，所以在这里我们进行初始化
+
+71
+00:03:39,130 --> 00:03:42,239
+the new to do where the first argument
+第一个参数对应于中的第一个元素的新操作
+
+72
+00:03:42,239 --> 00:03:45,010
+corresponds to the first element in the
+第一个参数对应于中的第一个元素的新操作
+
+73
+00:03:45,010 --> 00:03:48,160
+definition of this job and the second
+此作业的定义，第二个值对应于第二个元素
+
+74
+00:03:48,160 --> 00:03:50,609
+value corresponds to the second element
+此作业的定义，第二个值对应于第二个元素
+
+75
+00:03:50,609 --> 00:03:54,820
+in the definition of the struct after
+在初始化TD之后的结构定义中，我们立即
+
+76
+00:03:54,820 --> 00:03:57,340
+the TD is initialized we immediately
+在初始化TD之后的结构定义中，我们立即
+
+77
+00:03:57,340 --> 00:03:59,880
+push it into the array up to this
+将其推入数组直到另一种初始化结构的方式是
+
+78
+00:03:59,880 --> 00:04:02,799
+another way to initialize our struct is
+将其推入数组直到另一种初始化结构的方式是
+
+79
+00:04:02,799 --> 00:04:05,430
+like this
+像这样
+
+80
+00:04:14,120 --> 00:04:16,798
+unlike the first way where the order of
+与第一种方法不同，在这种情况下，参数的顺序很重要
+
+81
+00:04:16,798 --> 00:04:19,709
+the argument is important in this case
+与第一种方法不同，在这种情况下，参数的顺序很重要
+
+82
+00:04:19,709 --> 00:04:22,229
+the order of argument is not important
+参数的顺序并不重要，因此您可以切换参数
+
+83
+00:04:22,229 --> 00:04:23,880
+so you could switch around the argument
+参数的顺序并不重要，因此您可以切换参数
+
+84
+00:04:23,880 --> 00:04:27,860
+and this to do will still be valid so
+而且这样做仍然有效，因此在这里我切换了
+
+85
+00:04:27,860 --> 00:04:30,389
+here I switched around the order of
+而且这样做仍然有效，因此在这里我切换了
+
+86
+00:04:30,389 --> 00:04:33,150
+texts and completed but this to do will
+文字并完成，但是当您被击中时，此操作仍会立即初始化
+
+87
+00:04:33,150 --> 00:04:36,750
+still initialize now when you're struck
+文字并完成，但是当您被击中时，此操作仍会立即初始化
+
+88
+00:04:36,750 --> 00:04:38,849
+contains like five or more parameters
+包含五个或更多参数，然后用这种方式初始化结构
+
+89
+00:04:38,849 --> 00:04:41,729
+then this way of initializing a struct
+包含五个或更多参数，然后用这种方式初始化结构
+
+90
+00:04:41,729 --> 00:04:44,550
+is more readable than the first way of
+比第一种方式更具可读性
+
+91
+00:04:44,550 --> 00:04:45,680
+doing it
+比第一种方式更具可读性
+
+92
+00:04:45,680 --> 00:04:48,960
+the third way of creating a struct is to
+创建结构的第三种方法是初始化变量的类型
+
+93
+00:04:48,960 --> 00:04:51,690
+initialize a variable of the type of the
+创建结构的第三种方法是初始化变量的类型
+
+94
+00:04:51,690 --> 00:04:55,680
+struct and then update the attributes so
+结构，然后更新属性，例如，我们可以创建一个变量
+
+95
+00:04:55,680 --> 00:04:58,169
+for example we can create a variable of
+结构，然后更新属性，例如，我们可以创建一个变量
+
+96
+00:04:58,169 --> 00:05:03,840
+type to do like this and then update
+输入以执行此操作，然后在这种情况下更新该属性，
+
+97
+00:05:03,840 --> 00:05:09,810
+that attribute in this case we then have
+输入以执行此操作，然后在这种情况下更新该属性，
+
+98
+00:05:09,810 --> 00:05:12,960
+to explicitly set the completed flag to
+明确将completed标记设置为false，这是因为坚固性将其设置为
+
+99
+00:05:12,960 --> 00:05:15,930
+false this is because solidity sets it
+明确将completed标记设置为false，这是因为坚固性将其设置为
+
+100
+00:05:15,930 --> 00:05:18,720
+to its default values so this is a
+为其默认值，因此这是在以下情况下初始化结构的有用方法：
+
+101
+00:05:18,720 --> 00:05:21,449
+useful way to initialize our struct when
+为其默认值，因此这是在以下情况下初始化结构的有用方法：
+
+102
+00:05:21,449 --> 00:05:24,210
+you're struck contains many attributes
+您被包含许多属性或包含复杂数据的内容而震惊
+
+103
+00:05:24,210 --> 00:05:28,440
+or when it contains complex data and you
+您被包含许多属性或包含复杂数据的内容而震惊
+
+104
+00:05:28,440 --> 00:05:30,659
+just want solidity to set it to its
+只是希望将其设置为默认值，所以这是三种方式
+
+105
+00:05:30,659 --> 00:05:33,720
+default values so these are three ways
+只是希望将其设置为默认值，所以这是三种方式
+
+106
+00:05:33,720 --> 00:05:36,930
+to initialize our struct positional key
+初始化我们的结构位置键值映射，然后对其进行声明并
+
+107
+00:05:36,930 --> 00:05:40,199
+value mapping and then declare it and
+初始化我们的结构位置键值映射，然后对其进行声明并
+
+108
+00:05:40,199 --> 00:05:42,419
+then update it now that we have a
+然后更新它，现在我们有一个功能可以创建这些，然后
+
+109
+00:05:42,419 --> 00:05:44,430
+function to create to those and then
+然后更新它，现在我们有一个功能可以创建这些，然后
+
+110
+00:05:44,430 --> 00:05:47,669
+store it in this array next let's create
+将其存储在此数组中接下来，让我们创建一个函数以获取那些
+
+111
+00:05:47,669 --> 00:05:50,280
+a function to get the to those out of
+将其存储在此数组中接下来，让我们创建一个函数以获取那些
+
+112
+00:05:50,280 --> 00:05:53,340
+this array we will name this function
+这个数组我们将这个函数命名为get，它将接受索引
+
+113
+00:05:53,340 --> 00:05:57,479
+get and it's going to take in the index
+这个数组我们将这个函数命名为get，它将接受索引
+
+114
+00:05:57,479 --> 00:06:00,040
+of the array
+数组的[音乐]
+
+115
+00:06:00,040 --> 00:06:02,430
+[Music]
+数组的[音乐]
+
+116
+00:06:02,430 --> 00:06:11,100
+and it's gonna return the to do now in
+它会以其他编程语言返回现在可以执行的操作
+
+117
+00:06:11,100 --> 00:06:13,139
+other programming languages you can
+它会以其他编程语言返回现在可以执行的操作
+
+118
+00:06:13,139 --> 00:06:16,050
+return a stroke like this however in
+返回这样的笔划，但稳固性为0.5，这不是有效的功能
+
+119
+00:06:16,050 --> 00:06:19,229
+solidity 0.5 this is not a valid feature
+返回这样的笔划，但稳固性为0.5，这不是有效的功能
+
+120
+00:06:19,229 --> 00:06:22,050
+so instead we'll need to explicitly
+所以相反，我们需要显式声明潮汐以返回我们要去的地方
+
+121
+00:06:22,050 --> 00:06:25,410
+declare the tides to return we're going
+所以相反，我们需要显式声明潮汐以返回我们要去的地方
+
+122
+00:06:25,410 --> 00:06:27,690
+to return the string stored in our to do
+返回存储在我们要做的结构中的字符串，然后返回布尔值
+
+123
+00:06:27,690 --> 00:06:33,330
+struct and then also the boolean value
+返回存储在我们要做的结构中的字符串，然后返回布尔值
+
+124
+00:06:33,330 --> 00:06:35,490
+that represents whether to do is
+代表该操作是否完成，接下来我们需要获取
+
+125
+00:06:35,490 --> 00:06:38,910
+complete it or not next we need to get
+代表该操作是否完成，接下来我们需要获取
+
+126
+00:06:38,910 --> 00:06:41,610
+the to do stored in this array at this
+将要存储在此索引处的数组中，因此我们将声明一个
+
+127
+00:06:41,610 --> 00:06:44,190
+index so we're going to declare a
+将要存储在此索引处的数组中，因此我们将声明一个
+
+128
+00:06:44,190 --> 00:06:47,430
+variable that references the to do that
+变量，该变量引用存储在此和X处的方法以及您的方式
+
+129
+00:06:47,430 --> 00:06:50,250
+is stored at this and X and the way you
+变量，该变量引用存储在此和X处的方法以及您的方式
+
+130
+00:06:50,250 --> 00:06:53,490
+do it is you declare the type of data
+是因为您声明要执行的数据类型，因为这将是
+
+131
+00:06:53,490 --> 00:06:57,300
+which is to do since it's going to be a
+是因为您声明要执行的数据类型，因为这将是
+
+132
+00:06:57,300 --> 00:07:00,150
+variable that's stored in storage we're
+存储在存储中的变量，我们将声明为存储，然后
+
+133
+00:07:00,150 --> 00:07:03,509
+going to declare as storage and then the
+存储在存储中的变量，我们将声明为存储，然后
+
+134
+00:07:03,509 --> 00:07:07,199
+name of the variable we elect to do and
+我们选择执行的变量的名称，该名称将等于
+
+135
+00:07:07,199 --> 00:07:12,840
+this is going to equal to those at the
+我们选择执行的变量的名称，该名称将等于
+
+136
+00:07:12,840 --> 00:07:17,940
+end X and we return the two attributes
+结束X，我们返回两个属性文本并完成存储在此操作
+
+137
+00:07:17,940 --> 00:07:21,150
+text and completed stored in this to do
+结束X，我们返回两个属性文本并完成存储在此操作
+
+138
+00:07:21,150 --> 00:07:33,449
+like this so this illustrates how to get
+这样，这说明了如何获取存储在状态中的结构
+
+139
+00:07:33,449 --> 00:07:35,520
+our struct that is stored in a state
+这样，这说明了如何获取存储在状态中的结构
+
+140
+00:07:35,520 --> 00:07:38,789
+variable you first declare the type of
+在这种情况下，您首先要声明数据类型的变量
+
+141
+00:07:38,789 --> 00:07:41,750
+the data in this case it is to do
+在这种情况下，您首先要声明数据类型的变量
+
+142
+00:07:41,750 --> 00:07:44,699
+followed by the keyword storage since
+后跟关键字storage，因为数据存储在状态变量中
+
+143
+00:07:44,699 --> 00:07:46,889
+the data is stored in a state variable
+后跟关键字storage，因为数据存储在状态变量中
+
+144
+00:07:46,889 --> 00:07:49,800
+and then followed by the name of the
+然后输入变量名称并访问属性
+
+145
+00:07:49,800 --> 00:07:52,919
+variable and to access the attributes
+然后输入变量名称并访问属性
+
+146
+00:07:52,919 --> 00:07:55,770
+that is stored in the struct you do it
+它存储在结构中，您可以像下面这样操作，让我们来看看如何
+
+147
+00:07:55,770 --> 00:08:00,750
+like this next let's go over how to
+它存储在结构中，您可以像下面这样操作，让我们来看看如何
+
+148
+00:08:00,750 --> 00:08:02,039
+update your struct
+更新您的结构，我希望能够更新的文本
+
+149
+00:08:02,039 --> 00:08:04,919
+I want to be able to update the text of
+更新您的结构，我希望能够更新的文本
+
+150
+00:08:04,919 --> 00:08:08,039
+the to do and then marques completed so
+要做，然后完成字幕，所以我们要创建两个函数
+
+151
+00:08:08,039 --> 00:08:10,440
+we're going to create two function want
+要做，然后完成字幕，所以我们要创建两个函数
+
+152
+00:08:10,440 --> 00:08:13,210
+update the text and another function
+更新文字，另一个功能市场已经完成，我们要命名
+
+153
+00:08:13,210 --> 00:08:15,910
+market has completed we're gonna name
+更新文字，另一个功能市场已经完成，我们要命名
+
+154
+00:08:15,910 --> 00:08:21,460
+the first function update and it's gonna
+第一次函数更新，它将接受数组的索引是否
+
+155
+00:08:21,460 --> 00:08:23,740
+take in the index of the array whether
+第一次函数更新，它将接受数组的索引是否
+
+156
+00:08:23,740 --> 00:08:28,479
+to do this toy followed by the new text
+做这个玩具，然后更新新文本以及您访问它的方式
+
+157
+00:08:28,479 --> 00:08:36,370
+to update and the way you access it to
+做这个玩具，然后更新新文本以及您访问它的方式
+
+158
+00:08:36,370 --> 00:08:38,380
+do I already explained the earlier so
+我早先已经解释过了吗，所以我只复制并粘贴代码
+
+159
+00:08:38,380 --> 00:08:40,510
+I'm just gonna copy and paste the code
+我早先已经解释过了吗，所以我只复制并粘贴代码
+
+160
+00:08:40,510 --> 00:08:44,260
+here and to update the to do you do it
+在这里并更新，您可以这样做吗，所以在这里，我们要做
+
+161
+00:08:44,260 --> 00:08:50,950
+like this so here we get the to do and
+在这里并更新，您可以这样做吗，所以在这里，我们要做
+
+162
+00:08:50,950 --> 00:08:53,770
+then update the text attribute to our
+然后将text属性更新为从中传入的新文本值
+
+163
+00:08:53,770 --> 00:08:56,649
+new text value that was passed in from
+然后将text属性更新为从中传入的新文本值
+
+164
+00:08:56,649 --> 00:09:00,220
+our function the code update the
+我们的功能代码更新completed属性将是相似的
+
+165
+00:09:00,220 --> 00:09:02,320
+completed attribute is gonna be similar
+我们的功能代码更新completed属性将是相似的
+
+166
+00:09:02,320 --> 00:09:04,930
+to the code here so we're first gonna
+到这里的代码，所以我们首先要复制，然后将代码粘贴到这里
+
+167
+00:09:04,930 --> 00:09:08,860
+copy and then paste the code here I'm
+到这里的代码，所以我们首先要复制，然后将代码粘贴到这里
+
+168
+00:09:08,860 --> 00:09:11,910
+gonna name this function double
+将这个函数命名为双完成，只需要索引
+
+169
+00:09:11,910 --> 00:09:17,440
+completed it's only gonna need the index
+将这个函数命名为双完成，只需要索引
+
+170
+00:09:17,440 --> 00:09:23,110
+of the array and nothing else and to
+数组的其他内容，并更新完成的属性，我们将
+
+171
+00:09:23,110 --> 00:09:26,380
+update the completed attribute we'll
+数组的其他内容，并更新完成的属性，我们将
+
+172
+00:09:26,380 --> 00:09:29,050
+just reassign it to the opposite of the
+只需将其重新分配为当前完成值的反面即可，因此，如果
+
+173
+00:09:29,050 --> 00:09:34,810
+current completed value so if the
+只需将其重新分配为当前完成值的反面即可，因此，如果
+
+174
+00:09:34,810 --> 00:09:37,440
+current value of the completed is true
+完成的当前值是true，那么更新的完成将是false
+
+175
+00:09:37,440 --> 00:09:40,990
+then the updated completed will be false
+完成的当前值是true，那么更新的完成将是false
+
+176
+00:09:40,990 --> 00:09:43,570
+and if the current value of the complete
+如果complete的当前值为false，则将新值设置为
+
+177
+00:09:43,570 --> 00:09:46,779
+is false then the new one will be set to
+如果complete的当前值为false，则将新值设置为
+
+178
+00:09:46,779 --> 00:09:50,650
+true now let's compile it and put our
+是的，现在让我们编译一下，然后将我们的两个家伙放在区块链上
+
+179
+00:09:50,650 --> 00:09:56,620
+two dudes on the blockchain first I'm
+是的，现在让我们编译一下，然后将我们的两个家伙放在区块链上
+
+180
+00:09:56,620 --> 00:09:57,660
+going to
+要做到这一点，我需要洗碗，
+
+181
+00:09:57,660 --> 00:10:07,650
+to do this I need to wash the dishes and
+要做到这一点，我需要洗碗，
+
+182
+00:10:07,650 --> 00:10:13,980
+walk the dog we can check that our to
+狗，我们可以检查我们那些被保存到合同中的人
+
+183
+00:10:13,980 --> 00:10:16,380
+those been stored into the contract by
+狗，我们可以检查我们那些被保存到合同中的人
+
+184
+00:10:16,380 --> 00:10:25,410
+calling get notice that solidity also
+呼吁注意，团结也为我们创造了完全相同的吸气剂，因此
+
+185
+00:10:25,410 --> 00:10:29,070
+created the same exact getter for us so
+呼吁注意，团结也为我们创造了完全相同的吸气剂，因此
+
+186
+00:10:29,070 --> 00:10:30,960
+actually we didn't need to write this
+实际上，我们不需要编写此函数，因为自动自动生成
+
+187
+00:10:30,960 --> 00:10:33,900
+function since solidity automatically
+实际上，我们不需要编写此函数，因为自动自动生成
+
+188
+00:10:33,900 --> 00:10:36,750
+creates getters for us but it's useful
+为我们创造吸气剂，但了解如何从
+
+189
+00:10:36,750 --> 00:10:39,090
+to know how to get values out of a
+为我们创造吸气剂，但了解如何从
+
+190
+00:10:39,090 --> 00:10:41,400
+struct especially when you want to
+结构，尤其是当您要自定义要使用的数据时
+
+191
+00:10:41,400 --> 00:10:44,190
+customize which data that you're gonna
+结构，尤其是当您要自定义要使用的数据时
+
+192
+00:10:44,190 --> 00:10:47,790
+be returning next let's try updating the
+接下来返回，让我们尝试更新，以便将第二个更新为
+
+193
+00:10:47,790 --> 00:10:50,670
+to do so I'm gonna update the second to
+接下来返回，让我们尝试更新，以便将第二个更新为
+
+194
+00:10:50,670 --> 00:10:53,730
+do so the index will be one and instead
+这样做的索引将是一个，而不是walking狗，我要walk
+
+195
+00:10:53,730 --> 00:10:55,680
+of walking the dog I'm gonna walk the
+这样做的索引将是一个，而不是walking狗，我要walk
+
+196
+00:10:55,680 --> 00:11:03,120
+cat and we can check that out to those
+ cat，我们可以通过调用get或to来检查是否已更新
+
+197
+00:11:03,120 --> 00:11:06,930
+been updated by calling either get or to
+ cat，我们可以通过调用get或to来检查是否已更新
+
+198
+00:11:06,930 --> 00:11:13,110
+lose and it returns walk the cat once I
+输了，它返回walk猫，一旦我完成walking猫的动作，我要标记它
+
+199
+00:11:13,110 --> 00:11:15,570
+finish walking my cat I'm gonna mark it
+输了，它返回walk猫，一旦我完成walking猫的动作，我要标记它
+
+200
+00:11:15,570 --> 00:11:18,720
+as completed the index of the to do is
+完成后，要做的索引是1，然后点击切换完成，我可以
+
+201
+00:11:18,720 --> 00:11:22,890
+one and I hit toggle completed I can
+完成后，要做的索引是1，然后点击切换完成，我可以
+
+202
+00:11:22,890 --> 00:11:25,080
+check that the two dudes been updated by
+通过再次调用检查两个家伙是否已更新，现在返回
+
+203
+00:11:25,080 --> 00:11:27,780
+calling yet again and now it returns
+通过再次调用检查两个家伙是否已更新，现在返回
+
+204
+00:11:27,780 --> 00:11:31,050
+true now I forgot to mention this
+是的，现在我忘了提起这个，但是请注意，
+
+205
+00:11:31,050 --> 00:11:33,480
+earlier but notice that the output of
+是的，现在我忘了提起这个，但是请注意，
+
+206
+00:11:33,480 --> 00:11:36,330
+the two dues on the bottom is a little
+底部的两个会费与这里的会费有些不同，因此
+
+207
+00:11:36,330 --> 00:11:39,060
+bit different from the ones here so the
+底部的两个会费与这里的会费有些不同，因此
+
+208
+00:11:39,060 --> 00:11:41,250
+output here is saying that the text
+这里的输出是说text属性被走了哦，猫和
+
+209
+00:11:41,250 --> 00:11:44,280
+attribute is walked Oh cat and the
+这里的输出是说text属性被走了哦，猫和
+
+210
+00:11:44,280 --> 00:11:47,270
+completed attribute is false
+completed属性为false，而最重要的是，
+
+211
+00:11:47,270 --> 00:11:50,520
+whereas up on top it's saying that the
+completed属性为false，而最重要的是，
+
+212
+00:11:50,520 --> 00:11:53,460
+first return value is walk the cat and
+第一个返回值是walk猫，第二个返回值是true，因此
+
+213
+00:11:53,460 --> 00:11:57,570
+the second return value is true so
+第一个返回值是walk猫，第二个返回值是true，因此
+
+214
+00:11:57,570 --> 00:11:59,670
+before we go I'm gonna show you how to
+在我们开始之前，我将向您展示如何将输出作为键值返回
+
+215
+00:11:59,670 --> 00:12:02,580
+return the output as a key value like
+在我们开始之前，我将向您展示如何将输出作为键值返回
+
+216
+00:12:02,580 --> 00:12:06,210
+this and the way to do it is to name
+这样做的方法是这样命名您的输出
+
+217
+00:12:06,210 --> 00:12:09,350
+your output like this
+这样做的方法是这样命名您的输出
+
+218
+00:12:13,900 --> 00:12:19,360
+let's recompile and redeployed contract
+让我们重新编译并重新部署合同
+
+219
+00:12:26,780 --> 00:12:29,750
+and now you can see here that
+现在您可以在此处看到将文本whopper cat转换为已完成
+
+220
+00:12:29,750 --> 00:12:33,380
+turn the text whopper cat and completed
+现在您可以在此处看到将文本whopper cat转换为已完成
+
+221
+00:12:33,380 --> 00:12:36,200
+equal to false being able to return an
+等于false能够返回输出，因为键值变得非常大
+
+222
+00:12:36,200 --> 00:12:38,810
+output as a key value becomes extremely
+等于false能够返回输出，因为键值变得非常大
+
+223
+00:12:38,810 --> 00:12:41,180
+useful when your smart contract
+当您的智能合约与其他程序交互时很有用
+
+224
+00:12:41,180 --> 00:12:43,190
+interacts with other programming
+当您的智能合约与其他程序交互时很有用
+
+225
+00:12:43,190 --> 00:12:45,740
+languages instead of remembering that
+语言，而不是记住第一个值代表
+
+226
+00:12:45,740 --> 00:12:48,620
+the first value represents the text of
+语言，而不是记住第一个值代表
+
+227
+00:12:48,620 --> 00:12:50,360
+the to do and the second value
+要执行的操作，第二个值表示是否要执行的操作
+
+228
+00:12:50,360 --> 00:12:52,010
+represents whether the to do is
+要执行的操作，第二个值表示是否要执行的操作
+
+229
+00:12:52,010 --> 00:12:54,860
+completed or not you'll get a map where
+完成与否，您会得到一张地图，其中的文字等同于走路的猫和
+
+230
+00:12:54,860 --> 00:12:57,640
+the text is equal to walk the cat and
+完成与否，您会得到一张地图，其中的文字等同于走路的猫和
+
+231
+00:12:57,640 --> 00:13:01,280
+completed is equal to false so you won't
+完成等于假，因此您不必记住命令的顺序
+
+232
+00:13:01,280 --> 00:13:03,080
+have to remember the order of the
+完成等于假，因此您不必记住命令的顺序
+
+233
+00:13:03,080 --> 00:13:05,420
+outputs well that's all I got for this
+输出得很好，这就是我为这部影片所获得的一切，感谢您的收看和观看
+
+234
+00:13:05,420 --> 00:13:08,390
+video thanks for watching and see you in
+输出得很好，这就是我为这部影片所获得的一切，感谢您的收看和观看
+
+235
+00:13:08,390 --> 00:13:11,290
+the next video
+下一个视频
+

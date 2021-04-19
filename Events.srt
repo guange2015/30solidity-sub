@@ -1,0 +1,1089 @@
+1
+00:00:00,770 --> 00:00:03,510
+smart contracts can doubt that something
+智能合约可以通过触发来怀疑区块链上发生了什么
+
+2
+00:00:03,510 --> 00:00:06,359
+has happened on the blockchain by firing
+智能合约可以通过触发来怀疑区块链上发生了什么
+
+3
+00:00:06,359 --> 00:00:09,450
+events applications can be notified when
+发出事件而不是发出事件时可以通知事件应用程序
+
+4
+00:00:09,450 --> 00:00:11,460
+an event is emitted instead of
+发出事件而不是发出事件时可以通知事件应用程序
+
+5
+00:00:11,460 --> 00:00:13,710
+constantly monitoring a contract on a
+不断监控区块链上的合同以了解状态变化
+
+6
+00:00:13,710 --> 00:00:16,170
+blockchain for state changes to occur
+不断监控区块链上的合同以了解状态变化
+
+7
+00:00:16,170 --> 00:00:19,619
+this is like YouTube if you subscribe to
+这就像YouTube，如果您订阅的频道不必重复
+
+8
+00:00:19,619 --> 00:00:21,689
+a channel you don't have to repeatedly
+这就像YouTube，如果您订阅的频道不必重复
+
+9
+00:00:21,689 --> 00:00:23,820
+visit the channel to check if a new
+前往频道查看最近是否有新影片上传
+
+10
+00:00:23,820 --> 00:00:26,250
+video was uploaded recently you get
+前往频道查看最近是否有新影片上传
+
+11
+00:00:26,250 --> 00:00:28,980
+notified when a new video is released in
+在此视频中发布新视频时收到通知，我们将讨论如何
+
+12
+00:00:28,980 --> 00:00:30,990
+this video we're gonna go over how to
+在此视频中发布新视频时收到通知，我们将讨论如何
+
+13
+00:00:30,990 --> 00:00:34,020
+write and fire events using solidity and
+使用牢固性编写和触发事件，我们还将介绍如何克服过去
+
+14
+00:00:34,020 --> 00:00:36,630
+we'll also go over how to get past
+使用牢固性编写和触发事件，我们还将介绍如何克服过去
+
+15
+00:00:36,630 --> 00:00:38,640
+events that are already on the
+区块链上已经存在的事件以及如何订阅您
+
+16
+00:00:38,640 --> 00:00:41,219
+blockchain and how to subscribe to you
+区块链上已经存在的事件以及如何订阅您
+
+17
+00:00:41,219 --> 00:00:44,700
+events using a library called web pages
+使用称为网页的库来定义事件，您可以从
+
+18
+00:00:44,700 --> 00:00:49,110
+to define an event you start with the
+使用称为网页的库来定义事件，您可以从
+
+19
+00:00:49,110 --> 00:00:51,480
+keyword event followed by the name of
+在这种情况下，关键字事件后接事件名称，我将其称为
+
+20
+00:00:51,480 --> 00:00:54,149
+the event in this case I'm gonna call it
+在这种情况下，关键字事件后接事件名称，我将其称为
+
+21
+00:00:54,149 --> 00:00:58,230
+dog inside the parentheses you can pass
+狗在括号内，您可以将要登录的数据传递到
+
+22
+00:00:58,230 --> 00:01:00,629
+the data that you want to log on to the
+狗在括号内，您可以将要登录的数据传递到
+
+23
+00:01:00,629 --> 00:01:03,870
+blockchain here I'm gonna log the sender
+区块链在这里，我将使用一些消息记录交易的发送者，
+
+24
+00:01:03,870 --> 00:01:07,380
+of a transaction with some message and
+区块链在这里，我将使用一些消息记录交易的发送者，
+
+25
+00:01:07,380 --> 00:01:09,689
+you can also create events where no
+您还可以创建未传递任何参数的事件
+
+26
+00:01:09,689 --> 00:01:11,210
+parameter is passed
+您还可以创建未传递任何参数的事件
+
+27
+00:01:11,210 --> 00:01:13,740
+next I'm gonna show you how to fire an
+接下来，我将向您展示如何触发事件，因此首先，我需要创建您的
+
+28
+00:01:13,740 --> 00:01:16,590
+event so first I need to create your
+接下来，我将向您展示如何触发事件，因此首先，我需要创建您的
+
+29
+00:01:16,590 --> 00:01:18,930
+function and inside the function we're
+功能，在功能内部，我们将首先通过电子邮件发送蝙蝠
+
+30
+00:01:18,930 --> 00:01:20,670
+gonna email the bat first
+功能，在功能内部，我们将首先通过电子邮件发送蝙蝠
+
+31
+00:01:20,670 --> 00:01:22,920
+okay a public function called fire
+好吧，一个称为火灾事件的公共功能，您可以将事件记录到
+
+32
+00:01:22,920 --> 00:01:26,400
+events you can log an event onto the
+好吧，一个称为火灾事件的公共功能，您可以将事件记录到
+
+33
+00:01:26,400 --> 00:01:28,590
+blockchain by starting with the keyword
+以关键字email开头，后跟事件名称的区块链
+
+34
+00:01:28,590 --> 00:01:30,990
+email followed by the name of the event
+以关键字email开头，后跟事件名称的区块链
+
+35
+00:01:30,990 --> 00:01:33,479
+that you want to log in our case we're
+您想登录我们的案例，我们将与Lee一起找到它的日志事件，然后
+
+36
+00:01:33,479 --> 00:01:36,390
+gonna find it a log event with Lee then
+您想登录我们的案例，我们将与Lee一起找到它的日志事件，然后
+
+37
+00:01:36,390 --> 00:01:38,520
+we're also gonna log the sender of this
+我们还将使用消息hello world记录此交易的发送者
+
+38
+00:01:38,520 --> 00:01:41,630
+transaction with the message hello world
+我们还将使用消息hello world记录此交易的发送者
+
+39
+00:01:41,630 --> 00:01:45,180
+and you can also fire multiple events so
+您还可以触发多个事件，所以在这里我将再次触发同一事件
+
+40
+00:01:45,180 --> 00:01:47,490
+here I'm gonna fire the same event again
+您还可以触发多个事件，所以在这里我将再次触发同一事件
+
+41
+00:01:47,490 --> 00:01:49,409
+with a different message followed by a
+带有不同的消息，然后是另一个叫另一只狗的事件，让我们
+
+42
+00:01:49,409 --> 00:01:52,470
+different event called another dog let's
+带有不同的消息，然后是另一个叫另一只狗的事件，让我们
+
+43
+00:01:52,470 --> 00:01:55,649
+compile and deploy and see these events
+编译并部署，并在运行中查看这些事件，执行功能触发
+
+44
+00:01:55,649 --> 00:01:58,619
+in action execute the function fire
+编译并部署，并在运行中查看这些事件，执行功能触发
+
+45
+00:01:58,619 --> 00:02:01,280
+events and click on the transaction mode
+事件，然后单击事务日志中的事务模式以搜索
+
+46
+00:02:01,280 --> 00:02:04,110
+inside the transaction log search for
+事件，然后单击事务日志中的事务模式以搜索
+
+47
+00:02:04,110 --> 00:02:06,810
+the keyword logs that's where you will
+关键字日志，您可以在其中找到所有触发的事件
+
+48
+00:02:06,810 --> 00:02:09,030
+find all of the events that was fired
+关键字日志，您可以在其中找到所有触发的事件
+
+49
+00:02:09,030 --> 00:02:11,910
+when this function was called in our
+在本例中，当调用此函数时，您可以在此处看到
+
+50
+00:02:11,910 --> 00:02:13,740
+case you can see here that the
+在本例中，当调用此函数时，您可以在此处看到
+
+51
+00:02:13,740 --> 00:02:16,950
+that log was fired twice followed by
+该日志被触发两次，然后键入另一个日志
+
+52
+00:02:16,950 --> 00:02:19,130
+typing another log
+该日志被触发两次，然后键入另一个日志
+
+53
+00:02:19,130 --> 00:02:21,690
+furthermore you can see here that the
+此外，您可以在此处看到使用参数触发了日志事件
+
+54
+00:02:21,690 --> 00:02:24,540
+log event was fired with the parameters
+此外，您可以在此处看到使用参数触发了日志事件
+
+55
+00:02:24,540 --> 00:02:27,270
+that we passed in in this case Center is
+在这种情况下，我们传入的中心是交易的中心，
+
+56
+00:02:27,270 --> 00:02:30,180
+the center of the transaction and the
+在这种情况下，我们传入的中心是交易的中心，
+
+57
+00:02:30,180 --> 00:02:33,150
+message boards hello world which is the
+留言板你好世界，这是在这些日志中触发的事件
+
+58
+00:02:33,150 --> 00:02:37,170
+event that was fired here these logs
+留言板你好世界，这是在这些日志中触发的事件
+
+59
+00:02:37,170 --> 00:02:39,360
+will be stored on the blockchain but
+将存储在区块链上，但智能合约将无法访问
+
+60
+00:02:39,360 --> 00:02:41,550
+smart contracts won't be able to access
+将存储在区块链上，但智能合约将无法访问
+
+61
+00:02:41,550 --> 00:02:45,360
+these logs so one use case of firing
+这些日志，因此触发事件的一个用例是记录某事
+
+62
+00:02:45,360 --> 00:02:48,210
+events is to record that something
+这些日志，因此触发事件的一个用例是记录某事
+
+63
+00:02:48,210 --> 00:02:51,090
+happened on the blockchain and it is
+发生在区块链上，比在智能设备上存储数据便宜
+
+64
+00:02:51,090 --> 00:02:53,490
+cheaper than storing data on a smart
+发生在区块链上，比在智能设备上存储数据便宜
+
+65
+00:02:53,490 --> 00:02:57,300
+contract past events are all stored on
+合同过去的事件都存储在区块链上，但通常情况下您不是
+
+66
+00:02:57,300 --> 00:02:59,760
+the blockchain but oftentimes you're not
+合同过去的事件都存储在区块链上，但通常情况下您不是
+
+67
+00:02:59,760 --> 00:03:02,850
+interested in all of the events and you
+对所有事件感兴趣，并且您希望能够快速搜索
+
+68
+00:03:02,850 --> 00:03:05,040
+want to be able to quickly search for
+对所有事件感兴趣，并且您希望能够快速搜索
+
+69
+00:03:05,040 --> 00:03:08,340
+specific events such as searching for
+特定事件，例如搜索所有发件人为
+
+70
+00:03:08,340 --> 00:03:10,980
+all log events where the sender is a
+特定事件，例如搜索所有发件人为
+
+71
+00:03:10,980 --> 00:03:14,130
+certain address that's where the keyword
+通过使用关键字进入关键字索引的特定地址
+
+72
+00:03:14,130 --> 00:03:17,700
+index comes in by using the keyword
+通过使用关键字进入关键字索引的特定地址
+
+73
+00:03:17,700 --> 00:03:19,980
+indexed on a parameter you can quickly
+在参数上建立索引，您可以快速搜索该参数所在的事件
+
+74
+00:03:19,980 --> 00:03:22,470
+search for events where the parameter
+在参数上建立索引，您可以快速搜索该参数所在的事件
+
+75
+00:03:22,470 --> 00:03:26,040
+equals a certain value for example if
+等于某个值，例如，如果此事件记录在
+
+76
+00:03:26,040 --> 00:03:28,500
+this event was recorded on the
+等于某个值，例如，如果此事件记录在
+
+77
+00:03:28,500 --> 00:03:30,960
+blockchain 100 times by different
+区块链由不同的发件人进行100次，您想找到所有这些
+
+78
+00:03:30,960 --> 00:03:34,260
+senders and you want to find all of this
+区块链由不同的发件人进行100次，您想找到所有这些
+
+79
+00:03:34,260 --> 00:03:37,740
+event triggered by a certain sender one
+由某个发送者触发的事件的一种执行方法是获取所有日志
+
+80
+00:03:37,740 --> 00:03:39,990
+way to do it is to get all of the logs
+由某个发送者触发的事件的一种执行方法是获取所有日志
+
+81
+00:03:39,990 --> 00:03:42,720
+and then check that the sender is equal
+然后检查发件人是否等于您要查找的地址
+
+82
+00:03:42,720 --> 00:03:44,660
+to the address that you're looking for
+然后检查发件人是否等于您要查找的地址
+
+83
+00:03:44,660 --> 00:03:47,160
+but since we're using the keyword
+但由于我们使用的是此处索引的关键字，所以我们要做的就是发送一个
+
+84
+00:03:47,160 --> 00:03:50,340
+indexed here all we have to do is send a
+但由于我们使用的是此处索引的关键字，所以我们要做的就是发送一个
+
+85
+00:03:50,340 --> 00:03:53,490
+search query to the Italian phone asking
+搜索查询到意大利电话，询问发件人相等的所有日志
+
+86
+00:03:53,490 --> 00:03:56,160
+for all logs where the sender is equal
+搜索查询到意大利电话，询问发件人相等的所有日志
+
+87
+00:03:56,160 --> 00:03:59,730
+to certain address in response you'll
+到特定地址作为响应，您将获得发件人所在的所有日志
+
+88
+00:03:59,730 --> 00:04:02,010
+get all of the logs where the sender is
+到特定地址作为响应，您将获得发件人所在的所有日志
+
+89
+00:04:02,010 --> 00:04:05,190
+equal to that address that's an example
+等于该地址，这是在区块链上使用智能合约的示例
+
+90
+00:04:05,190 --> 00:04:08,900
+using a smart contract on the blockchain
+等于该地址，这是在区块链上使用智能合约的示例
+
+91
+00:04:08,900 --> 00:04:12,690
+so I wrote a script in ojs to get past
+所以我用ojs编写了一个脚本，以从区块链上的合同中获取过去的事件
+
+92
+00:04:12,690 --> 00:04:15,109
+events from a contract on the blockchain
+所以我用ojs编写了一个脚本，以从区块链上的合同中获取过去的事件
+
+93
+00:04:15,109 --> 00:04:17,608
+for this script I chose a one on
+为此脚本，我选择了一个合同上的骰子表硬币
+
+94
+00:04:17,608 --> 00:04:19,680
+contract called the dice table coin
+为此脚本，我选择了一个合同上的骰子表硬币
+
+95
+00:04:19,680 --> 00:04:22,048
+since it's pretty active on the Italian
+简而言之，它在意大利区块链上非常活跃
+
+96
+00:04:22,048 --> 00:04:24,870
+blockchain in short the dice table coin
+简而言之，它在意大利区块链上非常活跃
+
+97
+00:04:24,870 --> 00:04:27,090
+is a crypto currency where the price
+是一种加密货币，每个硬币和胸骨的价格保持在1美元左右
+
+98
+00:04:27,090 --> 00:04:30,210
+stays around $1 per coin and sternum
+是一种加密货币，每个硬币和胸骨的价格保持在1美元左右
+
+99
+00:04:30,210 --> 00:04:33,300
+stable point how it maintains price
+视频如何保持价格稳定以及为什么有用的一个稳定点
+
+100
+00:04:33,300 --> 00:04:36,510
+stability and why it's useful is a video
+视频如何保持价格稳定以及为什么有用的一个稳定点
+
+101
+00:04:36,510 --> 00:04:39,780
+for another day so now let's go over the
+再过一天，现在让我们先逐行浏览代码，然后导入Web
+
+102
+00:04:39,780 --> 00:04:43,620
+code line by line first we import web
+再过一天，现在让我们先逐行浏览代码，然后导入Web
+
+103
+00:04:43,620 --> 00:04:46,530
+the web tea is like a bridge between the
+网络茶就像区块链和其他程序之间的桥梁
+
+104
+00:04:46,530 --> 00:04:48,419
+blockchain and other programming
+网络茶就像区块链和其他程序之间的桥梁
+
+105
+00:04:48,419 --> 00:04:50,910
+languages it allows us to send
+它允许我们发送交易并从中获取数据的语言
+
+106
+00:04:50,910 --> 00:04:53,220
+transactions and get data from the
+它允许我们发送交易并从中获取数据的语言
+
+107
+00:04:53,220 --> 00:04:54,900
+blockchain using a program like
+使用JavaScript和ojs之类的程序进行区块链操作，接下来我们导入
+
+108
+00:04:54,900 --> 00:04:59,250
+JavaScript and ojs next we import the
+使用JavaScript和ojs之类的程序进行区块链操作，接下来我们导入
+
+109
+00:04:59,250 --> 00:05:03,180
+ABI of the dice table clone API stands
+骰子表克隆API的ABI代表应用程序二进制接口ABI
+
+110
+00:05:03,180 --> 00:05:07,710
+for application binary interface the ABI
+骰子表克隆API的ABI代表应用程序二进制接口ABI
+
+111
+00:05:07,710 --> 00:05:10,440
+allows different programs to interact
+允许不同的程序与
+
+112
+00:05:10,440 --> 00:05:12,120
+with the smart contract on the
+允许不同的程序与
+
+113
+00:05:12,120 --> 00:05:15,600
+blockchain in our case the ABI of the
+在我们的案例中，区块链的骰子表硬币的ABI将使我们能够获得所有
+
+114
+00:05:15,600 --> 00:05:18,150
+dice table coin will allow us to get all
+在我们的案例中，区块链的骰子表硬币的ABI将使我们能够获得所有
+
+115
+00:05:18,150 --> 00:05:20,880
+the events fired by a contract of the
+骰子表硬币合约引发的事件我得到了ABI
+
+116
+00:05:20,880 --> 00:05:24,930
+dice table coin I got the ABI of the
+骰子表硬币合约引发的事件我得到了ABI
+
+117
+00:05:24,930 --> 00:05:27,930
+dice table coin by going to either scan
+通过扫描任一骰子表硬币，您是否通过以下方式搜索合同
+
+118
+00:05:27,930 --> 00:05:30,840
+are you searching for the contract by
+通过扫描任一骰子表硬币，您是否通过以下方式搜索合同
+
+119
+00:05:30,840 --> 00:05:33,930
+the address and clicking on contract and
+地址，然后点击合同，然后向下滚动至合同API
+
+120
+00:05:33,930 --> 00:05:38,070
+then scrolling down to a contract API in
+地址，然后点击合同，然后向下滚动至合同API
+
+121
+00:05:38,070 --> 00:05:40,710
+order to use web 3 we need a eternian
+为了使用Web 3，我们需要一个eternian电话节点，这意味着我们需要
+
+122
+00:05:40,710 --> 00:05:43,139
+phone node that means that we need to
+为了使用Web 3，我们需要一个eternian电话节点，这意味着我们需要
+
+123
+00:05:43,139 --> 00:05:45,180
+run the ethereum software and download
+运行以太坊软件并下载所有区块链，但我们没有
+
+124
+00:05:45,180 --> 00:05:48,479
+all of the blockchain but we don't have
+运行以太坊软件并下载所有区块链，但我们没有
+
+125
+00:05:48,479 --> 00:05:50,250
+time to download all of the blockchain
+是时候下载所有区块链了，理论上这就是IO来的地方
+
+126
+00:05:50,250 --> 00:05:53,460
+so that's where in theory the IO comes
+是时候下载所有区块链了，理论上这就是IO来的地方
+
+127
+00:05:53,460 --> 00:05:56,700
+in by signing up to inferior dot IO it
+通过注册劣等点IO，您可以快速访问意大利语
+
+128
+00:05:56,700 --> 00:05:59,370
+allows you to quickly access the Italian
+通过注册劣等点IO，您可以快速访问意大利语
+
+129
+00:05:59,370 --> 00:06:01,770
+boxing without running your own Italian
+在不运行您自己的意大利语软件的情况下进行拳击，接下来我们通过以下方式初始化web 3
+
+130
+00:06:01,770 --> 00:06:05,789
+software next we initialize web 3 by
+在不运行您自己的意大利语软件的情况下进行拳击，接下来我们通过以下方式初始化web 3
+
+131
+00:06:05,789 --> 00:06:08,849
+passing in the URL of our Italian for
+传递我们意大利语节点的URL，这是合同的地址
+
+132
+00:06:08,849 --> 00:06:11,760
+node this is the address of the contract
+传递我们意大利语节点的URL，这是合同的地址
+
+133
+00:06:11,760 --> 00:06:14,220
+of the dice table coin this is the
+的骰子表硬币，这是我们将要运行的功能
+
+134
+00:06:14,220 --> 00:06:16,020
+function that will be run when we
+的骰子表硬币，这是我们将要运行的功能
+
+135
+00:06:16,020 --> 00:06:18,780
+execute the script inside the function
+在函数中执行脚本，我们首先获取最新的块，然后我们
+
+136
+00:06:18,780 --> 00:06:21,750
+we first get the latest block next we
+在函数中执行脚本，我们首先获取最新的块，然后我们
+
+137
+00:06:21,750 --> 00:06:23,910
+load up the contract of the dice table
+使用我们复制过来的ABI加载骰子表硬币的合约
+
+138
+00:06:23,910 --> 00:06:27,000
+coin using the ABI that we copied over
+使用我们复制过来的ABI加载骰子表硬币的合约
+
+139
+00:06:27,000 --> 00:06:30,150
+from eater Skanda I oh and finally
+食者Skanda的我哦，终于研究了转移事件
+
+140
+00:06:30,150 --> 00:06:33,210
+research for the transfer event that was
+食者Skanda的我哦，终于研究了转移事件
+
+141
+00:06:33,210 --> 00:06:36,120
+fired in the last 100 blocks and then
+在最后100个区块中触发，然后打印出
+
+142
+00:06:36,120 --> 00:06:38,830
+print out the logs that
+在最后100个区块中触发，然后打印出
+
+143
+00:06:38,830 --> 00:06:41,020
+execute the script open your terminal
+执行脚本，打开终端，然后输入节点
+
+144
+00:06:41,020 --> 00:06:43,060
+and then type in node
+执行脚本，打开终端，然后输入节点
+
+145
+00:06:43,060 --> 00:06:45,550
+followed by the path of the script in
+然后是脚本的路径，在这种情况下，您将位于源代码中，
+
+146
+00:06:45,550 --> 00:06:47,500
+this case you'll be on the source and
+然后是脚本的路径，在这种情况下，您将位于源代码中，
+
+147
+00:06:47,500 --> 00:06:52,020
+the filename is called get past blogs
+该文件名称为获取过去的博客
+
+148
+00:06:55,650 --> 00:06:58,540
+once you get the response you can check
+收到响应后，您可以检查事件的名称是否为
+
+149
+00:06:58,540 --> 00:07:00,610
+that the name of the event was
+收到响应后，您可以检查事件的名称是否为
+
+150
+00:07:00,610 --> 00:07:03,700
+transferred and these parameters were
+转移，并且这些参数与之前的事件有关
+
+151
+00:07:03,700 --> 00:07:08,350
+involved with the event earlier I
+转移，并且这些参数与之前的事件有关
+
+152
+00:07:08,350 --> 00:07:10,240
+mentioned that the parameters of any
+提到任何银行的参数都可以建立索引，以便您可以
+
+153
+00:07:10,240 --> 00:07:12,790
+bank can be indexed so that you can
+提到任何银行的参数都可以建立索引，以便您可以
+
+154
+00:07:12,790 --> 00:07:14,920
+quickly search for any bank where the
+快速搜索参数等于您所需要的值的任何库
+
+155
+00:07:14,920 --> 00:07:16,900
+parameter equals a value that you're
+快速搜索参数等于您所需要的值的任何库
+
+156
+00:07:16,900 --> 00:07:20,710
+looking for looking at the code for the
+寻找看骰子表硬币合约的代码，您可以看到
+
+157
+00:07:20,710 --> 00:07:23,260
+dice table coin contract you can see
+寻找看骰子表硬币合约的代码，您可以看到
+
+158
+00:07:23,260 --> 00:07:25,750
+here that the transfer event uses the
+在这里，转移事件使用关键字索引的参数很少
+
+159
+00:07:25,750 --> 00:07:29,370
+keyword index few of the parameters
+在这里，转移事件使用关键字索引的参数很少
+
+160
+00:07:29,370 --> 00:07:33,250
+since the parameter name DST is indexed
+由于已为参数名称DST建立了索引，因此我们可以快速搜索事件，其中
+
+161
+00:07:33,250 --> 00:07:36,130
+we can quickly search for events where
+由于已为参数名称DST建立了索引，因此我们可以快速搜索事件，其中
+
+162
+00:07:36,130 --> 00:07:39,400
+DST is equal to this address from the
+DST等于此地址，从响应中只会打印出DST
+
+163
+00:07:39,400 --> 00:07:41,530
+response will only print out the DST
+DST等于此地址，从响应中只会打印出DST
+
+164
+00:07:41,530 --> 00:07:44,050
+parameter so that we can quickly verify
+参数，以便我们可以快速验证所有DST参数
+
+165
+00:07:44,050 --> 00:07:47,050
+that all of the DST parameters that
+参数，以便我们可以快速验证所有DST参数
+
+166
+00:07:47,050 --> 00:07:49,570
+return is equal to the address that we
+return等于我们提供的地址，一旦获得
+
+167
+00:07:49,570 --> 00:07:53,080
+provided execute the script once you get
+return等于我们提供的地址，一旦获得
+
+168
+00:07:53,080 --> 00:07:55,630
+the response you can see here that all
+您可以在此处看到的响应是，所有事件都包含该地址，
+
+169
+00:07:55,630 --> 00:07:57,940
+of the events contain that address that
+您可以在此处看到的响应是，所有事件都包含该地址，
+
+170
+00:07:57,940 --> 00:08:00,700
+we provided for the DST parameter so I
+我们提供了DST参数，所以我只是向您展示了如何从中获取事件
+
+171
+00:08:00,700 --> 00:08:03,160
+just showed you how to get events from
+我们提供了DST参数，所以我只是向您展示了如何从中获取事件
+
+172
+00:08:03,160 --> 00:08:05,710
+the blockchain and how to filter them by
+区块链以及如何使用网页通过索引参数过滤它们
+
+173
+00:08:05,710 --> 00:08:09,820
+index parameters using webpages next i
+区块链以及如何使用网页通过索引参数过滤它们
+
+174
+00:08:09,820 --> 00:08:12,040
+want to show you a demonstration of how
+想要向您展示如何订阅活动的演示，所以这里是
+
+175
+00:08:12,040 --> 00:08:15,130
+to subscribe to events so here's the
+想要向您展示如何订阅活动的演示，所以这里是
+
+176
+00:08:15,130 --> 00:08:18,580
+script to subscribe to events so here's
+订阅事件的脚本，因此这是订阅合同的代码，
+
+177
+00:08:18,580 --> 00:08:21,940
+the code to subscribe to contract and
+订阅事件的脚本，因此这是订阅合同的代码，
+
+178
+00:08:21,940 --> 00:08:23,740
+we're going to be using the dice table
+我们将再次使用骰子表硬币合约
+
+179
+00:08:23,740 --> 00:08:26,620
+coin contract again the top part is
+我们将再次使用骰子表硬币合约
+
+180
+00:08:26,620 --> 00:08:29,800
+mostly the same from the basket inside
+初始化主功能时，篮子中的内容基本相同
+
+181
+00:08:29,800 --> 00:08:32,289
+the main function you initialize the
+初始化主功能时，篮子中的内容基本相同
+
+182
+00:08:32,289 --> 00:08:34,450
+contract and subscribe to the event
+签订合同并订阅事件转移，因此转移事件为
+
+183
+00:08:34,450 --> 00:08:37,749
+transfer so when the transfer event is
+签订合同并订阅事件转移，因此转移事件为
+
+184
+00:08:37,749 --> 00:08:37,750
+transfer so when the transfer event is
+
+185
+00:08:37,750 --> 00:08:39,940
+emitted this function will be called
+发出此函数将在函数内部被调用（如果有箭头）
+
+186
+00:08:39,940 --> 00:08:42,250
+inside the function if there's an arrow
+发出此函数将在函数内部被调用（如果有箭头）
+
+187
+00:08:42,250 --> 00:08:44,590
+we're going to log it and I were also
+我们要记录它，我也要记录被解雇的事件
+
+188
+00:08:44,590 --> 00:08:47,340
+gonna log the event that was fired
+我们要记录它，我也要记录被解雇的事件
+
+189
+00:08:47,340 --> 00:08:50,290
+similar to how you can filter out past
+类似于您如何过滤过去的事件
+
+190
+00:08:50,290 --> 00:08:51,450
+events by
+类似于您如何过滤过去的事件
+
+191
+00:08:51,450 --> 00:08:54,360
+experimenters you can also filter out
+实验者，您还可以使用index参数过滤掉传入的事件
+
+192
+00:08:54,360 --> 00:08:57,390
+incoming events by using index parameter
+实验者，您还可以使用index参数过滤掉传入的事件
+
+193
+00:08:57,390 --> 00:09:00,030
+so here we're saying that we only want
+所以我们在这里说的是，我们只想听事件发生的机会，
+
+194
+00:09:00,030 --> 00:09:02,250
+to listen to the chance for event where
+所以我们在这里说的是，我们只想听事件发生的机会，
+
+195
+00:09:02,250 --> 00:09:04,370
+the sender is equal to this address
+发送者等于此地址执行脚本并等待
+
+196
+00:09:04,370 --> 00:09:06,720
+execute the script and wait for
+发送者等于此地址执行脚本并等待
+
+197
+00:09:06,720 --> 00:09:09,090
+something to print out when the transfer
+当发送方等于此的转移事件时要打印的东西
+
+198
+00:09:09,090 --> 00:09:11,070
+event where the sender is equal to this
+当发送方等于此的转移事件时要打印的东西
+
+199
+00:09:11,070 --> 00:09:13,380
+address is recorded onto the blockchain
+地址记录在区块链上，您将看到打印出来的响应
+
+200
+00:09:13,380 --> 00:09:16,410
+you'll see the response printed out into
+地址记录在区块链上，您将看到打印出来的响应
+
+201
+00:09:16,410 --> 00:09:18,660
+the terminal here I've been running the
+在这里的终端上，我已经运行了几分钟的脚本，您可以看到
+
+202
+00:09:18,660 --> 00:09:21,000
+script for a few minutes and you can see
+在这里的终端上，我已经运行了几分钟的脚本，您可以看到
+
+203
+00:09:21,000 --> 00:09:23,040
+that some of the logs were printed out
+某些日志已打印出来，我会将这段代码上传到github上，
+
+204
+00:09:23,040 --> 00:09:26,130
+I'll upload this code onto github and
+某些日志已打印出来，我会将这段代码上传到github上，
+
+205
+00:09:26,130 --> 00:09:28,350
+provide the links in the descriptions
+提供以下说明中的链接，以便随时浏览
+
+206
+00:09:28,350 --> 00:09:31,010
+below so feel free to play around in
+提供以下说明中的链接，以便随时浏览
+
+207
+00:09:31,010 --> 00:09:33,540
+this video I showed you how to write
+这个视频我向您展示了如何牢固地编写事件，您可以通过一些
+
+208
+00:09:33,540 --> 00:09:36,240
+events in solidity you can pass some
+这个视频我向您展示了如何牢固地编写事件，您可以通过一些
+
+209
+00:09:36,240 --> 00:09:38,550
+parameters into an event and three of
+参数转换为事件，并且其中三个参数可以通过以下方式建立索引：
+
+210
+00:09:38,550 --> 00:09:40,710
+the parameters can be indexed by
+参数转换为事件，并且其中三个参数可以通过以下方式建立索引：
+
+211
+00:09:40,710 --> 00:09:43,170
+indexing the parameter you'll be able to
+为参数建立索引，您将能够快速过滤掉过去的事件并使用
+
+212
+00:09:43,170 --> 00:09:46,620
+quickly filter out past events and using
+为参数建立索引，您将能够快速过滤掉过去的事件并使用
+
+213
+00:09:46,620 --> 00:09:49,230
+web DJ yes I showed you several demos of
+网络DJ是的，我向您展示了如何演示过去的事件以及如何进行
+
+214
+00:09:49,230 --> 00:09:51,570
+how to get past events and how to
+网络DJ是的，我向您展示了如何演示过去的事件以及如何进行
+
+215
+00:09:51,570 --> 00:09:54,690
+subscribe to incoming events that's all
+订阅传入的事件，这是我在代码中获得此视频链接的全部内容
+
+216
+00:09:54,690 --> 00:09:57,300
+I got for this video links in the code
+订阅传入的事件，这是我在代码中获得此视频链接的全部内容
+
+217
+00:09:57,300 --> 00:09:59,910
+will be in the description below thanks
+将出现在下面的说明中，感谢您的观看，下次见
+
+218
+00:09:59,910 --> 00:10:03,980
+for watching and I'll see you next time
+将出现在下面的说明中，感谢您的观看，下次见
+

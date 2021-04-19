@@ -1,0 +1,345 @@
+1
+00:00:00,230 --> 00:00:02,690
+when you deploy a contract or creative
+当您在混合中部署合同或创意交易时，您会看到字词
+
+2
+00:00:02,690 --> 00:00:04,850
+transaction in remix you'll see words
+当您在混合中部署合同或创意交易时，您会看到字词
+
+3
+00:00:04,850 --> 00:00:07,190
+like ether and way in account balance
+例如以太币和账户余额和交易日志中的方式
+
+4
+00:00:07,190 --> 00:00:09,530
+and transaction logs what are they in
+例如以太币和账户余额和交易日志中的方式
+
+5
+00:00:09,530 --> 00:00:12,019
+this video I'll explain what ether is in
+这个视频我将解释以太醚方式的一些常见单位中的以太
+
+6
+00:00:12,019 --> 00:00:15,349
+some common units of ether ether way and
+这个视频我将解释以太醚方式的一些常见单位中的以太
+
+7
+00:00:15,349 --> 00:00:18,590
+way similar to how the currency of USS
+与美元货币在美元内部使用的货币相似的方式
+
+8
+00:00:18,590 --> 00:00:20,750
+dollar the currency used within the
+与美元货币在美元内部使用的货币相似的方式
+
+9
+00:00:20,750 --> 00:00:23,600
+thorium is ether ether is used to pay
+is是醚，醚用于支付大笔交易酬金
+
+10
+00:00:23,600 --> 00:00:26,000
+block rewards pay for transaction fees
+is是醚，醚用于支付大笔交易酬金
+
+11
+00:00:26,000 --> 00:00:28,310
+and you can also transfer it between the
+您还可以在通道之间传输以太最小单位
+
+12
+00:00:28,310 --> 00:00:31,039
+channels the smallest unit of ether is
+您还可以在通道之间传输以太最小单位
+
+13
+00:00:31,039 --> 00:00:33,499
+way and one ether is equal to 10 to the
+一个醚等于18等于10的方法这是一个完整的台式机单位
+
+14
+00:00:33,499 --> 00:00:36,649
+18 way here's a complete desktop units
+一个醚等于18等于10的方法这是一个完整的台式机单位
+
+15
+00:00:36,649 --> 00:00:39,319
+and you can use weights above finis and
+您可以使用高于finis和ether的权重来进行固定，但我们将重点放在
+
+16
+00:00:39,319 --> 00:00:41,960
+ether in solidity but we'll focus on the
+您可以使用高于finis和ether的权重来进行固定，但我们将重点放在
+
+17
+00:00:41,960 --> 00:00:44,510
+more commonly used ones way and ether
+更常用的方式和以太让我们来看一个例子
+
+18
+00:00:44,510 --> 00:00:47,179
+let's go through an example here we have
+更常用的方式和以太让我们来看一个例子
+
+19
+00:00:47,179 --> 00:00:49,399
+our contract inside the contract there's
+我们的合同在合同内有一个变量设置为另一种方式
+
+20
+00:00:49,399 --> 00:00:51,619
+a variable set to one way and another
+我们的合同在合同内有一个变量设置为另一种方式
+
+21
+00:00:51,619 --> 00:00:55,100
+variable set to one either units can
+变量设置为一个或两个单位只能在农村数字之后添加
+
+22
+00:00:55,100 --> 00:00:57,199
+only be added after the rural numbers
+变量设置为一个或两个单位只能在农村数字之后添加
+
+23
+00:00:57,199 --> 00:00:59,929
+for example one liter is about a code
+例如，一升是关于代码的，但您也不能写x
+
+24
+00:00:59,929 --> 00:01:01,850
+but you won't be able to write x either
+例如，一升是关于代码的，但您也不能写x
+
+25
+00:01:01,850 --> 00:01:05,349
+where X is some number variable
+其中X是一些数字变量，将单位附加到a的唯一效果
+
+26
+00:01:05,349 --> 00:01:08,020
+the only effect of appending a unit to a
+其中X是一些数字变量，将单位附加到a的唯一效果
+
+27
+00:01:08,020 --> 00:01:10,330
+number is a multiplication by a power of
+数字是乘以10的幂，所以一种方式与乘积相同
+
+28
+00:01:10,330 --> 00:01:12,970
+10 so one way is the same as multiplying
+数字是乘以10的幂，所以一种方式与乘积相同
+
+29
+00:01:12,970 --> 00:01:15,880
+1 by 10 to the 0 which is simply just 1
+从1乘10到0，仅是1升和1升等于将1乘以
+
+30
+00:01:15,880 --> 00:01:19,000
+and 1 liter is equal to multiplying 1 by
+从1乘10到0，仅是1升和1升等于将1乘以
+
+31
+00:01:19,000 --> 00:01:21,940
+10 to the 18 first compile and deploy
+10到18首先编译和部署合同调用函数的一种方法和
+
+32
+00:01:21,940 --> 00:01:25,390
+the contract call a function one way and
+10到18首先编译和部署合同调用函数的一种方法和
+
+33
+00:01:25,390 --> 00:01:28,300
+you can see here they returned 1 next
+您可以在这里看到他们返回了1个下一个电话，您可以在这里看到
+
+34
+00:01:28,300 --> 00:01:30,160
+call one either and you can see here
+您可以在这里看到他们返回了1个下一个电话，您可以在这里看到
+
+35
+00:01:30,160 --> 00:01:32,530
+that I returned a big number this number
+我返回了一个很大的数字，这个数字应该是10到18，但这有点像
+
+36
+00:01:32,530 --> 00:01:34,690
+should be 10 to the 18 but it's kind of
+我返回了一个很大的数字，这个数字应该是10到18，但这有点像
+
+37
+00:01:34,690 --> 00:01:37,150
+tedious to count the number of zeros so
+计算零的数量很繁琐，所以我们总是从字面上检查它
+
+38
+00:01:37,150 --> 00:01:39,790
+we always literally check it for us back
+计算零的数量很繁琐，所以我们总是从字面上检查它
+
+39
+00:01:39,790 --> 00:01:41,590
+in our code we have a function named
+在我们的代码中，我们在函数内部有一个名为test1的函数
+
+40
+00:01:41,590 --> 00:01:44,590
+test1 either inside this function we
+在我们的代码中，我们在函数内部有一个名为test1的函数
+
+41
+00:01:44,590 --> 00:01:46,960
+checked that one liter is equal to 10 to
+检查一升等于18的10等于10
+
+42
+00:01:46,960 --> 00:01:49,720
+the 18 way we have already seen that a
+检查一升等于18的10等于10
+
+43
+00:01:49,720 --> 00:01:52,390
+way is equal to 1 so this function
+ way等于1，因此如果一升等于，则此函数返回true
+
+44
+00:01:52,390 --> 00:01:54,759
+returns true if one liter is equal to
+ way等于1，因此如果一升等于，则此函数返回true
+
+45
+00:01:54,759 --> 00:01:57,160
+the number 10 to the 18 and returns
+ 10到18的数字，否则在部署的情况下返回false
+
+46
+00:01:57,160 --> 00:01:59,410
+false otherwise under a deployed
+ 10到18的数字，否则在部署的情况下返回false
+
+47
+00:01:59,410 --> 00:02:01,509
+contract hit the test one a third button
+合约点击了第三个按钮，该函数返回true，就像我们
+
+48
+00:02:01,509 --> 00:02:04,390
+and the function returns true just as we
+合约点击了第三个按钮，该函数返回true，就像我们
+
+49
+00:02:04,390 --> 00:02:07,750
+expected gwei stands for gate away and
+预期的gwei代表大门，它等于一幢大楼，
+
+50
+00:02:07,750 --> 00:02:09,940
+it is equal to one building away the
+预期的gwei代表大门，它等于一幢大楼，
+
+51
+00:02:09,940 --> 00:02:11,830
+most common situation where you would
+最常见的情况是您提交“灰色”一词时
+
+52
+00:02:11,830 --> 00:02:13,930
+see the word gray is when you submit a
+最常见的情况是您提交“灰色”一词时
+
+53
+00:02:13,930 --> 00:02:16,150
+transaction to the blockchain for the
+如果您使用灰色来设置交易到区块链的交易
+
+54
+00:02:16,150 --> 00:02:18,310
+transaction if you gray is used to set
+如果您使用灰色来设置交易到区块链的交易
+
+55
+00:02:18,310 --> 00:02:20,830
+the gas price gas and gas price are the
+汽油价格汽油和汽油价格是下一个视频的主题
+
+56
+00:02:20,830 --> 00:02:23,290
+topics of the next video so for now all
+汽油价格汽油和汽油价格是下一个视频的主题
+
+57
+00:02:23,290 --> 00:02:25,330
+you need to know is that gray is equal
+您需要知道的是，灰色等于10亿次，您会看到
+
+58
+00:02:25,330 --> 00:02:27,670
+to 1 billion way and you see it with
+您需要知道的是，灰色等于10亿次，您会看到
+
+59
+00:02:27,670 --> 00:02:30,430
+transactions for example open your
+例如，交易打开您喜欢的浏览器并访问其中任一扫描
+
+60
+00:02:30,430 --> 00:02:32,470
+favorite browser and visit either scan
+例如，交易打开您喜欢的浏览器并访问其中任一扫描
+
+61
+00:02:32,470 --> 00:02:35,920
+REO and click on any transaction scroll
+REO，然后单击任何交易，向下滚动，单击交易明细，然后
+
+62
+00:02:35,920 --> 00:02:38,110
+down click on the transaction detail and
+REO，然后单击任何交易，向下滚动，单击交易明细，然后
+
+63
+00:02:38,110 --> 00:02:40,120
+you can see here that the gas price was
+您可以在此处看到汽油价格设置为灰色
+
+64
+00:02:40,120 --> 00:02:42,020
+set in gray
+您可以在此处看到汽油价格设置为灰色
+
+65
+00:02:42,020 --> 00:02:44,810
+eaters the currency of ethereum one
+食者以太坊一米的货币是10到18方式错误的方式是1
+
+66
+00:02:44,810 --> 00:02:48,050
+meter is 10 to the 18 way wrong way is 1
+食者以太坊一米的货币是10到18方式错误的方式是1
+
+67
+00:02:48,050 --> 00:02:49,970
+billion way and you see often in
+十亿的方式，您会经常在交易中看到，我会在下一个见到您
+
+68
+00:02:49,970 --> 00:02:52,130
+transactions I'll see you in the next
+十亿的方式，您会经常在交易中看到，我会在下一个见到您
+
+69
+00:02:52,130 --> 00:02:54,430
+video
+视频
+

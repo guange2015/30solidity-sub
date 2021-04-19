@@ -1,0 +1,565 @@
+1
+00:00:00,060 --> 00:00:02,120
+let's talk about the fallback function
+让我们来谈谈合约中的后备功能，您可以定义一个
+
+2
+00:00:02,120 --> 00:00:04,740
+inside the contract you can define a
+让我们来谈谈合约中的后备功能，您可以定义一个
+
+3
+00:00:04,740 --> 00:00:06,629
+special function called the fallback
+称为后备功能的特殊功能，您可以像这样操作
+
+4
+00:00:06,629 --> 00:00:09,780
+function and you can do it like this the
+称为后备功能的特殊功能，您可以像这样操作
+
+5
+00:00:09,780 --> 00:00:12,150
+function cannot have a name it cannot
+函数不能具有名称，不能接受任何输入，也不能返回任何名称
+
+6
+00:00:12,150 --> 00:00:14,700
+take any inputs and it cannot return any
+函数不能具有名称，不能接受任何输入，也不能返回任何名称
+
+7
+00:00:14,700 --> 00:00:17,250
+output and they must be declared as
+输出，并且必须将它们声明为外部，现在此函数将是
+
+8
+00:00:17,250 --> 00:00:19,680
+external now this function will be
+输出，并且必须将它们声明为外部，现在此函数将是
+
+9
+00:00:19,680 --> 00:00:22,890
+called in two situations one when you
+在两种情况下调用：一种是在您调用不存在的函数时-当
+
+10
+00:00:22,890 --> 00:00:25,920
+call function that does not exist - when
+在两种情况下调用：一种是在您调用不存在的函数时-当
+
+11
+00:00:25,920 --> 00:00:28,619
+you send either to this contract by sand
+您可以通过沙沙转移或致电发送给该合同，并为此
+
+12
+00:00:28,619 --> 00:00:31,619
+transfer or call and in order for this
+您可以通过沙沙转移或致电发送给该合同，并为此
+
+13
+00:00:31,619 --> 00:00:33,750
+contract to receive either the fallback
+接受后备功能的合同必须声明为应付账款，并且
+
+14
+00:00:33,750 --> 00:00:36,719
+function must be declared as payable and
+接受后备功能的合同必须声明为应付账款，并且
+
+15
+00:00:36,719 --> 00:00:38,969
+inside the function you can write your
+在函数内部，您可以像常规函数一样在此处编写代码，但是它
+
+16
+00:00:38,969 --> 00:00:41,910
+code here like a regular function but it
+在函数内部，您可以像常规函数一样在此处编写代码，但是它
+
+17
+00:00:41,910 --> 00:00:44,070
+is recommended not to write almost any
+建议不要在其中写任何代码，原因是
+
+18
+00:00:44,070 --> 00:00:46,920
+code inside here the reason is that when
+建议不要在其中写任何代码，原因是
+
+19
+00:00:46,920 --> 00:00:50,160
+you send either by hand or transfer it
+您可以手动发送或转移2300次喘息-这种后备
+
+20
+00:00:50,160 --> 00:00:52,890
+for its 2300 gasps - this fallback
+您可以手动发送或转移2300次喘息-这种后备
+
+21
+00:00:52,890 --> 00:00:56,129
+function which is enough gas to email or
+该功能足以发送电子邮件或日志，但没有足够的电量来写入
+
+22
+00:00:56,129 --> 00:00:59,100
+log but not enough gas to write to
+该功能足以发送电子邮件或日志，但没有足够的电量来写入
+
+23
+00:00:59,100 --> 00:01:02,609
+storage or call another contract and to
+存储或调用其他合同，并向您显示转发和转移
+
+24
+00:01:02,609 --> 00:01:05,060
+show you that send and transfer forwards
+存储或调用其他合同，并向您显示转发和转移
+
+25
+00:01:05,060 --> 00:01:07,860
+2300 gas we're gonna use a special
+2300汽油我们将在这里使用一种特殊的功能，称为汽油剩余
+
+26
+00:01:07,860 --> 00:01:10,650
+function here called gas left that
+2300汽油我们将在这里使用一种特殊的功能，称为汽油剩余
+
+27
+00:01:10,650 --> 00:01:13,049
+returns the remaining gas and we'll
+返回剩余的气体，我们将更新dog事件以返回
+
+28
+00:01:13,049 --> 00:01:15,000
+update our dog event to return the
+返回剩余的气体，我们将更新dog事件以返回
+
+29
+00:01:15,000 --> 00:01:17,369
+amount of gas left we'll also create a
+剩余的气体量，我们还将创建一个辅助函数，以返回余额
+
+30
+00:01:17,369 --> 00:01:19,830
+helper function that returns the balance
+剩余的气体量，我们还将创建一个辅助函数，以返回余额
+
+31
+00:01:19,830 --> 00:01:22,650
+of ether stored in this contract next
+储存在该合约中的以太币接下来，我们将创建一个合约
+
+32
+00:01:22,650 --> 00:01:24,360
+we're going to create a contract that
+储存在该合约中的以太币接下来，我们将创建一个合约
+
+33
+00:01:24,360 --> 00:01:26,460
+will send either to the contract above
+将发送给以上合同，这将触发后备功能
+
+34
+00:01:26,460 --> 00:01:28,890
+which will trigger the fallback function
+将发送给以上合同，这将触发后备功能
+
+35
+00:01:28,890 --> 00:01:30,869
+the first function that we're going to
+我们将要创建的第一个函数称为转移下降
+
+36
+00:01:30,869 --> 00:01:33,030
+create will be called transfer to fall
+我们将要创建的第一个函数称为转移下降
+
+37
+00:01:33,030 --> 00:01:35,430
+back after we deployed these two
+在我们将这两个合同部署到这里之后，我们将通过
+
+38
+00:01:35,430 --> 00:01:37,740
+contracts here we're going to pass in
+在我们将这两个合同部署到这里之后，我们将通过
+
+39
+00:01:37,740 --> 00:01:39,869
+the address of the fallback contract
+以上备用合同的地址，我们将使用
+
+40
+00:01:39,869 --> 00:01:42,930
+above and we're gonna send either using
+以上备用合同的地址，我们将使用
+
+41
+00:01:42,930 --> 00:01:45,590
+the transfer method transfer forwards
+转移方法转移2300瓦斯，之后当我们实际呼叫时
+
+42
+00:01:45,590 --> 00:01:49,200
+2300 gas and later when we actually call
+转移方法转移2300瓦斯，之后当我们实际呼叫时
+
+43
+00:01:49,200 --> 00:01:51,659
+this function here you'll be able to see
+使用此功能，您现在可以看到剩余气体少于2300
+
+44
+00:01:51,659 --> 00:01:55,409
+that the gas left is less than 2300 now
+使用此功能，您现在可以看到剩余气体少于2300
+
+45
+00:01:55,409 --> 00:01:57,450
+recall that sending neeterb like all
+回想一下，像福特一样向所有公司派遣neeterb的所有气体
+
+46
+00:01:57,450 --> 00:01:59,640
+Ford's all the gas to the fallback
+回想一下，像福特一样向所有公司派遣neeterb的所有气体
+
+47
+00:01:59,640 --> 00:02:03,000
+function and in that case gas theft can
+功能，在这种情况下，煤气盗窃可能会超过2300，并向您显示
+
+48
+00:02:03,000 --> 00:02:06,240
+be greater than 2300 and to show you a
+功能，在这种情况下，煤气盗窃可能会超过2300，并向您显示
+
+49
+00:02:06,240 --> 00:02:07,799
+demo of this we're going to create a
+此演示我们将创建一个函数，该函数将调用
+
+50
+00:02:07,799 --> 00:02:09,690
+function that's going to call the
+此演示我们将创建一个函数，该函数将调用
+
+51
+00:02:09,690 --> 00:02:12,720
+fallback contract above using the call
+使用调用的后备合同，我们将此函数命名为
+
+52
+00:02:12,720 --> 00:02:15,120
+and we'll name this function call
+使用调用的后备合同，我们将此函数命名为
+
+53
+00:02:15,120 --> 00:02:16,110
+fallback
+后备广告，我们将使用call方法发送
+
+54
+00:02:16,110 --> 00:02:18,720
+we'll send either using the call method
+后备广告，我们将使用call方法发送
+
+55
+00:02:18,720 --> 00:02:21,300
+and make sure that it was able to send
+并确保它能够发送食者
+
+56
+00:02:21,300 --> 00:02:21,750
+the eater
+并确保它能够发送食者
+
+57
+00:02:21,750 --> 00:02:24,810
+now let's deploy the contract execute
+现在让我们部署合同来执行功能，我将逐步指导您
+
+58
+00:02:24,810 --> 00:02:26,730
+the functions and I'll walk you through
+现在让我们部署合同来执行功能，我将逐步指导您
+
+59
+00:02:26,730 --> 00:02:30,950
+how the codes are executed
+代码如何执行
+
+60
+00:02:35,360 --> 00:02:38,550
+so here I've deployed the two contracts
+所以在这里，我部署了两个合同，即后备合同
+
+61
+00:02:38,550 --> 00:02:41,070
+the fallback contract that's going to be
+所以在这里，我部署了两个合同，即后备合同
+
+62
+00:02:41,070 --> 00:02:44,160
+receiving the ETA and sent to for that
+接收预计到达时间并发送给该合同的合同，该合同将发送
+
+63
+00:02:44,160 --> 00:02:46,230
+contract that's going to be sending the
+接收预计到达时间并发送给该合同的合同，该合同将发送
+
+64
+00:02:46,230 --> 00:02:49,440
+heater and let's go over the transfer to
+加热器，让我们先谈谈向后备功能的转移，我要
+
+65
+00:02:49,440 --> 00:02:52,560
+fallback function first so I'm gonna
+加热器，让我们先谈谈向后备功能的转移，我要
+
+66
+00:02:52,560 --> 00:02:54,840
+copy and paste the address of the
+在此处复制并粘贴后备合同的地址，然后发送一个
+
+67
+00:02:54,840 --> 00:02:58,920
+fallback contract here and send one
+在此处复制并粘贴后备合同的地址，然后发送一个
+
+68
+00:02:58,920 --> 00:03:07,190
+either when we check the transaction log
+或者当我们检查交易记录时，您可以在此处看到记录为2255
+
+69
+00:03:07,190 --> 00:03:11,580
+you can see here that it logged 2255
+或者当我们检查交易记录时，您可以在此处看到记录为2255
+
+70
+00:03:11,580 --> 00:03:15,360
+gasp so when we call the transfer to
+喘着粗气，所以当我们调用转移到后备功能时，它将以太发送到
+
+71
+00:03:15,360 --> 00:03:18,930
+fallback function it sent the ether to
+喘着粗气，所以当我们调用转移到后备功能时，它将以太发送到
+
+72
+00:03:18,930 --> 00:03:21,270
+the fallback contract above using the
+上面的后备合同使用转移方法触发了
+
+73
+00:03:21,270 --> 00:03:24,209
+transfer method which triggered the
+上面的后备合同使用转移方法触发了
+
+74
+00:03:24,209 --> 00:03:26,340
+fallback function inside the fallback
+后备合同内的后备功能，以及自转移以来
+
+75
+00:03:26,340 --> 00:03:29,660
+contract and since transfer forwards
+后备合同内的后备功能，以及自转移以来
+
+76
+00:03:29,660 --> 00:03:32,940
+2300 gas by the time the cold reached
+到这里的冷气到达2300瓦斯时，它已经使用了一些瓦斯和瓦斯
+
+77
+00:03:32,940 --> 00:03:36,570
+here it used some of the gas and gas
+到这里的冷气到达2300瓦斯时，它已经使用了一些瓦斯和瓦斯
+
+78
+00:03:36,570 --> 00:03:40,280
+theft returned an amount less than 2300
+盗窃返回的金额小于2300，在这种情况下，下一个我返回2255
+
+79
+00:03:40,280 --> 00:03:46,050
+in this case it returned 2255 next I
+盗窃返回的金额小于2300，在这种情况下，下一个我返回2255
+
+80
+00:03:46,050 --> 00:03:48,120
+want to show you that the call method is
+想要告诉您调用方法将转发所有气体，所以再次
+
+81
+00:03:48,120 --> 00:03:51,239
+going to forward all of the gas so again
+想要告诉您调用方法将转发所有气体，所以再次
+
+82
+00:03:51,239 --> 00:03:53,190
+I'm gonna copy the address of the
+我要在此处复制后备合同的地址，然后发送一个
+
+83
+00:03:53,190 --> 00:03:57,060
+fallback contract here and then send one
+我要在此处复制后备合同的地址，然后发送一个
+
+84
+00:03:57,060 --> 00:03:59,900
+ether again
+再次以太
+
+85
+00:04:02,920 --> 00:04:10,400
+and let's check the transaction log then
+让我们检查事务日志，然后您可以在此处看到它转发了更多内容
+
+86
+00:04:10,400 --> 00:04:12,830
+you can see here that it forwarded more
+让我们检查事务日志，然后您可以在此处看到它转发了更多内容
+
+87
+00:04:12,830 --> 00:04:14,470
+than two thousand three hundred gasps
+超过23300次喘息，与之前的示例类似
+
+88
+00:04:14,470 --> 00:04:17,480
+similar to the previous example when we
+超过23300次喘息，与之前的示例类似
+
+89
+00:04:17,480 --> 00:04:20,238
+called the function called fallback this
+称为回退功能，此功能将以太币发送至回退合约
+
+90
+00:04:20,238 --> 00:04:22,850
+sent the ethers to the fallback contract
+称为回退功能，此功能将以太币发送至回退合约
+
+91
+00:04:22,850 --> 00:04:25,790
+by the call method which forwarded all
+通过转发所有喘气的调用方法，回退功能是
+
+92
+00:04:25,790 --> 00:04:28,280
+of the gasps the fallback function was
+通过转发所有喘气的调用方法，回退功能是
+
+93
+00:04:28,280 --> 00:04:31,570
+executed and involved the remaining gas
+执行并涉及剩余的天然气，这是这里的数量，因此总之
+
+94
+00:04:31,570 --> 00:04:37,940
+which is this amount here so in summary
+执行并涉及剩余的天然气，这是这里的数量，因此总之
+
+95
+00:04:37,940 --> 00:04:40,010
+the fallback function receives two
+备用功能在收到后会收到两千三百次喘息
+
+96
+00:04:40,010 --> 00:04:42,080
+thousand three hundred gasps when it is
+备用功能在收到后会收到两千三百次喘息
+
+97
+00:04:42,080 --> 00:04:44,810
+invoked by the send or transfer method
+由send或transfer方法调用，但在发送时可以接收更多气体
+
+98
+00:04:44,810 --> 00:04:47,540
+but it can receive more gas when it is
+由send或transfer方法调用，但在发送时可以接收更多气体
+
+99
+00:04:47,540 --> 00:04:50,120
+invoked by the call method the call
+通过call方法调用，call方法可以将所有气体提供给
+
+100
+00:04:50,120 --> 00:04:52,670
+method can afford all of the gas to the
+通过call方法调用，call方法可以将所有气体提供给
+
+101
+00:04:52,670 --> 00:04:55,040
+fallback function which means that you
+后备功能，这意味着您可以像编写常规功能一样编写代码
+
+102
+00:04:55,040 --> 00:04:56,900
+can write code like a regular function
+后备功能，这意味着您可以像编写常规功能一样编写代码
+
+103
+00:04:56,900 --> 00:04:59,510
+to execute inside the fallback function
+在后备功能内执行，但建议不要写太多
+
+104
+00:04:59,510 --> 00:05:02,150
+but it is recommended not to write much
+在后备功能内执行，但建议不要写太多
+
+105
+00:05:02,150 --> 00:05:04,880
+cold inside it since the function can
+内部温度过低，因为如果使用过多的气体，该功能可能会失败，这意味着
+
+106
+00:05:04,880 --> 00:05:07,910
+fail if it uses too much gas which means
+内部温度过低，因为如果使用过多的气体，该功能可能会失败，这意味着
+
+107
+00:05:07,910 --> 00:05:10,280
+that you won't be able to send either to
+您将无法使用“发送”或“转移”将其发送到合同
+
+108
+00:05:10,280 --> 00:05:13,130
+the contract using the send or transfer
+您将无法使用“发送”或“转移”将其发送到合同
+
+109
+00:05:13,130 --> 00:05:15,560
+method so that's all I got for this
+方法，如果您有任何问题，请放心，这就是我为这部影片所拍摄的全部内容
+
+110
+00:05:15,560 --> 00:05:18,080
+video if you have any questions let me
+方法，如果您有任何问题，请放心，这就是我为这部影片所拍摄的全部内容
+
+111
+00:05:18,080 --> 00:05:20,510
+know in the comments below have a nice
+知道在下面的评论中度过了愉快的一天，我很快会在下一个与您见面
+
+112
+00:05:20,510 --> 00:05:22,550
+day and I'll see you soon in the next
+知道在下面的评论中度过了愉快的一天，我很快会在下一个与您见面
+
+113
+00:05:22,550 --> 00:05:25,030
+video
+视频
+

@@ -1,0 +1,485 @@
+1
+00:00:00,350 --> 00:00:03,720
+let's go over inheritance in solidity in
+让我们在这个视频军号中仔细研究一下继承，
+
+2
+00:00:03,720 --> 00:00:06,420
+this video bugle with a case where a
+让我们在这个视频军号中仔细研究一下继承，
+
+3
+00:00:06,420 --> 00:00:08,429
+contract and here it's a single parent
+合同，这里是单亲文化，例如合同可以继承
+
+4
+00:00:08,429 --> 00:00:12,719
+culture for example contract be inherits
+合同，这里是单亲文化，例如合同可以继承
+
+5
+00:00:12,719 --> 00:00:15,599
+a parent contract a and we're not going
+父合同a，我们不处理合同B
+
+6
+00:00:15,599 --> 00:00:17,640
+to deal with the case where contract B
+父合同a，我们不处理合同B
+
+7
+00:00:17,640 --> 00:00:21,180
+inherits from two parents contract C and
+从两个父合同C和D继承
+
+8
+00:00:21,180 --> 00:00:24,420
+contract D multiple inheritance will be
+从两个父合同C和D继承
+
+9
+00:00:24,420 --> 00:00:27,750
+the topic of the next video so let's see
+下一个视频的主题，让我们来看一些混音示例，我们将继续
+
+10
+00:00:27,750 --> 00:00:31,050
+some examples in remix so we'll go over
+下一个视频的主题，让我们来看一些混音示例，我们将继续
+
+11
+00:00:31,050 --> 00:00:34,170
+the basic syntax for inheritance and go
+继承的基本语法，并介绍一些继承的示例
+
+12
+00:00:34,170 --> 00:00:36,270
+over some examples of inherited
+继承的基本语法，并介绍一些继承的示例
+
+13
+00:00:36,270 --> 00:00:38,670
+functions next we'll go over how to
+函数接下来，我们将探讨如何覆盖继承的函数
+
+14
+00:00:38,670 --> 00:00:41,340
+override inherited functions I'll also
+函数接下来，我们将探讨如何覆盖继承的函数
+
+15
+00:00:41,340 --> 00:00:43,260
+show you examples of how to pass
+向您展示如何将参数传递给父构造函数的示例
+
+16
+00:00:43,260 --> 00:00:45,899
+parameters to parent constructors we
+向您展示如何将参数传递给父构造函数的示例
+
+17
+00:00:45,899 --> 00:00:48,420
+will consider two situations when the
+当我们传递给父级的参数时，将考虑两种情况
+
+18
+00:00:48,420 --> 00:00:50,550
+parameter that we pass into the parent
+当我们传递给父级的参数时，将考虑两种情况
+
+19
+00:00:50,550 --> 00:00:53,309
+constructor is fixed and the case when
+构造函数是固定的，当我们传递给
+
+20
+00:00:53,309 --> 00:00:54,780
+the parameter that we pass into the
+构造函数是固定的，当我们传递给
+
+21
+00:00:54,780 --> 00:00:57,239
+parent constructor is not fixed first
+首先不固定父构造函数，让我们回顾一下继承的语法
+
+22
+00:00:57,239 --> 00:00:59,750
+let's go over the syntax for inheritance
+首先不固定父构造函数，让我们回顾一下继承的语法
+
+23
+00:00:59,750 --> 00:01:03,210
+we want contract B to inherit from
+我们希望合同B从合同a继承，换句话说，合同a是
+
+24
+00:01:03,210 --> 00:01:06,659
+contract a in other words contract a is
+我们希望合同B从合同a继承，换句话说，合同a是
+
+25
+00:01:06,659 --> 00:01:09,600
+the parent of contract B let's say we
+合同B的父级假设我们在合同a中有一个函数
+
+26
+00:01:09,600 --> 00:01:12,000
+have a function in contract a that we
+合同B的父级假设我们在合同a中有一个函数
+
+27
+00:01:12,000 --> 00:01:15,000
+also want in contract B for this example
+对于此示例，合同B也需要在合同内创建函数
+
+28
+00:01:15,000 --> 00:01:17,580
+like created a function inside contract
+对于此示例，合同B也需要在合同内创建函数
+
+29
+00:01:17,580 --> 00:01:20,040
+a that returns the name of the contract
+返回合同名称的合同B可以继承
+
+30
+00:01:20,040 --> 00:01:22,530
+contract B can inherit the
+返回合同名称的合同B可以继承
+
+31
+00:01:22,530 --> 00:01:25,500
+functionalities of contract a by using
+使用关键字is和其后跟名称的合约a的功能
+
+32
+00:01:25,500 --> 00:01:28,229
+the keyword is and followed by the name
+使用关键字is和其后跟名称的合约a的功能
+
+33
+00:01:28,229 --> 00:01:31,770
+of the contract in this case a go ahead
+在这种情况下，合同的执行将继续进行，并编译和部署合同B
+
+34
+00:01:31,770 --> 00:01:35,979
+and compile and deploy contract B
+在这种情况下，合同的执行将继续进行，并编译和部署合同B
+
+35
+00:01:35,979 --> 00:01:38,560
+click on the deployed contract and you
+单击已部署的合同，您可以在此处看到该合同被继承
+
+36
+00:01:38,560 --> 00:01:41,740
+can see here the contract be inherited
+单击已部署的合同，您可以在此处看到该合同被继承
+
+37
+00:01:41,740 --> 00:01:44,170
+the functioning get contract name from
+功能自合同日起获取合同名称，执行该功能并
+
+38
+00:01:44,170 --> 00:01:47,500
+contract day execute the function and
+功能自合同日起获取合同名称，执行该功能并
+
+39
+00:01:47,500 --> 00:01:49,899
+you can verify that the function inside
+您可以验证合同日期之内的函数是否已被调用接下来我们开始
+
+40
+00:01:49,899 --> 00:01:52,960
+contract day was called next let's go
+您可以验证合同日期之内的函数是否已被调用接下来我们开始
+
+41
+00:01:52,960 --> 00:01:55,060
+over how to override functions from a
+有关如何从父合约覆盖功能的问题，请先复制该功能
+
+42
+00:01:55,060 --> 00:01:57,729
+parent contract first copy the function
+有关如何从父合约覆盖功能的问题，请先复制该功能
+
+43
+00:01:57,729 --> 00:02:02,259
+from contract a into contract B we want
+从合同a到合同B，我们希望此函数返回不同的值
+
+44
+00:02:02,259 --> 00:02:03,729
+this function to return a different
+从合同a到合同B，我们希望此函数返回不同的值
+
+45
+00:02:03,729 --> 00:02:06,460
+value from the function inside contract
+合约a中函数的值，因此您将返回值更改为
+
+46
+00:02:06,460 --> 00:02:09,399
+a so you'll change the return value to
+合约a中函数的值，因此您将返回值更改为
+
+47
+00:02:09,399 --> 00:02:12,940
+contract B recompile and redeploy
+合同B重新编译和重新部署合同B
+
+48
+00:02:12,940 --> 00:02:15,720
+contract B
+合同B重新编译和重新部署合同B
+
+49
+00:02:17,590 --> 00:02:20,510
+once the new contract is deployed go
+一旦部署了新合同，就继续执行该功能
+
+50
+00:02:20,510 --> 00:02:22,549
+ahead and execute the function get
+一旦部署了新合同，就继续执行该功能
+
+51
+00:02:22,549 --> 00:02:25,430
+contract name you can see here that the
+合同名称，您可以在此处看到该函数返回字符串合同B
+
+52
+00:02:25,430 --> 00:02:27,680
+function return the string contract B
+合同名称，您可以在此处看到该函数返回字符串合同B
+
+53
+00:02:27,680 --> 00:02:29,989
+this shows that the function we wrote
+这表明我们编写的函数取代了父函数的一件事
+
+54
+00:02:29,989 --> 00:02:32,959
+overrode the parent function one thing
+这表明我们编写的函数取代了父函数的一件事
+
+55
+00:02:32,959 --> 00:02:34,790
+you need to be careful here is that the
+您需要注意的是，合同的功能签名和
+
+56
+00:02:34,790 --> 00:02:37,250
+function signature for the contract and
+您需要注意的是，合同的功能签名和
+
+57
+00:02:37,250 --> 00:02:39,379
+the parent contract has to be the same
+父合同必须是相同的，例如在这里我稍微改变了
+
+58
+00:02:39,379 --> 00:02:42,500
+for example here I slightly changed the
+父合同必须是相同的，例如在这里我稍微改变了
+
+59
+00:02:42,500 --> 00:02:45,379
+function to taking a parameter after you
+重新编译和重新部署合同后获取参数的函数
+
+60
+00:02:45,379 --> 00:02:47,780
+recompile and redeploy the contract
+重新编译和重新部署合同后获取参数的函数
+
+61
+00:02:47,780 --> 00:02:50,209
+you'll notice that contract B has two
+您会注意到合约B有两个功能，它没有覆盖
+
+62
+00:02:50,209 --> 00:02:53,060
+functions and it did not overwrite the
+您会注意到合约B有两个功能，它没有覆盖
+
+63
+00:02:53,060 --> 00:02:55,819
+function from contract a so when you
+合约a的功能，因此当您想要从合约a覆盖功能时
+
+64
+00:02:55,819 --> 00:02:57,739
+want to overwrite a function from a
+合约a的功能，因此当您想要从合约a覆盖功能时
+
+65
+00:02:57,739 --> 00:03:00,109
+parent contract make sure to match the
+父合同确保与功能签名完全匹配
+
+66
+00:03:00,109 --> 00:03:02,750
+function signature as exactly as it is
+父合同确保与功能签名完全匹配
+
+67
+00:03:02,750 --> 00:03:05,239
+so next that's not about how to pass
+所以接下来的内容与如何将参数传递给父构造函数无关
+
+68
+00:03:05,239 --> 00:03:07,639
+parameters into a parent constructor
+所以接下来的内容与如何将参数传递给父构造函数无关
+
+69
+00:03:07,639 --> 00:03:10,310
+first contract a has a constructor that
+第一个合约a有一个以名称为参数的构造函数，
+
+70
+00:03:10,310 --> 00:03:12,469
+takes in the name as parameter and
+第一个合约a有一个以名称为参数的构造函数，
+
+71
+00:03:12,469 --> 00:03:15,650
+stores it as a state variable one way to
+将其存储为状态变量的一种将参数传递给父构造函数的方法
+
+72
+00:03:15,650 --> 00:03:18,079
+pass parameters to a parent constructor
+将其存储为状态变量的一种将参数传递给父构造函数的方法
+
+73
+00:03:18,079 --> 00:03:23,680
+is like this another way is like this
+就像这样，另一种方式是这样，如果你需要传递变量
+
+74
+00:03:23,680 --> 00:03:26,359
+and if you need to pass variable
+就像这样，另一种方式是这样，如果你需要传递变量
+
+75
+00:03:26,359 --> 00:03:28,970
+parameters to the pen constructor this
+笔构造函数的参数，这就是您的工作方式，让我们部署它
+
+76
+00:03:28,970 --> 00:03:32,389
+is how you do it let's deploy this
+笔构造函数的参数，这就是您的工作方式，让我们部署它
+
+77
+00:03:32,389 --> 00:03:35,209
+contract and see an example called
+合约，并看到一个称为传递合约B并带有双引号的示例，例如
+
+78
+00:03:35,209 --> 00:03:37,939
+passing contract B with double quotes as
+合约，并看到一个称为传递合约B并带有双引号的示例，例如
+
+79
+00:03:37,939 --> 00:03:40,790
+parameter to the constructor of contract
+合同B的构造函数的参数，然后点击deploy点击deploy
+
+80
+00:03:40,790 --> 00:03:44,239
+B and hit deploy click on the deploy
+合同B的构造函数的参数，然后点击deploy点击deploy
+
+81
+00:03:44,239 --> 00:03:47,239
+contract and click on the function name
+合同，然后单击函数名称，您应该获得合同，所以该怎么办？
+
+82
+00:03:47,239 --> 00:03:50,720
+you should get contract be back so what
+合同，然后单击函数名称，您应该获得合同，所以该怎么办？
+
+83
+00:03:50,720 --> 00:03:53,030
+just happened here was that we passed in
+只是这里发生的是我们将参数合约B传递给了
+
+84
+00:03:53,030 --> 00:03:55,189
+the parameter contract B to the
+只是这里发生的是我们将参数合约B传递给了
+
+85
+00:03:55,189 --> 00:03:58,459
+constructor of contract B next step
+合同B下一步的构造函数的参数已传递到
+
+86
+00:03:58,459 --> 00:04:00,199
+parameter was passed into the
+合同B下一步的构造函数的参数已传递到
+
+87
+00:04:00,199 --> 00:04:02,659
+constructor of contract a the
+合同的建设者a合同的建设者a
+
+88
+00:04:02,659 --> 00:04:04,879
+constructor contract a took that
+合同的建设者a合同的建设者a
+
+89
+00:04:04,879 --> 00:04:07,340
+parameter and then set it to its state
+参数，然后将其设置为其状态变量
+
+90
+00:04:07,340 --> 00:04:09,939
+variable
+参数，然后将其设置为其状态变量
+
+91
+00:04:10,970 --> 00:04:12,770
+in this video we went over how to
+在本视频中，我们介绍了如何继承单亲合同以及如何继承
+
+92
+00:04:12,770 --> 00:04:15,530
+inherit single-parent contracts and how
+在本视频中，我们介绍了如何继承单亲合同以及如何继承
+
+93
+00:04:15,530 --> 00:04:17,660
+to pass parameters to parent
+在下一个视频中将参数传递给父构造函数
+
+94
+00:04:17,660 --> 00:04:20,329
+constructors in the next video we'll go
+在下一个视频中将参数传递给父构造函数
+
+95
+00:04:20,329 --> 00:04:22,700
+over multiple inheritance and how to
+多重继承以及如何调用父合同非常感谢
+
+96
+00:04:22,700 --> 00:04:25,580
+call parent contracts thank you so much
+多重继承以及如何调用父合同非常感谢
+
+97
+00:04:25,580 --> 00:04:29,710
+for watching and I'll talk to you soon
+观看，我会尽快与您联系
+

@@ -1,0 +1,570 @@
+1
+00:00:00,410 --> 00:00:03,360
+in solidity when you want to store a
+当您要存储数据集合时，可以使用数组
+
+2
+00:00:03,360 --> 00:00:05,879
+collection of data you either use array
+当您要存储数据集合时，可以使用数组
+
+3
+00:00:05,879 --> 00:00:09,030
+or mapping in this video we'll go over
+或本视频中的映射，我们将介绍如何创建映射以及如何获取
+
+4
+00:00:09,030 --> 00:00:12,000
+how to create a mapping and how to get
+或本视频中的映射，我们将介绍如何创建映射以及如何获取
+
+5
+00:00:12,000 --> 00:00:15,379
+set and delete a value from a mapping
+首先设置和删除映射中的值什么是映射映射
+
+6
+00:00:15,379 --> 00:00:18,930
+first what is a mapping mapping in
+首先设置和删除映射中的值什么是映射映射
+
+7
+00:00:18,930 --> 00:00:21,660
+solidity is like a dictionary in Python
+坚固性就像Python中的字典或JavaScript映射中的映射
+
+8
+00:00:21,660 --> 00:00:24,960
+or a map in JavaScript mapping allows
+坚固性就像Python中的字典或JavaScript映射中的映射
+
+9
+00:00:24,960 --> 00:00:27,510
+you to disable data add a key that you
+要禁用数据，请添加您指定的键，然后在以下位置获取该值
+
+10
+00:00:27,510 --> 00:00:30,420
+specify and then later get that value at
+要禁用数据，请添加您指定的键，然后在以下位置获取该值
+
+11
+00:00:30,420 --> 00:00:33,690
+the key now Python allows you to iterate
+现在的关键是Python使您可以遍历字典和JavaScript
+
+12
+00:00:33,690 --> 00:00:35,940
+through a dictionary and JavaScript
+现在的关键是Python使您可以遍历字典和JavaScript
+
+13
+00:00:35,940 --> 00:00:38,670
+allows you to iterate through the map so
+允许您遍历地图，以便提供字典或地图
+
+14
+00:00:38,670 --> 00:00:41,430
+giving a dictionary or a map you can get
+允许您遍历地图，以便提供字典或地图
+
+15
+00:00:41,430 --> 00:00:43,680
+all of the keys or all of the values
+所有键或其中的所有值，但是牢固性不能
+
+16
+00:00:43,680 --> 00:00:47,129
+from it however in solidity you cannot
+所有键或其中的所有值，但是牢固性不能
+
+17
+00:00:47,129 --> 00:00:49,559
+iterate through the mapping and in order
+遍历映射，然后创建可以迭代的映射
+
+18
+00:00:49,559 --> 00:00:51,270
+to create a map that you can iterate
+遍历映射，然后创建可以迭代的映射
+
+19
+00:00:51,270 --> 00:00:53,850
+you'll have to use a combination of
+您将不得不使用映射帮派数组的组合并存储密钥
+
+20
+00:00:53,850 --> 00:00:56,520
+mapping gang arrays and store the keys
+您将不得不使用映射帮派数组的组合并存储密钥
+
+21
+00:00:56,520 --> 00:00:59,489
+in an array the other downside of using
+在数组中，使用映射和坚固性的另一个缺点是您可以
+
+22
+00:00:59,489 --> 00:01:02,250
+a mapping and solidity is that you can
+在数组中，使用映射和坚固性的另一个缺点是您可以
+
+23
+00:01:02,250 --> 00:01:05,489
+get the size of a mapping so in summary
+获取映射的大小，因此总而言之，映射对于快速查找和
+
+24
+00:01:05,489 --> 00:01:08,400
+a mapping is good for fast look ups and
+获取映射的大小，因此总而言之，映射对于快速查找和
+
+25
+00:01:08,400 --> 00:01:10,619
+if you want to iterate through a mapping
+如果要遍历映射，则必须做一些额外的工作
+
+26
+00:01:10,619 --> 00:01:12,540
+then you'll have to do some extra work
+如果要遍历映射，则必须做一些额外的工作
+
+27
+00:01:12,540 --> 00:01:16,110
+and write extra code now to create your
+并立即编写额外的代码来创建您的映射，您可以从关键字开始
+
+28
+00:01:16,110 --> 00:01:17,729
+mapping you start with the keyword
+并立即编写额外的代码来创建您的映射，您可以从关键字开始
+
+29
+00:01:17,729 --> 00:01:20,700
+mapping followed by the key type and the
+紧随其后的键类型和值类型的映射将其声明为public和
+
+30
+00:01:20,700 --> 00:01:23,460
+value type will declare it as public and
+紧随其后的键类型和值类型的映射将其声明为public和
+
+31
+00:01:23,460 --> 00:01:25,680
+call this mapping my map
+将此映射称为我的地图，所以这里我的地图是来自地址的映射
+
+32
+00:01:25,680 --> 00:01:29,159
+so here my map is a mapping from address
+将此映射称为我的地图，所以这里我的地图是来自地址的映射
+
+33
+00:01:29,159 --> 00:01:32,310
+to you and the key type for a mapping
+给您，并且映射的键类型必须是内置值，请输入字符串
+
+34
+00:01:32,310 --> 00:01:35,250
+has to be a built-in value type a string
+给您，并且映射的键类型必须是内置值，请输入字符串
+
+35
+00:01:35,250 --> 00:01:39,090
+or bytes so for example you end boolean
+或字节，例如，您结束布尔值和地址都是有效的键类型，
+
+36
+00:01:39,090 --> 00:01:42,659
+and address are all valid key types the
+或字节，例如，您结束布尔值和地址都是有效的键类型，
+
+37
+00:01:42,659 --> 00:01:45,450
+value type of a mapping can be any type
+映射的值类型可以是任何类型，例如，它可以是难得的buin旅游
+
+38
+00:01:45,450 --> 00:01:49,290
+for example it can be a rare buin tour
+映射的值类型可以是任何类型，例如，它可以是难得的buin旅游
+
+39
+00:01:49,290 --> 00:01:52,890
+another mapping the syntax for reading
+另一个映射从映射中读取值的语法类似于
+
+40
+00:01:52,890 --> 00:01:55,470
+of value from a map is similar to how
+另一个映射从映射中读取值的语法类似于
+
+41
+00:01:55,470 --> 00:01:58,170
+you would access an array we'll create a
+您将访问一个数组，我们将创建一个返回值的公共函数
+
+42
+00:01:58,170 --> 00:02:00,450
+public function that returns the value
+您将访问一个数组，我们将创建一个返回值的公共函数
+
+43
+00:02:00,450 --> 00:02:04,259
+given a key since the key type of my map
+给定一个键，因为我的地图的键类型是一个地址，但函数会接受
+
+44
+00:02:04,259 --> 00:02:07,680
+is an address yet function will take in
+给定一个键，因为我的地图的键类型是一个地址，但函数会接受
+
+45
+00:02:07,680 --> 00:02:11,129
+an address as input the value type of my
+输入的地址是我地图的值类型，是一个新的整数，因此我们
+
+46
+00:02:11,129 --> 00:02:13,630
+map is a new int so our
+输入的地址是我地图的值类型，是一个新的整数，因此我们
+
+47
+00:02:13,630 --> 00:02:16,240
+Shango return on you and inside the
+Shango返回您，并且在函数内部，我们返回的UM值是
+
+48
+00:02:16,240 --> 00:02:19,120
+function we return the UM value that is
+Shango返回您，并且在函数内部，我们返回的UM值是
+
+49
+00:02:19,120 --> 00:02:21,850
+stored inside my map at the address
+存储在我的地图中的地址处，请注意，我们访问地图的方式
+
+50
+00:02:21,850 --> 00:02:24,940
+notice that the way we access a mapping
+存储在我的地图中的地址处，请注意，我们访问地图的方式
+
+51
+00:02:24,940 --> 00:02:28,210
+is similar to how we access an array now
+类似于我们现在访问数组的方式，不像数组，您将永远不会获得
+
+52
+00:02:28,210 --> 00:02:30,550
+unlike an array you would never get an
+类似于我们现在访问数组的方式，不像数组，您将永远不会获得
+
+53
+00:02:30,550 --> 00:02:32,680
+error from accessing the mapping at a
+即使访问键处的映射是错误的，也无法访问键处的映射
+
+54
+00:02:32,680 --> 00:02:36,280
+key even if the mapping at the key was
+即使访问键处的映射是错误的，也无法访问键处的映射
+
+55
+00:02:36,280 --> 00:02:39,040
+never set if the belly was never set
+如果从未设置腹部，则从不设置，那么坚固性将返回默认值
+
+56
+00:02:39,040 --> 00:02:41,560
+then solidity will return the default
+如果从未设置腹部，则从不设置，那么坚固性将返回默认值
+
+57
+00:02:41,560 --> 00:02:44,680
+value in this case it will be zero
+在这种情况下，它的值将为零，这是您为映射设置值的方式是
+
+58
+00:02:44,680 --> 00:02:47,800
+the way you set a value for a mapping is
+在这种情况下，它的值将为零，这是您为映射设置值的方式是
+
+59
+00:02:47,800 --> 00:02:50,590
+also similar to how you will update an
+也类似于您将在此处创建一个函数的情况下更新数组元素的方式
+
+60
+00:02:50,590 --> 00:02:53,350
+array element here I created a function
+也类似于您将在此处创建一个函数的情况下更新数组元素的方式
+
+61
+00:02:53,350 --> 00:02:55,540
+that takes in an address and the value
+它需要一个地址和要在该地址设置的值，在这里我们
+
+62
+00:02:55,540 --> 00:02:59,170
+to be set at that address and here we
+它需要一个地址和要在该地址设置的值，在这里我们
+
+63
+00:02:59,170 --> 00:03:02,050
+update the value of my map at the
+通过分配新值并在地址处更新我的地图的值，并
+
+64
+00:03:02,050 --> 00:03:04,570
+address by assigning the new value and
+通过分配新值并在地址处更新我的地图的值，并
+
+65
+00:03:04,570 --> 00:03:07,180
+the way you would delete a element from
+您从映射中删除元素的方式也类似于您
+
+66
+00:03:07,180 --> 00:03:09,400
+a mapping is also similar to how you
+您从映射中删除元素的方式也类似于您
+
+67
+00:03:09,400 --> 00:03:12,010
+would do the element from an array you
+会从您以关键字delete开头的数组中执行元素
+
+68
+00:03:12,010 --> 00:03:14,200
+start with the keyword delete followed
+会从您以关键字delete开头的数组中执行元素
+
+69
+00:03:14,200 --> 00:03:16,660
+by the location inside the mapping to
+根据要删除的映射内的位置，我们要删除的值
+
+70
+00:03:16,660 --> 00:03:18,940
+delete here we're deleting the value
+根据要删除的映射内的位置，我们要删除的值
+
+71
+00:03:18,940 --> 00:03:21,400
+that is stored inside my map at this
+存储在我的地图中此地址的位置，就像删除数组一样
+
+72
+00:03:21,400 --> 00:03:24,130
+address just like an array the delete
+存储在我的地图中此地址的位置，就像删除数组一样
+
+73
+00:03:24,130 --> 00:03:26,440
+keyword actually doesn't remove the
+关键字实际上不会从映射中删除元素，因此在此之后
+
+74
+00:03:26,440 --> 00:03:29,170
+element from a mapping so after this
+关键字实际上不会从映射中删除元素，因此在此之后
+
+75
+00:03:29,170 --> 00:03:32,410
+operation my map at this address will be
+操作我在此地址的地图的值为0现在让我们尝试调用这些
+
+76
+00:03:32,410 --> 00:03:35,860
+the value 0 now let's try calling these
+操作我在此地址的地图的值为0现在让我们尝试调用这些
+
+77
+00:03:35,860 --> 00:03:38,860
+functions in remix so go ahead and
+可以进行混音，所以现在就可以编译和部署合同
+
+78
+00:03:38,860 --> 00:03:41,530
+compile and deploy the contract now
+可以进行混音，所以现在就可以编译和部署合同
+
+79
+00:03:41,530 --> 00:03:43,540
+we're gonna need an address to call
+我们需要一个地址来调用这些函数，所以我只想复制
+
+80
+00:03:43,540 --> 00:03:45,880
+these functions so I'm just gonna copy
+我们需要一个地址来调用这些函数，所以我只想复制
+
+81
+00:03:45,880 --> 00:03:48,430
+the address from the contract that was
+现在正在部署的合同中的地址称为cat，您将
+
+82
+00:03:48,430 --> 00:03:51,340
+deploying now called cat and you'll
+现在正在部署的合同中的地址称为cat，您将
+
+83
+00:03:51,340 --> 00:03:53,200
+notice that the function did not fail
+请注意，该函数没有失败，而是返回了值0甚至
+
+84
+00:03:53,200 --> 00:03:56,260
+and instead it returned the value 0 even
+请注意，该函数没有失败，而是返回了值0甚至
+
+85
+00:03:56,260 --> 00:03:59,200
+though we haven't set any value at this
+尽管我们没有在该地址设置任何值，所以这表明我们的映射
+
+86
+00:03:59,200 --> 00:04:01,660
+address so this shows that our mapping
+尽管我们没有在该地址设置任何值，所以这表明我们的映射
+
+87
+00:04:01,660 --> 00:04:04,720
+always returns a value even if it was
+即使从未设置过，也总是返回一个值，在这种情况下，它将
+
+88
+00:04:04,720 --> 00:04:07,360
+never set and in that case it will
+即使从未设置过，也总是返回一个值，在这种情况下，它将
+
+89
+00:04:07,360 --> 00:04:09,760
+return a default value and this is why
+返回默认值，这就是为什么我们在这里调用下一个set函数时得到0的原因
+
+90
+00:04:09,760 --> 00:04:13,840
+we got a 0 here next call a set function
+返回默认值，这就是为什么我们在这里调用下一个set函数时得到0的原因
+
+91
+00:04:13,840 --> 00:04:16,420
+and you can verify that the value was
+您可以通过调用get函数来验证该值是否已设置
+
+92
+00:04:16,420 --> 00:04:18,548
+set by calling the get function
+您可以通过调用get函数来验证该值是否已设置
+
+93
+00:04:18,548 --> 00:04:21,579
+afterwards finally call the remove
+之后，最后调用remove函数，您可以验证
+
+94
+00:04:21,579 --> 00:04:24,460
+function and you can verify that the
+之后，最后调用remove函数，您可以验证
+
+95
+00:04:24,460 --> 00:04:27,370
+value was deleted by calling the get 4
+再次调用get 4下巴删除了值，从而涵盖了如何创建
+
+96
+00:04:27,370 --> 00:04:29,919
+chin again so that covers how to create
+再次调用get 4下巴删除了值，从而涵盖了如何创建
+
+97
+00:04:29,919 --> 00:04:32,949
+your mapping get set and delete your
+在此视频中，您的映射已设置并从映射中删除了您的值，我们
+
+98
+00:04:32,949 --> 00:04:36,729
+value from a mapping in this video we
+在此视频中，您的映射已设置并从映射中删除了您的值，我们
+
+99
+00:04:36,729 --> 00:04:38,770
+went over how to create your mapping and
+讨论了如何创建映射以及如何执行基本操作（如读取）
+
+100
+00:04:38,770 --> 00:04:41,979
+how to do basic operations like read
+讨论了如何创建映射以及如何执行基本操作（如读取）
+
+101
+00:04:41,979 --> 00:04:45,360
+write and delete value for my mapping
+为我的映射编写和删除值，例如Python中的字典或Windows中的映射
+
+102
+00:04:45,360 --> 00:04:48,639
+like a dictionary in Python or a map in
+为我的映射编写和删除值，例如Python中的字典或Windows中的映射
+
+103
+00:04:48,639 --> 00:04:51,400
+JavaScript mapping and solidity is good
+JavaScript映射和坚固性有助于快速查找，这是您需要做的一件事
+
+104
+00:04:51,400 --> 00:04:54,310
+for fast look ups one thing you need to
+JavaScript映射和坚固性有助于快速查找，这是您需要做的一件事
+
+105
+00:04:54,310 --> 00:04:56,830
+keep in mind about mapping is that you
+请记住，映射是您无法迭代它们，也无法获取
+
+106
+00:04:56,830 --> 00:04:59,110
+cannot iterate them and you cannot get
+请记住，映射是您无法迭代它们，也无法获取
+
+107
+00:04:59,110 --> 00:05:02,229
+the size of a mapping so if you need to
+映射的大小，因此如果您需要遍历地图或知道有多少
+
+108
+00:05:02,229 --> 00:05:05,020
+iterate through a map or know how many
+映射的大小，因此如果您需要遍历地图或知道有多少
+
+109
+00:05:05,020 --> 00:05:07,780
+elements are inside a mapping then
+元素在映射内，那么您将不得不编写一些额外的代码来
+
+110
+00:05:07,780 --> 00:05:10,060
+you'll have to write some extra code to
+元素在映射内，那么您将不得不编写一些额外的代码来
+
+111
+00:05:10,060 --> 00:05:12,550
+make it work well that's all I got for
+使其运作良好，这就是我获得的这段视频的全部内容，感谢您收看一个
+
+112
+00:05:12,550 --> 00:05:14,889
+this video thanks for watching have a
+使其运作良好，这就是我获得的这段视频的全部内容，感谢您收看一个
+
+113
+00:05:14,889 --> 00:05:17,740
+nice week and I'll see you in the next
+美好的一周，我会在下一个视频中再见
+
+114
+00:05:17,740 --> 00:05:20,100
+video
+美好的一周，我会在下一个视频中再见
+

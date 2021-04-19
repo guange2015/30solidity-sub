@@ -1,0 +1,1135 @@
+1
+00:00:00,000 --> 00:00:02,520
+I showed you how to call functions in
+我向您展示了如何使用call方法调用另一个合约中的函数
+
+2
+00:00:02,520 --> 00:00:04,740
+another contract using the call method
+我向您展示了如何使用call方法调用另一个合约中的函数
+
+3
+00:00:04,740 --> 00:00:07,109
+but it's not the best way to call other
+但这不是调用其他函数的最佳方法，所以我想向您展示一个更好的方法
+
+4
+00:00:07,109 --> 00:00:09,480
+functions so I want to show you a better
+但这不是调用其他函数的最佳方法，所以我想向您展示一个更好的方法
+
+5
+00:00:09,480 --> 00:00:11,670
+way of calling functions that are in
+调用另一个合约中的函数的方式，所以我将向您展示如何
+
+6
+00:00:11,670 --> 00:00:14,130
+another contract so I'll show you how to
+调用另一个合约中的函数的方式，所以我将向您展示如何
+
+7
+00:00:14,130 --> 00:00:16,440
+call functions in another contract and
+另一个合约中的调用函数以及如何将eater发送到应付款函数
+
+8
+00:00:16,440 --> 00:00:19,189
+how to send eater to a payable function
+另一个合约中的调用函数以及如何将eater发送到应付款函数
+
+9
+00:00:19,189 --> 00:00:21,750
+first we're gonna need a contract that's
+首先，我们需要一份要被调用的合同，所以我要命名为
+
+10
+00:00:21,750 --> 00:00:23,820
+gonna get called so I'm gonna name this
+首先，我们需要一份要被调用的合同，所以我要命名为
+
+11
+00:00:23,820 --> 00:00:26,910
+contract Collie and we'll declare some
+合约Collie，我们将在此示例中声明一些状态变量，
+
+12
+00:00:26,910 --> 00:00:29,789
+state variables for this example the
+合约Collie，我们将在此示例中声明一些状态变量，
+
+13
+00:00:29,789 --> 00:00:32,279
+state variable value will be used when
+当我们将Eater发送到此合同和
+
+14
+00:00:32,279 --> 00:00:35,070
+we send eater to this contract and to
+当我们将Eater发送到此合同和
+
+15
+00:00:35,070 --> 00:00:37,020
+show you an example of how to call a
+向您展示了如何从另一个合约中调用常规函数的示例
+
+16
+00:00:37,020 --> 00:00:39,510
+regular function from another contract
+向您展示了如何从另一个合约中调用常规函数的示例
+
+17
+00:00:39,510 --> 00:00:41,640
+we're first going to declare a function
+我们首先要声明一个名为set X的函数，该函数将一个单位作为
+
+18
+00:00:41,640 --> 00:00:44,700
+called set X that's gonna take a unit as
+我们首先要声明一个名为set X的函数，该函数将一个单位作为
+
+19
+00:00:44,700 --> 00:00:47,070
+input we will declare the function as
+输入后，我们会将函数声明为public，并向您展示如何分配
+
+20
+00:00:47,070 --> 00:00:49,739
+public and to show you how to assign the
+输入后，我们会将函数声明为public，并向您展示如何分配
+
+21
+00:00:49,739 --> 00:00:52,079
+output of this function in the contract
+合同中该函数的输出，在这里调用该函数
+
+22
+00:00:52,079 --> 00:00:54,780
+that call this function here we're gonna
+合同中该函数的输出，在这里调用该函数
+
+23
+00:00:54,780 --> 00:00:57,059
+return a new int inside the function
+在函数内部返回一个新的int会简单地重新分配状态变量
+
+24
+00:00:57,059 --> 00:00:59,699
+will simply reassign the state variable
+在函数内部返回一个新的int会简单地重新分配状态变量
+
+25
+00:00:59,699 --> 00:01:02,309
+X to the employee and then we turn the
+X给员工，然后我们将状态变量X的值作为输出
+
+26
+00:01:02,309 --> 00:01:05,060
+value of the state variable X as output
+X给员工，然后我们将状态变量X的值作为输出
+
+27
+00:01:05,060 --> 00:01:07,950
+next to show you an example of how to
+接下来向您展示如何调用应付款功能的示例，这意味着
+
+28
+00:01:07,950 --> 00:01:10,770
+call payable function which means that
+接下来向您展示如何调用应付款功能的示例，这意味着
+
+29
+00:01:10,770 --> 00:01:13,170
+the function can receive either we're
+该函数可以接收我们将首先创建的函数
+
+30
+00:01:13,170 --> 00:01:15,689
+gonna first create a function like the
+该函数可以接收我们将首先创建的函数
+
+31
+00:01:15,689 --> 00:01:18,060
+function above set accents and a third
+上面的重音符号的功能，而第三个功能将使您不再
+
+32
+00:01:18,060 --> 00:01:20,100
+function is going to take a you ain't as
+上面的重音符号的功能，而第三个功能将使您不再
+
+33
+00:01:20,100 --> 00:01:22,710
+input and since this function is going
+输入，并且由于此功能将能够接收它，我们需要
+
+34
+00:01:22,710 --> 00:01:24,810
+to be able to receive it we need to
+输入，并且由于此功能将能够接收它，我们需要
+
+35
+00:01:24,810 --> 00:01:27,810
+declare as payable and for this example
+声明为应付款项，在此示例中，我们将返回多个输出，并且它们
+
+36
+00:01:27,810 --> 00:01:31,079
+we'll return multiple outputs and they
+声明为应付款项，在此示例中，我们将返回多个输出，并且它们
+
+37
+00:01:31,079 --> 00:01:32,400
+don't I'll show you how to assign
+我不告诉你如何从多个输出分配变量并且相同
+
+38
+00:01:32,400 --> 00:01:35,790
+variables from multiple outputs and same
+我不告诉你如何从多个输出分配变量并且相同
+
+39
+00:01:35,790 --> 00:01:37,770
+as the function above you'll assign the
+作为上面的函数，您将状态变量X分配给输入，并且因为
+
+40
+00:01:37,770 --> 00:01:40,619
+state variable X to the input and since
+作为上面的函数，您将状态变量X分配给输入，并且因为
+
+41
+00:01:40,619 --> 00:01:42,329
+we're gonna send it to this function
+我们将其发送到此函数将捕获加热器中的值
+
+42
+00:01:42,329 --> 00:01:45,329
+will capture the value of the heater in
+我们将其发送到此函数将捕获加热器中的值
+
+43
+00:01:45,329 --> 00:01:48,450
+the state variable value and then return
+状态变量值，然后返回状态变量X的值，
+
+44
+00:01:48,450 --> 00:01:50,610
+the value of the state variable X and
+状态变量值，然后返回状态变量X的值，
+
+45
+00:01:50,610 --> 00:01:53,729
+value so that completes the code for the
+值，从而完成合同的代码，这将被称为
+
+46
+00:01:53,729 --> 00:01:55,579
+contract and that's gonna get called
+值，从而完成合同的代码，这将被称为
+
+47
+00:01:55,579 --> 00:01:58,020
+next we need a contract that's gonna
+接下来，我们需要一个合同，该合同将被称为上述合同的呼叫，
+
+48
+00:01:58,020 --> 00:02:01,110
+call the call the contract above and
+接下来，我们需要一个合同，该合同将被称为上述合同的呼叫，
+
+49
+00:02:01,110 --> 00:02:03,840
+we'll name this contract caller we will
+我们将命名此合同调用方，稍后将在集合X中命名此函数
+
+50
+00:02:03,840 --> 00:02:07,170
+name this function as set X later after
+我们将命名此合同调用方，稍后将在集合X中命名此函数
+
+51
+00:02:07,170 --> 00:02:09,209
+we deploy the contracts you'll call this
+我们部署您将从中调用此功能的合同
+
+52
+00:02:09,209 --> 00:02:10,258
+function from
+我们部署您将从中调用此功能的合同
+
+53
+00:02:10,258 --> 00:02:12,689
+account and this function will call the
+帐户，此函数将调用牧羊犬内部的set X函数
+
+54
+00:02:12,689 --> 00:02:15,239
+set X function inside the collie
+帐户，此函数将调用牧羊犬内部的set X函数
+
+55
+00:02:15,239 --> 00:02:18,420
+contract above to call the functions in
+上面的合同来调用牧羊犬合同中的功能，我们首先需要
+
+56
+00:02:18,420 --> 00:02:20,760
+the collie contract we first need to
+上面的合同来调用牧羊犬合同中的功能，我们首先需要
+
+57
+00:02:20,760 --> 00:02:24,180
+pass the collie contract as input now
+现在，当我们实际调用此函数时，将牧羊犬合同作为输入传递
+
+58
+00:02:24,180 --> 00:02:26,430
+when we actually call this function what
+现在，当我们实际调用此函数时，将牧羊犬合同作为输入传递
+
+59
+00:02:26,430 --> 00:02:29,069
+we need to pass here as input is the
+我们需要通过此处，因为输入是此处牧羊犬合同的地址
+
+60
+00:02:29,069 --> 00:02:31,890
+address of the collie contract in here
+我们需要通过此处，因为输入是此处牧羊犬合同的地址
+
+61
+00:02:31,890 --> 00:02:33,659
+we're saying that the type for the first
+我们是说第一个输入的类型是牧羊犬合约和
+
+62
+00:02:33,659 --> 00:02:36,750
+input is the collie contract and the
+我们是说第一个输入的类型是牧羊犬合约和
+
+63
+00:02:36,750 --> 00:02:39,420
+valuable name for this input is called e
+此输入的有价值的名称称为e，接下来我们将传递youant作为
+
+64
+00:02:39,420 --> 00:02:42,090
+and next we'll pass in a youant as the
+此输入的有价值的名称称为e，接下来我们将传递youant作为
+
+65
+00:02:42,090 --> 00:02:45,060
+second input so how do we call the set X
+第二个输入，那么我们如何调用牧羊犬内部的set X函数
+
+66
+00:02:45,060 --> 00:02:47,250
+function which is inside the collie
+第二个输入，那么我们如何调用牧羊犬内部的set X函数
+
+67
+00:02:47,250 --> 00:02:49,109
+contract well it's pretty
+合同很好，这很简单，您可以打电话给我们
+
+68
+00:02:49,109 --> 00:02:51,180
+straightforward and you can call the set
+合同很好，这很简单，您可以打电话给我们
+
+69
+00:02:51,180 --> 00:02:53,579
+X function which is inside the collie
+像这样的牧羊犬函数内部的X函数，您将传递
+
+70
+00:02:53,579 --> 00:02:56,519
+function like this and you'll pass the
+像这样的牧羊犬函数内部的X函数，您将传递
+
+71
+00:02:56,519 --> 00:02:59,970
+input X now if this syntax are passing
+如果此语法正在传递合同，则现在输入X，因为输入似乎令人困惑
+
+72
+00:02:59,970 --> 00:03:02,370
+the contract as input seems confusing
+如果此语法正在传递合同，则现在输入X，因为输入似乎令人困惑
+
+73
+00:03:02,370 --> 00:03:05,190
+you can do it like this instead instead
+您可以这样操作，而不是通过合同作为输入，您可以
+
+74
+00:03:05,190 --> 00:03:07,560
+of passing the contract as input you can
+您可以这样操作，而不是通过合同作为输入，您可以
+
+75
+00:03:07,560 --> 00:03:09,930
+pass the address of the contract as
+通过合同的地址作为输入，您可以实例化
+
+76
+00:03:09,930 --> 00:03:13,079
+input and you can instantiate the
+通过合同的地址作为输入，您可以实例化
+
+77
+00:03:13,079 --> 00:03:16,440
+contract at the address like this here
+合同在这样的地址在这里我们实例化合同
+
+78
+00:03:16,440 --> 00:03:18,840
+we're instantiating the contract at the
+合同在这样的地址在这里我们实例化合同
+
+79
+00:03:18,840 --> 00:03:21,660
+address where we got the address of the
+从我们声明的输入中获取合同地址的地址
+
+80
+00:03:21,660 --> 00:03:24,180
+contract from the input we'll declare
+从我们声明的输入中获取合同地址的地址
+
+81
+00:03:24,180 --> 00:03:27,540
+the variable name as collie and the type
+变量名称为牧羊犬，变量类型为牧羊犬合约
+
+82
+00:03:27,540 --> 00:03:30,109
+of the variable is the collie contract
+变量名称为牧羊犬，变量类型为牧羊犬合约
+
+83
+00:03:30,109 --> 00:03:33,449
+so that's how you instantiate a contract
+这样便可以从地址实例化合同，然后调用函数
+
+84
+00:03:33,449 --> 00:03:36,120
+from address and you can call functions
+这样便可以从地址实例化合同，然后调用函数
+
+85
+00:03:36,120 --> 00:03:39,060
+on the contract in the exact same way as
+按照与上面示例完全相同的方式进行合同处理，所以这两个是
+
+86
+00:03:39,060 --> 00:03:42,120
+the example above so these are the two
+按照与上面示例完全相同的方式进行合同处理，所以这两个是
+
+87
+00:03:42,120 --> 00:03:44,069
+ways of calling a function in another
+在另一个合同中调用函数的方法，所以接下来我想向您展示
+
+88
+00:03:44,069 --> 00:03:46,859
+contract so next I want to show you how
+在另一个合同中调用函数的方法，所以接下来我想向您展示
+
+89
+00:03:46,859 --> 00:03:49,470
+to call a payable function and send
+调用一个付费功能并与之一起发送我将调用此功能
+
+90
+00:03:49,470 --> 00:03:51,690
+either with it I'll call this function
+调用一个付费功能并与之一起发送我将调用此功能
+
+91
+00:03:51,690 --> 00:03:55,650
+set X and Sandy tur and like the example
+设置X和Sandy tur，就像示例Bob一样，将需要调用合同
+
+92
+00:03:55,650 --> 00:03:57,959
+Bob it's gonna take to call the contract
+设置X和Sandy tur，就像示例Bob一样，将需要调用合同
+
+93
+00:03:57,959 --> 00:04:00,720
+as the first input and you'll pass a
+作为第一个输入，您将为第二个输入传递一个youant，因为
+
+94
+00:04:00,720 --> 00:04:03,359
+youant for the second input and since
+作为第一个输入，您将为第二个输入传递一个youant，因为
+
+95
+00:04:03,359 --> 00:04:05,010
+we're going to send it to this function
+我们将其发送到此函数将声明为应付款，因此我们已经
+
+96
+00:04:05,010 --> 00:04:08,459
+will declare as payable so we already
+我们将其发送到此函数将声明为应付款，因此我们已经
+
+97
+00:04:08,459 --> 00:04:10,470
+know how to call function in another
+知道如何在另一个合约中调用函数，所以我将复制此示例
+
+98
+00:04:10,470 --> 00:04:13,620
+contract so I'm gonna copy this example
+知道如何在另一个合约中调用函数，所以我将复制此示例
+
+99
+00:04:13,620 --> 00:04:16,620
+as our starting point and instead of
+作为我们的起点，而不是在
+
+100
+00:04:16,620 --> 00:04:18,930
+calling the set X function in the
+作为我们的起点，而不是在
+
+101
+00:04:18,930 --> 00:04:20,668
+colleague contract we're going to call
+同事合同，我们将其称为集合X时态，
+
+102
+00:04:20,668 --> 00:04:23,290
+the set X tense and
+同事合同，我们将其称为集合X时态，
+
+103
+00:04:23,290 --> 00:04:26,770
+either function and your pasta input X
+任一功能和您的面食输入X并向该功能发送食用者
+
+104
+00:04:26,770 --> 00:04:29,950
+and to send eater to this function you
+任一功能和您的面食输入X并向该功能发送食用者
+
+105
+00:04:29,950 --> 00:04:32,410
+can do it like this you write and don't
+可以像这样写，不用在想要的功能之后赋值
+
+106
+00:04:32,410 --> 00:04:34,840
+value after the function that you want
+可以像这样写，不用在想要的功能之后赋值
+
+107
+00:04:34,840 --> 00:04:37,570
+to call here I want to forward although
+在这里打电话，我想转发，尽管发送到此功能的食者
+
+108
+00:04:37,570 --> 00:04:39,630
+the eater that was sent to this function
+在这里打电话，我想转发，尽管发送到此功能的食者
+
+109
+00:04:39,630 --> 00:04:42,430
+so inside the parentheses that come
+因此，在值方法后面的括号内，我要通过
+
+110
+00:04:42,430 --> 00:04:44,740
+after the value method I'm gonna pass
+因此，在值方法后面的括号内，我要通过
+
+111
+00:04:44,740 --> 00:04:47,740
+message dot value which means that we're
+消息点值，这意味着我们将转发所有的食者
+
+112
+00:04:47,740 --> 00:04:49,570
+gonna forward all of the eater that was
+消息点值，这意味着我们将转发所有的食者
+
+113
+00:04:49,570 --> 00:04:52,630
+sent to this function and since the set
+发送到此函数，并且由于在内部设置了X和食砂盘函数
+
+114
+00:04:52,630 --> 00:04:55,360
+X and sand eater function inside the
+发送到此函数，并且由于在内部设置了X和食砂盘函数
+
+115
+00:04:55,360 --> 00:04:57,940
+call the contract returns two outputs
+调用合同返回两个输出，我们需要将代码更新为
+
+116
+00:04:57,940 --> 00:05:00,250
+here we need to update our code to
+调用合同返回两个输出，我们需要将代码更新为
+
+117
+00:05:00,250 --> 00:05:04,090
+assign variables for two outputs since
+为该函数分配两个输出，因为该函数将返回两个
+
+118
+00:05:04,090 --> 00:05:05,680
+the function is going to return two
+为该函数分配两个输出，因为该函数将返回两个
+
+119
+00:05:05,680 --> 00:05:08,080
+outputs we first need to start with
+我们首先需要以括号开头的输出，第一个输出是a
+
+120
+00:05:08,080 --> 00:05:11,140
+parentheses the first output is a you
+我们首先需要以括号开头的输出，第一个输出是a
+
+121
+00:05:11,140 --> 00:05:13,450
+end so we will declare a variable of
+结束，所以我们将声明一个类型为U的变量，第二个输出也是
+
+122
+00:05:13,450 --> 00:05:16,750
+type U and the second output is also all
+结束，所以我们将声明一个类型为U的变量，第二个输出也是
+
+123
+00:05:16,750 --> 00:05:19,000
+you end so we will declare the second
+您结束了，所以我们也将第二个变量声明为youant，以便
+
+124
+00:05:19,000 --> 00:05:21,670
+variable as youant as well so that
+您结束了，所以我们也将第二个变量声明为youant，以便
+
+125
+00:05:21,670 --> 00:05:24,070
+completes our code let's now deploy the
+完成我们的代码，现在让我们部署合同
+
+126
+00:05:24,070 --> 00:05:24,700
+contracts
+完成我们的代码，现在让我们部署合同
+
+127
+00:05:24,700 --> 00:05:27,490
+so here I've deployed the Collie and the
+所以在这里，我已经部署了Collie和color contract，对于第一个示例
+
+128
+00:05:27,490 --> 00:05:30,220
+color contract and for the first example
+所以在这里，我已经部署了Collie和color contract，对于第一个示例
+
+129
+00:05:30,220 --> 00:05:33,430
+I'm gonna call the function set X which
+我要称它为函数集X，当我们称它为函数集X时
+
+130
+00:05:33,430 --> 00:05:36,580
+is here when we call this function it
+我要称它为函数集X，当我们称它为函数集X时
+
+131
+00:05:36,580 --> 00:05:39,550
+should call the set X function inside
+应该在同事合同内部和内部调用set X函数
+
+132
+00:05:39,550 --> 00:05:42,310
+the colleague contract and inside the
+应该在同事合同内部和内部调用set X函数
+
+133
+00:05:42,310 --> 00:05:44,110
+Cloe contract it's gonna call this
+Cloe合约将调用此函数并设置状态变量X
+
+134
+00:05:44,110 --> 00:05:46,900
+function and set the state variable X
+Cloe合约将调用此函数并设置状态变量X
+
+135
+00:05:46,900 --> 00:05:49,960
+which we'll check later so I'm gonna
+我们稍后再检查，以便我复制通话D合同的地址
+
+136
+00:05:49,960 --> 00:05:52,630
+copy the address of the call D contract
+我们稍后再检查，以便我复制通话D合同的地址
+
+137
+00:05:52,630 --> 00:05:55,330
+and then pass it as the first input and
+然后将其作为第一个输入传递，然后对于第二个输入，我将传递
+
+138
+00:05:55,330 --> 00:05:57,760
+then for the second input I'll pass in
+然后将其作为第一个输入传递，然后对于第二个输入，我将传递
+
+139
+00:05:57,760 --> 00:06:01,300
+the number of one two three and to check
+一二三的数量，并检查是否一切顺利，我们将检查
+
+140
+00:06:01,300 --> 00:06:03,250
+that everything went through we'll check
+一二三的数量，并检查是否一切顺利，我们将检查
+
+141
+00:06:03,250 --> 00:06:05,790
+the value of the state variable X and
+状态变量X的值，并且在调用合约内，它是
+
+142
+00:06:05,790 --> 00:06:10,210
+inside the call the contract and it's
+状态变量X的值，并且在调用合约内，它是
+
+143
+00:06:10,210 --> 00:06:11,310
+one two three
+一二三接下来我要给你看一个
+
+144
+00:06:11,310 --> 00:06:12,970
+next I'm going to show you a
+一二三接下来我要给你看一个
+
+145
+00:06:12,970 --> 00:06:16,060
+demonstration of set X and send eater
+集X的演示并在此处发送Eater函数，所以当我们称其为
+
+146
+00:06:16,060 --> 00:06:18,280
+function here so when we call this
+集X的演示并在此处发送Eater函数，所以当我们称其为
+
+147
+00:06:18,280 --> 00:06:23,230
+function inside the caller contract it's
+调用者合约内部的函数，它将在内部调用相同的函数
+
+148
+00:06:23,230 --> 00:06:25,360
+going to call the same function inside
+调用者合约内部的函数，它将在内部调用相同的函数
+
+149
+00:06:25,360 --> 00:06:31,180
+the Colie contract and inside the kaga
+Colie合约和kaga合约中将设定状态
+
+150
+00:06:31,180 --> 00:06:33,550
+contract it's gonna set the state
+Colie合约和kaga合约中将设定状态
+
+151
+00:06:33,550 --> 00:06:36,400
+variable x and the amount of ether that
+变量x和
+
+152
+00:06:36,400 --> 00:06:36,940
+was
+变量x和
+
+153
+00:06:36,940 --> 00:06:39,760
+and again I'm gonna copy the address of
+然后我要复制牧羊犬合同的地址粘贴到这里，
+
+154
+00:06:39,760 --> 00:06:43,180
+the collie contract paste it in here and
+然后我要复制牧羊犬合同的地址粘贴到这里，
+
+155
+00:06:43,180 --> 00:06:45,670
+this time you'll pass the input four
+这次您将通过输入四五六，我们将发送一米，所以现在
+
+156
+00:06:45,670 --> 00:06:56,380
+five six and we'll send one meter so now
+这次您将通过输入四五六，我们将发送一米，所以现在
+
+157
+00:06:56,380 --> 00:06:58,720
+when we check back on the state valuable
+当我们检查状态X的值时，现在是4 5 6，其值是
+
+158
+00:06:58,720 --> 00:07:02,920
+X it is now four five six and the value
+当我们检查状态X的值时，现在是4 5 6，其值是
+
+159
+00:07:02,920 --> 00:07:07,420
+that was sent should be one either so I
+发送的应该是一个，所以我只是向您展示了如何在
+
+160
+00:07:07,420 --> 00:07:09,880
+just showed you how to call functions in
+发送的应该是一个，所以我只是向您展示了如何在
+
+161
+00:07:09,880 --> 00:07:12,400
+another contract and this is the better
+另一个合同，与使用合同相比，这是更好的方法
+
+162
+00:07:12,400 --> 00:07:14,500
+way of doing it compared to using the
+另一个合同，与使用合同相比，这是更好的方法
+
+163
+00:07:14,500 --> 00:07:17,980
+call method why is that so well recall
+调用方法为什么这么好回想一下，您将使用调用方法
+
+164
+00:07:17,980 --> 00:07:20,050
+that using the call method you would do
+调用方法为什么这么好回想一下，您将使用调用方法
+
+165
+00:07:20,050 --> 00:07:22,870
+something like test to call the function
+例如test之类的调用函数集X并将其发送的东西，您将通过
+
+166
+00:07:22,870 --> 00:07:26,470
+set X and send it you would passing the
+例如test之类的调用函数集X并将其发送的东西，您将通过
+
+167
+00:07:26,470 --> 00:07:28,660
+function signature of the function that
+您要调用的函数的函数签名，然后是输入
+
+168
+00:07:28,660 --> 00:07:30,550
+you're gonna call followed by the input
+您要调用的函数的函数签名，然后是输入
+
+169
+00:07:30,550 --> 00:07:33,430
+and if this function does not exist then
+如果此函数不存在，则call方法将调用后备
+
+170
+00:07:33,430 --> 00:07:35,290
+the call method will call the fallback
+如果此函数不存在，则call方法将调用后备
+
+171
+00:07:35,290 --> 00:07:38,290
+function now the advantage of calling a
+函数现在调用这样的函数的优点是，如果
+
+172
+00:07:38,290 --> 00:07:40,600
+function like this is that if the
+函数现在调用这样的函数的优点是，如果
+
+173
+00:07:40,600 --> 00:07:43,300
+function does not exist then literally
+函数不存在，那么从字面上看，您将不会进行编译，例如，如果我
+
+174
+00:07:43,300 --> 00:07:46,480
+you will not compile so for example if I
+函数不存在，那么从字面上看，您将不会进行编译，例如，如果我
+
+175
+00:07:46,480 --> 00:07:48,520
+change the name of the function
+更改函数名称，然后按ctrl进行编译
+
+176
+00:07:48,520 --> 00:07:52,180
+and then hit ctrl s to compile you'll
+更改函数名称，然后按ctrl进行编译
+
+177
+00:07:52,180 --> 00:07:55,780
+notice that it did not compile so by
+请注意，它没有通过使用此调用函数的方法进行编译
+
+178
+00:07:55,780 --> 00:07:58,060
+using this method of calling functions
+请注意，它没有通过使用此调用函数的方法进行编译
+
+179
+00:07:58,060 --> 00:08:00,430
+in another contract you can check for
+在另一份合同中，您可以在合同平整之前检查是否存在错误
+
+180
+00:08:00,430 --> 00:08:02,950
+errors before the contract is even
+在另一份合同中，您可以在合同平整之前检查是否存在错误
+
+181
+00:08:02,950 --> 00:08:06,100
+deployed and before we go I want to warn
+部署，在我们出发之前，我想警告您一些您应该做的事情
+
+182
+00:08:06,100 --> 00:08:07,900
+you about something that you should be
+部署，在我们出发之前，我想警告您一些您应该做的事情
+
+183
+00:08:07,900 --> 00:08:10,270
+aware of what do you think will happen
+知道当我们调用函数集X时您会怎么想
+
+184
+00:08:10,270 --> 00:08:12,610
+when we call the function set X and
+知道当我们调用函数集X时您会怎么想
+
+185
+00:08:12,610 --> 00:08:15,340
+passing the address of a contract that
+传递例如不是联系人的合同的地址
+
+186
+00:08:15,340 --> 00:08:18,400
+is not the call the contact for example
+传递例如不是联系人的合同的地址
+
+187
+00:08:18,400 --> 00:08:20,230
+instead of passing the address of the
+而不是通过同事合同的地址，而是通过地址
+
+188
+00:08:20,230 --> 00:08:22,360
+colleague contract we pass the address
+而不是通过同事合同的地址，而是通过地址
+
+189
+00:08:22,360 --> 00:08:25,120
+of this contract foo well surprisingly
+这个合约foo非常令人惊讶，这里的编码方会称其为
+
+190
+00:08:25,120 --> 00:08:27,820
+the coding side here will call this
+这个合约foo非常令人惊讶，这里的编码方会称其为
+
+191
+00:08:27,820 --> 00:08:30,790
+function when we passing the address of
+当我们传递食物的地址作为输入而不执行
+
+192
+00:08:30,790 --> 00:08:34,150
+food as input instead of executing the
+当我们传递食物的地址作为输入而不执行
+
+193
+00:08:34,150 --> 00:08:37,690
+code inside here inside the colleague
+同事合同里面的代码让我给你看一个例子
+
+194
+00:08:37,690 --> 00:08:41,289
+contract let me show you an example so
+同事合同里面的代码让我给你看一个例子
+
+195
+00:08:41,289 --> 00:08:43,780
+here I deployed the color and the food
+在这里，我部署了颜色和食物合同，当我们将集合x称为
+
+196
+00:08:43,780 --> 00:08:47,050
+contracts and when we call the set x
+在这里，我部署了颜色和食物合同，当我们将集合x称为
+
+197
+00:08:47,050 --> 00:08:49,280
+function passing in the address
+在传递食品合同地址的功能中，您会注意到
+
+198
+00:08:49,280 --> 00:08:52,400
+the food contract you'll notice that the
+在传递食品合同地址的功能中，您会注意到
+
+199
+00:08:52,400 --> 00:08:54,560
+cold inside the food contract was
+食品合同中的合同被执行了，所以我通过了他们一二三
+
+200
+00:08:54,560 --> 00:08:58,610
+executed so I passed them one two three
+食品合同中的合同被执行了，所以我通过了他们一二三
+
+201
+00:08:58,610 --> 00:09:00,950
+as input the code inside the contract
+作为输入，执行了合同foo内部的代码，并实现了一个
+
+202
+00:09:00,950 --> 00:09:03,920
+foo was executed and it implemented one
+作为输入，执行了合同foo内部的代码，并实现了一个
+
+203
+00:09:03,920 --> 00:09:06,860
+two three by one and we got one two four
+二三一一，这里得到一二四
+
+204
+00:09:06,860 --> 00:09:10,220
+here so when we call this function and
+二三一一，这里得到一二四
+
+205
+00:09:10,220 --> 00:09:13,070
+passed in the address of foo instead of
+传入foo的地址，而不是在此处执行此代码，而是执行了
+
+206
+00:09:13,070 --> 00:09:16,430
+executing this code here it executed the
+传入foo的地址，而不是在此处执行此代码，而是执行了
+
+207
+00:09:16,430 --> 00:09:19,700
+code here inside the full-contact so
+完整联系方式中的代码，因此请记住，您签订的合同
+
+208
+00:09:19,700 --> 00:09:21,980
+keep in mind that the contract that you
+完整联系方式中的代码，因此请记住，您签订的合同
+
+209
+00:09:21,980 --> 00:09:24,170
+think you're calling might not be the
+认为您所打电话的可能不是所称的实际合同，因此
+
+210
+00:09:24,170 --> 00:09:27,170
+actual contract that is being called so
+认为您所打电话的可能不是所称的实际合同，因此
+
+211
+00:09:27,170 --> 00:09:29,270
+in some way you can call functions in
+以某种方式，您可以在另一个合约中调用函数，类似于您的调用方式
+
+212
+00:09:29,270 --> 00:09:31,730
+another contract similar to how you call
+以某种方式，您可以在另一个合约中调用函数，类似于您的调用方式
+
+213
+00:09:31,730 --> 00:09:33,860
+functions in object-oriented programming
+面向对象编程中的函数，这比使用调用更好
+
+214
+00:09:33,860 --> 00:09:36,890
+and this is better than using the call
+面向对象编程中的函数，这比使用调用更好
+
+215
+00:09:36,890 --> 00:09:39,230
+function to call functions in another
+函数调用另一个合同中的函数，因为如果函数没有
+
+216
+00:09:39,230 --> 00:09:41,990
+contract since if the function does not
+函数调用另一个合同中的函数，因为如果函数没有
+
+217
+00:09:41,990 --> 00:09:44,860
+exist then solidity will not compile
+存在，那么坚固性将无法编译，而使用call方法它将
+
+218
+00:09:44,860 --> 00:09:47,630
+whereas using the call method it would
+存在，那么坚固性将无法编译，而使用call方法它将
+
+219
+00:09:47,630 --> 00:09:50,720
+just call the fallback function and you
+只需调用后备功能，您将无法捕获错误，直到
+
+220
+00:09:50,720 --> 00:09:53,000
+won't be able to catch your error until
+只需调用后备功能，您将无法捕获错误，直到
+
+221
+00:09:53,000 --> 00:09:55,400
+you deploy the contract and actually
+您部署合同并实际执行功能并牢记
+
+222
+00:09:55,400 --> 00:09:58,160
+execute the functions and keep in mind
+您部署合同并实际执行功能并牢记
+
+223
+00:09:58,160 --> 00:10:00,020
+that the contract that you think you're
+您认为您正在呼叫的合同可能不是实际的合同
+
+224
+00:10:00,020 --> 00:10:02,510
+calling might not be the actual contract
+您认为您正在呼叫的合同可能不是实际的合同
+
+225
+00:10:02,510 --> 00:10:05,000
+that is being called if you have any
+如果您有任何反馈或问题，请在电话中告诉我
+
+226
+00:10:05,000 --> 00:10:07,370
+feedback or questions let me know in the
+如果您有任何反馈或问题，请在电话中告诉我
+
+227
+00:10:07,370 --> 00:10:11,560
+comments below have a good night
+以下评论祝您晚安
+

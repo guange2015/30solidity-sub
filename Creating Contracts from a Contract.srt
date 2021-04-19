@@ -1,0 +1,840 @@
+1
+00:00:00,000 --> 00:00:03,449
+contracts can create other contracts and
+合同可以创建其他合同，这在您需要的情况下很有用
+
+2
+00:00:03,449 --> 00:00:05,279
+it's useful in situations where you
+合同可以创建其他合同，这在您需要的情况下很有用
+
+3
+00:00:05,279 --> 00:00:07,919
+deploy the same contract many times with
+使用相同的投入多次部署相同的合同，也可以是
+
+4
+00:00:07,919 --> 00:00:10,889
+the same inputs and it can also be
+使用相同的投入多次部署相同的合同，也可以是
+
+5
+00:00:10,889 --> 00:00:12,660
+useful when you want to manage many
+当您想从一个合同管理多个合同时非常有用
+
+6
+00:00:12,660 --> 00:00:16,170
+contracts from a single contract so for
+当您想从一个合同管理多个合同时非常有用
+
+7
+00:00:16,170 --> 00:00:18,029
+example let's say that you deployed the
+假设您以相同的合同部署了100次不同的合同
+
+8
+00:00:18,029 --> 00:00:20,580
+same contract 100 times with different
+假设您以相同的合同部署了100次不同的合同
+
+9
+00:00:20,580 --> 00:00:23,789
+parameters want me to keep track of all
+参数要我跟踪您刚刚部署的所有合同是
+
+10
+00:00:23,789 --> 00:00:26,070
+the contract that you just deployed is
+参数要我跟踪您刚刚部署的所有合同是
+
+11
+00:00:26,070 --> 00:00:28,800
+to store the addresses of the contract
+将链式合同的地址存储在数据库中的另一种方法是
+
+12
+00:00:28,800 --> 00:00:32,098
+of chain in a database another way is to
+将链式合同的地址存储在数据库中的另一种方法是
+
+13
+00:00:32,098 --> 00:00:34,170
+have a contract that creates other
+具有创建其他合同并存储以下地址的合同
+
+14
+00:00:34,170 --> 00:00:36,989
+contracts and store the addresses of
+具有创建其他合同并存储以下地址的合同
+
+15
+00:00:36,989 --> 00:00:39,480
+these contracts inside the contract that
+这些合同在创建它们的合同中，所以我将向您展示两个
+
+16
+00:00:39,480 --> 00:00:42,270
+created them so I'll show you two
+这些合同在创建它们的合同中，所以我将向您展示两个
+
+17
+00:00:42,270 --> 00:00:45,180
+examples how to create a new contract
+示例如何从另一个合同内部创建新合同以及如何
+
+18
+00:00:45,180 --> 00:00:48,210
+from inside another contract and how to
+示例如何从另一个合同内部创建新合同以及如何
+
+19
+00:00:48,210 --> 00:00:50,730
+send either at the same time that new
+首先创建新合同的同时发送，我们需要两个
+
+20
+00:00:50,730 --> 00:00:53,789
+contract is created first we need two
+首先创建新合同的同时发送，我们需要两个
+
+21
+00:00:53,789 --> 00:00:56,670
+contracts a contract that's going to be
+签订合同，该合同将被多次部署
+
+22
+00:00:56,670 --> 00:00:59,789
+deployed multiple times this contract
+签订合同，该合同将被多次部署
+
+23
+00:00:59,789 --> 00:01:02,550
+will represent a car so it's going to
+将代表一辆汽车，因此它将存储模型和汽车所有者
+
+24
+00:01:02,550 --> 00:01:04,920
+store the model and the owner of the car
+将代表一辆汽车，因此它将存储模型和汽车所有者
+
+25
+00:01:04,920 --> 00:01:08,010
+and we'll initialize these two state
+然后我们将在其中一个中使用构造函数来初始化这两个状态变量
+
+26
+00:01:08,010 --> 00:01:11,490
+variables using a constructor in one of
+然后我们将在其中一个中使用构造函数来初始化这两个状态变量
+
+27
+00:01:11,490 --> 00:01:13,200
+the examples I'm going to show you how
+我将向您展示如何将任何一个发送到此构造函数的示例，所以我
+
+28
+00:01:13,200 --> 00:01:16,170
+to send either to this constructor so I
+我将向您展示如何将任何一个发送到此构造函数的示例，所以我
+
+29
+00:01:16,170 --> 00:01:18,780
+declare the constructor as payable so
+将构造函数声明为应付款，从而完成合同的代码
+
+30
+00:01:18,780 --> 00:01:21,479
+that completes the code for the contract
+将构造函数声明为应付款，从而完成合同的代码
+
+31
+00:01:21,479 --> 00:01:22,890
+that's going to be deployed multiple
+接下来将要多次部署
+
+32
+00:01:22,890 --> 00:01:25,740
+times next we'll create a contract
+接下来将要多次部署
+
+33
+00:01:25,740 --> 00:01:27,720
+that's going to create the contract
+这将创建高于此合同车工厂名称的合同
+
+34
+00:01:27,720 --> 00:01:32,310
+above name this contract car factory the
+这将创建高于此合同车工厂名称的合同
+
+35
+00:01:32,310 --> 00:01:35,009
+function create will take two parameters
+函数创建将采用两个参数，即车主和车型
+
+36
+00:01:35,009 --> 00:01:38,640
+the owner and the model of the car that
+函数创建将采用两个参数，即车主和车型
+
+37
+00:01:38,640 --> 00:01:41,450
+we're going to pass to the car contract
+我们将传递给汽车合同，并在
+
+38
+00:01:41,450 --> 00:01:45,000
+and to create a new contract inside the
+我们将传递给汽车合同，并在
+
+39
+00:01:45,000 --> 00:01:47,670
+contract you start of the keyword new
+您以关键字new开头的合同，然后是
+
+40
+00:01:47,670 --> 00:01:50,159
+and then followed by the contract that
+您以关键字new开头的合同，然后是
+
+41
+00:01:50,159 --> 00:01:52,290
+you want to create in this case we're
+您要在这种情况下创建，我们将创建汽车合同，
+
+42
+00:01:52,290 --> 00:01:56,189
+going to create the car contract and
+您要在这种情况下创建，我们将创建汽车合同，
+
+43
+00:01:56,189 --> 00:01:59,689
+we'll pass the parameter model and owner
+我们将参数模型和所有者传递给汽车合同的构造函数
+
+44
+00:01:59,689 --> 00:02:03,350
+to the constructor of the car contract
+我们将参数模型和所有者传递给汽车合同的构造函数
+
+45
+00:02:03,350 --> 00:02:06,570
+so this code here will create a new
+因此此代码将创建一个新合同并调用
+
+46
+00:02:06,570 --> 00:02:09,899
+contract and call the constructor of the
+因此此代码将创建一个新合同并调用
+
+47
+00:02:09,899 --> 00:02:10,639
+car con
+汽车模型参数传递手
+
+48
+00:02:10,639 --> 00:02:13,610
+passing in the parameters model hand
+汽车模型参数传递手
+
+49
+00:02:13,610 --> 00:02:16,610
+owner and if you want to assign a
+所有者，如果您想为该合同分配变量，请先
+
+50
+00:02:16,610 --> 00:02:19,250
+variable to this contract you first
+所有者，如果您想为该合同分配变量，请先
+
+51
+00:02:19,250 --> 00:02:21,800
+start with the type of the variable in
+从变量的类型开始，在这种情况下，它将是car，我们将命名
+
+52
+00:02:21,800 --> 00:02:26,000
+this case it will be car and we'll name
+从变量的类型开始，在这种情况下，它将是car，我们将命名
+
+53
+00:02:26,000 --> 00:02:30,020
+the variable also car so this is how you
+变量也为car，所以这是您在另一个内部创建新合同的方式
+
+54
+00:02:30,020 --> 00:02:32,480
+create a new contract inside another
+变量也为car，所以这是您在另一个内部创建新合同的方式
+
+55
+00:02:32,480 --> 00:02:36,620
+contract by using the keyword new next
+通过使用关键字“ new next”来签订合同，我将向您展示如何创建新的
+
+56
+00:02:36,620 --> 00:02:38,540
+I'm gonna show you how to create a new
+通过使用关键字“ new next”来签订合同，我将向您展示如何创建新的
+
+57
+00:02:38,540 --> 00:02:42,290
+contract and send ETA with it and we can
+签订合同并随同发送ETA，我们可以将食客发送到此汽车合同，因为
+
+58
+00:02:42,290 --> 00:02:44,690
+send eater to this car contract since
+签订合同并随同发送ETA，我们可以将食客发送到此汽车合同，因为
+
+59
+00:02:44,690 --> 00:02:48,170
+its marked as payable first I'm gonna
+首先将其标记为“付款”，我将复制此示例作为我们的起点
+
+60
+00:02:48,170 --> 00:02:50,650
+copy this example as our starting point
+首先将其标记为“付款”，我将复制此示例作为我们的起点
+
+61
+00:02:50,650 --> 00:02:54,490
+and we name this function as create and
+我们将此函数命名为create并发送，输入将是相同的
+
+62
+00:02:54,490 --> 00:02:58,790
+send either the inputs will be the same
+我们将此函数命名为create并发送，输入将是相同的
+
+63
+00:02:58,790 --> 00:03:01,520
+as the example above and for this
+如上面的示例，在这个示例中，您将食者发送到此
+
+64
+00:03:01,520 --> 00:03:03,650
+example you'll send eater to this
+如上面的示例，在这个示例中，您将食者发送到此
+
+65
+00:03:03,650 --> 00:03:08,630
+function so we'll declare as payable now
+函数，因此我们现在将如何将进餐者发送到餐厅的语法声明为应付款
+
+66
+00:03:08,630 --> 00:03:10,730
+the syntax for how to send eater to a
+函数，因此我们现在将如何将进餐者发送到餐厅的语法声明为应付款
+
+67
+00:03:10,730 --> 00:03:13,090
+new contract is a little bit confusing
+新合同有点让您感到困惑，您需要先将这辆新车包装在
+
+68
+00:03:13,090 --> 00:03:16,070
+you first wrap this new car in a
+新合同有点让您感到困惑，您需要先将这辆新车包装在
+
+69
+00:03:16,070 --> 00:03:21,019
+parenthesis like this and to send either
+这样的括号，并发送给您，请调用top top value函数，然后
+
+70
+00:03:21,019 --> 00:03:24,459
+you call top top value function and
+这样的括号，并发送给您，请调用top top value函数，然后
+
+71
+00:03:24,459 --> 00:03:27,350
+inside the parenthesis you pass in the
+在括号内，您传递了要发送给的etre数量
+
+72
+00:03:27,350 --> 00:03:29,510
+amount of etre that you're gonna send to
+在括号内，您传递了要发送给的etre数量
+
+73
+00:03:29,510 --> 00:03:32,420
+this contract and for simplicity we'll
+这份合同，为简单起见，我们稍后将使用消息转发所有这些消息
+
+74
+00:03:32,420 --> 00:03:35,330
+just forward all of later using messages
+这份合同，为简单起见，我们稍后将使用消息转发所有这些消息
+
+75
+00:03:35,330 --> 00:03:38,690
+all value so this is the syntax for how
+所有值，因此这是如何将进餐者发送到新合同的语法，以及
+
+76
+00:03:38,690 --> 00:03:41,989
+to send eater to a new contract and the
+所有值，因此这是如何将进餐者发送到新合同的语法，以及
+
+77
+00:03:41,989 --> 00:03:44,840
+syntax might look a little confusing so
+语法可能看起来有些混乱，所以我记得语法的方式就像
+
+78
+00:03:44,840 --> 00:03:46,970
+the way i remember the syntax is like
+语法可能看起来有些混乱，所以我记得语法的方式就像
+
+79
+00:03:46,970 --> 00:03:49,459
+this let's say that a contract has a
+假设合同具有将XYZ作为输入的功能，
+
+80
+00:03:49,459 --> 00:03:53,269
+function that takes in XYZ as input and
+假设合同具有将XYZ作为输入的功能，
+
+81
+00:03:53,269 --> 00:03:55,400
+the way you can call the function is
+调用该函数的方式就像这样，您可以将一个食者发送到
+
+82
+00:03:55,400 --> 00:03:59,030
+like this and you can send one eater to
+调用该函数的方式就像这样，您可以将一个食者发送到
+
+83
+00:03:59,030 --> 00:04:01,660
+this function by using top value
+通过使用最高值后跟您所升的升量来实现此功能
+
+84
+00:04:01,660 --> 00:04:04,160
+followed by the amount of liter that you
+通过使用最高值后跟您所升的升量来实现此功能
+
+85
+00:04:04,160 --> 00:04:06,709
+want to send to this function now you
+现在想发送到此功能，您可以想象，当一个新合同
+
+86
+00:04:06,709 --> 00:04:08,930
+can imagine that when a new contract is
+现在想发送到此功能，您可以想象，当一个新合同
+
+87
+00:04:08,930 --> 00:04:11,450
+created the constructor which is a
+创建了一个称为特殊函数的构造函数，您可以
+
+88
+00:04:11,450 --> 00:04:14,720
+special function is called and you can
+创建了一个称为特殊函数的构造函数，您可以
+
+89
+00:04:14,720 --> 00:04:17,060
+send one liter to the constructor of the
+通过调用最高价将一公升水发送给合同的建设者
+
+90
+00:04:17,060 --> 00:04:19,880
+contract by calling the top value
+通过调用最高价将一公升水发送给合同的建设者
+
+91
+00:04:19,880 --> 00:04:22,880
+function and the way you would call the
+函数，调用构造函数的方式是
+
+92
+00:04:22,880 --> 00:04:24,030
+constructor is
+函数，调用构造函数的方式是
+
+93
+00:04:24,030 --> 00:04:29,070
+by using the new keyword and notice that
+通过使用new关键字，请注意我们刚到达的语法是
+
+94
+00:04:29,070 --> 00:04:31,080
+the syntax that we just arrived is
+通过使用new关键字，请注意我们刚到达的语法是
+
+95
+00:04:31,080 --> 00:04:35,430
+similar to the Ballad syntax above so
+类似于上面的民谣语法，这就是我记得如何
+
+96
+00:04:35,430 --> 00:04:37,470
+that's how I remember the syntax for how
+类似于上面的民谣语法，这就是我记得如何
+
+97
+00:04:37,470 --> 00:04:41,370
+to send eater to a constructor I hope
+将食者发送给构造函数，我希望这很有意义，这样可以完成
+
+98
+00:04:41,370 --> 00:04:44,040
+that made sense so that completes the
+将食者发送给构造函数，我希望这很有意义，这样可以完成
+
+99
+00:04:44,040 --> 00:04:46,200
+code for how to send eater to a new
+我之前说过如何将食者发送到新合同的代码
+
+100
+00:04:46,200 --> 00:04:49,800
+contract now earlier I said that a
+我之前说过如何将食者发送到新合同的代码
+
+101
+00:04:49,800 --> 00:04:52,110
+contract that creates another contract
+在这里创建另一个这样的合同的合同在以下方面很有用
+
+102
+00:04:52,110 --> 00:04:54,330
+like this one here is useful in
+在这里创建另一个这样的合同的合同在以下方面很有用
+
+103
+00:04:54,330 --> 00:04:57,270
+situations such as when the contract
+诸如当合同被多次部署时的情况
+
+104
+00:04:57,270 --> 00:04:59,030
+that is getting deployed multiple times
+诸如当合同被多次部署时的情况
+
+105
+00:04:59,030 --> 00:05:02,580
+uses the same inputs and also when you
+使用相同的输入，以及当您想跟踪所有合同时
+
+106
+00:05:02,580 --> 00:05:04,470
+want to keep track of all the contracts
+使用相同的输入，以及当您想跟踪所有合同时
+
+107
+00:05:04,470 --> 00:05:07,440
+that's been deployed so I'm gonna
+已经部署好了，所以我要说明这两种情况
+
+108
+00:05:07,440 --> 00:05:09,930
+illustrate those two situation using
+已经部署好了，所以我要说明这两种情况
+
+109
+00:05:09,930 --> 00:05:13,290
+this contract let's say that the owner
+这份合同让我们说，车主应该始终是地址
+
+110
+00:05:13,290 --> 00:05:14,970
+of the car should always be the address
+这份合同让我们说，车主应该始终是地址
+
+111
+00:05:14,970 --> 00:05:17,960
+that created the contract
+创建了合同，所以在这里汽车合同应该总是
+
+112
+00:05:17,960 --> 00:05:20,910
+so here the car contract should always
+创建了合同，所以在这里汽车合同应该总是
+
+113
+00:05:20,910 --> 00:05:25,229
+belong to the car factory contract so
+属于汽车工厂合同，因此对于我们传递的所有者参数
+
+114
+00:05:25,229 --> 00:05:27,419
+for the owner parameter we're passing
+属于汽车工厂合同，因此对于我们传递的所有者参数
+
+115
+00:05:27,419 --> 00:05:34,080
+the address of the car factory and we'll
+汽车工厂的地址，我们将删除所有者参数，因此现在当
+
+116
+00:05:34,080 --> 00:05:37,860
+remove the owner parameter so now when a
+汽车工厂的地址，我们将删除所有者参数，因此现在当
+
+117
+00:05:37,860 --> 00:05:40,410
+new car is created the owner of the car
+新车被创建后，该车的所有者将永远是该车的工厂合同
+
+118
+00:05:40,410 --> 00:05:43,160
+will always be this car factory contract
+新车被创建后，该车的所有者将永远是该车的工厂合同
+
+119
+00:05:43,160 --> 00:05:45,810
+so that's the example of how you would
+这就是如何使用固定输入创建合同的示例
+
+120
+00:05:45,810 --> 00:05:49,070
+create a contract with fixed inputs
+这就是如何使用固定输入创建合同的示例
+
+121
+00:05:49,070 --> 00:05:51,870
+moving on I'm gonna show you example how
+继续前进，我将向您展示示例如何使用此合同来跟踪
+
+122
+00:05:51,870 --> 00:05:54,330
+to use this contract to keep track of
+继续前进，我将向您展示示例如何使用此合同来跟踪
+
+123
+00:05:54,330 --> 00:05:56,729
+the individual contracts that's been
+已部署的各个合同，因此我们将创建一系列汽车
+
+124
+00:05:56,729 --> 00:06:00,600
+deployed so we'll create an array of car
+已部署的各个合同，因此我们将创建一系列汽车
+
+125
+00:06:00,600 --> 00:06:07,560
+contracts and name it cars and once the
+合同并将其命名为汽车，一旦汽车合同创建完毕，您将存储
+
+126
+00:06:07,560 --> 00:06:10,200
+car contract is created you'll store an
+合同并将其命名为汽车，一旦汽车合同创建完毕，您将存储
+
+127
+00:06:10,200 --> 00:06:18,300
+array of clause and that's it so let's
+子句数组就是这样，让我们​​现在部署这些合同，我将展示
+
+128
+00:06:18,300 --> 00:06:21,060
+now deploy these contracts and I'll show
+子句数组就是这样，让我们​​现在部署这些合同，我将展示
+
+129
+00:06:21,060 --> 00:06:22,890
+you a demo of calling these two
+您在这里演示了调用这两个功能的演示我有汽车厂
+
+130
+00:06:22,890 --> 00:06:26,039
+functions here I have the car factory
+您在这里演示了调用这两个功能的演示我有汽车厂
+
+131
+00:06:26,039 --> 00:06:28,260
+contract decoyed and we don't need to
+合同被诱骗了，我们不需要部署此车合同，因为这辆车
+
+132
+00:06:28,260 --> 00:06:31,590
+deploy this car contract since this car
+合同被诱骗了，我们不需要部署此车合同，因为这辆车
+
+133
+00:06:31,590 --> 00:06:34,050
+factory contract when we call the
+工厂合同，当我们调用该函数创建时，它将部署
+
+134
+00:06:34,050 --> 00:06:36,689
+function create it will deploy the
+工厂合同，当我们调用该函数创建时，它将部署
+
+135
+00:06:36,689 --> 00:06:40,499
+car contract I'm going to create Toyota
+汽车合同我要为丰田花冠和特斯拉制造网络卡车，所以当
+
+136
+00:06:40,499 --> 00:06:46,619
+Corolla and Tesla a cyber truck so when
+汽车合同我要为丰田花冠和特斯拉制造网络卡车，所以当
+
+137
+00:06:46,619 --> 00:06:48,360
+we call the create function they
+我们将其称为create函数，他们部署了汽车合同，但我们没有
+
+138
+00:06:48,360 --> 00:06:50,849
+deployed a car contract but we don't
+我们将其称为create函数，他们部署了汽车合同，但我们没有
+
+139
+00:06:50,849 --> 00:06:52,889
+need to remember the address of the car
+由于地址已存储，因此需要记住汽车合同的地址
+
+140
+00:06:52,889 --> 00:06:55,649
+contract since the addresses are stored
+由于地址已存储，因此需要记住汽车合同的地址
+
+141
+00:06:55,649 --> 00:06:59,399
+in this contract and we can get the
+在这份合同中，我们可以获得汽车合同的地址，但是
+
+142
+00:06:59,399 --> 00:07:01,709
+addresses of the car contract but
+在这份合同中，我们可以获得汽车合同的地址，但是
+
+143
+00:07:01,709 --> 00:07:05,339
+accessing the cars array the Toyota
+访问汽车数组，丰田卡罗拉将存储在索引0中，我们
+
+144
+00:07:05,339 --> 00:07:09,539
+Corolla will be stored at index 0 and we
+访问汽车数组，丰田卡罗拉将存储在索引0中，我们
+
+145
+00:07:09,539 --> 00:07:12,659
+get the address of the contract back now
+现在获取合同的地址，以检查车内的模型
+
+146
+00:07:12,659 --> 00:07:14,699
+to check that the model inside the car
+现在获取合同的地址，以检查车内的模型
+
+147
+00:07:14,699 --> 00:07:17,279
+contract is actually your Toyota Corolla
+合同实际上是您的Toyota Corolla，我们所有人要做的就是复制此文件
+
+148
+00:07:17,279 --> 00:07:19,860
+what we all have to do is copy this
+合同实际上是您的Toyota Corolla，我们所有人要做的就是复制此文件
+
+149
+00:07:19,860 --> 00:07:25,529
+address and then get the car contract at
+地址，然后在该地址获取汽车合同，该合同在Toyota中
+
+150
+00:07:25,529 --> 00:07:33,869
+the address and it is in the Toyota
+地址，然后在该地址获取汽车合同，该合同在Toyota中
+
+151
+00:07:33,869 --> 00:07:37,499
+Corolla and we can check that the second
+卡罗拉，我们可以通过复制来检查第二辆车是否再次是网吧
+
+152
+00:07:37,499 --> 00:07:40,589
+car is a cyber truck again by copying
+卡罗拉，我们可以通过复制来检查第二辆车是否再次是网吧
+
+153
+00:07:40,589 --> 00:07:45,659
+the address getting the car contract at
+地址在该地址获取汽车合同，然后检查状态
+
+154
+00:07:45,659 --> 00:07:51,779
+the address and then checking the state
+地址在该地址获取汽车合同，然后检查状态
+
+155
+00:07:51,779 --> 00:07:54,779
+variable model which is equal to Tesla
+等于特斯拉网络工作的可变模型，所以这就是您创建一个
+
+156
+00:07:54,779 --> 00:07:57,329
+cyber job so that's how you create a
+等于特斯拉网络工作的可变模型，所以这就是您创建一个
+
+157
+00:07:57,329 --> 00:08:00,419
+contract using another contract with the
+使用另一个带有关键字new的合同的合同，您可以将其中一个发送到
+
+158
+00:08:00,419 --> 00:08:03,659
+keyword new and you can send either to
+使用另一个带有关键字new的合同的合同，您可以将其中一个发送到
+
+159
+00:08:03,659 --> 00:08:05,849
+the contract you're about to create by
+您将要通过使用点值创建合约，然后将
+
+160
+00:08:05,849 --> 00:08:09,360
+using dot value and then passing in the
+您将要通过使用点值创建合约，然后将
+
+161
+00:08:09,360 --> 00:08:11,729
+amount of ether well that's all I got
+以太坊数量，这是我为该视频提供的所有反馈或问题
+
+162
+00:08:11,729 --> 00:08:14,789
+for this video any feedback or questions
+以太坊数量，这是我为该视频提供的所有反馈或问题
+
+163
+00:08:14,789 --> 00:08:17,129
+please put them in the comments below or
+请把它们放在下面的评论中，或者您可以在此向我发送您的消息
+
+164
+00:08:17,129 --> 00:08:19,469
+you can send me your message on this
+请把它们放在下面的评论中，或者您可以在此向我发送您的消息
+
+165
+00:08:19,469 --> 00:08:21,389
+cord where the links are in the
+说明中的链接所在的电源线，感谢您收看
+
+166
+00:08:21,389 --> 00:08:24,209
+descriptions thanks for watching have a
+说明中的链接所在的电源线，感谢您收看
+
+167
+00:08:24,209 --> 00:08:26,219
+nice week and I'll see you in the next
+美好的一周，我会在下一个视频中再见
+
+168
+00:08:26,219 --> 00:08:28,519
+video
+美好的一周，我会在下一个视频中再见
+

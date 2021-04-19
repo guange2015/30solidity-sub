@@ -1,0 +1,1115 @@
+1
+00:00:00,680 --> 00:00:03,419
+often times you want your function to
+很多时候，当您不希望出现某些错误时，您希望功能失败
+
+2
+00:00:03,419 --> 00:00:05,879
+fail when something is not right in
+很多时候，当您不希望出现某些错误时，您希望功能失败
+
+3
+00:00:05,879 --> 00:00:09,330
+solidity dirty wasted donor which was
+坚实肮脏的浪费捐助者，这被停止了进一步执行
+
+4
+00:00:09,330 --> 00:00:11,400
+stopped the further execution of the
+坚实肮脏的浪费捐助者，这被停止了进一步执行
+
+5
+00:00:11,400 --> 00:00:14,190
+function being called the day wasted on
+所谓的浪费天的功能是断言的需求，而韦伯在此
+
+6
+00:00:14,190 --> 00:00:18,539
+air are assert require and Weber in this
+所谓的浪费天的功能是断言的需求，而韦伯在此
+
+7
+00:00:18,539 --> 00:00:20,279
+video we're gonna go over how to use
+视频，我们将介绍如何使用它们，看看它们如何
+
+8
+00:00:20,279 --> 00:00:22,410
+each of them and see how they are
+视频，我们将介绍如何使用它们，看看它们如何
+
+9
+00:00:22,410 --> 00:00:25,289
+different from the other ones when a
+与其他函数不同的是，当一个函数抛出错误时，它将撤消
+
+10
+00:00:25,289 --> 00:00:27,539
+function throws an error it will undo
+与其他函数不同的是，当一个函数抛出错误时，它将撤消
+
+11
+00:00:27,539 --> 00:00:29,609
+all of the changes that were made in the
+当前调用中所做的所有更改都类似于编程
+
+12
+00:00:29,609 --> 00:00:32,219
+current call similar to a programming
+当前调用中所做的所有更改都类似于编程
+
+13
+00:00:32,219 --> 00:00:34,380
+language like Python and JavaScript
+Python和JavaScript错误之类的语言冒出来，这意味着如果您
+
+14
+00:00:34,380 --> 00:00:37,770
+errors bubble up this means that if you
+Python和JavaScript错误之类的语言冒出来，这意味着如果您
+
+15
+00:00:37,770 --> 00:00:39,480
+call a function that calls another
+调用一个函数，该函数调用另一个失败的函数，然后
+
+16
+00:00:39,480 --> 00:00:42,270
+function which fails with an air then
+调用一个函数，该函数调用另一个失败的函数，然后
+
+17
+00:00:42,270 --> 00:00:44,489
+the function you called also fails with
+在我向您展示示例之前，您调用的函数也同样失败了
+
+18
+00:00:44,489 --> 00:00:47,399
+the same air before I show you examples
+在我向您展示示例之前，您调用的函数也同样失败了
+
+19
+00:00:47,399 --> 00:00:50,160
+of assert require and we burn first
+肯定的需求，我们先烧，我们要写一个简单的合同，
+
+20
+00:00:50,160 --> 00:00:52,440
+we're gonna write a simple contract that
+肯定的需求，我们先烧，我们要写一个简单的合同，
+
+21
+00:00:52,440 --> 00:00:55,379
+stores the balance of an account to
+存储帐户余额以存储余额，我们将需要
+
+22
+00:00:55,379 --> 00:00:57,270
+store the balance we're gonna need a
+存储帐户余额以存储余额，我们将需要
+
+23
+00:00:57,270 --> 00:01:00,180
+public state variable and we're also
+公共状态变量，我们还需要一个函数来存入
+
+24
+00:01:00,180 --> 00:01:02,460
+gonna need a function to deposit into
+公共状态变量，我们还需要一个函数来存入
+
+25
+00:01:02,460 --> 00:01:04,979
+this contract and a function to withdraw
+该合约和撤回该合约的功能存款功能将采取
+
+26
+00:01:04,979 --> 00:01:10,439
+from it the deposit function will take
+该合约和撤回该合约的功能存款功能将采取
+
+27
+00:01:10,439 --> 00:01:12,930
+in the amount to deposit and increment
+存入金额，并以提款金额增加余额
+
+28
+00:01:12,930 --> 00:01:15,720
+the balance by the amount the withdrawal
+存入金额，并以提款金额增加余额
+
+29
+00:01:15,720 --> 00:01:18,000
+function will taking the amount that you
+函数将提取您要提取的金额并从中减去
+
+30
+00:01:18,000 --> 00:01:20,100
+want to withdraw and subtract it from
+函数将提取您要提取的金额并从中减去
+
+31
+00:01:20,100 --> 00:01:23,189
+the balance now that we have a simple
+现在我们有了一个可以模拟银行帐户的简单合约来平衡余额
+
+32
+00:01:23,189 --> 00:01:25,380
+contract that simulates a bank account
+现在我们有了一个可以模拟银行帐户的简单合约来平衡余额
+
+33
+00:01:25,380 --> 00:01:27,990
+let's add validations using a sir
+让我们使用需要先生和重生先生来添加验证
+
+34
+00:01:27,990 --> 00:01:32,009
+require and rebirth a sir is used to
+让我们使用需要先生和重生先生来添加验证
+
+35
+00:01:32,009 --> 00:01:34,140
+check for conditions that should never
+如果您的代码是
+
+36
+00:01:34,140 --> 00:01:36,659
+be possible if your code which is a
+如果您的代码是
+
+37
+00:01:36,659 --> 00:01:39,329
+failing assertion then there's a serious
+断言失败，那么您的代码中就有一个严重的错误需要修复，因此
+
+38
+00:01:39,329 --> 00:01:42,390
+bug in your code that you need to fix so
+断言失败，那么您的代码中就有一个严重的错误需要修复，因此
+
+39
+00:01:42,390 --> 00:01:44,759
+correct codes who never taught an error
+正确的代码，在我们存入资金时从不从断言中教过错误
+
+40
+00:01:44,759 --> 00:01:47,700
+from an assertion when we make a deposit
+正确的代码，在我们存入资金时从不从断言中教过错误
+
+41
+00:01:47,700 --> 00:01:49,649
+we want to make sure that the balance
+我们要确保更新余额后余额会增加
+
+42
+00:01:49,649 --> 00:01:53,070
+went up after updating the balance will
+我们要确保更新余额后余额会增加
+
+43
+00:01:53,070 --> 00:01:55,200
+assert that the client balance is
+断言客户余额大于或等于旧余额
+
+44
+00:01:55,200 --> 00:01:57,649
+greater than or equal to the old balance
+断言客户余额大于或等于旧余额
+
+45
+00:01:57,649 --> 00:02:00,689
+this expression should always evaluate
+如果不是，则此表达式应始终求值为true。
+
+46
+00:02:00,689 --> 00:02:03,090
+to true if it does not then this
+如果不是，则此表达式应始终求值为true。
+
+47
+00:02:03,090 --> 00:02:05,969
+assertion will turn and our transaction
+断言将转而我们的交易将失败，并且当我们提款时我们想要
+
+48
+00:02:05,969 --> 00:02:09,030
+will fail and when we withdraw we want
+断言将转而我们的交易将失败，并且当我们提款时我们想要
+
+49
+00:02:09,030 --> 00:02:11,008
+to make sure that the balance went down
+确保余额减少，所以我们断言余额增加了
+
+50
+00:02:11,008 --> 00:02:13,160
+so we assert that up
+确保余额减少，所以我们断言余额增加了
+
+51
+00:02:13,160 --> 00:02:15,890
+balance is destined or equal to the
+余额注定或等于这两个断言的全部余额
+
+52
+00:02:15,890 --> 00:02:18,350
+whole balance these two assertions
+余额注定或等于这两个断言的全部余额
+
+53
+00:02:18,350 --> 00:02:21,350
+should always evaluate to true however
+应该始终评估为true，但是我们可以使这些断言失败，让我们
+
+54
+00:02:21,350 --> 00:02:24,680
+we can make these assertions fail let's
+应该始终评估为true，但是我们可以使这些断言失败，让我们
+
+55
+00:02:24,680 --> 00:02:27,560
+see how first we're gonna need a very
+看看我们如何首先需要非常大的数量，所以让我们存储最大的数量
+
+56
+00:02:27,560 --> 00:02:30,560
+large number so let's store the largest
+看看我们如何首先需要非常大的数量，所以让我们存储最大的数量
+
+57
+00:02:30,560 --> 00:02:33,200
+number possible for the datatype eland
+合约内的数据类型eland可能的编号，然后进行编译，
+
+58
+00:02:33,200 --> 00:02:36,830
+inside their contract next compile and
+合约内的数据类型eland可能的编号，然后进行编译，
+
+59
+00:02:36,830 --> 00:02:41,120
+deploy the contract deposit 1 and check
+部署合同保证金1并检查我们的新余额，它应该是下一个
+
+60
+00:02:41,120 --> 00:02:44,300
+our new balance it should be one next
+部署合同保证金1并检查我们的新余额，它应该是下一个
+
+61
+00:02:44,300 --> 00:02:46,640
+deposit this very large number and
+存入非常大的数字，您会发现交易失败
+
+62
+00:02:46,640 --> 00:02:50,650
+you'll see that the transaction fails
+存入非常大的数字，您会发现交易失败
+
+63
+00:02:51,970 --> 00:02:55,550
+click on the transaction log you can see
+点击交易日志，您可以看到我们发送了三百万次喘息，而我们
+
+64
+00:02:55,550 --> 00:02:58,010
+that we sent three million gasps and we
+点击交易日志，您可以看到我们发送了三百万次喘息，而我们
+
+65
+00:02:58,010 --> 00:02:59,330
+used up all of it
+所有这些都用完了，您可以在这里看到
+
+66
+00:02:59,330 --> 00:03:02,120
+furthermore you can see here that the
+所有这些都用完了，您可以在这里看到
+
+67
+00:03:02,120 --> 00:03:04,190
+balance did not change since the
+由于交易失败，余额没有变化，所以我只是向您显示
+
+68
+00:03:04,190 --> 00:03:07,190
+transaction failed so I just showed you
+由于交易失败，余额没有变化，所以我只是向您显示
+
+69
+00:03:07,190 --> 00:03:10,010
+that when assertion fails it will use up
+当断言失败时，它将耗尽您发送的所有来宾，并且
+
+70
+00:03:10,010 --> 00:03:11,720
+all of the guests that you send and
+当断言失败时，它将耗尽您发送的所有来宾，并且
+
+71
+00:03:11,720 --> 00:03:15,800
+state changes will be undone so why did
+状态更改将被撤消，所以为什么这个断言失败了，所以失败了，因为
+
+72
+00:03:15,800 --> 00:03:18,410
+this assertion fail it failed because
+状态更改将被撤消，所以为什么这个断言失败了，所以失败了，因为
+
+73
+00:03:18,410 --> 00:03:21,980
+numbers and civility can overflow and on
+数字和文明可能会溢出并在地板上，所以让我们来谈谈溢出
+
+74
+00:03:21,980 --> 00:03:24,530
+the floor so let's talk about overflow
+数字和文明可能会溢出并在地板上，所以让我们来谈谈溢出
+
+75
+00:03:24,530 --> 00:03:26,750
+and on the flow and then we'll come back
+然后在流程上，然后我们将返回添加额外的验证，以便这些
+
+76
+00:03:26,750 --> 00:03:29,390
+to add extra validations so that these
+然后在流程上，然后我们将返回添加额外的验证，以便这些
+
+77
+00:03:29,390 --> 00:03:34,280
+two assertions will not fail imagine a
+两个断言不会失败，假设一个时钟的时间范围是1到12，
+
+78
+00:03:34,280 --> 00:03:37,880
+clock that hours ranges from 1 to 12 and
+两个断言不会失败，假设一个时钟的时间范围是1到12，
+
+79
+00:03:37,880 --> 00:03:40,700
+any number greater than 12 will make
+任何大于12的数字都会使时钟全天候旋转，最终
+
+80
+00:03:40,700 --> 00:03:43,130
+circles around the clock and eventually
+任何大于12的数字都会使时钟全天候旋转，最终
+
+81
+00:03:43,130 --> 00:03:46,220
+band on a number between 1 and 12 for
+1到12之间的数字上的带，例如13将围绕
+
+82
+00:03:46,220 --> 00:03:49,130
+example 13 will make a circle around the
+1到12之间的数字上的带，例如13将围绕
+
+83
+00:03:49,130 --> 00:03:52,910
+clock once and stop at 1 and if you had
+计时一次，然后从1停下来，如果您离时钟位置还有12个小时的话
+
+84
+00:03:52,910 --> 00:03:55,220
+12 hours from a position on the clock
+计时一次，然后从1停下来，如果您离时钟位置还有12个小时的话
+
+85
+00:03:55,220 --> 00:03:58,190
+you come back to the same exact position
+您会回到相同的精确位置，例如，如果您有，则从7开始
+
+86
+00:03:58,190 --> 00:04:01,610
+so for example starting at 7 if you had
+您会回到相同的精确位置，例如，如果您有，则从7开始
+
+87
+00:04:01,610 --> 00:04:05,360
+12 hours you come back to 7 in solidity
+12个小时后，您将可靠地返回到7代表的数据类型
+
+88
+00:04:05,360 --> 00:04:08,090
+the data type youant which stands for
+12个小时后，您将可靠地返回到7代表的数据类型
+
+89
+00:04:08,090 --> 00:04:10,959
+unsigned integer is similar to a clock
+无符号整数类似于时钟，类似于范围为1的时钟
+
+90
+00:04:10,959 --> 00:04:14,450
+similar to a clock which ranges from 1
+无符号整数类似于时钟，类似于范围为1的时钟
+
+91
+00:04:14,450 --> 00:04:19,010
+to 12 UN ranges from 0 to 2 to the 256
+到12 UN的范围是从0到2到256减1，而不是从12开始
+
+92
+00:04:19,010 --> 00:04:22,760
+minus 1 and instead of starting at 12 it
+到12 UN的范围是从0到2到256减1，而不是从12开始
+
+93
+00:04:22,760 --> 00:04:26,160
+starts at 0 like a clock any no
+像时钟一样从0开始，不迟于2到256-一个将
+
+94
+00:04:26,160 --> 00:04:29,550
+later than two to the 256 - one will
+像时钟一样从0开始，不迟于2到256-一个将
+
+95
+00:04:29,550 --> 00:04:32,070
+wrap around and eventually fall in the
+环绕并最终落在0到2到256减去1的范围内
+
+96
+00:04:32,070 --> 00:04:35,970
+range between 0 and 2 to the 256 minus 1
+环绕并最终落在0到2到256减去1的范围内
+
+97
+00:04:35,970 --> 00:04:39,720
+and like adding 12 hours to a time will
+就像每次增加12个小时，您将回到原来的位置
+
+98
+00:04:39,720 --> 00:04:41,970
+get you back in the same position of the
+就像每次增加12个小时，您将回到原来的位置
+
+99
+00:04:41,970 --> 00:04:45,360
+clock adding 2 to the 256 - a number
+时钟加2到256-一个数字会使您回到相同的数字，因此
+
+100
+00:04:45,360 --> 00:04:48,480
+will get you back to the same number so
+时钟加2到256-一个数字会使您回到相同的数字，因此
+
+101
+00:04:48,480 --> 00:04:52,080
+let's say that X and y are 2 units there
+假设X和y是2个单位，则x ly的总和可能是
+
+102
+00:04:52,080 --> 00:04:55,200
+is a possibility that the sum of x ly is
+假设X和y是2个单位，则x ly的总和可能是
+
+103
+00:04:55,200 --> 00:04:58,950
+greater than 2 to the 256 minus 1 in
+大于2等于256减1，在这种情况下，总和会环绕并
+
+104
+00:04:58,950 --> 00:05:01,260
+that case the sum wraps around and
+大于2等于256减1，在这种情况下，总和会环绕并
+
+105
+00:05:01,260 --> 00:05:04,410
+starts counting from 0 this is called
+从0开始计数，这被称为溢出，因此我们依次如何
+
+106
+00:05:04,410 --> 00:05:07,680
+overflow so let's in turn how we could
+从0开始计数，这被称为溢出，因此我们依次如何
+
+107
+00:05:07,680 --> 00:05:09,920
+prevent our contract from overflowing
+防止我们的合同首先溢出，我们知道将256加2
+
+108
+00:05:09,920 --> 00:05:13,530
+first we know that adding 2 to the 256
+防止我们的合同首先溢出，我们知道将256加2
+
+109
+00:05:13,530 --> 00:05:16,430
+to X will give us back the same number
+ X将给我们第二个相同的数字，我们知道所有数字都更少
+
+110
+00:05:16,430 --> 00:05:19,260
+second we know that all numbers are less
+ X将给我们第二个相同的数字，我们知道所有数字都更少
+
+111
+00:05:19,260 --> 00:05:23,340
+than or equal to 2 to the 256 minus 1 so
+等于或等于256减1的2，所以这意味着X加y会跌倒
+
+112
+00:05:23,340 --> 00:05:26,550
+this means that X plus y can over fall
+等于或等于256减1的2，所以这意味着X加y会跌倒
+
+113
+00:05:26,550 --> 00:05:30,450
+but it can never reach back to X since Y
+但它永远无法回到X，因为Y小于256的2，因此如果X
+
+114
+00:05:30,450 --> 00:05:35,040
+is less than 2 to the 256 therefore if X
+但它永远无法回到X，因为Y小于256的2，因此如果X
+
+115
+00:05:35,040 --> 00:05:37,740
+plus y is greater than or equal to X and
+加y大于或等于X，则没有溢出，如果X加
+
+116
+00:05:37,740 --> 00:05:41,130
+then there was no overflow and if X plus
+加y大于或等于X，则没有溢出，如果X加
+
+117
+00:05:41,130 --> 00:05:43,710
+y is less than X then we know that
+y小于X，那么我们知道在流上发生的溢出是
+
+118
+00:05:43,710 --> 00:05:47,220
+overflow occurred on the flow is the
+y小于X，那么我们知道在流上发生的溢出是
+
+119
+00:05:47,220 --> 00:05:50,070
+opposite of over for a number overflows
+大于的相反数，当大于最大数时溢出
+
+120
+00:05:50,070 --> 00:05:52,050
+when it is greater than the maximum
+大于的相反数，当大于最大数时溢出
+
+121
+00:05:52,050 --> 00:05:55,830
+range likewise a number under flows when
+同样，范围在嵌套在最小范围内时在流量下的数字
+
+122
+00:05:55,830 --> 00:05:58,890
+it is nest in the minimum range in the
+同样，范围在嵌套在最小范围内时在流量下的数字
+
+123
+00:05:58,890 --> 00:06:01,500
+case of unsigned integers this happens
+无符号整数的情况，当数字小于0时会发生这种情况，所以X
+
+124
+00:06:01,500 --> 00:06:04,440
+when the number is less than 0 so X
+无符号整数的情况，当数字小于0时会发生这种情况，所以X
+
+125
+00:06:04,440 --> 00:06:07,020
+minus y will on the floor when Y is
+当Y大于X时，减去y将在地板上，现在我们知道何时
+
+126
+00:06:07,020 --> 00:06:10,140
+greater than X now that we know when
+当Y大于X时，减去y将在地板上，现在我们知道何时
+
+127
+00:06:10,140 --> 00:06:12,810
+numbers overflow and on the floor let's
+数字溢出，在地板上，让我们回到我们的代码并添加其他内容
+
+128
+00:06:12,810 --> 00:06:14,610
+go back to our code and add extra
+数字溢出，在地板上，让我们回到我们的代码并添加其他内容
+
+129
+00:06:14,610 --> 00:06:18,270
+validations we know that X plus y does
+验证我们知道，如果X加y大于X，则x加y不会溢出。
+
+130
+00:06:18,270 --> 00:06:21,510
+not overflow if X plus y is greater than
+验证我们知道，如果X加y大于X，则x加y不会溢出。
+
+131
+00:06:21,510 --> 00:06:25,170
+or equal to X replacing X with balance
+或等于X用余额代替X并用L中的水代替X
+
+132
+00:06:25,170 --> 00:06:28,230
+and water from L we have balance plus
+或等于X用余额代替X并用L中的水代替X
+
+133
+00:06:28,230 --> 00:06:31,200
+amount does not overflow if balance plus
+如果余额加金额大于或等于金额，则金额不会溢出
+
+134
+00:06:31,200 --> 00:06:33,450
+amount is greater than or equal to
+如果余额加金额大于或等于金额，则金额不会溢出
+
+135
+00:06:33,450 --> 00:06:36,750
+balance in other words there was no
+换句话说，如果新的平衡很好，就不会有溢出
+
+136
+00:06:36,750 --> 00:06:39,210
+overflow if the new balance is great
+换句话说，如果新的平衡很好，就不会有溢出
+
+137
+00:06:39,210 --> 00:06:41,970
+then or equal to the old balance so
+等于或等于旧余额，这就是我们需要的额外验证
+
+138
+00:06:41,970 --> 00:06:44,160
+that's the extra validation that we need
+等于或等于旧余额，这就是我们需要的额外验证
+
+139
+00:06:44,160 --> 00:06:46,169
+to make sure that our balance does not
+确保我们的余额不会溢出，但是我们不应该使用先生
+
+140
+00:06:46,169 --> 00:06:49,259
+overflow but we shouldn't use a sir
+确保我们的余额不会溢出，但是我们不应该使用先生
+
+141
+00:06:49,259 --> 00:06:51,900
+since assertions should always evaluate
+因为断言应该始终评估为true，所以这是我们使用require的地方
+
+142
+00:06:51,900 --> 00:06:55,849
+to true so this is where we use require
+因为断言应该始终评估为true，所以这是我们使用require的地方
+
+143
+00:06:55,849 --> 00:06:59,550
+require is used to validate inputs state
+require用于在执行之前验证输入状态条件并检查
+
+144
+00:06:59,550 --> 00:07:02,729
+conditions before execution and to check
+require用于在执行之前验证输入状态条件并检查
+
+145
+00:07:02,729 --> 00:07:05,490
+outputs of other functions in this case
+在这种情况下，我们将检查其他功能的输出
+
+146
+00:07:05,490 --> 00:07:06,930
+we're going to check that the New
+在这种情况下，我们将检查其他功能的输出
+
+147
+00:07:06,930 --> 00:07:09,449
+Balance is greater than or equal to the
+余额大于或等于旧余额，然后再更新余额
+
+148
+00:07:09,449 --> 00:07:11,970
+old balance before updating the balance
+余额大于或等于旧余额，然后再更新余额
+
+149
+00:07:11,970 --> 00:07:17,160
+state variable when this condition is
+当该条件不成立时的状态变量需要良好的供体，并且
+
+150
+00:07:17,160 --> 00:07:20,460
+not true require well donor and the
+当该条件不成立时的状态变量需要良好的供体，并且
+
+151
+00:07:20,460 --> 00:07:24,240
+transaction will fail require accepts an
+交易将失败，需要接受一个可选的错误消息，该消息将是
+
+152
+00:07:24,240 --> 00:07:26,070
+optional error message that will be
+交易将失败，需要接受一个可选的错误消息，该消息将是
+
+153
+00:07:26,070 --> 00:07:29,759
+shown when it tells an error so you'll
+当它告诉您错误时显示，以便您将消息溢出传递给
+
+154
+00:07:29,759 --> 00:07:32,099
+pass in the message overflow for the
+当它告诉您错误时显示，以便您将消息溢出传递给
+
+155
+00:07:32,099 --> 00:07:35,610
+error message if this condition passes
+错误消息，如果此条件通过，则我们会将余额更新为新的
+
+156
+00:07:35,610 --> 00:07:38,159
+then we'll update the balance to our new
+错误消息，如果此条件通过，则我们会将余额更新为新的
+
+157
+00:07:38,159 --> 00:07:41,460
+balance now this possession should
+平衡，现在该拥有权应始终评估为真，因为
+
+158
+00:07:41,460 --> 00:07:44,130
+always evaluate to true since by the
+平衡，现在该拥有权应始终评估为真，因为
+
+159
+00:07:44,130 --> 00:07:46,740
+time the call reaches a sign there was
+当呼叫到达一个标志时，再也没有溢出，接下来让我们添加一些
+
+160
+00:07:46,740 --> 00:07:49,919
+no overflow next let's add some
+当呼叫到达一个标志时，再也没有溢出，接下来让我们添加一些
+
+161
+00:07:49,919 --> 00:07:52,349
+validations to our withdrawal function
+验证我们的提款功能，以便断言永远不会失败
+
+162
+00:07:52,349 --> 00:07:54,599
+so that the assertion never fails
+验证我们的提款功能，以便断言永远不会失败
+
+163
+00:07:54,599 --> 00:07:57,659
+we know that X minus y does not on the
+我们知道，如果X大于或等于Y，则X减去y不会出现在流上
+
+164
+00:07:57,659 --> 00:08:00,830
+flow if X is greater than or equal to Y
+我们知道，如果X大于或等于Y，则X减去y不会出现在流上
+
+165
+00:08:00,830 --> 00:08:03,509
+replacing the variables the condition
+替换变量，我们需要检查的条件是
+
+166
+00:08:03,509 --> 00:08:05,280
+that we need to check for is that the
+替换变量，我们需要检查的条件是
+
+167
+00:08:05,280 --> 00:08:07,650
+balance is greater than or equal to the
+余额大于或等于将要提取的金额
+
+168
+00:08:07,650 --> 00:08:11,210
+amount that were gonna withdraw
+余额大于或等于将要提取的金额
+
+169
+00:08:13,419 --> 00:08:16,939
+if the code reaches this mind and we
+如果代码达到了这个目的，并且我们知道地板上没有任何东西，那么
+
+170
+00:08:16,939 --> 00:08:18,919
+know that there was no on the floor so
+如果代码达到了这个目的，并且我们知道地板上没有任何东西，那么
+
+171
+00:08:18,919 --> 00:08:21,619
+this assertion should always evaluate to
+此断言应始终评估为true
+
+172
+00:08:21,619 --> 00:08:22,089
+true
+此断言应始终评估为true
+
+173
+00:08:22,089 --> 00:08:25,249
+that's deposit again and make sure that
+再次存款，并确保我们的会话没有出错
+
+174
+00:08:25,249 --> 00:08:28,179
+our session does not do an error
+再次存款，并确保我们的会话没有出错
+
+175
+00:08:28,179 --> 00:08:32,919
+compile and redeploy the contract
+编制和重新部署合同
+
+176
+00:08:34,169 --> 00:08:37,210
+again deposit one and check that the
+再次存入一笔，并检查余额是否正确
+
+177
+00:08:37,210 --> 00:08:38,490
+balance is correct
+再次存入一笔，并检查余额是否正确
+
+178
+00:08:38,490 --> 00:08:41,230
+next deposit this very large number
+下次再次存入这个非常大的数字，您可以在这里看到
+
+179
+00:08:41,230 --> 00:08:45,040
+again you can see here that the
+下次再次存入这个非常大的数字，您可以在这里看到
+
+180
+00:08:45,040 --> 00:08:46,840
+transaction failed with the message
+事务失败并显示消息溢出，这意味着存在一个
+
+181
+00:08:46,840 --> 00:08:49,900
+overflow this means that there was an
+事务失败并显示消息溢出，这意味着存在一个
+
+182
+00:08:49,900 --> 00:08:52,270
+overflow and are required statement
+溢出，并且要求语句失败，这也意味着该断言
+
+183
+00:08:52,270 --> 00:08:55,390
+failed it also means that the assertion
+溢出，并且要求语句失败，这也意味着该断言
+
+184
+00:08:55,390 --> 00:08:58,390
+below they never executed when you check
+下面它们在您检查事务日志时从未执行过，您可以看到
+
+185
+00:08:58,390 --> 00:09:00,970
+the transaction log you can see that not
+下面它们在您检查事务日志时从未执行过，您可以看到
+
+186
+00:09:00,970 --> 00:09:04,360
+all of the gas were used this shows that
+所有的气体都被使用，这表明断言如果被执行则永远不会执行
+
+187
+00:09:04,360 --> 00:09:07,660
+the assertion was never executed if it
+所有的气体都被使用，这表明断言如果被执行则永远不会执行
+
+188
+00:09:07,660 --> 00:09:10,680
+did it would have used up all of the gas
+会不会像使用蜂鸣器一样消耗掉所有气体
+
+189
+00:09:10,680 --> 00:09:13,990
+the way you use beeper is similar to the
+会不会像使用蜂鸣器一样消耗掉所有气体
+
+190
+00:09:13,990 --> 00:09:17,380
+way you use require however Reber only
+您使用的方式require但是Reber只接受一个参数错误消息
+
+191
+00:09:17,380 --> 00:09:19,930
+takes in one argument the error message
+您使用的方式require但是Reber只接受一个参数错误消息
+
+192
+00:09:19,930 --> 00:09:23,050
+to be told so the way you will use River
+被告知，所以您将使用River的方式是编写栓塞语句
+
+193
+00:09:23,050 --> 00:09:25,510
+is to write if statements for embolic
+被告知，所以您将使用River的方式是编写栓塞语句
+
+194
+00:09:25,510 --> 00:09:28,380
+conditions when the invalid condition
+当无效条件评估为真时的条件称为重生
+
+195
+00:09:28,380 --> 00:09:31,210
+evaluates to true we call the rebirth
+当无效条件评估为真时的条件称为重生
+
+196
+00:09:31,210 --> 00:09:34,270
+function in this case the invalid
+函数在这种情况下无效的条件是当余额为
+
+197
+00:09:34,270 --> 00:09:36,280
+condition is when the balance is
+函数在这种情况下无效的条件是当余额为
+
+198
+00:09:36,280 --> 00:09:38,980
+destined amount to be withdrawn when
+当计算结果为true时要提取的预定金额，我们称为
+
+199
+00:09:38,980 --> 00:09:41,380
+that evaluates to true we call the
+当计算结果为true时要提取的预定金额，我们称为
+
+200
+00:09:41,380 --> 00:09:44,440
+reverb function this revert statement
+混响功能此revert语句的作用与
+
+201
+00:09:44,440 --> 00:09:46,360
+does exactly the same thing as the
+混响功能此revert语句的作用与
+
+202
+00:09:46,360 --> 00:09:49,120
+require statement above River might be a
+在条件较高的情况下，River语句可能是一个更好的选择
+
+203
+00:09:49,120 --> 00:09:51,550
+better choice to use when the condition
+在条件较高的情况下，River语句可能是一个更好的选择
+
+204
+00:09:51,550 --> 00:09:54,850
+to check becomes more complex that
+检查变得更加复杂，涵盖了如何使用断言的require和
+
+205
+00:09:54,850 --> 00:09:57,460
+covers how to use assert require and
+检查变得更加复杂，涵盖了如何使用断言的require和
+
+206
+00:09:57,460 --> 00:09:59,510
+rebirth
+在这段视频中我们谈到了三个
+
+207
+00:09:59,510 --> 00:10:01,910
+in this video we talked about the three
+在这段视频中我们谈到了三个
+
+208
+00:10:01,910 --> 00:10:05,210
+ways to turn air assert require and
+转变空中断言需求的方法，韦伯断言永远不应该评估为
+
+209
+00:10:05,210 --> 00:10:08,540
+Weber assertion should never evaluate to
+转变空中断言需求的方法，韦伯断言永远不应该评估为
+
+210
+00:10:08,540 --> 00:10:11,270
+false if it does then that means there's
+如果为false，则表示代码中的错误未能通过断言
+
+211
+00:10:11,270 --> 00:10:13,520
+a bug in your code failing assertion
+如果为false，则表示代码中的错误未能通过断言
+
+212
+00:10:13,520 --> 00:10:16,340
+will use Apollo the gas that you sent
+将使用阿波罗您随交易发送的气体由
+
+213
+00:10:16,340 --> 00:10:19,340
+with your transaction require is used by
+将使用阿波罗您随交易发送的气体由
+
+214
+00:10:19,340 --> 00:10:22,040
+all the inputs preconditions and other
+所有输入前提条件和其他功能输出（如果需要）
+
+215
+00:10:22,040 --> 00:10:24,680
+function outputs when a require
+所有输入前提条件和其他功能输出（如果需要）
+
+216
+00:10:24,680 --> 00:10:27,110
+statement fails it does not use up all
+语句失败，在您使用以下语句的情况下，它不会耗尽所有气体
+
+217
+00:10:27,110 --> 00:10:30,170
+of the gas in situations where you use a
+语句失败，在您使用以下语句的情况下，它不会耗尽所有气体
+
+218
+00:10:30,170 --> 00:10:32,960
+require you can also write an equivalent
+要求您还可以使用Ebert编写等效的代码，但Weber更为实用
+
+219
+00:10:32,960 --> 00:10:37,040
+code using Ebert but Weber is more
+要求您还可以使用Ebert编写等效的代码，但Weber更为实用
+
+220
+00:10:37,040 --> 00:10:39,260
+useful than require when checking
+比我在检查复杂条件时所需的功能要有用
+
+221
+00:10:39,260 --> 00:10:42,530
+complex conditions that's all I got for
+比我在检查复杂条件时所需的功能要有用
+
+222
+00:10:42,530 --> 00:10:45,140
+this video thanks for watching and have
+这部影片感谢您的收看，祝您度过愉快的一周
+
+223
+00:10:45,140 --> 00:10:47,680
+a nice week
+这部影片感谢您的收看，祝您度过愉快的一周
+

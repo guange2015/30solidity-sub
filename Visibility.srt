@@ -1,0 +1,515 @@
+1
+00:00:00,350 --> 00:00:03,270
+let's say that a contract has some state
+假设合同具有一些状态变量和功能，
+
+2
+00:00:03,270 --> 00:00:06,839
+variables and functions in solidity you
+假设合同具有一些状态变量和功能，
+
+3
+00:00:06,839 --> 00:00:09,000
+have to declare whether a child contract
+必须声明子合同，其他合同或帐户是否可以访问
+
+4
+00:00:09,000 --> 00:00:12,059
+other contracts or accounts have access
+必须声明子合同，其他合同或帐户是否可以访问
+
+5
+00:00:12,059 --> 00:00:13,910
+to these state variables and functions
+在本视频中，我们将介绍这些状态变量和函数
+
+6
+00:00:13,910 --> 00:00:16,800
+in this video we're going to go over the
+在本视频中，我们将介绍这些状态变量和函数
+
+7
+00:00:16,800 --> 00:00:18,810
+four key words that determine the
+决定状态变量可见性的四个关键词
+
+8
+00:00:18,810 --> 00:00:20,970
+visibility of state variables and
+决定状态变量可见性的四个关键词
+
+9
+00:00:20,970 --> 00:00:24,240
+functions these key words are private
+这些关键词的功能是私人的，内部的，公共的，外部的，国家的
+
+10
+00:00:24,240 --> 00:00:28,680
+internal public and external a state
+这些关键词的功能是私人的，内部的，公共的，外部的，国家的
+
+11
+00:00:28,680 --> 00:00:31,109
+variable or a function declared private
+变量或声明为私有的函数意味着只能在内部访问
+
+12
+00:00:31,109 --> 00:00:33,780
+means that it is only accessible inside
+变量或声明为私有的函数意味着只能在内部访问
+
+13
+00:00:33,780 --> 00:00:36,809
+the contract that defines it for example
+定义它的合同，例如，如果合同具有私有状态
+
+14
+00:00:36,809 --> 00:00:38,820
+if a contract has a private state
+定义它的合同，例如，如果合同具有私有状态
+
+15
+00:00:38,820 --> 00:00:41,610
+variable and another contract and heads
+变量和另一个合同，然后从该计划合同中选择，然后是孩子
+
+16
+00:00:41,610 --> 00:00:44,489
+from that plan contract then the child
+变量和另一个合同，然后从该计划合同中选择，然后是孩子
+
+17
+00:00:44,489 --> 00:00:46,800
+contract does not have access to that
+合同无权访问在
+
+18
+00:00:46,800 --> 00:00:49,350
+private state variable defined in the
+合同无权访问在
+
+19
+00:00:49,350 --> 00:00:52,590
+pair contract when a state variable or
+当状态变量或函数声明为内部变量时，配对合同然后
+
+20
+00:00:52,590 --> 00:00:55,379
+function is declared as internal then
+当状态变量或函数声明为内部变量时，配对合同然后
+
+21
+00:00:55,379 --> 00:00:58,320
+that means that it is accessible inside
+这意味着它可以在合同本身和子合同中访问
+
+22
+00:00:58,320 --> 00:01:01,260
+a contract itself and the child contract
+这意味着它可以在合同本身和子合同中访问
+
+23
+00:01:01,260 --> 00:01:03,899
+but it is not accessible by other
+但是其他合同无法访问它，并且在公共状态下也无法访问
+
+24
+00:01:03,899 --> 00:01:07,320
+contracts and accounts a public state
+但是其他合同无法访问它，并且在公共状态下也无法访问
+
+25
+00:01:07,320 --> 00:01:10,049
+variable or a function is accessible by
+变量或函数可以通过任何合同和任何帐户访问，并且如果
+
+26
+00:01:10,049 --> 00:01:13,710
+any contract and any account and if a
+变量或函数可以通过任何合同和任何帐户访问，并且如果
+
+27
+00:01:13,710 --> 00:01:16,229
+contract has an external function then
+合同有一个外部功能，那么该功能只能由
+
+28
+00:01:16,229 --> 00:01:18,509
+that function can only be called by
+合同有一个外部功能，那么该功能只能由
+
+29
+00:01:18,509 --> 00:01:21,420
+other contracts and accounts and an
+其他合同和账户，并且外部状态变量不存在
+
+30
+00:01:21,420 --> 00:01:23,880
+external state variable does not exist
+其他合同和账户，并且外部状态变量不存在
+
+31
+00:01:23,880 --> 00:01:26,640
+since it doesn't make sense to have a
+因为拥有仅存储数据的状态变量是没有意义的
+
+32
+00:01:26,640 --> 00:01:29,880
+state variable that stores data only be
+因为拥有仅存储数据的状态变量是没有意义的
+
+33
+00:01:29,880 --> 00:01:32,159
+accessible by other contracts and
+现在可以通过其他合同和帐户访问足够多的数据了
+
+34
+00:01:32,159 --> 00:01:35,340
+accounts that's enough top for now let's
+现在可以通过其他合同和帐户访问足够多的数据了
+
+35
+00:01:35,340 --> 00:01:39,869
+see some code here we have a private
+在这里看到一些代码，我们有一个名为私人电话的私人功能，
+
+36
+00:01:39,869 --> 00:01:42,150
+function named private phone that
+在这里看到一些代码，我们有一个名为私人电话的私人功能，
+
+37
+00:01:42,150 --> 00:01:44,399
+returns the same public function called
+返回相同的公共函数，而私钥使它
+
+38
+00:01:44,399 --> 00:01:47,220
+and the private key word makes this
+返回相同的公共函数，而私钥使它
+
+39
+00:01:47,220 --> 00:01:49,619
+function only accessible inside this
+功能仅在此合同内以及如果您部署此合同时可访问
+
+40
+00:01:49,619 --> 00:01:52,649
+contract and if you deploy this contract
+功能仅在此合同内以及如果您部署此合同时可访问
+
+41
+00:01:52,649 --> 00:01:54,780
+you'll notice that you cannot call the
+您会注意到您无法调用私有函数，但这是完美的
+
+42
+00:01:54,780 --> 00:02:01,590
+private function but it is perfectly
+您会注意到您无法调用私有函数，但这是完美的
+
+43
+00:02:01,590 --> 00:02:03,630
+fine to have a public function and
+拥有公共功能很好，并且在内部调用私有功能，但是
+
+44
+00:02:03,630 --> 00:02:06,960
+inside it call the private function but
+拥有公共功能很好，并且在内部调用私有功能，但是
+
+45
+00:02:06,960 --> 00:02:08,669
+a child contract cannot call this
+子合同无法调用此函数，因为关键字private
+
+46
+00:02:08,669 --> 00:02:11,400
+function since the keyword private makes
+子合同无法调用此函数，因为关键字private
+
+47
+00:02:11,400 --> 00:02:12,690
+this function
+该功能在合同内可见
+
+48
+00:02:12,690 --> 00:02:15,150
+visible inside the contract that it is
+该功能在合同内可见
+
+49
+00:02:15,150 --> 00:02:20,820
+defined in an internal function can be
+可以在内部函数中调用在内部函数中定义的
+
+50
+00:02:20,820 --> 00:02:23,070
+called inside the contract that it is
+可以在内部函数中调用在内部函数中定义的
+
+51
+00:02:23,070 --> 00:02:25,740
+defined in and also inside the child
+在儿童文化中以及在儿童文化中进行定义，我们将通过以下方式对此进行测试
+
+52
+00:02:25,740 --> 00:02:28,110
+culture and we're gonna test this out by
+在儿童文化中以及在儿童文化中进行定义，我们将通过以下方式对此进行测试
+
+53
+00:02:28,110 --> 00:02:31,170
+creating a public function inside the
+在基本合同和子合同中创建公共职能
+
+54
+00:02:31,170 --> 00:02:33,530
+base contract and the child contract
+在基本合同和子合同中创建公共职能
+
+55
+00:02:33,530 --> 00:02:36,090
+inside the function we're gonna call the
+在函数内部，我们将调用内部函数重新编译和部署
+
+56
+00:02:36,090 --> 00:02:39,480
+internal function recompile and deploy
+在函数内部，我们将调用内部函数重新编译和部署
+
+57
+00:02:39,480 --> 00:02:45,270
+both the base and the child contract and
+基本合同和子合同都可以，您可以在此处看到两个合同都是
+
+58
+00:02:45,270 --> 00:02:48,330
+you can see here that both contracts are
+基本合同和子合同都可以，您可以在此处看到两个合同都是
+
+59
+00:02:48,330 --> 00:02:50,160
+able to call the internal function
+能够将内部函数称为公共函数
+
+60
+00:02:50,160 --> 00:02:56,580
+inside the public function a public
+能够将内部函数称为公共函数
+
+61
+00:02:56,580 --> 00:02:58,470
+function can be called inside this
+该功能可以在子合同中由其他合同调用
+
+62
+00:02:58,470 --> 00:03:01,920
+contract by child contracts by other
+该功能可以在子合同中由其他合同调用
+
+63
+00:03:01,920 --> 00:03:07,140
+contracts and accounts an external
+合同和账目外部功能只能由其他人调用
+
+64
+00:03:07,140 --> 00:03:09,120
+function can only be called by other
+合同和账目外部功能只能由其他人调用
+
+65
+00:03:09,120 --> 00:03:12,000
+contracts and accounts so that means you
+合约和帐户，因此您无法在另一个内部调用此函数
+
+66
+00:03:12,000 --> 00:03:14,250
+cannot call this function inside another
+合约和帐户，因此您无法在另一个内部调用此函数
+
+67
+00:03:14,250 --> 00:03:17,880
+function here I've created a public
+我在这里创建了一个公共函数来调用外部函数
+
+68
+00:03:17,880 --> 00:03:20,130
+function that calls the external
+我在这里创建了一个公共函数来调用外部函数
+
+69
+00:03:20,130 --> 00:03:22,860
+function inside it this code will not
+里面的函数，因为外部函数是
+
+70
+00:03:22,860 --> 00:03:25,620
+compile since the external function is
+里面的函数，因为外部函数是
+
+71
+00:03:25,620 --> 00:03:28,470
+not accessible inside the contract it
+在合同内部无法访问，只能从其他合同中调用
+
+72
+00:03:28,470 --> 00:03:30,900
+can only be called from other contracts
+在合同内部无法访问，只能从其他合同中调用
+
+73
+00:03:30,900 --> 00:03:36,870
+and accounts and the same visibility's
+和帐户，并且状态变量的可见性相同，但
+
+74
+00:03:36,870 --> 00:03:39,720
+applied to state variables except the
+和帐户，并且状态变量的可见性相同，但
+
+75
+00:03:39,720 --> 00:03:42,510
+keyword external the state variable
+关键字external不能将状态变量声明为external。
+
+76
+00:03:42,510 --> 00:03:46,019
+cannot be declared as external doing so
+关键字external不能将状态变量声明为external。
+
+77
+00:03:46,019 --> 00:03:48,000
+you can see here that the code does not
+您可以在此处看到，尽管私有状态变量也无法编译代码
+
+78
+00:03:48,000 --> 00:03:51,750
+compile although private state variables
+您可以在此处看到，尽管私有状态变量也无法编译代码
+
+79
+00:03:51,750 --> 00:03:54,540
+are only accessible inside the contract
+只能在合同内访问，这并不意味着您应该存储
+
+80
+00:03:54,540 --> 00:03:56,670
+this does not mean that you should store
+只能在合同内访问，这并不意味着您应该存储
+
+81
+00:03:56,670 --> 00:03:59,790
+sensitive information inside it since
+内部的敏感信息，因为区块链上的所有内容都是可见的
+
+82
+00:03:59,790 --> 00:04:02,040
+everything on the blockchain is visible
+内部的敏感信息，因为区块链上的所有内容都是可见的
+
+83
+00:04:02,040 --> 00:04:04,739
+to everyone it is not difficult to find
+对于每个人来说，找到存储在私有状态中的值并不难
+
+84
+00:04:04,739 --> 00:04:07,260
+the value stored in a private state
+对于每个人来说，找到存储在私有状态中的值并不难
+
+85
+00:04:07,260 --> 00:04:10,050
+variable and the same caution should be
+变量，对内部状态变量应采取与以下相同的注意事项：
+
+86
+00:04:10,050 --> 00:04:12,510
+applied to internal state variables as
+变量，对内部状态变量应采取与以下相同的注意事项：
+
+87
+00:04:12,510 --> 00:04:14,750
+well
+出色地
+
+88
+00:04:14,940 --> 00:04:18,070
+in this video we went over the four
+在本视频中，我们介绍了状态变量和
+
+89
+00:04:18,070 --> 00:04:21,040
+visibilities that our state variable and
+在本视频中，我们介绍了状态变量和
+
+90
+00:04:21,040 --> 00:04:24,250
+functions can have private means it is
+函数可以具有私有手段，它仅在合同内部可见
+
+91
+00:04:24,250 --> 00:04:26,400
+only visible inside the contract
+函数可以具有私有手段，它仅在合同内部可见
+
+92
+00:04:26,400 --> 00:04:29,260
+internal means it is only visible inside
+内部意味着它仅在合同内部和子合同公共内部可见
+
+93
+00:04:29,260 --> 00:04:32,740
+the contract and child contract public
+内部意味着它仅在合同内部和子合同公共内部可见
+
+94
+00:04:32,740 --> 00:04:34,690
+means it is visible to the contract
+表示合同的合同子合同可见
+
+95
+00:04:34,690 --> 00:04:37,150
+child contract of the contracts and
+表示合同的合同子合同可见
+
+96
+00:04:37,150 --> 00:04:40,419
+accounts external means it is visible to
+外部帐户表示其他合同和帐户可见
+
+97
+00:04:40,419 --> 00:04:43,600
+other contracts and accounts and not
+外部帐户表示其他合同和帐户可见
+
+98
+00:04:43,600 --> 00:04:46,990
+visible inside the contract and don'ts
+在合同内可见，在私人和内部不存在或没有秘密
+
+99
+00:04:46,990 --> 00:04:49,780
+or secrets inside private and internal
+在合同内可见，在私人和内部不存在或没有秘密
+
+100
+00:04:49,780 --> 00:04:52,000
+state variables if you have any
+状态变量，如果您有任何疑问，请把它们放在
+
+101
+00:04:52,000 --> 00:04:53,530
+questions please put them in the
+状态变量，如果您有任何疑问，请把它们放在
+
+102
+00:04:53,530 --> 00:04:56,800
+comments below thanks for watching and
+以下评论感谢您的收看，下回见
+
+103
+00:04:56,800 --> 00:04:59,790
+I'll see you next time
+以下评论感谢您的收看，下回见
+
